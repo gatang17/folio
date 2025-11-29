@@ -248,6 +248,69 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+/*PROJECTS*/
+document.querySelectorAll('.project-card .project-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const projectId = e.target.closest('.project-card').dataset.id;
+    sessionStorage.setItem('selectedProject', projectId);
+    window.location.href = 'p_descript.html';
+  });
+});
+
+const projectId = sessionStorage.getItem('selectedProject'); // obtener el proyecto
+const projectContainer = document.getElementById('projects-list');
+
+if (!projectId) {
+  projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
+} else {
+  
+  fetch('js/data/projects.json')
+    .then(res => res.json())
+    .then(data => {
+      const project = data.projects.find(p => p.id === projectId);
+      if (!project) {
+        projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
+        return;
+      }
+      let imagesHtml = '';
+project.images.forEach(img => {
+  imagesHtml += `
+    <div class="col-6 mb-3">
+      <img src="${img}" class="img-fluid" alt="${project.title}">
+    </div>
+  `;
+});
+
+
+// breadcrumb
+const breadcrumb = document.getElementById('breadcrumb');
+breadcrumb.innerHTML += ` ${project.title}`;
+
+      projectContainer.innerHTML = `
+      <h1>${project.title}</h1>
+            <h2 class="my-5">${project.subtitle}</h2>
+             <a class="my-5" href="${project.live}">See it Live </a>
+
+       <p>${project.description}</p>
+       <div class="row">
+       
+        ${imagesHtml}
+       
+       </div>
+  
+  <p><strong>Technologies:</strong> ${project.technologies.join(', ')}</p>
+
+      `;
+    })
+    .catch(err => {
+      console.error(err);
+      projectContainer.innerHTML = '<p>Error al cargar el proyecto.</p>';
+    });
+}
+
+
+
 
 
 
