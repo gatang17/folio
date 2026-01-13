@@ -491,8 +491,13 @@ textarea {
   background-color: #90720d;
   color: #fff;
  
-  
 }
+
+.btn {
+  border: 2px solid #90720d; /* 2px de ancho, línea sólida, color dorado */
+  border-radius: 5px;         /* opcional, para bordes redondeados */
+}
+
  /********************************/
 
 

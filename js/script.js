@@ -190,28 +190,43 @@ if (!projectId) {
   projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
 } else {
   
-  fetch('js/data/projects.json')
-    .then(res => res.json())
-    .then(data => {
-      const project = data.projects.find(p => p.id === projectId);
-      if (!project) {
-        projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
-        return;
-      }
-      let imagesHtml = '';
-project.images.forEach(img => {
-  imagesHtml += `
-    <div class="col-6 mb-3">
-      <img src="${img}" class="img-fluid" alt="${project.title}">
-    </div>
-  `;
-});
+  fetch('./data/projects.json')
+  .then(res => res.json())
+  .then(data => {
+    const project = data.projects.find(p => p.id.toString() === projectId);
+    if (!project) {
+      projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
+      return;
+    }
 
+    // Construir HTML completo del proyecto
+    let html = `
+      <h2>${project.title}</h2>
+      ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
+      <p>${project.description}</p>
+      ${project.technologies && project.technologies.length > 0 ? `
+        <h5>Technologies:</h5>
+        <ul>
+          ${project.technologies.map(tech => `<li>${tech}</li>`).join('')}
+        </ul>
+      ` : ''}
+      ${project.images && project.images.length > 0 ? `
+        <div class="row">
+          ${project.images.map(img => `
+            <div class="col-6 mb-3">
+              <img src="${img}" class="img-fluid" alt="${project.title}">
+            </div>
+          `).join('')}
+        </div>
+      ` : '<p>No images available.</p>'}
+      <div class="project-links mt-3">
+        ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-primary me-2">GitHub</a>` : ''}
+        ${project.live ? `<a href="${project.live}" target="_blank" class="btn btn-success">Live Demo</a>` : ''}
+      </div>
+    `;
 
-
-
-
-    })
+    projectContainer.innerHTML = html;
+  })
   
 }
 
@@ -271,7 +286,11 @@ function fileNameToLabel(path) {
   if (file === 'index.html') {
     return 'Home';
   }
+ 
 
+  if (file === 'p_descript.html') {
+    return 'details';
+  }
   return file
     .replace('.html', '')
     .replace(/[-_]/g, ' ')

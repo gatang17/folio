@@ -30,7 +30,7 @@
 
       },
       {
-        "id": "handymandmd",
+        "id": "handydmd",
         "title": "HandymanDMD",
         "description": "Development of a simple and user-friendly website for HandymanDMD...",
         "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
@@ -38,7 +38,8 @@
             "projects/jgphoto/jg_1.jpg",
             "projects/jgphoto/jg_2.jpg"
         ],
-        "github": "gatang17.github.io/handyman-dmd/",
+       "github": "https://gatang17.github.io/handyman-dmd/",
+
         "live": "https://handydmd.vercel.app"
 
       },
@@ -58,7 +59,7 @@
 
       },
       {
-        "id": "quillpenpress",
+        "id": "quill",
         "title": "The Quill Pen Press",
         "description": "This project focused on the corporate design of The Quill Pen Press, including logo creation, corporate stationery (business card, envelope, letterhead), and a brand manual defining typography, color palette, and graphic elements for consistent brand identity. A homepage mockup was also created using Adobe XD to show how the visual identity could be applied online, although the project emphasis was on brand design rather than web functionality. The design aimed to reflect professionalism, creativity, and trust within the printing industry.",
         "technologies": ["Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Corporate Design"],
