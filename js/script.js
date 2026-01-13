@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error loading header:', err));
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  fetch("./data/h_menu.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("h_menu-container").innerHTML = html;
+    })
+    .catch(err => console.error('Error loading menuhamburguer:', err));
+});
+
 
 // footer-container for all pages
 document.addEventListener('DOMContentLoaded', () => {
