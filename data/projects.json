@@ -1,0 +1,84 @@
+{
+    "projects": [
+        {
+            "id": "portfolio",
+            "title": "Personal Portfolio",
+            "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
+            "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
+            "images": [],
+            "github": "https://github.com/tuusuario/portfolio",
+            "live": "https://tuportfolio.vercel.app"
+          },
+          
+        {
+        "id": "jgphoto",
+        "title": "J&G Photography",
+        "subtitle": "Development of a website for J&G Photography LLC, a studio specializing in product photography, fine art portraits, and children's portraits.",
+        "description": " The client needed a modern website to showcase their photographic style, allow easy studio location, offer direct contact, and provide transparent pricing, including a module for clients to build their own service packages. The site was custom-built with HTML, CSS, and JavaScript for full flexibility, using Bootstrap for interactive components, an embedded Google Maps iframe for location, and FormSubmit for messaging. The design focused on a minimalist, elegant, and sophisticated aesthetic. The project was hosted on Vercel to reduce costs and track user metrics.",
+ 
+        "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "FormSubmit", "Google Maps iframe", "Vercel"],
+        "images": [
+          "images/projects/jgphoto/jg_1.png",
+          "images/projects/jgphoto/jg_2.png",
+          "images/projects/jgphoto/jg_3.png",
+          "images/projects/jgphoto/jg_4.png",
+          "images/projects/jgphoto/jg_5.png"
+         
+        ],
+        "github": "https://gatang17.github.io",
+        "live": "https://jgstudio.vercel.app"
+
+      },
+      {
+        "id": "handymandmd",
+        "title": "HandymanDMD",
+        "description": "Development of a simple and user-friendly website for HandymanDMD...",
+        "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
+        "images": [
+            "projects/jgphoto/jg_1.jpg",
+            "projects/jgphoto/jg_2.jpg"
+        ],
+        "github": "gatang17.github.io/handyman-dmd/",
+        "live": "https://handydmd.vercel.app"
+
+      },
+      {
+        "id": "aurora",
+        "title": "Aurora Wellness Center",
+        "description": "Aurora Wellness Center is a personal project built on the free version of WordPress. Due to the limitations of the free plan, no custom CSS or HTML could be used, so the site was structured entirely using covers, columns, rows, and careful margin adjustments. The page is designed as a single-page layout with anchor links to different sections, providing a training exercise in organizing content and design with minimal tools. This project focuses on a calm and professional aesthetic, with warm, editorial-style photography, soft colors (greens, beige, cream, golden accents), and clear visual hierarchy. The site is still in development, serving as a practical exercise in layout, structure, and usability within WordPress constraints.",
+        "technologies": ["WordPress Free Version", "Covers", "Columns", "Rows", "Anchor Links"],
+        "images": [
+             "images/projects/aurora/a_1.png",
+            "images/projects/aurora/a_2.png",
+            "images/projects/aurora/a_3.png",
+            "images/projects/aurora/a_4.png"
+        ],
+        "live": "https://aurwelcen.wordpress.com",
+        "github": ""
+
+      },
+      {
+        "id": "quillpenpress",
+        "title": "The Quill Pen Press",
+        "description": "This project focused on the corporate design of The Quill Pen Press, including logo creation, corporate stationery (business card, envelope, letterhead), and a brand manual defining typography, color palette, and graphic elements for consistent brand identity. A homepage mockup was also created using Adobe XD to show how the visual identity could be applied online, although the project emphasis was on brand design rather than web functionality. The design aimed to reflect professionalism, creativity, and trust within the printing industry.",
+        "technologies": ["Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Corporate Design"],
+        "images": [],
+        "github": "",
+        "live": ""
+      },
+      {
+        "id": "juicysplash",
+        "title": "Juicy Splash",
+        "description": "For the Juicy Splash project, I designed the homepage to reflect the brand’s fresh and vibrant spirit. The homepage mockup was created in Figma, using warm, energetic colors to evoke a summer vibe, representing the brand’s essence of refreshment and vitality. In addition to the homepage, I developed the full visual identity, including the logo, advertisements, corporate stationery, and Point of Purchase (POP) materials using Adobe Illustrator. The color palette and typography were carefully chosen to communicate energy, freshness, and a dynamic brand personality. The project emphasizes consistent visual identity and brand communication rather than full website functionality.",
+        "technologies": ["Adobe Illustrator", "Figma", "Corporate Design", "Mockup"],
+        "images": [],
+        "github": "",
+        "live": ""
+      }
+      
+      
+      
+    ]
+  }
+  
+  

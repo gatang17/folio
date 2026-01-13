@@ -1,3 +1,29 @@
+//==================FETCHES===========================
+
+// menu_top for no index pages
+document.addEventListener('DOMContentLoaded', () => {
+  fetch("./data/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-container").innerHTML = html;
+    })
+    .catch(err => console.error('Error loading header:', err));
+});
+
+
+// footer-container for all pages
+document.addEventListener('DOMContentLoaded', () => {
+  fetch("./data/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-container").innerHTML = html;
+    })
+    .catch(err => console.error('Error loading footer:', err));
+});
+
+//==================END_FETCHES===========================
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const images = document.querySelectorAll('.popup-img');
@@ -100,111 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-// menus top
-document.addEventListener('DOMContentLoaded', () => {
-  const headerHTML = `
-    <header class="row justify-content-between align-items-start">
-      <!-- Logo -->
-      <div class="col-9 col-md-6 container_logo"> 
-        <div class="sec_logoP" id="logoH">
-          <!-- Aquí va tu logo -->
-        </div>
-      </div>
-      
-      <!-- Menú horizontal -->
-      <div class="col-6 d-none d-lg-flex">
-        <div class="row w-100 justify-content-center">
-          <div class="col-auto  ">
-            <a class="active-link p_h2" href="index.html">home</a>
-          </div>
-          <div class="col-auto  ">
-            <a class="active-link p_h2" href="project.html">projects</a>
-          </div>
-          <div class="col-auto  ">
-           <a class="active-link p_h2" href="experience.html">expertise</a>
-          </div>
-          <div class="col-auto  ">
-           <a class="active-link p_h2" href="aboutme.html">about me</a>
-          </div>
-          <div class="col-auto ">
-          <a class="active-link p_h2" href="contact.html">contact</a>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Menú hamburguesa (solo en pantallas pequeñas) -->
-      <div class="col-3 d-flex align-items-center justify-content-end d-block d-lg-none">
-        <nav class="navbar">
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon btn_menu"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
-                  <span class="navbar-toggler-icon btn_menu2"></span>
-                </button>
-              </div>
-              <div class="offcanvas-body" style="dysplay=block;">
-               
-                
-                    <a class="active-link p_h_m" href="index.html">home</a>
-                    <a class="active-link p_h_m " href="project.html">project</a>
-                    <a class="active-link p_h_m"  href="experience.html">expertise</a>
-                    <a class="active-link p_h_m" href="aboutme.html">about me</a>
-                    <a class=" active-link p_h_m" href="contact.html">contact</a>
-             
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-  `
-  
-  ;
 
-  // Insertar el header en el contenedor
-  const container = document.getElementById('header-container');
-  if (container) {
-    container.innerHTML = headerHTML;
-  }
-});
 
-// menus footer
-document.addEventListener('DOMContentLoaded', () => {
-  const footerHTML = `
-   <footer class="container-fluid row container_foot justify-content-center align-items-center">
-  <div class="col-12 col-md-2 cont_footer">
-      <a class="active-link p_h" href="index.html">home</a>
-      
-  </div>
-  <div class="col-12 col-md-2 cont_footer">
-     <a class="active-link p_h" href="project.html">projects</a>
-  </div>
-  <div class="col-12 col-md-2 cont_footer"> 
-    <a class="active-link p_h" href="experience.html">expertise</a>
- </div>
-  <div class="col-12 col-md-2 cont_footer">
-     <a class="active-link p_h" href="aboutme.html">about_me</a>
-  </div>
-  <div class="col-12 col-md-2 cont_footer">
-   <a class="active-link p_h" href="contact.html">contact</a>
 
-</div>
- 
-</footer>
-  `
-  
-  ;
 
-  // Insertar el header en el contenedor
-  const container = document.getElementById('footer-container');
-  if (container) {
-    container.innerHTML = footerHTML;
-  }
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const link = document.getElementById('link_logoV');
@@ -283,30 +208,75 @@ project.images.forEach(img => {
 });
 
 
-// breadcrumb
-const breadcrumb = document.getElementById('breadcrumb');
-breadcrumb.innerHTML += ` ${project.title}`;
 
-      projectContainer.innerHTML = `
-      <h1>${project.title}</h1>
-            <h2 class="my-5">${project.subtitle}</h2>
-             <a class="my-5" href="${project.live}">See it Live </a>
 
-       <p>${project.description}</p>
-       <div class="row">
-       
-        ${imagesHtml}
-       
-       </div>
-  
-  <p><strong>Technologies:</strong> ${project.technologies.join(', ')}</p>
 
-      `;
     })
-    .catch(err => {
-      console.error(err);
-      projectContainer.innerHTML = '<p>Error al cargar el proyecto.</p>';
-    });
+  
+}
+
+//==============BREADCUMBS============================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const bc = document.getElementById('breadcrumb');
+  if (!bc) return;
+
+  const url = normalize(window.location.pathname);
+  const label = fileNameToLabel(url);
+
+  const HOME = normalize('/index.html');
+
+  let trail = JSON.parse(sessionStorage.getItem('breadcrumbTrail')) || [];
+
+  if (url === HOME) {
+    trail = [{ label, url }];
+  } else {
+    const existingIndex = trail.findIndex(p => p.url === url);
+
+    if (existingIndex !== -1) {
+      trail = trail.slice(0, existingIndex + 1);
+    } else {
+      trail.push({ label, url });
+    }
+  }
+
+  sessionStorage.setItem('breadcrumbTrail', JSON.stringify(trail));
+
+  bc.innerHTML = trail
+    .map((item, i) => {
+      if (i === trail.length - 1) {
+        return `<span>${item.label}</span>`;
+      }
+      return `<a href="${item.url}">${item.label}</a>`;
+    })
+    .join(' <i class="fa-solid fa-angle-right mx-2"></i> ');
+
+});
+
+/* ===============================
+   HELPERS
+=============================== */
+
+function normalize(path) {
+  return path.replace(/\/$/, '');
+}
+function fileNameToLabel(path) {
+  let file = path.split('/').pop();
+
+  if (!file || file === '') {
+    file = 'index.html';
+  }
+
+  if (file === 'index.html') {
+    return 'Home';
+  }
+
+  return file
+    .replace('.html', '')
+    .replace(/[-_]/g, ' ')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/\b\w/g, c => c);
 }
 
 
