@@ -1,27 +1,29 @@
 
-a{
-    padding-top: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 #breadcrumb a,
 #breadcrumb span {
   color: inherit;
   text-decoration: none;
-  font-weight: normal;
- 
+  font-weight: normal; 
 }
 
 #breadcrumb a:hover {
   text-decoration: underline;
 }
-
-
-.my_container1 , .my_container{
-    width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
+#footer-container{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }
+
+.my_container{
+    width: auto;
+    height: 100%;
+    padding-bottom: 2rem;
+}
+.hide-menu {
+  display: none !important;
+}
+
 .sec_logo {
     height:  80vh;
     width: 100%;
@@ -39,7 +41,7 @@ a{
   }
 
   .container_logo {
-    display: flex;
+  display: flex;
   flex-flow: row;
     
   }
@@ -74,31 +76,19 @@ a{
     border: transparent;
 }
 
-.btn_drop{
-    background-color: aqua;
-    margin-left: rem;
-}
 
 .btn_menu{
-    background-image: url(../images/btn_menu1.png);
-    
+    background-image: url(../images/btn_menu1.png);    
 }
+
 body{
-padding: 2rem;
 font-family: 'Courier New', Courier, monospace;
+height: 100vh;
+padding: 10px 20px 0 20px;
+
 }
 
-.btn_menu2{
-    background-image: url(../images/btn_menu2.png);
-    
-}
 
-.cont_line2{
-    position: relative;
-    height: 2px; 
-   margin-bottom: 10rem;
-   margin-top: 1rem;
-   }  
 
 
 h1{
@@ -173,14 +163,24 @@ p{
     text-transform: uppercase;
      }
   
-     .sec_menu, .sec_menu2{
+     .sec_menu, .sec_menu22{
         padding-top: 5em;
         text-align: right;       
         text-align: right;
         align-content:baseline;
     }
-
-
+    .sec_menu2{
+      padding: 5px;
+      margin: 5px;
+      position: relative;
+      text-align: left;
+      justify-content: center;
+      display: flex;
+      text-indent: 0.5rem;
+     transform: scale(1);
+     color: #fff;
+    }   
+  
 .offcanvas{
 background-color: black;
 opacity: 80%;
@@ -192,8 +192,6 @@ width: 150px;
 margin-bottom: 2rem; 
     
 }
-
-
 
 .img_line{
     height:100vh ;
@@ -253,7 +251,7 @@ transform: scale(1.05);
 .sec_hero{
     margin-left: 1REM;
     width: 100%;
-    height: 100%;
+    height: 90vh;
     background-blend-mode: multiply;
     background-image: url(../images/hero.png);
     background-position: center;
@@ -284,8 +282,8 @@ transform: scale(1.05);
 /*Pagina PROJECTS*/
   
 .h1_title{
-    background-color: #90720d ;
-    color: #ffff;
+
+    color: #0e0d0d;
     text-align: center;
     
 }
@@ -318,6 +316,7 @@ transform: scale(1.05);
   z-index: 1; /*este hace q se ponga delante de todo*/
   font-size: 2rem;
 }
+
 .tb_img:hover{ /*este hace q la imagen crezca*/
     transform: scale(1.08) ;
     opacity: 50%;
@@ -328,48 +327,6 @@ transform: scale(1.05);
   visibility: visible;
   opacity: 1;
 }
-
-
-/*quill pen press page*/
-.cont_project{
-    margin-top: 2em;    
-}
-.sec_project{
-    justify-content: center;
-   }
-
-
-
-.img_project{
-    max-width: 30%;
-    
-}
-.cont_info {
-    width: 100%;
-   }
-
-
-  .cont_line{
-   
-    position: relative;
-    background-color: black;
-    height: 2px; /* ajusta como desees */
-    margin: 10px;
-
-   }
-
-
- .img_horizontal{
-  
-  width: 100%;
-  height: 100%;
-   
-   
-}
-
-.div_menu {
-    display: none;
-  }
 
 /*aboutme*/
 
@@ -550,37 +507,12 @@ textarea {
   
  
   /*MEDIA QUERY*/
-  @media (max-width: 850px) {
+  @media (max-width: 868px) {
   
     .menu-desktop{
         display: none;
     }
-    .space_2{
-        height: 50%;
-    }
-
-        .my_container1{
-        padding: 0;
-        margin: 0 auto;
-        width: 100%;
-        height: auto;
-        display: block;
-        flex-flow: row;
-        
-    }
-    .my_container{
-        padding: 1rem;
-        margin: 0 auto;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-flow: row;
-         }
-
-    .img_line{
-       visibility: hidden;
-       position: absolute;
-    } 
+ 
   
     .p_info{
         height: 25vh;
@@ -601,10 +533,7 @@ textarea {
       }
    
       .sec_logo {
-        height:  10vh;
-       width: 100%;
-        background-image: url(../images/logo2.png);
-           background-size: contain;          
+       display: none;
        }
 
       .p_info1{
@@ -615,25 +544,11 @@ textarea {
       }
     
       
-    .sec_menu2{
-        padding: 5px;
-        margin: 5px;
-        position: relative;
-         text-align: left;
-        justify-content: center;
-        display: flex;
-        text-indent: 0.5rem;
-       transform: scale(0.9)
-    }
+
     .div_menu_home {
         border-right: 0;
         }
-    
-    .space{
-        height: 2PX;
-        width: 100%;
-        background-color: black;
-    }
+
     .sec_menu{
         padding: 0;
         margin: 0;
@@ -641,10 +556,10 @@ textarea {
         visibility: hidden;
         visibility: hidden;
     }
-   
+
     .sec_hero{
         width: auto;
-        height: 40vh;
+        height: 50vh;
         background-size: contain;
         background-repeat: no-repeat;
         margin-bottom: -1rem !important;
@@ -653,9 +568,9 @@ textarea {
     }
 
     .hero_text {
-        position: relative;
+        position: absolute;
         left: 0%;
-        top: 0%;
+        top: 15%;
         text-align: center;
         justify-content: center;
         color: black;
@@ -666,33 +581,15 @@ textarea {
       }
      
       footer.container_foot {
-        margin-top: 2rem;
+
         text-align: center;
         justify-content: center !important;
         align-items: center !important;
       
       }
-      
-      .cont_footer {
-       
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        
-      }
-      .sec_project {
-        display: flex;
-        flex-direction: column; /* Asegura que los elementos se apilen */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
 
-    .my_col {
-        margin: 1rem 0; /* Asegura que haya un pequeño espacio entre las columnas */
-        border: none !important;
-        border-top: solid !important;
-    }
+
+
     .p_hover { /*este es el texto*/
         font-size: 1rem;
       }
