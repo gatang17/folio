@@ -5,38 +5,42 @@
             "title": "Personal Portfolio",
             "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
             "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
-            "images": [],
+            "images": ["images/projects/personal/gatang.jpg"],
             "github": "https://github.com/tuusuario/portfolio",
             "live": "https://tuportfolio.vercel.app"
           },
           
-        {
-        "id": "jgphoto",
-        "title": "J&G Photography",
-        "subtitle": "Development of a website for J&G Photography LLC, a studio specializing in product photography, fine art portraits, and children's portraits.",
-        "description": " The client needed a modern website to showcase their photographic style, allow easy studio location, offer direct contact, and provide transparent pricing, including a module for clients to build their own service packages. The site was custom-built with HTML, CSS, and JavaScript for full flexibility, using Bootstrap for interactive components, an embedded Google Maps iframe for location, and FormSubmit for messaging. The design focused on a minimalist, elegant, and sophisticated aesthetic. The project was hosted on Vercel to reduce costs and track user metrics.",
- 
-        "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "FormSubmit", "Google Maps iframe", "Vercel"],
-        "images": [
-          "images/projects/jgphoto/jg_1.png",
-          "images/projects/jgphoto/jg_2.png",
-          "images/projects/jgphoto/jg_3.png",
-          "images/projects/jgphoto/jg_4.png",
-          "images/projects/jgphoto/jg_5.png"
-         
-        ],
-        "github": "https://gatang17.github.io",
-        "live": "https://jgstudio.vercel.app"
-
-      },
+          {
+            "id": "jgphoto",
+            "title": "J&G Photography",
+            "subtitle": "Development of a website for J&G Photography LLC, a studio specializing in product photography, fine art portraits, and children's portraits.",
+            "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based background color, a glass-effect hamburger menu without affecting carousel images, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and Google Maps iframe for location. Hosted on Vercel for free deployment, shortened URL, and basic analytics.",
+            "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "FormSubmit", "Google Maps iframe", "Vercel"],
+            "images": [
+              "images/projects/jgphoto/jg_1.png",
+              "images/projects/jgphoto/jg_2.png",
+              "images/projects/jgphoto/jg_3.png",
+              "images/projects/jgphoto/jg_4.png",
+              "images/projects/jgphoto/jg_5.png"
+            ],
+            "captions": [
+              "Homepage hero with dynamic top menu",
+              "Hamburger menu with glass blur effect",
+              "Custom service package builder dropdowns",
+              "Generated message ready to send via FormSubmit",
+              "Embedded Google Maps for studio location"
+            ],
+            "github": "https://gatang17.github.io",
+            "live": "https://jgstudio.vercel.app"
+          }
+          ,
       {
         "id": "handydmd",
         "title": "HandymanDMD",
         "description": "Development of a simple and user-friendly website for HandymanDMD...",
         "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
         "images": [
-            "projects/jgphoto/jg_1.jpg",
-            "projects/jgphoto/jg_2.jpg"
+            "images/projects/handydmd/handyman.jpg"
         ],
        "github": "https://gatang17.github.io/handyman-dmd/",
 
@@ -56,30 +60,99 @@
         ],
         "live": "https://aurwelcen.wordpress.com",
         "github": ""
+      }  
+    ],
 
+ "about": [
+  { "name": "Design & Web Development Approach",
+    "skills": { "Visual Design": {"items": [  "Adobe XD, Figma",  "Photoshop ","Illustrator ",   "Typography & color theory", "Responsive layouts & grids" ],
+    "images": ["images/portfolio/visual1.png","images/portfolio/visual2.png","images/portfolio/visual3.png"]
+  },
+      "Web Implementation": {
+        "items": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Bootstrap",
+          "Forms integration",
+          "Hosting on Vercel / GitHub"
+        ],
+        "images": [
+          "images/portfolio/web1.png",
+          "images/portfolio/web2.png",
+          "images/portfolio/web3.png"
+        ]
       },
-      {
-        "id": "quill",
-        "title": "The Quill Pen Press",
-        "description": "This project focused on the corporate design of The Quill Pen Press, including logo creation, corporate stationery (business card, envelope, letterhead), and a brand manual defining typography, color palette, and graphic elements for consistent brand identity. A homepage mockup was also created using Adobe XD to show how the visual identity could be applied online, although the project emphasis was on brand design rather than web functionality. The design aimed to reflect professionalism, creativity, and trust within the printing industry.",
-        "technologies": ["Adobe Illustrator", "Adobe InDesign", "Adobe XD", "Corporate Design"],
-        "images": [],
-        "github": "",
-        "live": ""
-      },
-      {
-        "id": "juicysplash",
-        "title": "Juicy Splash",
-        "description": "For the Juicy Splash project, I designed the homepage to reflect the brand’s fresh and vibrant spirit. The homepage mockup was created in Figma, using warm, energetic colors to evoke a summer vibe, representing the brand’s essence of refreshment and vitality. In addition to the homepage, I developed the full visual identity, including the logo, advertisements, corporate stationery, and Point of Purchase (POP) materials using Adobe Illustrator. The color palette and typography were carefully chosen to communicate energy, freshness, and a dynamic brand personality. The project emphasizes consistent visual identity and brand communication rather than full website functionality.",
-        "technologies": ["Adobe Illustrator", "Figma", "Corporate Design", "Mockup"],
-        "images": [],
-        "github": "",
-        "live": ""
+      "Other Strengths": {
+        "items": [
+          "Photography & image editing",
+          "Attention to detail",
+          "Creative problem-solving & visual consistency"
+        ],
+        "images": [
+          "images/portfolio/other1.png",
+          "images/portfolio/other2.png",
+          "images/portfolio/other3.png"
+        ]
       }
-      
-      
-      
-    ]
+    }
+  }
+],
+
+"skils": [
+  {
+    "id": "html",
+    "title": "HTML",
+    "overlay": "HTML",
+    "points": [
+      "Semantic structure",
+      "Accessibility basics",
+      "SEO-friendly markup",
+      "Clean, maintainable code"
+    ],
+    "tools": ["HTML5"]
+  },
+  {
+    "id": "css",
+    "title": "CSS",
+    "overlay": "CSS",
+    "points": [
+      "Flexbox & Grid",
+      "Responsive layouts",
+      "Animations & transitions",
+      "Modern UI patterns"
+    ],
+    "tools": ["CSS3", "Bootstrap"]
+  },
+  {
+    "id": "js",
+    "title": "JavaScript",
+    "overlay": "JS",
+    "points": [
+      "DOM manipulation",
+      "Event handling",
+      "UI interactions",
+      "Basic logic & state"
+    ],
+    "tools": ["Vanilla JS"]
+  },
+  {
+    "id": "sql",
+    "title": "SQL",
+    "overlay": "SQL",
+    "points": [
+      "Complex queries",
+      "Joins & subqueries",
+      "Data analysis",
+      "Optimization basics"
+    ],
+    "tools": ["MySQL", "PostgreSQL"]
+  }
+]
+
+
+
+    
   }
   
   

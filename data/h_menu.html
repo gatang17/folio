@@ -1,27 +1,31 @@
-  
-    <!-- Menú hamburguesa (solo en pantallas pequeñas) -->
 
-      <nav class="navbar">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon btn_menu"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
-                <span class="navbar-toggler-icon btn_menu2"></span>
-              </button>
-            </div>
-            <div class="offcanvas-body" style="display: block;">
-             
-              
-                  <a class="active-link p_h_m" href="index.html">home</a>
-                  <a class="active-link p_h_m " href="project.html">project</a>
-                  <a class="active-link p_h_m" href="aboutme.html">about me</a>
-                  <a class=" active-link p_h_m" href="contact.html">contact</a>
-           
-            </div>
-          </div>
+
+    <div class="col-6 d-flex d-lg-none justify-content-end align-items-center">
+      <button id="btn_menu">
+        <i id="iconm" class="fa-solid fa-bars"></i>
+      </button>
+      
+        <div class="navMenu" id="navMenu">
+          <a class="nav-link mosaic_btn m_text m_off_text"  href="index.html">home</a>
+          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#aboutme">about_me</a>
+          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#projects">projects</a>
+          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#contact">contact</a>
         </div>
-      </nav>
+ 
+      
+    </div>
+    
+    
+      <style>
+ #btn_menu { background: none;  border: none;  padding: 0;  cursor: pointer;}
+.navBar button {  background: none; /* quita el fondo por defecto */  border: none; /* quita el borde por defecto */  padding: 0;/* quita el padding por defecto */  cursor: pointer; /* mano al pasar el mouse */  display: inline-flex;/* permite centrar contenido si quieres */  }
+.navBar{ width: 100vw; height: 10vh; background-color: transparent;}
+.navMenu{  position: fixed;  top: 0;  right: 0;  width: 60vw;  height: 100vh;  background: black;  display: flex;  flex-direction: column;  gap: 2rem;  padding: 4rem 2rem;  transform: translateX(100%); /* 🔒 oculto */  transition: transform 0.3s ease;  z-index: 9999;}
+.navMenu.open {  transform: translateX(0); /* 🔓 visible */}
+#iconm{  font-size: 3rem;}
+body.menu-open {  overflow: hidden;}
+
+
+</style>
+
+  
