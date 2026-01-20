@@ -1,10 +1,32 @@
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fonts/GoogleSansCode-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fonts/GoogleSansCode-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Google Sans Code";
+  src: url("../fonts/GoogleSansCode-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 
   #breadcrumb a, #breadcrumb span { filter: opacity(60%);  text-decoration: none; font-weight: normal;  }
   #breadcrumb{  padding: 1rem 0 1rem 0;  }
   #breadcrumb a:hover { text-decoration: underline;  filter: none;  }
   * {    max-width: 100%;    box-sizing: border-box; /* padding y border no agrandan el tamaño */  }
     img, video, iframe {    max-width: 100%;    height: auto;    display: block;  }
-    body{ min-height: 100vh;  width: 100vw;  display: flex;    flex-direction: column;     font-family: 'Courier Prime', monospace; color: rgba(0, 0, 0, 0.817);  scrollbar-width: none;  background-color: #a9a48333; overflow-x: hidden;}
+    body{ min-height: 100vh;  width: 100vw;  display: flex;    flex-direction: column;     font-family: "Google Sans Code", monospace; color: rgba(0, 0, 0, 0.817);  scrollbar-width: none;  background-color: #a9a48333; overflow-x: hidden;}
   
   content {    scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */  }
   h1{font-size: clamp(2rem,10vw,4rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */      font-weight: 900;   overflow-wrap: normal; /* no rompe palabras largas */
