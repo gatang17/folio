@@ -2,12 +2,9 @@
   #breadcrumb a, #breadcrumb span { filter: opacity(60%);  text-decoration: none; font-weight: normal;  }
   #breadcrumb{  padding: 1rem 0 1rem 0;  }
   #breadcrumb a:hover { text-decoration: underline;  filter: none;  }
-  * {
-    max-width: 100%;
-    box-sizing: border-box; /* padding y border no agrandan el tamaño */
-  }
-  
-  body{ min-height: 100vh;  width: 100vw;  display: flex;    flex-direction: column;    font-family: 'Courier New', Courier, monospace;  color: rgba(0, 0, 0, 0.817);  scrollbar-width: none;  background-color: #a9a48333; overflow-x: hidden;}
+  * {    max-width: 100%;    box-sizing: border-box; /* padding y border no agrandan el tamaño */  }
+    img, video, iframe {    max-width: 100%;    height: auto;    display: block;  }
+    body{ min-height: 100vh;  width: 100vw;  display: flex;    flex-direction: column;     font-family: 'Courier Prime', monospace; color: rgba(0, 0, 0, 0.817);  scrollbar-width: none;  background-color: #a9a48333; overflow-x: hidden;}
   
   content {    scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */  }
   h1{font-size: clamp(2rem,10vw,4rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */      font-weight: 900;   overflow-wrap: normal; /* no rompe palabras largas */
@@ -27,14 +24,14 @@
 
   .hide-menu { display: none !important;} 
   #header-container{  max-height: 70px;}
-  #div_1, #img_logoV{    display: flex;     height: 60vh;    width: auto;        margin-bottom: 50px;    }
+  #div_1, #img_logoV{  display: flex;     height: 60vh;    width: auto;        margin-bottom: 50px;    }
   #img_logoh{    height: 5vh;    width: auto;  }
   #img_logoV{    margin: 0 1rem 0 0;   }
   .content{ padding:0 0 0 0;  margin-top: 4rem;}
   /*--------------SECTION INTRO*/
   
   #intro { min-height: 100vh;  display: flex;  flex-direction: column; padding-top: 20px; overflow: hidden; }
-  #hero{  background-image: url(/images/hero.png); position: relative; width: 60vw; background-size: cover; background-position: center; background-repeat: no-repeat; }
+  #hero{  background-image: url("../images/hero.png");   position: relative; width: 100%; background-size: cover; background-position: right; background-repeat: no-repeat; }
   #hero { flex: 0 0 auto; /* ocupa su altura natural */  }
   .hero_text{ position: relative; left: 10vw; top: 25vh; width: 50vw; background: rgba(255,255,255,0.7); padding: 1rem;  border-radius: 10px; z-index: 1; }
   
@@ -54,7 +51,7 @@
 
   /*==================indexMobil*/
  .p_info{     margin-bottom: -0.1em;      font-size: 1rem;      text-align: center;   }
-  .div_menu_home { padding-right: 1rem;      border-right: 2px solid rgba(0, 0, 0, 0.817); /* o el color que prefieras */  }
+  .div_menu_home { padding-right: 1rem;     border-right: 2px solid rgba(0, 0, 0, 0.817); /* o el color que prefieras */  }
   .navbar , .navbar-toggler { border: transparent;  }
  
 
@@ -168,6 +165,3 @@ transform: scaleY(1);     transition: transform 0.5s linear, top 1s linear, bott
 .mosaic_btn .line.top {     top: 0;     transform-origin: bottom;   }
 
 .mosaic_btn .line.bottom {     top: auto;     bottom: 0;     transform-origin: top;   }
-
-
-

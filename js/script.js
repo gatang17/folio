@@ -107,29 +107,21 @@ document.addEventListener("DOMContentLoaded", () => {
           <a class="nav-link m_text mosaic_btn" href="https://github.com/gatang17">GITHUB</a>
           <a class="nav-link m_text mosaic_btn" href="https://www.linkedin.com/in/grete88/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
           </div>
-          </div>               
-         </div>
-        </div>        
-      `;
+          </div>
+          </div>
+          </div>    `;
       if (hMenu) hMenu.classList.add("hide-menu");   
     } else {
       div_desk.innerHTML = "";
-      
-      if (hMenu) hMenu.classList.remove("hide-menu");
-      
-      
-    }
+        if (hMenu) hMenu.classList.remove("hide-menu");
+       }
   }
 
   updateSocialMenu(mediaQuery);
   mediaQuery.addEventListener("change", updateSocialMenu);
 });
 
-
-
-
-
-//----------------------------------PROJECT
+//=====================================================PROJECT
 document.querySelectorAll('.project-card .project-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault(); 
@@ -156,11 +148,9 @@ if (projectContainer) {  // <- chequeo agregado
           projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
           return;
         }
-
         //-------------------built the data
         let html = `
-       
-          <h2>${project.title}</h2>
+        <h2>${project.title}</h2>
        
           ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
           <p>${project.description}</p>
@@ -296,12 +286,9 @@ function fileNameToLabel(path) {
   if (!file || file === '') {
     file = 'index.html';
   }
-
   if (file === 'index.html') {
     return 'Home';
-  }
- 
-
+  } 
   if (file === 'p_descript.html') {
     return 'details';
   }
@@ -324,9 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.appendChild(tile);
     }    setTimeout(() => {      loader.remove();    }, 900); // duración total < 1s
   }});
- 
-  
-
 //========================typewriter effect
 const text = "Hello_World...";
 const text2 = "let's create!   ";
