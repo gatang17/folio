@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("footer-container").innerHTML = html;
   })  .catch(err => console.error('Error loading footer:', err));
    //----------------------------------hamburguer-mobil
-  fetch("/data/h_menu.html")
+  fetch("./data/h_menu.html")
   .then(res => res.text())
   .then(html => {
     document.getElementById("h_menu-container").innerHTML = html;
@@ -205,7 +205,7 @@ function truncateText(text, limit = 60) {
     ? text.slice(0, limit).trim() + "…"
     : text;
 }
-fetch("data/projects.json")
+fetch("./data/projects.json")
   .then(res => res.json())
   .then(data => {
     const grid = document.getElementById("projects-grid");
