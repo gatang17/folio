@@ -93,8 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.matches) {
       // inject desktop layout
       div_desk.innerHTML = `
-        <div class="container-fluid" id="div_1"> 
-         <img src="images/logo.png" id="img_logoV">         
+        <div class="container-fluid " id="div_1"> 
+        <div id="img_logoV"><img src="images/logo.png" ></div>
+               
           <div class="div_menu_home">  
             <section class="sec_menu">
               <a class="nav-link m_text mosaic_btn" href="#summary">summary</a>
@@ -226,7 +227,7 @@ fetch("./data/projects.json")
       overlay.classList.add("overlay");
       overlay.textContent = truncateText(project.description, 60);
 
-      const title = document.createElement("h4");
+      const title = document.createElement("p");
       title.textContent = project.title;
 
       imageWrapper.appendChild(img);

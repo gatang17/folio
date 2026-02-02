@@ -45,11 +45,13 @@
   /*=================index*/
 
   .hide-menu { display: none !important;} 
-  #header-container{  max-height: 70px;}
-  #div_1, #img_logoV{  display: flex;     height: 60vh;    width: auto;        margin-bottom: 50px;    }
+  #header-container{  max-height: 100px;}
+  #div_1{  display: flex;   flex-direction: row;  align-items: center;  min-height: 100vh; }
   #img_logoh{    height: 5vh;    width: auto;  }
-  #img_logoV{    margin: 0 1rem 0 0;   }
+  #img_logoV{ max-height: 1000px;margin: 5rem;}
   .content{ padding:0 0 0 0;  margin-top: 4rem;}
+  .div_menu_home { padding-right: 1rem;  border-right: 2px solid rgba(0, 0, 0, 0.817); /* o el color que prefieras */  }
+  .div_menu_home .m_text{font-size: 1.65rem; font-weight: 100; padding-left: 1rem;}
   /*--------------SECTION INTRO*/
   
   #intro { min-height: 100vh;  display: flex;  flex-direction: column; padding-top: 20px; overflow: hidden; }
@@ -60,26 +62,18 @@
   .chat { flex: 1; overflow: hidden; white-space: nowrap; background-color: rgba(43, 41, 41, 0.1); color: #2f2f2f; display: flex; justify-content: center; align-items: center;  text-align: center;   min-height: 150px; max-height: auto; /* limita la altura en mobile */}
   .typewriter {display: inline-block;transform: translateX(0);text-transform: uppercase; color: #bb9f30; }
   .cursor { display: inline-block;width: 2px;background: rgba(0, 0, 0, 0.817);margin-left: 2px;animation: blink 0.7s step-end infinite;vertical-align: bottom; height: 1em; }
+  
   @keyframes blink {50% { background: transparent; }}
 /* Mobile: no ocupa espacio si está vacío */
   #menu_dtk {flex: 0 0 auto; /* ocupa solo lo que tenga */ }
-  
-  /* Desktop: 40% */
-  @media (min-width: 875px) {
-  #menu_dtk {  flex: 0 0 30%;  }
-  #menu_dtk #div_1 { display: flex;  align-items: center; justify-content: space-between; /* separa logo y menú */  }
-  }
-
 
   /*==================indexMobil*/
- .p_info{     margin-bottom: -0.1em;      font-size: 1rem;      text-align: center;   }
-  .div_menu_home { padding-right: 1rem;     border-right: 2px solid rgba(0, 0, 0, 0.817); /* o el color que prefieras */  }
-  .navbar , .navbar-toggler { border: transparent;  }
+ .p_info{     margin-bottom: -0.1em; font-size: 1rem; text-align: center;   }
+ .navbar , .navbar-toggler { border: transparent;  }
  
 
   /*H===========================================================MENU*/
-   /*Texts*/
- .m_text{ margin-bottom: 2em;  font-weight: 700;  text-transform: uppercase;  text-decoration: none; /* Quita el subrayado por defecto */  transition: transform 0.3s ease, text-decoration 0.3s ease;   }
+  .m_text{ margin-bottom: 2em;  font-weight: 700;  text-transform: uppercase;  text-decoration: none; /* Quita el subrayado por defecto */  transition: transform 0.3s ease, text-decoration 0.3s ease;   }
   .m_text {    transition: transform 0.3s ease, color 0.3s ease;  }
   .m_text:hover { transform: skewY(-2deg) scaleY(1.1); text-decoration: underline; /* Solo se subraya al pasar el mouse */ }
   .m_off_text{ color: #abaa9f; }
@@ -107,7 +101,16 @@
       align-items: flex-end;  /* texto abajo */  font-size: 0.85rem;   line-height: 1.4; }
   .image-wrapper:hover .overlay {  opacity: 1; }
   #projects-grid {  display: grid;  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));    gap: 2rem;  } 
-  
+/*=================================================ABOUT_ME*/
+  #skills_section {  display: flex;  align-items: flex-start; /* 👈 ESTO es lo que te falta */  gap: 2rem;  margin-top: 2rem;}
+  #titles_col { width: 25%;display: flex;flex-direction: column; justify-content: flex-start; gap: 5rem;/* distribuye los títulos verticalmente */ }
+  .title_item {display: flex;align-items: center;cursor: pointer;font-weight: bold;font-size: 1.1rem; color: gray; transition: color 0.2s;}
+  .title_item.selected {color: rgba(0, 0, 0, 0.817); }
+  .title_item i { margin-right: 0.5rem; }
+  #desc_col {flex: 1; background-color: rgba(0, 0, 0, 0.05); padding: 1rem; }
+  .desc_item i { margin-right: 0.5rem;   color: #555;} 
+  /* Desktop: mostrar imágenes */
+  .images_grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));gap: 0.5rem;}    
   /*=================================================SKILS*/
   .skills-grid {  display: flex;  height: 50vh;  gap: 0.5rem;}
   /* Celdas */
@@ -152,14 +155,14 @@
       .content {        scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */      }
       .menu-desktop{          display: none;      }
       .sec_logo {     display: none;    }
-      .div_menu_home {          border-right: 0;     }
+      .div_menu_home {  border-right: 0;     }
       .sec_menu{padding: 0;     margin: 0; height: 0;  visibility: hidden; visibility: hidden;   }
 
-      #projects-grid {grid-template-columns: 1fr; }
+      #projects-grid {grid-template-columns: 1fr; }      
       
       .sec_project{ display: flex; justify-content: center; /* horizontal */ align-items: center;     /* vertical */        }
        #skills_section {flex-direction: column; /* columnas → vertical */ height: auto; /* deja que la sección crezca según contenido */  }
-       #titles_col { width: 100%; /* ocupa toda la fila */ flex-direction: column; /* apilados verticalmente */ flex-wrap: wrap; justify-content: flex-start; gap: 0.5rem;  }
+       #titles_col { width: 100%; /* ocupa toda la fila */ flex-direction: column; /* apilados verticalmente */ justify-content: flex-start; gap: 0.5rem;  }
        #desc_col { width: 100%;/* ocupa toda la fila */  margin-top: 1rem;}
        .images_grid {grid-template-columns: 1fr;/* apiladas en móvil */}
        .view_gallery_btn {display: inline-block;        margin-top: 1rem;        padding: 0.5rem 1rem;        text-align: center;    }
