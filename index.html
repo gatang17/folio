@@ -190,100 +190,59 @@
     <div class="skills-grid">
 
         <div class="skill" data-title="HTML">
-          <div class="skill-overlay">
-            <span>HTML</span>
-          </div>
-      
-          <div class="skill-inner">
-            <h3>HTML</h3>
-            <p>Semantic structure, accessibility, clean markup.</p>
-          </div>
+          <div class="skill-overlay"></div>      
+          <div class="skill-inner"></div>
         </div>
       
-        <div class="skill" data-title="CSS">
-          <div class="skill-overlay">
-            <span>CSS</span>
-          </div>
-      
-          <div class="skill-inner">
-            <h3>CSS</h3>
-            <p>Layouts, animations, responsive design.</p>
-          </div>
+        <div class="skill" data-title="CSS"><div class="skill-overlay"></div>      
+          <div class="skill-inner"></div>
         </div>
-        <div class="skill" data-title="HTML">
-            <div class="skill-overlay">
-              <span>HTML</span>
-            </div>
-        
-            <div class="skill-inner">
-              <h3>HTML</h3>
-              <p>Semantic structure, accessibility, clean markup.</p>
-            </div>
+
+        <div class="skill" data-title="js"><div class="skill-overlay"></div>        
+            <div class="skill-inner"></div>
           </div>
         
-          <div class="skill " data-title="CSS">
-            <div class="skill-overlay">
-              <span>CSS</span>
-            </div>
-        
-            <div class="skill-inner">
-              <h3>CSS</h3>
-              <p>Layouts, animations, responsive design.</p>
-            </div>
+          <div class="skill " data-title="uiux"><div class="skill-overlay"></div>        
+            <div class="skill-inner"></div>
           </div>
       
       </div>
       
   </section>
   <style>
+/* descktop */
 
-@media (min-width: 875px) {
-  .skills-grid {flex-direction: row; height: 50vh; }
-  .skill.active {flex: 7;}
-}
-
-/* MÓVIL */
-@media (max-width: 767px) { 
-    .skills-grid { flex-direction: column;  height: auto; }
-    .skill { min-height: 2rem; /* cerrada */  transition: min-height 0.4s ease;  }
-    .skill.active { min-height: 50vh; /* expandida */ }
-}
   </style>
  <script>
- const skills = document.querySelectorAll('.skill');
-skills.forEach(skill => {
-  skill.addEventListener('click', () => {
-    if (skill.classList.contains('active')) {
-      skill.classList.remove('active');
-      return; }
+    fetch('data/projects.json')
+  .then(res => res.json())
+  .then(data => {
+    const skills = document.querySelectorAll('.skill');
 
-    skills.forEach(s => s.classList.remove('active'));
-    skill.classList.add('active');
-  });
-}); 
-// asumiendo que tu JSON ya está cargado en la variable `projects`
 
-skills.forEach(skillEl => {
-  const key = skillEl.dataset.title.toLowerCase(); // "html", "css", etc
+    skills.forEach(skillEl => {
+      const key = skillEl.dataset.title.toLowerCase();
+      const skillData = data.skills.find(s => s.id.toLowerCase() === key);
+      if (!skillData) return;
 
-  const data = projects.skils.find(s => s.id === key);
-  if (!data) return;
+      // contenido interno mínimo
+      skillEl.querySelector('.skill-overlay').innerHTML = `<span>${skillData.overlay}</span>`;
 
-  // overlay
-  const overlaySpan = skillEl.querySelector('.skill-overlay span');
-  overlaySpan.textContent = data.overlay;
 
-  // contenido interno
-  const inner = skillEl.querySelector('.skill-inner');
+      skillEl.querySelector('.skill-inner').innerHTML = `
+        <h3>${skillData.title}</h3>
+        <ul>${skillData.points.map(p => `<li>${p}</li>`).join('')}</ul>
+        <small>${skillData.tools.join(' • ')}</small>
+      `;
 
-  inner.innerHTML = `
-    <h3>${data.title}</h3>
-    <ul>
-      ${data.points.map(p => `<li>${p}</li>`).join('')}
-    </ul>
-    <small>${data.tools.join(' • ')}</small>
-  `;
-});
+      // click expand/contraer
+      skillEl.addEventListener('click', () => {
+        skills.forEach(s => s !== skillEl && s.classList.remove('active'));
+        skillEl.classList.toggle('active');
+      });
+    });
+  })
+  .catch(err => console.error('Error loading skills:', err));
 
   </script>
 

@@ -99,7 +99,7 @@
   }
 ],
 
-"skils": [
+"skills": [
   {
     "id": "html",
     "title": "HTML",
@@ -137,21 +137,18 @@
     "tools": ["Vanilla JS"]
   },
   {
-    "id": "sql",
-    "title": "SQL",
-    "overlay": "SQL",
+    "id": "uiux",
+    "title": "UI/UX Design",
+    "overlay": "UI/UX",
     "points": [
-      "Complex queries",
-      "Joins & subqueries",
-      "Data analysis",
-      "Optimization basics"
+      "Wireframing & prototyping",
+      "Visual hierarchy",
+      "Color & typography",
+      "User-centered design"
     ],
-    "tools": ["MySQL", "PostgreSQL"]
+    "tools": ["Figma", "Adobe XD"]
   }
 ]
-
-
-
     
   }
   
