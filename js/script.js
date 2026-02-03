@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <a class="nav-link m_text mosaic_btn " href="#contact">contact</a>
             </section>
             <div class="sec_menu22" id="">
-             <a class="nav-link m_text mosaic_btn" href="https://www.figma.com/files/project/283205193">figma</a>
+             <a class="nav-link m_text mosaic_btn" href="https://figma.com/@gretel4">figma</a>
           <a class="nav-link m_text mosaic_btn" href="https://github.com/gatang17">GITHUB</a>
           <a class="nav-link m_text mosaic_btn" href="https://www.linkedin.com/in/grete88/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
           </div>
