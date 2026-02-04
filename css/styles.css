@@ -58,6 +58,7 @@
   #hero{  background-image: url("../images/hero.png");   position: relative; width: 100%; background-size: cover; background-position: right; background-repeat: no-repeat; }
   #hero { flex: 0 0 auto; /* ocupa su altura natural */  }
   .hero_text{ position: relative; left: 10vw; top: 25vh; width: 50vw; background: rgba(255,255,255,0.7); padding: 1rem;  border-radius: 10px; z-index: 1; }
+  .hero_btn{position: relative; left: 10vw; top: 25vh; width: 50vw;  padding: 1rem;  border-radius: 10px; z-index: 1;}
   
   .chat { flex: 1; overflow: hidden; white-space: nowrap; background-color: rgba(43, 41, 41, 0.1); color: #2f2f2f; display: flex; justify-content: center; align-items: center;  text-align: center;   min-height: 150px; max-height: auto; /* limita la altura en mobile */}
   .typewriter {font-size: 2rem; display: inline-block;transform: translateX(0);text-transform: uppercase; color: #bb9f30; }
@@ -157,6 +158,7 @@
     @media (max-width: 875px) {
       #hero{ height: 90vw; width: 100vw;}
       .hero_text{ font-size: 1.5rem;  top: 15%;   left: 15%; width: 80%;/* mejor que right:0% */ }
+      .hero_btn{font-size: 1.5rem;  left: 15%; width: 80%;}
       #menu{  visibility: hidden;  }
 
       .content {        scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */      }
