@@ -1,4 +1,4 @@
-<div class="row container-fluid my_container"> 
+<!-- <div class="row container-fluid my_container"> 
     <div class="col-12 col-md-6" id="menu_dtk">      
     </div>
     <div class="col-12 col-md-6 ">
@@ -22,6 +22,7 @@
         </div>
         
     </section>
+    
 </div>
 
 <div id="hero"></div>
@@ -206,4 +207,39 @@ skills.forEach(skill => {
   });
 });
 
-</script>
+</script> -->
+<h1>Visual Design & Implementation Flow</h1>
+<section id="sec_2">
+  <div class="div_grid">
+   
+    <p>The diagram represents the workflow from the initial concept in Figma to the final deployment.
+      Each block symbolizes a key step in the process. The larger Figma block highlights the importance of planning and visual design—while it may not take the most time, it is essential to solidify the idea before building. Subsequent steps progressively transform the concept into a structured, styled, interactive, and finally live website.</p>
+  </div>
+ 
+  <div>
+    <img src="/images/diagram/diagram.png" alt="" id="sec_diag">
+  </div>
+  
+</section>
+<style>
+  p{
+    line-height:2rem;
+  }
+
+#sec_2{
+  justify-items: center;
+  align-items: center;
+  padding: 3rem;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+
+}
+
+#sec_diag{
+  max-width: clamp(50px, 100%, 750px);
+  height: auto;
+}
+
+
+</style>

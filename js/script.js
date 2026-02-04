@@ -121,6 +121,43 @@ document.addEventListener("DOMContentLoaded", () => {
   mediaQuery.addEventListener("change", updateSocialMenu);
 });
 
+//=====================================================DNOTES
+fetch('data/projects.json')
+  .then(res => res.json())
+  .then(data => {
+    const t_dnote = document.getElementById('t_dnote');
+    const dnoDescrip = document.getElementById('dno_descrip');
+    const pdnLink = document.getElementById('pdn_link');
+    const pdiag = document.getElementById('pdiag');
+    const t_pdiag = document.getElementById('t_pdiag');
+    const sec_diag = document.getElementById('sec_diag');
+
+    const project = data.d_notes[0]; // solo el primer proyecto
+
+    // título y descripción
+    t_dnote.textContent = project.title;
+    dnoDescrip.textContent = project.description;
+
+    // botones GitHub / Live
+    pdnLink.innerHTML = `
+    <div class="project-links mt-0 mb-5 mt-5 text-end " style=" border-top:solid;">
+      ${project.github ? `<a href="${project.github}" target="_blank" class="btn me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
+      ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
+    </div>`;
+
+    // diagram description
+
+    pdiag.textContent = `${project.diag_descrip}`;
+    t_pdiag.textContent=`${project.title2}`;
+
+    // imagen
+    if (project.images && project.images.length > 0) {
+      sec_diag.src = project.images[0];      
+    }
+  })
+  .catch(err => console.error('Error cargando JSON:', err));
+
+
 //=====================================================PROJECT
 document.querySelectorAll('.project-card .project-link').forEach(link => {
   link.addEventListener('click', (e) => {
@@ -139,7 +176,7 @@ if (projectContainer) {  // <- chequeo agregado
   if (!projectId) {
     projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
   } else {
-    //-------------------------------fetch the selected project
+ //-------------------------------fetch the selected project
     fetch('./data/projects.json')
       .then(res => res.json())
       .then(data => {
@@ -189,6 +226,8 @@ if (projectContainer) {  // <- chequeo agregado
   }
 }
 
+
+
 //==================project en index
 const grid = document.getElementById("projects-grid");
 grid.addEventListener("click", (e) => {
@@ -236,6 +275,8 @@ fetch("./data/projects.json")
       grid.appendChild(card);
     });
   });
+
+
 
 
 //==================END_FETCHES==========================
@@ -312,9 +353,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }    setTimeout(() => {      loader.remove();    }, 900); // duración total < 1s
   }});
 //========================typewriter effect
-const text = "Hello_World...";
+
 const text2 = "let's create!   ";
-const h3 = document.getElementById("typewriter");
 const h32 = document.getElementById("typewriter2");
 let index = 0;
 let left = 0;
@@ -323,29 +363,26 @@ const pause = 1000;
 
 // agrega cursor
 const cursor = document.createElement("span");
+cursor.style.height="50px";
 cursor.classList.add("cursor");
-h3.parentElement.appendChild(cursor);
+h32.parentElement.appendChild(cursor);
 
 function typeWriter() {
-  if (index < text.length) {
-    h3.textContent += text.charAt(index);
+  if (index < text2.length) {
     h32.textContent += text2.charAt(index);
     index++;
 
-    const overflow = h3.scrollWidth - h3.parentElement.clientWidth;
+
     const overflow2 = h32.scrollWidth - h32.parentElement.clientWidth;
-    if (overflow > 0) {
-      left = Math.min(left + h3.offsetWidth / text.length, overflow);
-      left = Math.min(left + h32.offsetWidth / text2.length, overflow);
-      h3.style.transform = `translateX(-${left}px)`;
+    if (overflow2 > 0) {     
+      left = Math.min(left + h32.offsetWidth / text2.length, overflow2);   
       h32.style.transform = `translateX(-${left}px)`;
     }
 
     setTimeout(typeWriter, speed);
   } else {
     setTimeout(() => {
-      h3.textContent = "";
-      h3.style.transform = "translateX(0)";
+    
       h32.textContent = "";
       h32.style.transform = "translateX(0)";
       index = 0;

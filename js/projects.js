@@ -46,3 +46,5 @@ function showProject(id) {
       document.getElementById('projectModalFooter').innerHTML = footerHtml;
     });
 }
+
+

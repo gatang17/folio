@@ -60,7 +60,7 @@
   .hero_text{ position: relative; left: 10vw; top: 25vh; width: 50vw; background: rgba(255,255,255,0.7); padding: 1rem;  border-radius: 10px; z-index: 1; }
   
   .chat { flex: 1; overflow: hidden; white-space: nowrap; background-color: rgba(43, 41, 41, 0.1); color: #2f2f2f; display: flex; justify-content: center; align-items: center;  text-align: center;   min-height: 150px; max-height: auto; /* limita la altura en mobile */}
-  .typewriter {display: inline-block;transform: translateX(0);text-transform: uppercase; color: #bb9f30; }
+  .typewriter {font-size: 2rem; display: inline-block;transform: translateX(0);text-transform: uppercase; color: #bb9f30; }
   .cursor { display: inline-block;width: 2px;background: rgba(0, 0, 0, 0.817);margin-left: 2px;animation: blink 0.7s step-end infinite;vertical-align: bottom; height: 1em; }
   
   @keyframes blink {50% { background: transparent; }}
@@ -134,7 +134,7 @@
   @media (max-width: 767px) { skills-grid { flex-direction: column;  height: auto; }
       .skill { min-height: 2rem; /* cerrada */  transition: min-height 0.4s ease;  }
       .skill.active { min-height: 50vh; /* expandida */ }  }
-      
+
    /*=================================================contact en index*/
   /* contact en index*/
   .cont_aca_hono{      padding: 1rem;  }
