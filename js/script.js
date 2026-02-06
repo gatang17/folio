@@ -94,8 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // inject desktop layout
       div_desk.innerHTML = `
         <div class="container-fluid " id="div_1"> 
-        <div id="img_logoV"><img src="images/logo.png" ></div>
-               
+        <div id="img_logoV"><img src="images/logo.png" ></div>               
           <div class="div_menu_home">  
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="#projects">projects</a>
@@ -103,9 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <a class="nav-link m_text mosaic_btn " href="#contact">contact</a>
             </section>
             <div class="sec_menu22" id="">
-             <a class="nav-link m_text mosaic_btn" href="https://figma.com/@gatang17">figma</a>
-          <a class="nav-link m_text mosaic_btn" href="https://github.com/gatang17">GITHUB</a>
-          <a class="nav-link m_text mosaic_btn" href="https://www.linkedin.com/in/grete88/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+          <a class="nav-link m_text mosaic_btn" href="https://figma.com/@gatang17" target="_blank">figma</a>
+          <a class="nav-link m_text mosaic_btn" href="https://github.com/gatang17" target="_blank">GITHUB</a>
+          <a class="nav-link m_text mosaic_btn" href="https://www.linkedin.com/in/grete88/" target="_blank">LINKEDIN</a>
           </div>
           </div>
           </div>
