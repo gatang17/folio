@@ -93,12 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.matches) {
       // inject desktop layout
       div_desk.innerHTML = `
-        <div class="container-fluid " id="div_1"> 
-        <div id="img_logoV"><img src="images/logo.png" ></div>               
+        <div class="container-fluid "> 
+           
           <div class="div_menu_home">  
+          <img id="img_logoV" src="images/logo.png" >
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="#projects">projects</a>
-              <a class="nav-link m_text mosaic_btn" href="#aboutme">my_Toolbox</a>
+              <a class="nav-link m_text mosaic_btn" href="#aboutme">Skills</a>
               <a class="nav-link m_text mosaic_btn " href="#contact">contact</a>
             </section>
             <div class="sec_menu22" id="">
