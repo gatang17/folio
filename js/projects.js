@@ -47,4 +47,88 @@ function showProject(id) {
     });
 }
 
+fetch('data/projects.json')
+.then(res => res.json())
+.then(data => {
+  const skills = document.querySelectorAll('.skill');
 
+
+  skills.forEach(skillEl => {
+    const key = skillEl.dataset.title.toLowerCase();
+    const skillData = data.skills.find(s => s.id.toLowerCase() === key);
+    if (!skillData) return;
+
+    // contenido interno mínimo
+    skillEl.querySelector('.skill-overlay').innerHTML = `<span>${skillData.overlay}</span>`;
+
+
+    skillEl.querySelector('.skill-inner').innerHTML = `
+      <h3>${skillData.title}</h3>
+      <ul>${skillData.points.map(p => `<li>${p}</li>`).join('')}</ul>
+      <small>${skillData.tools.join(' • ')}</small>
+    `;
+
+    // click expand/contraer
+    skillEl.addEventListener('click', () => {
+      skills.forEach(s => s !== skillEl && s.classList.remove('active'));
+      skillEl.classList.toggle('active');
+    });
+  });
+})
+.catch(err => console.error('Error loading skills:', err));
+
+fetch('./data/projects.json')
+.then(res => res.json())
+.then(data => {
+    const aboutme = data.about[0];
+    const maxImages = 6;
+
+    // Nombre
+    document.getElementById("name").textContent = aboutme.name;
+    const titlesCol = document.getElementById("titles_col");
+    const descCol = document.getElementById("desc_col");
+
+    const topics = Object.keys(aboutme.skills);
+    let selectedTopic = topics[0]; // por defecto seleccionamos el primero
+
+    function renderTitles() {
+        titlesCol.innerHTML = '';
+        topics.forEach(topic => {
+            const div = document.createElement('div');
+            div.className = 'title_item' + (topic === selectedTopic ? ' selected' : '');
+            div.innerHTML = `<i class="fa-solid fa-circle"></i>${topic}`;
+            div.addEventListener('click', () => {
+                selectedTopic = topic;
+                renderTitles();
+                renderDesc();
+            });
+            titlesCol.appendChild(div);
+        });
+    }
+
+    function renderDesc() {
+        const descContent = document.getElementById('desc_content');
+        const grid = document.getElementById('images_grid');
+        // Limpiar contenido anterior
+        descContent.innerHTML = '';
+        grid.innerHTML = '';
+        // Skills
+        aboutme.skills[selectedTopic].items.forEach(skill => {
+            const div = document.createElement('div');
+            div.className = 'desc_item';
+            div.innerHTML = `. ${skill}`;
+            descContent.appendChild(div);
+        });
+        // Images
+        // Limitar a máximo 6 imágenes
+        aboutme.skills[selectedTopic].images.slice(0, maxImages).forEach(img => {
+            const imgEl = document.createElement('img');
+            imgEl.src = img;
+            imgEl.style.width = '100%';
+            imgEl.style.borderRadius = '8px';
+            grid.appendChild(imgEl);
+        });
+    }
+    renderTitles();
+    renderDesc();
+});

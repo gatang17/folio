@@ -36,19 +36,20 @@
 
 <body>
     <div id="mosaic-loader"></div>
-<div style="padding: 2px; background-color: rgb(22, 22, 22); display: flex; justify-content: center;align-items: center;"><a href="d_notes.html" class="mosaic_btn" style="color: #ff0000; font-weight: 100!important;">The designer's note</a></div>
-    <!--HEADER-->
+<div id="top_bar"><a href="d_notes.html" class="m_text" id="link_note">The designer's note</a></div>
+    
+<!--HEADER-->
 
-    <div id="header-container"></div>
+    <div id="header-container" ></div>
 
     <!--============================================INTRO SECTION-->
     <section id="intro" class="">
-        <div class="d-flex" >
-            <div class="" id="menu_dtk"> </div>
+        <div class="d-flex">
+            <div class="" id="menu_dtk" > </div>
             <div id="hero">
                 <div class="con_hero">
-                    <img src="images/hero.png" style="max-height:800px;">
-                    <div class="" style="display: grid; justify-items: center; text-align: right; ">
+                    <img id="id_img_hero" src="images/hero.png">
+                    <div class="con_hero_sub" >
                         <h4 class="hero_text"> "Designs that<br> find solutions" </h4> 
                         <a href="index.html#contact" class="hero_btn btn m_text mosaic_btn">Let's Create something</a>
                     </div>
@@ -60,21 +61,7 @@
              </div>
       
     </section>
-     <!--============================================SUMMARY SECTION-->
-<!--   Terry no quiere esto
-     <section id="summary" class="row align-items-stretch">
-        <div class="sumtitle col-md-6">  <h2 class="">Summary</h2>  </div>
-        <div class="sumInfo col" style="height: 50vh;">
-            <h1>what can i say? I'm Awesome!   </h1>
-         
-        </div>
-       
-        <style>         
-            .sumtitle { padding-left: 2rem;   display: flex;  align-items: center; /* centra el h2 verticalmente */}
-            .sumInfo { padding-left: 2rem;  width: 100%;  display: flex;  align-items: center; background-color:rgba(0, 0, 0, 0.817); color: #a9a483;}
-        </style>
-    </section>
--->     
+   
     <!--============================================PROJECTS SECTION-->
 
     <section id="projects" class="content">
@@ -92,7 +79,7 @@
       
         </style>
     <!--============================================ABOUT_ME SECTION-->
-    <section id="aboutme" class="content">
+    <!-- <section id="aboutme" class="content">
         <div style="padding: 2rem;">
             <div class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
                 <h3 id="name"></h3>
@@ -100,9 +87,9 @@
   
               
             <div id="skills_section">
-                <!-- Columna títulos -->
+              
                 <div id="titles_col"></div>
-                <!-- Columna descripción -->
+              
                 <div id="desc_col" class="desc_col">
                     <div id="desc_content"></div>
                     <div class="images_grid" id="images_grid"></div>
@@ -112,69 +99,11 @@
             </div>
         </div>
       
-    </section>
+    </section> -->
 
-    <style>
-       
-    </style>
+    
 
-    <script>
-        fetch('./data/projects.json')
-            .then(res => res.json())
-            .then(data => {
-                const aboutme = data.about[0];
-                const maxImages = 6;
 
-                // Nombre
-                document.getElementById("name").textContent = aboutme.name;
-                const titlesCol = document.getElementById("titles_col");
-                const descCol = document.getElementById("desc_col");
-
-                const topics = Object.keys(aboutme.skills);
-                let selectedTopic = topics[0]; // por defecto seleccionamos el primero
-
-                function renderTitles() {
-                    titlesCol.innerHTML = '';
-                    topics.forEach(topic => {
-                        const div = document.createElement('div');
-                        div.className = 'title_item' + (topic === selectedTopic ? ' selected' : '');
-                        div.innerHTML = `<i class="fa-solid fa-circle"></i>${topic}`;
-                        div.addEventListener('click', () => {
-                            selectedTopic = topic;
-                            renderTitles();
-                            renderDesc();
-                        });
-                        titlesCol.appendChild(div);
-                    });
-                }
-
-                function renderDesc() {
-                    const descContent = document.getElementById('desc_content');
-                    const grid = document.getElementById('images_grid');
-                    // Limpiar contenido anterior
-                    descContent.innerHTML = '';
-                    grid.innerHTML = '';
-                    // Skills
-                    aboutme.skills[selectedTopic].items.forEach(skill => {
-                        const div = document.createElement('div');
-                        div.className = 'desc_item';
-                        div.innerHTML = `. ${skill}`;
-                        descContent.appendChild(div);
-                    });
-                    // Images
-                    // Limitar a máximo 6 imágenes
-                    aboutme.skills[selectedTopic].images.slice(0, maxImages).forEach(img => {
-                        const imgEl = document.createElement('img');
-                        imgEl.src = img;
-                        imgEl.style.width = '100%';
-                        imgEl.style.borderRadius = '8px';
-                        grid.appendChild(imgEl);
-                    });
-                }
-                renderTitles();
-                renderDesc();
-            });
-    </script>
 
 
 
@@ -182,7 +111,9 @@
   
 <section id="skills" class="content">
     <div style="padding: 2rem;">
+        <h2 class="">Skills</h2>
         <div class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
+            
             <h3>design, structure, and interaction</h3>
             <h4 class="skills-intro">
                 These are the tools and technologies I actively use to design and build
@@ -192,9 +123,8 @@
       
     <div class="skills-grid">
 
-        <div class="skill" data-title="HTML">
-          <div class="skill-overlay"></div>      
-          <div class="skill-inner"></div>
+        <div class="skill active" data-title="HTML"><div class="skill-overlay"></div>
+        <div class="skill-inner"></div>
         </div>
       
         <div class="skill" data-title="CSS"><div class="skill-overlay"></div>      
@@ -216,38 +146,7 @@
 /* descktop */
 
   </style>
- <script>
-    fetch('data/projects.json')
-  .then(res => res.json())
-  .then(data => {
-    const skills = document.querySelectorAll('.skill');
 
-
-    skills.forEach(skillEl => {
-      const key = skillEl.dataset.title.toLowerCase();
-      const skillData = data.skills.find(s => s.id.toLowerCase() === key);
-      if (!skillData) return;
-
-      // contenido interno mínimo
-      skillEl.querySelector('.skill-overlay').innerHTML = `<span>${skillData.overlay}</span>`;
-
-
-      skillEl.querySelector('.skill-inner').innerHTML = `
-        <h3>${skillData.title}</h3>
-        <ul>${skillData.points.map(p => `<li>${p}</li>`).join('')}</ul>
-        <small>${skillData.tools.join(' • ')}</small>
-      `;
-
-      // click expand/contraer
-      skillEl.addEventListener('click', () => {
-        skills.forEach(s => s !== skillEl && s.classList.remove('active'));
-        skillEl.classList.toggle('active');
-      });
-    });
-  })
-  .catch(err => console.error('Error loading skills:', err));
-
-  </script>
 
     <!--============================================CONTACT SECTION-->
     <section id="contact" class="">
@@ -257,11 +156,7 @@
 
         <div class="contForm">
             <form action="https://formsubmit.co/gretelalvareztang@gmail.com" method="POST" class="col">
-                <p>Use the form below to get in touch with me about your project or inquiry. Whether you have questions,
-                    need a quote, or want to discuss your ideas, we're here to help. The information you provide will
-                    help us understand your needs and serve as a starting point for our conversation. Please note that
-                    any details shared here are for initial contact purposes only and do not represent a binding
-                    agreement or formal proposal.</p>
+                <p>Use the form below to get in touch with me about your project or inquiry.</p>
                 <div class="col">
                     <label for="name">name:</label>
                     <input type="text" id="name" name="name" required>
@@ -323,6 +218,7 @@
     <!-- Bootstrap Bundle JS (incluye Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
 
 </body>
 

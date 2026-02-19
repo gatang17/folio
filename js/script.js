@@ -93,19 +93,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.matches) {
       // inject desktop layout
       div_desk.innerHTML = `
-        <div class="container-fluid "> 
-           
-          <div class="div_menu_home">  
-          <img id="img_logoV" src="images/logo.png" >
+        <div class="container-fluid"> 
+             
+          <div class="div_menu_home">
+          <div id="logo_container"><img id="img_logoV" src="images/logo.png" ></div>  
+        
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="#projects">projects</a>
-              <a class="nav-link m_text mosaic_btn" href="#aboutme">Skills</a>
+              <a class="nav-link m_text mosaic_btn" href="#skills">Skills</a>
               <a class="nav-link m_text mosaic_btn " href="#contact">contact</a>
             </section>
             <div class="sec_menu22" id="">
-          <a class="nav-link m_text mosaic_btn" href="https://figma.com/@gatang17" target="_blank">figma</a>
-          <a class="nav-link m_text mosaic_btn" href="https://github.com/gatang17" target="_blank">GITHUB</a>
-          <a class="nav-link m_text mosaic_btn" href="https://www.linkedin.com/in/grete88/" target="_blank">LINKEDIN</a>
+      <a class="nav-link m_text" href="https://figma.com/@gatang17"  target="_blank" ><i class="fa-brands fa-figma"></i></a>
+      <a class="nav-link m_text " href="https://github.com/gatang17"  target="_blank" ><i class="fa-brands fa-github-alt"></i></a>
+      <a class="nav-link m_text" href="https://www.linkedin.com/in/grete88/" target="_blank" ><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
           </div>
           </div>
