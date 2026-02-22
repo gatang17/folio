@@ -70,7 +70,18 @@
         ],
         "live": "https://aurwelcen.wordpress.com",
         "github": ""
-      }  
+      } ,
+      {
+        "id": "jlprezc",
+        "title": "joprec portfolio website",
+        "description": "This is a personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases the photography of Jose Luis Perez Cespedes, featuring pixelated effects in the initial animations to reflect the digital pixels that are part of modern photography.",
+        "technologies": ["WordPress Free Version", "Covers", "Columns", "Rows", "Anchor Links"],
+        "images": [
+             "images/projects/jlprezc/jlperezc.png"
+        ],
+        "live": "https://jlperezc.vercel.app/",
+        "github": ""
+      } 
     ],
 
  "about": [
