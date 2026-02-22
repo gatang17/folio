@@ -44,12 +44,66 @@
 
     <!--============================================INTRO SECTION-->
     <section id="intro" class="">
+     
         <div class="d-flex">
+            
             <div class="" id="menu_dtk" > </div>
+            
             <div id="hero">
-                <div class="con_hero">
+                <div class="glass"></div>
+                <style>
+              .glass {
+  position: absolute;
+  z-index: 10;
+  top: -100%;
+  left: 0%;
+  width: 500%;
+  height: 500%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    125deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.738) 50%,
+    transparent 55%
+  );
+
+  /* animación vertical */
+  animation: shineY 8s linear infinite;
+  mix-blend-mode: hard-light; /* o el que quieras */
+}
+
+@keyframes shineY {
+  from {
+    transform: translateY(-100%) ; /* empieza arriba */
+  }
+  to {
+    transform: translateY(50%); /* termina abajo */
+  }
+}
+
+@media (max-width: 768px) {
+  .glass {
+    top: -100%;
+    left: 0%;
+    width: 300%;
+    height: 400%;
+    animation: shineY 4s linear infinite;
+
+    background: linear-gradient(
+    125deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.738) 50%,
+    transparent 65%
+  );
+  }
+}                
+                </style>
+                <div class="con_hero">              
                     <img id="id_img_hero" src="images/hero.png">
+               
                     <div class="con_hero_sub" >
+                        
                         <h4 class="hero_text"> Designs that<br> find solutions </h4> 
                         <a href="index.html#contact" class="hero_btn btn m_text mosaic_btn">Let's Create something</a>
                     </div>

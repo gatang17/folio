@@ -208,7 +208,7 @@ skills.forEach(skill => {
 });
 
 </script> -->
-<h1>Visual Design & Implementation Flow</h1>
+<!-- <h1>Visual Design & Implementation Flow</h1>
 <section id="sec_2">
   <div class="div_grid">
    
@@ -242,4 +242,45 @@ skills.forEach(skill => {
 }
 
 
+</style> -->
+<div class="section">
+  <div class="glass"></div>
+  <h1>Contenido aquí</h1>
+</div>
+
+<style>
+  #flag {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    transform: rotate(25deg);
+    gap: 5px
+  }
+.glass {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.3) 50%,
+    transparent 60%
+  );
+
+  transform: translateX(-100%);
+  animation: shine 4s linear infinite;
+}
+
+ @keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 </style>
