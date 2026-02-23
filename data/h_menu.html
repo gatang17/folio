@@ -6,10 +6,10 @@
       </button>
       
         <div class="navMenu" id="navMenu">
-          <a class="nav-link mosaic_btn m_text m_off_text"  href="index.html">home</a>
-          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#projects">projects</a>
-          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#skills">Skills</a>          
-          <a class="nav-link mosaic_btn m_text m_off_text" href="index.html#contact">contact</a>
+          <a class=" m_text m_off_text"  href="index.html">home</a>
+          <a class=" m_text m_off_text" href="index.html#projects">projects</a>
+          <a class="  m_text m_off_text" href="index.html#skills">Skills</a>          
+          <a class=" m_text m_off_text" href="index.html#contact">contact</a>
         </div>
  
       
@@ -17,11 +17,11 @@
     
     
       <style>
- #btn_menu { background: none;  border: none;  padding: 0;  cursor: pointer;}
-.navBar button {  background: none; /* quita el fondo por defecto */  border: none; /* quita el borde por defecto */  padding: 0;/* quita el padding por defecto */  cursor: pointer; /* mano al pasar el mouse */  display: inline-flex;/* permite centrar contenido si quieres */  }
+#btn_menu { background: none;  border: none;  padding: 0;  cursor: pointer;}
+.navBar button {  background: none;  border: none;  padding: 0; cursor: pointer;  display: inline-flex; }
 .navBar{ width: 100vw; height: 10vh; background-color: transparent;}
-.navMenu{  position: fixed;  top: 0;  right: 0;  width: 60vw;  height: 100vh;  background: black;  display: flex;  flex-direction: column;  gap: 2rem;  padding: 4rem 2rem;  transform: translateX(100%); /* 🔒 oculto */  transition: transform 0.3s ease;  z-index: 9999;}
-.navMenu.open {  transform: translateX(0); /* 🔓 visible */}
+.navMenu{  position: fixed;  top: 0;  right: 0;  width: 60vw;  height: 100vh;  background: black;  display: flex;  flex-direction: column;  gap: 2rem;  padding: 4rem 2rem;  transform: translateX(100%); transition: transform 0.3s ease;  z-index: 9999;}
+.navMenu.open {  transform: translateX(0); }
 #iconm{  font-size: 3rem;}
 body.menu-open {  overflow: hidden;}
 

@@ -27,17 +27,23 @@ function InitMobile() {
   const menu = document.getElementById("navMenu");
   if (!btn || !menu) return;
 
+  // Evita agregar listeners múltiples
+  if (btn.dataset.init === "true") return;
+  btn.dataset.init = "true";
+
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     menu.classList.toggle("open");
     document.body.classList.toggle("menu-open");
   });
+
   document.addEventListener("click", (e) => {
     if (!menu.contains(e.target) && !btn.contains(e.target)) {
       menu.classList.remove("open");
       document.body.classList.remove("menu-open");
     }
   });
+
   menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       menu.classList.remove("open");
@@ -48,13 +54,16 @@ function InitMobile() {
 
 
 
+
 // ------------------- Menu injection on index
 document.addEventListener("DOMContentLoaded", () => {
+
 //----------------------------------menu_top for no index pages
   fetch("./data/header.html")
   .then(res => res.text())
   .then(html => {
     document.getElementById("header-container").innerHTML = html;
+    initMosaicButtons();
   })
   .catch(err => console.error('Error loading header:', err));
   //----------------------------------footer-container for all pages
@@ -68,17 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(res => res.text())
   .then(html => {
     document.getElementById("h_menu-container").innerHTML = html;
-   //----------------------------------header desktop
-    fetch("./data/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("menu").innerHTML = html;
-    })
-    .catch(err => console.error('Error loading header:', err));
-
-
+    
+   
     // AQUI el menú ya existe
-    initMosaicButtons();
+ 
     InitMobile();
   })
   .catch(err => console.error('Error loading menuhamburguer:', err));

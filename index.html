@@ -105,7 +105,7 @@
                     <div class="con_hero_sub" >
                         
                         <h4 class="hero_text"> Designs that<br> find solutions </h4> 
-                        <a href="index.html#contact" class="hero_btn btn m_text mosaic_btn">Let's Create something</a>
+                        <a href="index.html#projects" class="hero_btn btn m_text mosaic_btn">click here and check the things i've done</a>
                     </div>
              
                 </div>
@@ -174,30 +174,55 @@
                 modern, user-focused web experiences.
             </h4></div></div>
  
-      
-    <div class="skills-grid">
+            <div class="skills-grid">
 
-        <div class="skill active" data-title="HTML"><div class="skill-overlay"></div>
-        <div class="skill-inner"></div>
-        </div>
-      
-        <div class="skill" data-title="CSS"><div class="skill-overlay"></div>      
-          <div class="skill-inner"></div>
-        </div>
-
-        <div class="skill" data-title="js"><div class="skill-overlay"></div>        
-            <div class="skill-inner"></div>
-          </div>
-        
-          <div class="skill " data-title="uiux"><div class="skill-overlay"></div>        
-            <div class="skill-inner"></div>
-          </div>
-      
-      </div>
+                <div class="skill active" data-title="HTML">
+                  <i class="fa-solid fa-angle-right arrow"></i>
+           
+                  <div class="skill-overlay"></div>
+                  <div class="skill-inner"></div>
+                </div>
+              
+                <div class="skill" data-title="CSS">
+                  <i class="fa-solid fa-angle-right arrow"></i>
+               
+                  <div class="skill-overlay"></div>
+                  <div class="skill-inner"></div>
+                </div>
+              
+                <div class="skill" data-title="JS">
+                  <i class="fa-solid fa-angle-right arrow"></i>
+                
+                  <div class="skill-overlay"></div>
+                  <div class="skill-inner"></div>
+                </div>
+              
+                <div class="skill" data-title="UI/UX">
+                  <i class="fa-solid fa-angle-right arrow"></i>
+                  
+                  <div class="skill-overlay"></div>
+                  <div class="skill-inner"></div>
+                </div>
+              
+              </div>
       
   </section>
   <style>
-/* descktop */
+.skills-grid .skill .arrow {
+  display: none; /* por defecto no se ve */
+}
+
+.skills-grid .skill.active .arrow {
+  display: inline-block; /* o block según el diseño */
+  margin-left: 5px; /* opcional */
+  transition: transform 0.3s; /* para animación */
+  text-align: center;
+  justify-content: right;}
+  .skills-grid .skill {
+    position: relative;
+  }
+
+
 
   </style>
 
@@ -241,12 +266,12 @@
 
 
     <!-- Botón flotante móvil -->
-    <div id="mobile-menu-btn" >   <a href="#intro">      <i class="fa-solid  fa-house"></i>    </a>    </div>
+    <div id="mobile-menu-btn" >   <a href="#intro"> <i class="fa-solid fa-circle-arrow-up" ></i>    </a>    </div>
     <style>
-        #mobile-menu-btn {position: fixed;  bottom: 2rem;  right: 2rem;width: 40px; height: 40px; border-radius: 50%; background-color: rgba(43, 41, 41, 0.1); display: flex;
+        #mobile-menu-btn {position: fixed;  bottom: 2rem;  right: 2rem;width: 40px; height: 40px; border-radius: 50%; display: flex;
         justify-content: center;  align-items: center; cursor: pointer;  z-index: 9999;     }
-        #mobile-menu-btn i { color: white;    font-size: 1rem;     }
-        #mobile-menu-btn i:hover {  filter: invert(1);    }
+        #mobile-menu-btn i { color: rgba(64, 64, 64, 0.253);    font-size: 1.5rem;     }
+        #mobile-menu-btn i:hover {  color: rgb(24, 23, 23);    }
     </style>
     <div class="fade-overlay" id="fade-overlay"></div>
     <script>
