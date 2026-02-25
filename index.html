@@ -43,62 +43,21 @@
     <div id="header-container" ></div>
 
     <!--============================================INTRO SECTION-->
-    <section id="intro" class="">
-     
-        <div class="d-flex">
-            
-            <div class="" id="menu_dtk" > </div>
-            
+<section id="intro" class="">     
+        <div class="d-flex">            
+            <div class="" id="menu_dtk" > </div>            
             <div id="hero">
                 <div class="glass"></div>
-                <style>
-              .glass {
-  position: absolute;
-  z-index: 10;
-  top: -100%;
-  left: 0%;
-  width: 500%;
-  height: 500%;
-  pointer-events: none;
-
-  background: linear-gradient(
-    125deg,
-    transparent 45%,
-    rgba(255, 255, 255, 0.738) 50%,
-    transparent 55%
-  );
-
-  /* animación vertical */
-  animation: shineY 8s linear infinite;
-  mix-blend-mode: hard-light; /* o el que quieras */
-}
-
-@keyframes shineY {
-  from {
-    transform: translateY(-100%) ; /* empieza arriba */
-  }
-  to {
-    transform: translateY(50%); /* termina abajo */
-  }
-}
-
+ <style>
+.glass { position: absolute; z-index: 10; top: -100%; left: 0%; width: 500%; height: 500%; pointer-events: none;  
+ background: linear-gradient( 125deg, transparent 45%, rgba(255, 255, 255, 0.738) 50%, transparent 55% ); animation: shineY 8s linear infinite; mix-blend-mode: hard-light; }
+@keyframes shineY {from { transform: translateY(-100%) ; }
+                   to { transform: translateY(50%); }  }
 @media (max-width: 768px) {
-  .glass {
-    top: -100%;
-    left: 0%;
-    width: 300%;
-    height: 400%;
-    animation: shineY 4s linear infinite;
-
-    background: linear-gradient(
-    125deg,
-    transparent 42%,
-    rgba(255, 255, 255, 0.738) 50%,
-    transparent 65%
-  );
-  }
-}                
-                </style>
+  .glass { top: -100%; left: 0%; width: 300%;height: 400%;animation: shineY 4s linear infinite;
+    background: linear-gradient( 125deg, transparent 42%, rgba(255, 255, 255, 0.738) 50%,transparent 65% );
+  }} 
+</style>
                 <div class="con_hero">              
                     <img id="id_img_hero" src="images/hero.png">
                
@@ -132,34 +91,6 @@
     <style>
       
         </style>
-    <!--============================================ABOUT_ME SECTION-->
-    <!-- <section id="aboutme" class="content">
-        <div style="padding: 2rem;">
-            <div class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
-                <h3 id="name"></h3>
-                <h4 class="skills-intro"> I work at the intersection of design, structure, and interaction. </h4></div>
-  
-              
-            <div id="skills_section">
-              
-                <div id="titles_col"></div>
-              
-                <div id="desc_col" class="desc_col">
-                    <div id="desc_content"></div>
-                    <div class="images_grid" id="images_grid"></div>
-                    <div class="view_gallery_btn btn" id="view_gallery_btn">see moore</div>
-                </div>
-    
-            </div>
-        </div>
-      
-    </section> -->
-
-    
-
-
-
-
 
     <!--============================================SKILLS SECTION-->
   

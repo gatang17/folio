@@ -85,37 +85,14 @@
     ],
 
  "about": [
-  { "name": "Design & Web Development Approach",
-    "skills": { "Visual Design": {"items": [  "Adobe XD, Figma",  "Photoshop ","Illustrator ",   "Typography & color theory", "Responsive layouts & grids" ],
-    "images": ["images/portfolio/visual1.png","images/portfolio/visual2.png","images/portfolio/visual3.png"]
-  },
-      "Web Implementation": {
-        "items": [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Bootstrap",
-          "Forms integration",
-          "Hosting on Vercel / GitHub"
-        ],
-        "images": [
-          "images/portfolio/web1.png",
-          "images/portfolio/web2.png",
-          "images/portfolio/web3.png"
-        ]
-      },
-      "Other Strengths": {
-        "items": [
-          "Photography & image editing",
-          "Attention to detail",
-          "Creative problem-solving & visual consistency"
-        ],
-        "images": [
-          "images/portfolio/other1.png",
-          "images/portfolio/other2.png",
-          "images/portfolio/other3.png"
-        ]
-      }
+  {
+    "name": "Resume",
+    "skills": {
+    "EDUCATION ": {"items": ["Jefferson Community & Technical College, Louisville, KY\n Associate of Applied Science:\n Communication Arts Technology: Advertising Design Option\n Dec 2026",
+    "Universidad de Holguín, Cuba\n Bachelor’s Degree in Computer Engineering,\n  2011 " ]},
+    "SKILLS & ABILITIES ": {  "items": ["HTML",  "CSS",  "JavaScript", "Bootstrap", "Forms integration",   "Hosting on Vercel / GitHub" ] },
+    "EXPERIENCE ": {  "items": ["HTML",  "CSS",  "JavaScript", "Bootstrap", "Forms integration",   "Hosting on Vercel / GitHub" ] },
+    "AWARDS": {"items": ["Photography & image editing",  "Attention to detail",  "Creative problem-solving & visual consistency"  ]  }
     }
   }
 ],

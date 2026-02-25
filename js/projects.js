@@ -81,12 +81,12 @@ fetch('./data/projects.json')
 .then(res => res.json())
 .then(data => {
     const aboutme = data.about[0];
-    const maxImages = 6;
+  
 
     // Nombre
     document.getElementById("name").textContent = aboutme.name;
     const titlesCol = document.getElementById("titles_col");
-    const descCol = document.getElementById("desc_col");
+    
 
     const topics = Object.keys(aboutme.skills);
     let selectedTopic = topics[0]; // por defecto seleccionamos el primero
@@ -116,18 +116,10 @@ fetch('./data/projects.json')
         aboutme.skills[selectedTopic].items.forEach(skill => {
             const div = document.createElement('div');
             div.className = 'desc_item';
-            div.innerHTML = `. ${skill}`;
+            div.textContent = `. ${skill}`;
             descContent.appendChild(div);
         });
-        // Images
-        // Limitar a máximo 6 imágenes
-        aboutme.skills[selectedTopic].images.slice(0, maxImages).forEach(img => {
-            const imgEl = document.createElement('img');
-            imgEl.src = img;
-            imgEl.style.width = '100%';
-            imgEl.style.borderRadius = '8px';
-            grid.appendChild(imgEl);
-        });
+       
     }
     renderTitles();
     renderDesc();

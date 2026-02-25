@@ -119,6 +119,7 @@
   .image-wrapper:hover .overlay {  opacity: 1; }
   #projects-grid {  display: grid;  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));    gap: 2rem;  } 
 /*=================================================ABOUT_ME*/
+.desc_item { white-space: pre-line;}
   #skills_section {  display: flex;  align-items: flex-start; gap: 2rem;  margin-top: 2rem;}
   #titles_col { width: 25%;display: flex;flex-direction: column; justify-content: flex-start; gap: 5rem;/* distribuye los títulos verticalmente */ }
   .title_item {display: flex;align-items: center;cursor: pointer;font-weight: bold;font-size: 1.1rem; color: gray; transition: color 0.2s;}
