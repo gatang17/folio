@@ -7,7 +7,7 @@ fetch('projects.json')
       col.className = 'col-md-4 mb-4';
 
       col.innerHTML = `
-        <div class="card h-100">
+        <div class="card">
           ${project.images[0] ? `<img src="${project.images[0]}" class="card-img-top" alt="${project.title}">` : ''}
           <div class="card-body">
             <h5 class="card-title">${project.title}</h5>
@@ -22,7 +22,7 @@ fetch('projects.json')
   });
 
 function showProject(id) {
-  fetch('projects.json')
+  fetch('projects.json')``
     .then(response => response.json())
     .then(data => {
       const project = data.projects.find(p => p.id === id);
@@ -30,7 +30,7 @@ function showProject(id) {
 
       let imagesHtml = '';
       project.images.forEach(img => {
-        imagesHtml += `<img src="${img}" class="img-fluid mb-2">`;
+        imagesHtml += `<div id="img_cont" ><img src="${img}" class="img-fluid mb-2"></div>`;
       });
 
       document.getElementById('projectModalBody').innerHTML = `
@@ -77,18 +77,30 @@ fetch('data/projects.json')
 })
 .catch(err => console.error('Error loading skills:', err));
 
+//about_me----------------------------------------------------------------
 fetch('./data/projects.json')
 .then(res => res.json())
 .then(data => {
-    const aboutme = data.about[0];
-  
+    const aboutme = data.about[0];  
 
     // Nombre
-    document.getElementById("name").textContent = aboutme.name;
+    document.getElementById("name").textContent = aboutme.pageTitle;
     const titlesCol = document.getElementById("titles_col");
+
+        // Contenedor de personal info (p_info)
+        const personalDiv = document.getElementById('p_info');
+        personalDiv.innerHTML = `
+            <h3 style="font-weight:bold; text-transform:uppercase;">${aboutme.personal.name}</h3>
+            <p>
+                ${aboutme.personal.phone}<br>
+                ${aboutme.personal.email}<br>
+                <a href="${aboutme.personal.website}" target="_blank">${aboutme.personal.website.replace(/^https?:\/\//,'')}</a>
+            </p>
+        `;
     
 
-    const topics = Object.keys(aboutme.skills);
+    const topics = Object.keys(aboutme)
+  .filter(key => key !== "pageTitle" && key !== "personal");
     let selectedTopic = topics[0]; // por defecto seleccionamos el primero
 
     function renderTitles() {
@@ -96,7 +108,7 @@ fetch('./data/projects.json')
         topics.forEach(topic => {
             const div = document.createElement('div');
             div.className = 'title_item' + (topic === selectedTopic ? ' selected' : '');
-            div.innerHTML = `<i class="fa-solid fa-circle"></i>${topic}`;
+            div.innerHTML = `<i class="fa-solid fa-circle"></i><h4>${topic}</h4>`;
             div.addEventListener('click', () => {
                 selectedTopic = topic;
                 renderTitles();
@@ -107,20 +119,73 @@ fetch('./data/projects.json')
     }
 
     function renderDesc() {
-        const descContent = document.getElementById('desc_content');
-        const grid = document.getElementById('images_grid');
-        // Limpiar contenido anterior
-        descContent.innerHTML = '';
-        grid.innerHTML = '';
-        // Skills
-        aboutme.skills[selectedTopic].items.forEach(skill => {
-            const div = document.createElement('div');
-            div.className = 'desc_item';
-            div.textContent = `. ${skill}`;
-            descContent.appendChild(div);
-        });
-       
-    }
+      const descContent = document.getElementById('desc_content');
+      descContent.innerHTML = '';
+  
+      const sectionData = aboutme[selectedTopic];
+  
+      if (!sectionData) {
+          console.log("No data for:", selectedTopic);
+          return;
+      }
+  
+      // Si es lista simple (skills, abilities, awards, etc.)
+      if (Array.isArray(sectionData) && typeof sectionData[0] === "string") {
+          const ul = document.createElement('ul');
+  
+          sectionData.forEach(item => {
+              const li = document.createElement('li');
+              li.textContent = item;
+              ul.appendChild(li);
+          });
+  
+          descContent.appendChild(ul);
+          return;
+      }
+  
+      // EDUCATION
+      if (selectedTopic === "education") {
+          sectionData.forEach(item => {
+              const div = document.createElement('div');
+              div.innerHTML = `
+              <h4>${item.institution}</h4>
+              <p>
+                  ${item.degree}<br>
+                  ${item.graduation}<br><br>
+              </p>
+          `;
+              descContent.appendChild(div);
+          });
+          return;
+      }
+  
+      // EXPERIENCE
+      if (selectedTopic === "experience") {
+          sectionData.forEach(job => {
+              const div = document.createElement('div');
+  
+              const ul = document.createElement('ul');
+              job.responsibilities.forEach(r => {
+                  const li = document.createElement('li');
+                  li.textContent = r;
+                  ul.appendChild(li);
+              });
+              const space=  document.createElement('br');
+            //  const hr=  document.createElement('hr');
+  
+              div.innerHTML = `
+                  <h4>${job.title}</h4>
+                  <hr>
+                  <p>${job.organization} — ${job.location}</p>
+                  <small>${job.period}</small>
+              `;
+  
+              div.appendChild(ul);
+              div.appendChild(space);
+              descContent.appendChild(div);
+          });
+      }
+  }
     renderTitles();
     renderDesc();
 });

@@ -103,7 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="#projects">projects</a>
               <a class="nav-link m_text mosaic_btn" href="#skills">Skills</a>
-              <a class="nav-link m_text mosaic_btn " href="#contact">contact</a>
+              <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>     
+              <a class="nav-link m_text mosaic_btn" href="#contact">contact</a>
             </section>
             <div class="sec_menu22" id="">
       <a class="nav-link m_text" href="https://figma.com/@gatang17"  target="_blank" ><i class="fa-brands fa-figma"></i></a>
@@ -284,39 +285,6 @@ fetch("./data/projects.json")
 
 //==================END_FETCHES==========================
 
-
-
-//==============BREADCUMBS============================
-
-document.addEventListener('DOMContentLoaded', () => {
-  const bc = document.getElementById('breadcrumb');
-  if (!bc) return;
-
-  const url = normalize(window.location.pathname);
-  const label = fileNameToLabel(url);
-
-  const HOME = normalize('/index.html');
-
-  let trail = JSON.parse(sessionStorage.getItem('breadcrumbTrail')) || [];
-
-  if (url === HOME) {
-    trail = [{ label, url }];
-  } else {
-    const existingIndex = trail.findIndex(p => p.url === url);
-    if (existingIndex !== -1) {
-      trail = trail.slice(0, existingIndex + 1);
-    } else {
-      trail.push({ label, url });  }
-  }
-  sessionStorage.setItem('breadcrumbTrail', JSON.stringify(trail));
-  bc.innerHTML = trail
-    .map((item, i) => {
-      if (i === trail.length - 1) {
-        return `<span>${item.label}</span>`;  }
-      return `<a href="${item.url}">${item.label}</a>`;  })
-    .join(' <i class="fa-solid fa-angle-right mx-2"></i> ');
-});
-
 /* ===============================
    HELPERS
 =============================== */
@@ -356,42 +324,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }    setTimeout(() => {      loader.remove();    }, 900); // duración total < 1s
   }});
 //========================typewriter effect
-
-const text2 = "let's create!   ";
+const text2 = "Let’s connect!";
 const h32 = document.getElementById("typewriter2");
+
 let index = 0;
-let left = 0;
-const speed = 200;
+let isDeleting = false;
+
+const speed = 120;
+const deleteSpeed = 120;
 const pause = 1000;
 
-// agrega cursor
+// cursor
 const cursor = document.createElement("span");
-cursor.style.height="50px";
 cursor.classList.add("cursor");
 h32.parentElement.appendChild(cursor);
 
 function typeWriter() {
-  if (index < text2.length) {
-    h32.textContent += text2.charAt(index);
-    index++;
 
-
-    const overflow2 = h32.scrollWidth - h32.parentElement.clientWidth;
-    if (overflow2 > 0) {     
-      left = Math.min(left + h32.offsetWidth / text2.length, overflow2);   
-      h32.style.transform = `translateX(-${left}px)`;
+  if (!isDeleting) {
+    // ESCRIBIENDO
+    if (index < text2.length) {
+      h32.textContent += text2.charAt(index);
+      index++;
+      setTimeout(typeWriter, speed);
+    } else {
+      setTimeout(() => {
+        isDeleting = true;
+        typeWriter();
+      }, pause);
     }
-
-    setTimeout(typeWriter, speed);
   } else {
-    setTimeout(() => {
-    
-      h32.textContent = "";
-      h32.style.transform = "translateX(0)";
-      index = 0;
-      left = 0;
-      typeWriter();
-    }, pause);
+    // BORRANDO AL REVÉS
+    if (index > 0) {
+      index--;
+      h32.textContent = text2.substring(0, index);
+      setTimeout(typeWriter, deleteSpeed);
+    } else {
+      isDeleting = false;
+      setTimeout(typeWriter, 500);
+    }
   }
 }
 

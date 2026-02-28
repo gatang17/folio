@@ -47,7 +47,7 @@
         <div class="d-flex">            
             <div class="" id="menu_dtk" > </div>            
             <div id="hero">
-                <div class="glass"></div>
+                <!-- <div class="glass"></div>
  <style>
 .glass { position: absolute; z-index: 10; top: -100%; left: 0%; width: 500%; height: 500%; pointer-events: none;  
  background: linear-gradient( 125deg, transparent 45%, rgba(255, 255, 255, 0.738) 50%, transparent 55% ); animation: shineY 8s linear infinite; mix-blend-mode: hard-light; }
@@ -57,13 +57,13 @@
   .glass { top: -100%; left: 0%; width: 300%;height: 400%;animation: shineY 4s linear infinite;
     background: linear-gradient( 125deg, transparent 42%, rgba(255, 255, 255, 0.738) 50%,transparent 65% );
   }} 
-</style>
+</style> -->
                 <div class="con_hero">              
                     <img id="id_img_hero" src="images/hero.png">
                
                     <div class="con_hero_sub" >
                         
-                        <h4 class="hero_text"> Designs that<br> find solutions </h4> 
+                        <h1 class="hero_text"> Designs that<br> find solutions </h1> 
                         <a href="index.html#projects" class="hero_btn btn m_text mosaic_btn">click here and check the things i've done</a>
                     </div>
              
@@ -77,33 +77,28 @@
    
     <!--============================================PROJECTS SECTION-->
 
-    <section id="projects" class="content">
-        <div style="background-color: rgba(43, 41, 41, 0.083); padding: 2rem;">
+    <section id="projects" class="content ">
+        <div style="padding: 2rem;">
             <div style="border-bottom: solid; margin-bottom: 4rem;padding: 2rem;">
-                <h2 class="">Projects</h2>
+                <h2 class="title">Projects</h2>
             </div>
-    
-            <div id="projects-grid"  ></div>
-
-        </div>
+            <div id="p_container" >
+                   
+           <div id="projects-grid"></div>
+           
+       </div></div>
+        
      
     </section>
-    <style>
-      
-        </style>
-
+  
     <!--============================================SKILLS SECTION-->
   
 <section id="skills" class="content">
     <div style="padding: 2rem;">
-        <h2 class="">Skills</h2>
-        <div class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
+        <h2 class="title">Skills</h2>
+        <div id="title" class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
             
-            <h3>design, structure, and interaction</h3>
-            <h4 class="skills-intro">
-                These are the tools and technologies I actively use to design and build
-                modern, user-focused web experiences.
-            </h4></div></div>
+            </div></div>
  
             <div class="skills-grid">
 
@@ -127,31 +122,12 @@
                   <div class="skill-overlay"></div>
                   <div class="skill-inner"></div>
                 </div>
-              
-                <div class="skill" data-title="UI/UX">
-                  <i class="fa-solid fa-angle-right arrow"></i>
-                  
-                  <div class="skill-overlay"></div>
-                  <div class="skill-inner"></div>
-                </div>
-              
+                            
               </div>
       
   </section>
   <style>
-.skills-grid .skill .arrow {
-  display: none; /* por defecto no se ve */
-}
 
-.skills-grid .skill.active .arrow {
-  display: inline-block; /* o block según el diseño */
-  margin-left: 5px; /* opcional */
-  transition: transform 0.3s; /* para animación */
-  text-align: center;
-  justify-content: right;}
-  .skills-grid .skill {
-    position: relative;
-  }
 
 
 
@@ -159,14 +135,18 @@
 
 
     <!--============================================CONTACT SECTION-->
-    <section id="contact" class="">
+    <section id="contact" class="content">
+        <div style="padding: 2rem;">
         <div style="border-bottom: 1px solid #808080; margin-bottom: 4rem;">
-            <h2>Contact</h2>
+            <h2 class="title">Contact</h2>
+            
         </div>
+        
+    </div>
 
-        <div class="contForm">
+        <div class="contForm">            
             <form action="https://formsubmit.co/gretelalvareztang@gmail.com" method="POST" class="col">
-                <p>Use the form below to get in touch with me about your project or inquiry.</p>
+                <p class="infoT">Use the form below to get in touch with me about your project or inquiry.</p>
                 <div class="col">
                     <label for="name">name:</label>
                     <input type="text" id="name" name="name" required>

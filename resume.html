@@ -24,21 +24,47 @@
     <div id="header-container"></div>
                  
     </header>
+<style>
 
-<section id="aboutme" class="content">
-        <div style="padding: 2rem;">
-            <div class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
-                <h3 id="name"></h3>
-                <h4 class="skills-intro"> I work at the intersection of design, structure, and interaction. </h4></div>
-  
+#aboutme {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente dentro del contenedor */
+}
+
+#titles_col {
+    flex: 0 0 200px;        /* ancho fijo para el menú */
+}
+
+#desc_col {
+    flex: 1;                /* toma el resto del espacio disponible */
+   width: 900px;       /* no permite que se expanda más */
+    overflow-y: auto;       /* scroll vertical si hay mucho contenido */
+}
+.desc_item p {
+    margin: 0;          /* quita margen del <p> */
+    line-height: 1.2;   /* ajusta altura de línea */
+}
+
+.desc_item small {
+    display: inline;    /* evita que small se comporte como bloque */
+    line-height: 1.2;
+    font-size: 0.9rem;  /* opcional: más pequeño */
+}
+</style>
+<section id="aboutme" class="content regulator" >
+    <div style="padding: 2rem;">
+            <div style="border-bottom: solid; margin-bottom: 4rem;padding: 2rem;">
+                <h2 id="name"></h2>
+                </div>
+  <div id="p_info">
+  </div>
+ 
               
-            <div id="skills_section">
-              
-                <div id="titles_col"></div>
-              
+            <div id="skills_section" class="">              
+                <div id="titles_col" style="border-right: solid;"></div>              
                 <div id="desc_col" class="desc_col">
-                    <div id="desc_content"></div>
-                    <div class="images_grid" id="images_grid"></div>                   
+                    <div id="desc_content"></div>                                  
                 </div>
     
             </div>

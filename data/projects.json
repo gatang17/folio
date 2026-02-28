@@ -84,19 +84,6 @@
       } 
     ],
 
- "about": [
-  {
-    "name": "Resume",
-    "skills": {
-    "EDUCATION ": {"items": ["Jefferson Community & Technical College, Louisville, KY\n Associate of Applied Science:\n Communication Arts Technology: Advertising Design Option\n Dec 2026",
-    "Universidad de Holguín, Cuba\n Bachelor’s Degree in Computer Engineering,\n  2011 " ]},
-    "SKILLS & ABILITIES ": {  "items": ["HTML",  "CSS",  "JavaScript", "Bootstrap", "Forms integration",   "Hosting on Vercel / GitHub" ] },
-    "EXPERIENCE ": {  "items": ["HTML",  "CSS",  "JavaScript", "Bootstrap", "Forms integration",   "Hosting on Vercel / GitHub" ] },
-    "AWARDS": {"items": ["Photography & image editing",  "Attention to detail",  "Creative problem-solving & visual consistency"  ]  }
-    }
-  }
-],
-
 "skills": [
   {
     "id": "html",
@@ -146,8 +133,106 @@
     ],
     "tools": ["Figma", "Adobe XD"]
   }
-]
-    
+] ,
+
+
+
+"about": [
+  {
+    "pageTitle": "Resume",
+
+    "personal": {
+      "name": "GRETEL ALVAREZ TANG",
+      "phone": "(502) 345-8298",
+      "email": "gretelalvareztang@gmail.com",
+      "website": "https://gatang.vercel.app"
+    },
+
+    "education": [
+      {
+        "institution": "Jefferson Community & Technical College",
+        "location": "Louisville, KY",
+        "degree": "Associate of Applied Science\nCommunication Arts Technology: Advertising Design Option",
+        "graduation": "Dec 2026"
+      },
+      {
+        "institution": "Universidad de Holguín",
+        "location": "Holguín, Cuba",
+        "degree": "Bachelor’s Degree in Computer Engineering",
+        "graduation": "Jun 2011"
+      }
+    ],
+
+        "skills & abilities": [
+        "Design: Adobe Creative Suite",
+        "Web: HTML, CSS, Basic JavaScript",
+        "Technical Foundation: SQL, Java",
+        "Technical and creative workflow support",
+        "Strong communication and teamwork",
+        "Bilingual: English and Spanish"
+      ]
+   ,
+
+    "experience": [
+      {
+        "title": "Federal Work-Study Student Worker",
+        "organization": "Jefferson Community & Technical College Print Lab",
+        "location": "Louisville, KY",
+        "period": "Oct 2024 – Present",
+        "responsibilities": [
+          "Provide CAT Lab assistance by supporting students with photo printing, mounting, and Adobe Creative Suite programs.",
+          "Maintain the photography studio, printing lab, and classroom clean, organized, and secure.",
+          "Sell printing supplies and handle cash transactions accurately.",
+          "Troubleshoot basic software and printing equipment issues.",
+          "Ensure compliance with program rules and operational standards."
+        ]
+      },
+      {
+        "title": "Newborn Photographer & Sales Specialist",
+        "organization": "Bella Baby Photography",
+        "location": "Louisville, KY",
+        "period": "Aug 2023 – Aug 2024",
+        "responsibilities": [
+          "Conducted professional photo sessions and edited images.",
+          "Applied color correction and composition adjustments.",
+          "Guided clients through product selection and customized packages.",
+          "Managed client communication and order processing."
+        ]
+      },
+      {
+        "title": "Freelance Photographer & Editor Assistant",
+        "organization": "Estudio Esplendor",
+        "location": "Holguín, Cuba",
+        "period": "May 2017 – Mar 2022",
+        "responsibilities": [
+          "Managed photography projects from concept to final delivery.",
+          "Performed professional image editing, retouching, and color grading.",
+          "Collaborated with clients on portraits, events, and commercial projects.",
+          "Maintained organized digital archives and asset management."
+        ]
+      },
+      {
+        "title": "Oracle Database Administrator / Data Analyst",
+        "organization": "ONAT",
+        "location": "Holguín, Cuba",
+        "period": "2011 – 2016",
+        "responsibilities": [
+          "Managed Oracle databases and SQL systems.",
+          "Organized and analyzed institutional data for reporting and needs.",
+          "Maintained data integrity, structured storage, and system reliability.",
+          "Supported internal teams with technical troubleshooting."
+        ]
+      }
+    ],
+
+    "awards": [
+      "Dean’s List – Distinction for Scholastic Achievement, 2025",
+      "Phi Theta Kappa Honor Society – Lifetime Member",
+      "Recipient of Jubilee Scholarship"
+    ]
   }
-  
+]
+  }
+
+
   
