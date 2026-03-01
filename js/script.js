@@ -280,6 +280,53 @@ fetch("./data/projects.json")
     });
   });
 
+  //just tryinnggggg something-PROJECT CAROUSEL================
+//   const topTrack = document.getElementById("film-track-top");
+// const bottomTrack = document.getElementById("film-track-bottom");
+
+// fetch("./data/projects.json")
+//   .then(res => res.json())
+//   .then(data => {
+//     const projects = data.projects;
+
+//     function createFilmCard(project) {
+//       const card = document.createElement("div");
+//       card.classList.add("film-card");
+//       card.dataset.id = project.id;
+
+//       const img = document.createElement("img");
+//       img.src = project.images[0] || "images/placeholder.png";
+//       img.alt = project.title;
+
+//       const overlay = document.createElement("div");
+//       overlay.classList.add("film-overlay");
+//       overlay.textContent = project.title;
+
+//       card.appendChild(img);
+//       card.appendChild(overlay);
+
+//       card.addEventListener("click", () => {
+//         sessionStorage.setItem("selectedProject", project.id);
+//         window.location.href = "p_descript.html";
+//       });
+
+//       return card;
+//     }
+//     function fillInfinite(track, list, reverse = false) {
+//       const items = reverse ? list.slice().reverse() : list;
+    
+//       // mínimo 3 pantallas para que jamás se vea hueco
+//       const minWidth = window.innerWidth * 4;
+    
+//       while (track.scrollWidth < minWidth) {
+//         items.forEach(p => track.appendChild(createFilmCard(p)));
+//       }
+//     }
+    
+//     fillInfinite(topTrack, projects);
+//     fillInfinite(bottomTrack, projects, true);
+//   });
+
 
 
 
@@ -289,27 +336,27 @@ fetch("./data/projects.json")
    HELPERS
 =============================== */
 
-function normalize(path) {
-  return path.replace(/\/$/, '');
-}
-function fileNameToLabel(path) {
-  let file = path.split('/').pop();
+// function normalize(path) {
+//   return path.replace(/\/$/, '');
+// }
+// function fileNameToLabel(path) {
+//   let file = path.split('/').pop();
 
-  if (!file || file === '') {
-    file = 'index.html';
-  }
-  if (file === 'index.html') {
-    return 'Home';
-  } 
-  if (file === 'p_descript.html') {
-    return 'details';
-  }
-  return file
-    .replace('.html', '')
-    .replace(/[-_]/g, ' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/\b\w/g, c => c);
-}
+//   if (!file || file === '') {
+//     file = 'index.html';
+//   }
+//   if (file === 'index.html') {
+//     return 'Home';
+//   } 
+//   if (file === 'p_descript.html') {
+//     return 'details';
+//   }
+//   return file
+//     .replace('.html', '')
+//     .replace(/[-_]/g, ' ')
+//     .replace(/([a-z])([A-Z])/g, '$1 $2')
+//     .replace(/\b\w/g, c => c);
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -323,29 +370,33 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.appendChild(tile);
     }    setTimeout(() => {      loader.remove();    }, 900); // duración total < 1s
   }});
-//========================typewriter effect
-const text2 = "Let’s connect!";
-const h32 = document.getElementById("typewriter2");
 
-let index = 0;
+
+//========================typewriter effect
+const texts = [
+  "Let’s connect!",
+  "Let’s Build Something Great!"
+];
+
+const element = document.getElementById("typewriter");
+
+
+let textIndex = 0;
+let charIndex = 0;
 let isDeleting = false;
 
-const speed = 120;
-const deleteSpeed = 120;
-const pause = 1000;
-
-// cursor
-const cursor = document.createElement("span");
-cursor.classList.add("cursor");
-h32.parentElement.appendChild(cursor);
+const speed = 100;
+const deleteSpeed = 60;
+const pause = 1200;
 
 function typeWriter() {
+  const currentText = texts[textIndex];
 
   if (!isDeleting) {
     // ESCRIBIENDO
-    if (index < text2.length) {
-      h32.textContent += text2.charAt(index);
-      index++;
+    if (charIndex < currentText.length) {
+      element.textContent += currentText.charAt(charIndex);
+      charIndex++;
       setTimeout(typeWriter, speed);
     } else {
       setTimeout(() => {
@@ -354,19 +405,21 @@ function typeWriter() {
       }, pause);
     }
   } else {
-    // BORRANDO AL REVÉS
-    if (index > 0) {
-      index--;
-      h32.textContent = text2.substring(0, index);
+    // BORRANDO
+    if (charIndex > 0) {
+      charIndex--;
+      element.textContent = currentText.substring(0, charIndex);
       setTimeout(typeWriter, deleteSpeed);
     } else {
       isDeleting = false;
-      setTimeout(typeWriter, 500);
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(typeWriter, 300);
     }
   }
 }
 
 typeWriter();
+
 //==============================boton
 
 

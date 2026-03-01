@@ -10,15 +10,7 @@
         "live": "https://tuportfolio.vercel.app"}],
 
     "projects": [
-        {
-            "id": "portfolio",
-            "title": "Personal Portfolio",
-            "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
-            "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
-            "images": ["images/projects/personal/gatang.jpg"],
-            "github": "https://github.com/tuusuario/portfolio",
-            "live": "https://tuportfolio.vercel.app"
-          },
+     
           
           {
             "id": "jgphoto",
@@ -86,40 +78,52 @@
 
 "skills": [
   {
+    "id": "graphic",
+    "title": "Graphic Design",
+    "overlay": "Graphic",
+    "points": [
+      "Brand identity development",
+      "Editorial & layout design",
+      "Typography systems",
+      "Visual composition & hierarchy"
+    ],
+    "tools": ["Illustrator", "Photoshop", "InDesign"]
+  },
+  {
     "id": "html",
     "title": "HTML",
     "overlay": "HTML",
     "points": [
-      "Semantic structure",
-      "Accessibility basics",
-      "SEO-friendly markup",
-      "Clean, maintainable code"
+      "Structured content organization",
+      "Accessible page foundations",
+      "Content hierarchy & clarity",
+      "Clean and scalable markup"
     ],
-    "tools": ["HTML5"]
+    "tools": ["HTML"]
   },
   {
     "id": "css",
     "title": "CSS",
     "overlay": "CSS",
     "points": [
-      "Flexbox & Grid",
-      "Responsive layouts",
-      "Animations & transitions",
-      "Modern UI patterns"
+      "Layout systems (Flexbox & Grid)",
+      "Responsive visual design",
+      "Micro-interactions & motion",
+      "Consistent design systems"
     ],
-    "tools": ["CSS3", "Bootstrap"]
+    "tools": ["CSS", "Bootstrap"]
   },
   {
     "id": "js",
     "title": "JavaScript",
     "overlay": "JS",
     "points": [
-      "DOM manipulation",
-      "Event handling",
-      "UI interactions",
-      "Basic logic & state"
-    ],
-    "tools": ["Vanilla JS"]
+  "Creating interactive website elements",
+  "Enhancing user experience through motion",
+  "Building dynamic page behaviors",
+  "Improving usability with subtle interactions"
+],
+    "tools": ["Visual Studio Code"]
   },
   {
     "id": "uiux",
@@ -127,13 +131,13 @@
     "overlay": "UI/UX",
     "points": [
       "Wireframing & prototyping",
-      "Visual hierarchy",
-      "Color & typography",
-      "User-centered design"
+      "Visual storytelling",
+      "Typography & color strategy",
+      "User-centered design thinking"
     ],
     "tools": ["Figma", "Adobe XD"]
   }
-] ,
+],
 
 
 

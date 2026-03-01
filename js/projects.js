@@ -94,7 +94,7 @@ fetch('./data/projects.json')
             <p>
                 ${aboutme.personal.phone}<br>
                 ${aboutme.personal.email}<br>
-                <a href="${aboutme.personal.website}" target="_blank">${aboutme.personal.website.replace(/^https?:\/\//,'')}</a>
+                <a href="${aboutme.personal.website}" class="nav-link" target="_blank">${aboutme.personal.website.replace(/^https?:\/\//,'')}</a>
             </p>
         `;
     

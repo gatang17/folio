@@ -1,8 +1,65 @@
-
+<!-- 
 <footer class="">
                            
       <a class="nav-link" href="https://figma.com/@gatang17"  target="_blank" ><i class="fa-brands fa-figma"></i></a>
       <a class="nav-link" href="https://github.com/gatang17"  target="_blank" ><i class="fa-brands fa-github-alt"></i></a>
       <a class="nav-link" href="https://www.linkedin.com/in/grete88/" target="_blank" ><i class="fa-brands fa-linkedin-in"></i></a>
  
-  </footer>
+  </footer> -->
+<footer>
+
+    <div class="footer-links">
+        <a class="nav-link m_text " href="index.html#intro">home</a>
+        <a class="nav-link m_text " href="index.html#projects">projects</a>
+        <a class="nav-link m_text " href="index.html#skills">skills</a>
+        
+    </div>
+
+    <div class="footer-social-text">
+        <a class="nav-link m_text " href="https://figma.com/@gatang17" target="_blank">Figma</a>
+        <a class="nav-link m_text " href="https://github.com/gatang17" target="_blank">GitHub</a>
+        <a class="nav-link m_text " href="https://www.linkedin.com/in/grete88/" target="_blank">LinkedIn</a>
+        <a class="nav-link m_text " href="resume.html">resume</a>
+       </div>
+
+       <div class="logo">  <a href="index.html#intro">
+         <img src="images/logo.png"></a>
+        </div>
+    
+    <div class="footer-icons">
+        <a href="https://figma.com/@gatang17" class="nav-link m_text"  target="_blank">
+            <i class="fa-brands fa-figma"></i>
+        </a>
+        <a href="https://github.com/gatang17" class="nav-link m_text"  target="_blank">
+            <i class="fa-brands fa-github-alt"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/grete88/" class="nav-link m_text"  target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        
+    </div>
+    
+
+</footer>
+
+<style>
+footer {background:rgba(0, 0, 0, 0.764); padding: 3rem 8%;   /* más aire lateral */ color: #a9a483; }
+.footer-social-text a{line-height: 0.5rem; }
+.logo img{   max-height: 300px;    filter: brightness(0) invert(1); }
+
+.footer-links a{ font-size: 2rem;}
+/* Mobile */
+.footer-links,.footer-social-text,.logo {display: none;}
+
+.footer-icons { display: flex; justify-content: center; gap: 2.5rem; font-size: 1.8rem; margin: 0 auto; }
+
+/* Tablet y Desktop */
+@media (min-width: 768px) {
+    footer {display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: start;  }
+    .footer-links {display: flex; flex-direction: column;gap: 1rem;}
+    .footer-social-text {display: flex; flex-direction: column; align-items: center; /* redes separadas a la derecha */ }
+    .logo  {display: flex; flex-direction: column; align-items: flex-end; /* redes separadas a la derecha */ }
+      .footer-icons {  display: none;  }
+}
+
+</style>
