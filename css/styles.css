@@ -27,13 +27,13 @@ body{ font-family: "Google Sans Code",monospace; min-height: 100vh;  width: 100v
   .title{font-size: clamp(2rem,15vw,10rem); text-transform: uppercase;}
 /*****footer*/
 
-.chat {  display: flex;  flex-direction: column;  flex: 1;  overflow: hidden;  white-space: nowrap;
+.chat {  display: flex;  flex-direction: column;  flex: 1;  overflow: hidden;  white-space: nowrap; 
   background-color: rgba(43, 41, 41, 0.1);  color: #2f2f2f;
   justify-content: center;   /* centro vertical */
   align-items: center;       /* centro horizontal */
   text-align: center;        /* centro texto */
   padding: 6rem 0;  min-height: 50vh;  margin-top: 2rem;}
-.chat h3 {  font-size: 1.2rem;  font-weight: 500;  letter-spacing: 1px;  margin-top: 1rem; }
+.chat h3 {  font-size: 1.2rem;  font-weight: 500;  letter-spacing: 1px;  margin-top: 1rem; text-wrap: pretty;}
 .chat h2 {  font-size: 2rem;   /* no más de 32px */  font-weight: 600;color: #343224; }
 #typewriter {display: inline-block;transform: translateX(0);text-transform: uppercase; color: #a8a177; }
 h2 .cursor { display: inline-block; width: 5px;  background: rgba(126, 126, 126, 0.817);margin-left:2px; animation: blink 0.7s step-end infinite;
