@@ -55,15 +55,15 @@ vertical-align: bottom;height: 2rem;}
  
   /*--------------SECTION INTRO*/
  
-  #intro { min-height: 90vh;  display: grid;  overflow: hidden; place-content: center;}
-  #hero{position: relative; width: auto; display: flex; align-items: center; justify-content: center;}
+  #intro { min-height: 90vh;  display: grid;  overflow: hidden; }
+  #hero{position: relative; width: 100%; display: flex; align-items: center; justify-content: center; }
 
-  .con_hero{ display: grid; gap: 50px;  grid-template-columns: 50% 10%; grid-auto-rows:min-content;justify-items: center; text-align: center; padding: auto; }
-  .con_hero_sub{display: grid; justify-items: center; text-align: right;}
+  .con_hero{ display: grid; gap: 50px;  grid-template-columns: 50% 10%; grid-auto-rows:min-content;justify-items: center; text-align: center; padding: 0; }
+  .con_hero_sub{display: grid; justify-items: l; text-align: right;}
    #id_img_hero{max-height:700px;}
   .hero_text{max-height:800px;  z-index: 1; font-size: clamp(2.5rem, 5vw, 15rem); font-weight: 900; text-transform: uppercase; text-align: left;}  
-  .hero_btn{padding: 1rem;  border-radius: 10px; z-index: 1; text-shadow: 1px 1px 0px #d1d0d0;font-size: 1.3rem; }
-  #menu_dtk { flex: 0 1 auto; }
+  .hero_btn{padding: 1rem;   z-index: 1; font-size: 1.3rem; color: #ffffff}
+  #menu_dtk { flex: 0 1 auto; color: #ffffff; }
  
   @keyframes blink {50% { background: transparent; }}
 
@@ -73,11 +73,11 @@ vertical-align: bottom;height: 2rem;}
 
   /*H===========================================================MENU*/
 
-  .div_menu_home {height: 100vh; display: grid; grid-template-columns: 1fr;justify-items: center; text-align: right; min-width: 300px; padding-right: 1rem; border-right: 2px solid rgba(0, 0, 0, 0.817);}
+  .div_menu_home {height: 100vh; display: grid; grid-template-columns: 1fr;justify-items: center; text-align: right; min-width: 300px; padding-right: 1rem; border-right: 2px solid rgba(255, 255, 255, 0.817);}
   .div_menu_home .m_text,i{font-size: 1.65rem; font-weight: 100;}
 
   #logo_container {  width: 100%;  display: flex;   justify-content: center; margin-bottom: 2rem;}
-  #img_logoV { max-width: 150px;  width: auto; height: auto; object-fit: contain;  align-self: center; /* por si flex lo quiere estirar */}
+  #img_logoV { max-width: 150px;  width: auto; height: auto; object-fit: contain;  align-self: center; /* por si flex lo quiere estirar */ filter: brightness(10);}
 
   .nav-link{margin-bottom: 1.5rem;}
   .m_text{ display: inline-block; font-weight: 700;text-transform: uppercase; text-decoration: none; transition: transform 0.3s ease, color 0.3s ease; }
@@ -174,6 +174,7 @@ vertical-align: bottom;height: 2rem;}
      }
 
 @media (max-width: 875px) { 
+  #intro{ background-size:cover; background-position: center!important; }
 .content { scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */      }
 /*****index*/
 #hero{ height: 90vw; width: 100vw; background-position: center;}    
@@ -220,10 +221,10 @@ vertical-align: bottom;height: 2rem;}
 
 
 .mosaic_btn {   
-  position: relative;   overflow: hidden;border: none;  text-transform: uppercase;    font-weight: 700;     transition: color 0.5s;     z-index: 2;
+  position: relative;   overflow: hidden; border: none;  text-transform: uppercase;    font-weight: 700;     transition: color 0.5s;     z-index: 2;
 -webkit-appearance: none; /* eliminar estilos nativos de botón en Safari/Chrome */     -moz-appearance: none;    /* eliminar estilos nativos de botón en Firefox */     appearance: none;
 }
-.mosaic_btn .line {     position: absolute;     width: 2px;     height: 100%;     /* SIEMPRE blanco */
+.mosaic_btn .line {     position: absolute;     width: 2px;     height: 50px;   /* SIEMPRE blanco */
 transform: scaleY(1);     transition: transform 0.5s linear, top 1s linear, bottom 1s linear;     z-index: 1;   }
 .mosaic_btn .line.top {     top: 0;     transform-origin: bottom;   }
 .mosaic_btn .line.bottom {     top: auto;     bottom: 0;     transform-origin: top;   }
