@@ -7,6 +7,9 @@
  
   </footer> -->
 <footer>
+    <div class="logo">  <a href="index.html#intro">
+        <img src="images/logo.png"></a>
+       </div>
 
     <div class="footer-links">
         <a class="nav-link m_text " href="index.html#intro">home</a>
@@ -22,9 +25,7 @@
         <a class="nav-link m_text " href="resume.html">resume</a>
        </div>
 
-       <div class="logo">  <a href="index.html#intro">
-         <img src="images/logo.png"></a>
-        </div>
+       
     
     <div class="footer-icons">
         <a href="https://figma.com/@gatang17" class="nav-link m_text"  target="_blank">
@@ -44,10 +45,10 @@
 
 <style>
 footer {background:rgba(0, 0, 0, 0.764); padding: 3rem 8%;   /* más aire lateral */ color: #a9a483; }
-.footer-social-text a{line-height: 0.5rem; }
+.footer-social-text a,.footer-links a{line-height: 0.5rem; }
 .logo img{   max-height: 300px;    filter: brightness(0) invert(1); }
 
-.footer-links a{ font-size: 2rem;}
+
 /* Mobile */
 .footer-links,.footer-social-text,.logo {display: none;}
 
@@ -56,10 +57,10 @@ footer {background:rgba(0, 0, 0, 0.764); padding: 3rem 8%;   /* más aire latera
 /* Tablet y Desktop */
 @media (min-width: 768px) {
     footer {display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: start;  }
-    .footer-links {display: flex; flex-direction: column;gap: 1rem;}
+    .footer-links {display: flex; flex-direction: column;gap: 1rem; align-items: flex-end;}
     .footer-social-text {display: flex; flex-direction: column; align-items: center; /* redes separadas a la derecha */ }
-    .logo  {display: flex; flex-direction: column; align-items: flex-end; /* redes separadas a la derecha */ }
-      .footer-icons {  display: none;  }
+    .logo  {display: flex; flex-direction: column; align-items: flex-start; /* redes separadas a la derecha */ }
+    .footer-icons {  display: none;  }
 }
 
 </style>

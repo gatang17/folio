@@ -89,6 +89,9 @@ vertical-align: bottom;height: 2rem;}
   /* .p_hover {position: absolute;    top: 50%;    left: 50%;transform: translate(-50%, -50%);    padding: 1px 1px;    border-radius: 3px;
     font-weight: bold;    visibility: hidden;    opacity: 0;transition: opacity 0.3s ease;    pointer-events: none;
     z-index: 1; font-size: 2rem;  }   */
+  #p_container { max-width: 1500px;  width: auto; margin: 0 auto;   padding: 3rem 2rem; /* background: #e5e5e5; /* gris */ display: flex;  justify-content: center;  color:#a9a483;}
+  .project-card {background:rgba(0, 0, 0, 0.764);padding: 1.5rem;  max-width: 900px; width: auto; margin: 0 auto;  box-shadow: 0 8px 18px rgba(0,0,0,0.08); transition: transform 0.2s ease; display: grid; gap: 1rem; align-content: center;justify-items: center;text-transform: uppercase;}
+  .project-card:hover { transform: translateY(-4px);}
   .card-img-top{height: 20px;}
   .cont_descript:hover .p_hover{ /*esto hace q se haga visible*/    visibility: visible;    opacity: 1;  }
   .image-wrapper { position: relative;  overflow: hidden;}
@@ -177,18 +180,21 @@ textarea {  min-height: 140px;  resize: vertical;}
 @media (min-width: 875px)  and (max-width: 1024px) {
   /****hero*/
   .con_hero{ display: flex; flex-direction: column; }
-  
+  #projects-grid {  width: 100%;  display: grid;  grid-template-columns: repeat(1, 1fr);  gap: 2rem!important;}  
 }
-@media (min-width: 876px) { .skills-grid {flex-direction: row; }  
-      .skill.active {flex: 7;} 
-      .skills-grid .skill.active .arrow { position: absolute;  right: 10px; top: 50%;  }
+
+@media (min-width: 876px) { 
+  #projects-grid {  width: 100%;  display: grid; grid-template-columns: repeat(2, 1fr);  gap: 2rem;  }
+
+  .skills-grid {flex-direction: row; }  
+  .skill.active {flex: 7;} 
+  .skills-grid .skill.active .arrow { position: absolute;  right: 10px; top: 50%;  }
     
      }
 
 @media (max-width: 875px) { 
-  #intro{ background-size:cover; background-position: center!important; }
-    .con_hero{ height: 60vh;
-    align-content: end}
+#intro{ background-size:cover; background-position: center!important; }
+.con_hero{ height: 60vh;   align-content: end}
 .content { scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */      }
 /*****index*/
 #hero{ height: 90%; width: 100vw; background-position: center; justify-content: space-around;}    
@@ -202,6 +208,7 @@ textarea {  min-height: 140px;  resize: vertical;}
 /*****resume*/    
 #desc_col { width: 100%;/* ocupa toda la fila */  margin-top: 1rem;}  
 /*****project*/
+
 #projects-grid {  width: 100%;  display: grid;  grid-template-columns: repeat(1, 1fr);  gap: 2rem!important;}
 /* #p_container{min-width: 100%;   margin: 0 auto; padding: 0;} */
 
