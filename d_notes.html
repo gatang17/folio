@@ -57,30 +57,10 @@
 </div>
 </main>
   <style>
-    .dnotes{
-        padding: 2rem;
-    }
-    p{  line-height:2rem;  }
-  
-  #sec_2{
-    justify-items: center;
-    align-items: center;
-   
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  
-  }
-  
-  #sec_diag{ max-width: clamp(50px, 100%, 750px);height: auto; 
-    mix-blend-mode:darken;
-}
-  
-  @media (max-width: 768px){
-  #sec_2{
-    grid-template-columns: 1fr; /* se apilan en móvil */
-  }}
-  
+  .dnotes{  padding: 2rem; }  
+  #sec_2{  justify-items: center;    display: grid;    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    gap: 2rem;  }  
+  #sec_diag{ max-width: clamp(50px, 100%, 750px);height: auto;     mix-blend-mode:darken;}
+  @media (max-width: 768px){ #sec_2{ grid-template-columns: 1fr; /* se apilan en móvil */ }}  
   </style>
 
   <!-- Bootstrap 5 JS Bundle -->
