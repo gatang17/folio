@@ -29,8 +29,8 @@ body{  font-family: "Sen", sans-serif; min-height: 100vh;  width: 100vw; display
   align-items: center;       /* centro horizontal */
   text-align: center;        /* centro texto */
   padding: 6rem 0;  min-height: 50vh;  margin-top: 2rem;}
-.chat h3,p {  font-weight: 500;  letter-spacing: 1px;  margin-top: 1rem; text-wrap: balance;}
-.chat h2,p { /* no más de 32px */  font-weight: 600;color: #343224; text-wrap: pretty;}
+  .chat h3, .chat p {  font-weight: 500;  letter-spacing: 1px;  margin-top: 1rem; text-wrap: balance;}
+  .chat h2 ,.chat p p { /* no más de 32px */  font-weight: 600;color: #343224; text-wrap: pretty;}
 #typewriter {display: inline-block;transform: translateX(0);text-transform: uppercase; color: #a8a177; }
 h2 .cursor { display: inline-block; width: 5px;  background: rgba(126, 126, 126, 0.817);margin-left:2px; animation: blink 0.7s step-end infinite;
 vertical-align: bottom;height: 2rem;}  
@@ -86,16 +86,16 @@ vertical-align: bottom;height: 2rem;}
   /*================================================= PROJECTS*/
   #projects{min-height: 100vh; }   
   .cont_descript {    position: relative;    display: inline-block;    text-align: center;  }  
-  .p_hover {position: absolute;    top: 50%;    left: 50%;transform: translate(-50%, -50%);    padding: 1px 1px;    border-radius: 3px;
-    font-weight: bold;    visibility: hidden;    opacity: 0;transition: opacity 0.3s ease;    pointer-events: none; /* evita que interrumpa el click */
-    z-index: 1; /*este hace q se ponga delante de todo*/font-size: 2rem;  }  
+  /* .p_hover {position: absolute;    top: 50%;    left: 50%;transform: translate(-50%, -50%);    padding: 1px 1px;    border-radius: 3px;
+    font-weight: bold;    visibility: hidden;    opacity: 0;transition: opacity 0.3s ease;    pointer-events: none;
+    z-index: 1; font-size: 2rem;  }   */
   .card-img-top{height: 20px;}
   .cont_descript:hover .p_hover{ /*esto hace q se haga visible*/    visibility: visible;    opacity: 1;  }
   .image-wrapper { position: relative;  overflow: hidden;}
   .image-wrapper img {width: 100%; display: block;filter: grayscale(100%);  transition: filter 0.4s ease;}
-  .overlay { position: absolute;inset: 0;  background: rgba(0, 0, 0, 0.45);   color: white;   padding: 1rem;   opacity: 0; transition: opacity 0.25s ease;    display: flex;
-      align-items: flex-end;  /* texto abajo */  font-size: 0.85rem;   line-height: 1.4; }
-  .image-wrapper:hover .overlay{opacity: 1}
+  /* .overlay { position: absolute;inset: 0;  background: rgba(0, 0, 0, 0.45);   color: white;   padding: 1rem;   opacity: 0; transition: opacity 0.25s ease;    display: flex;
+      align-items: flex-end;   font-size: 0.85rem;   line-height: 1.4; }
+  .image-wrapper:hover .overlay{opacity: 1} */
   .image-wrapper:hover img{ filter: grayscale(0%); transition: filter 0.4s ease; }
   /* #p_container {  display: grid;  margin: 0 auto;  padding: 0 2rem;  justify-items: center;}
    #projects-grid { min-width: 100%; display: grid;  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));    gap: 2rem;  }  */
@@ -142,9 +142,25 @@ vertical-align: bottom;height: 2rem;}
   text-align: center; justify-content: right;}
   .skills-grid .skill { position: relative;  }
 
-   /*=================================================contact en index*/
+   /*=================================================CONTACT */
   
   #contact { display: flex; flex-direction: column; height: fit-content; }
+
+.contForm {  display: flex; justify-content: center; }
+/* CARD DEL FORM */
+.contForm form { width: 70%;  max-width: 900px; background-color: rgba(43, 41, 41, 0.1);  padding: 3rem;  border-radius: 0px;  box-shadow: 0 10px 30px rgba(0,0,0,0.08);  display: flex; flex-direction: column; gap: 1.5rem;  height: fit-content;}
+.field-group.full {  grid-template-columns: 1fr; /* ocupa todo */}
+textarea {  width: 100%;  border: none;  border-bottom: 2px solid #d0d0d0;  background: transparent;  padding: 0.8rem 0;}
+/* FILAS LABEL + INPUT (GRID PERFECTO PARA FORMS) */
+.field-group {  display: grid;  grid-template-columns: 120px 1fr;  align-items: start; }
+/* LABEL */
+label {  text-transform: uppercase;  font-size: 0.8rem;  letter-spacing: 1px;  color: #666;}
+/* INPUTS */
+input,textarea {  width: 100%;  padding: 0.7rem 0;  background: transparent;  border: none;  border-bottom: 2px solid #d0d0d0;  font-size: 1rem;  transition: all 0.25s ease;}
+/* FOCUS BONITO */
+input:focus,textarea:focus {  outline: none;  border-bottom-color: #000;  border-bottom-width: 3px;}
+/* TEXTAREA */
+textarea {  min-height: 140px;  resize: vertical;}
   /* .contForm {    display: flex;    justify-content: center;    width: 100%; padding:0 2rem 0 2rem; }
   .contForm form {    width: 100%;    max-width: 1000px;  }
  

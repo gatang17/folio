@@ -38,7 +38,7 @@
     ,
 {
   "id": "handydmd",
-  "title": "HandymanDMD",
+  "title": "Handyman DMD",
   "description": "Development of a simple and user-friendly website for HandymanDMD...",
   "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
   "images": [

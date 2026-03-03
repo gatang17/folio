@@ -80,7 +80,7 @@
 
     </style>
 
-<div class="chat"> <h2>  Hi, Im Gretel, welcome to my portfolio </h2>
+<div class="chat"> <h2>  Hi, Im Gretel, welcome to my portfolio. </h2>
   <p> I’m part of the Communication Art Technology (CAT) program at JCTCS, where I’ve fallen in love with structured layouts and thoughtful design. I enjoy creating web and visual identities that feel clean, intentional, and a little bit bold.</p>
     
 </div>
@@ -89,8 +89,8 @@
     <!--============================================PROJECTS SECTION-->
 
     <section id="projects" class="content ">
-        <div style="padding: 2rem;">
-            <div style="border-bottom: solid; margin-bottom: 4rem;padding: 2rem;">
+        <div style="padding: 0 4rem 0 4rem;">
+            <div style="border-bottom: solid; margin-bottom: 2rem;padding: 2rem;">
                 <h2 class="title">Projects</h2>
             </div>
         
@@ -130,17 +130,22 @@
  /* background: #e5e5e5; /* gris */ 
   display: flex;
   justify-content: center;
-  color:#a9a483 ;
+  color:#a9a483; ;
 }
 
 .project-card {
- background:rgba(0, 0, 0, 0.764);
+  background:rgba(0, 0, 0, 0.764);
   padding: 1.5rem;
   max-width: 900px;   /* ancho de cada tarjeta */
   width: auto;
   margin: 0 auto;     /* centra dentro de la celda */
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   transition: transform 0.2s ease;
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  justify-items: center;
+  text-transform: uppercase;
 }
 
 .project-card:hover {
@@ -233,14 +238,7 @@
       
   </section>
  
-  <div class="chat">
-    <h2>Have a project in mind?</h2>
-    <h2>
-        <span id="typewriter"></span>
-        <span class="cursor"></span>
-      </h2>
-      
-</div>
+
 
     <!--============================================CONTACT SECTION-->
     <section id="contact" class="content">
@@ -280,39 +278,15 @@
             </form>
         </div>                
     </section>
-   <style>
+    <div class="chat">
+      <h2>Have a project in mind?</h2>
+      <h2>
+          <span id="typewriter"></span>
+          <span class="cursor"></span>
+        </h2>
+        
+  </div>
 
-.contForm {
-  display: flex; justify-content: center; 
-}
-
-/* CARD DEL FORM */
-.contForm form { width: 70%;  max-width: 900px; background-color: rgba(43, 41, 41, 0.1);
-  padding: 3rem;  border-radius: 0px;  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  display: flex; flex-direction: column; gap: 1.5rem;  height: fit-content;
-}
-.field-group.full {  grid-template-columns: 1fr; /* ocupa todo */}
-
-textarea {  width: 100%;  border: none;  border-bottom: 2px solid #d0d0d0;  background: transparent;  padding: 0.8rem 0;}
-
-/* FILAS LABEL + INPUT (GRID PERFECTO PARA FORMS) */
-.field-group {  display: grid;  grid-template-columns: 120px 1fr;  align-items: start; /* ← CLAVE */}
-
-
-/* LABEL */
-label {  text-transform: uppercase;  font-size: 0.8rem;  letter-spacing: 1px;  color: #666;}
-
-
-/* INPUTS */
-input,textarea {  width: 100%;  padding: 0.7rem 0;  background: transparent;  border: none;  border-bottom: 2px solid #d0d0d0;  font-size: 1rem;  transition: all 0.25s ease;}
-
-
-/* FOCUS BONITO */
-input:focus,textarea:focus {  outline: none;  border-bottom-color: #000;  border-bottom-width: 3px;}
-
-/* TEXTAREA */
-textarea {  min-height: 140px;  resize: vertical;}
-   </style>
 
     <div id="footer-container" class="mt-2"></div>
 
