@@ -1,0 +1,8 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.tmp
+*.log
+# Archivos de respaldo o temporales
+_*

@@ -265,15 +265,15 @@ fetch("./data/projects.json")
       img.src = project.images[0] || "images/placeholder.png";
       img.alt = project.title;
 
-      const overlay = document.createElement("div");
+     /* const overlay = document.createElement("div");
       overlay.classList.add("overlay");
-      overlay.textContent = truncateText(project.description, 60);
+      overlay.textContent = truncateText(project.description, 60);*/
 
       const title = document.createElement("p");
       title.textContent = project.title;
 
       imageWrapper.appendChild(img);
-      imageWrapper.appendChild(overlay);
+     /* imageWrapper.appendChild(overlay);*/
       card.appendChild(imageWrapper);
       card.appendChild(title);
       grid.appendChild(card);
