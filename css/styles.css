@@ -60,6 +60,9 @@ vertical-align: bottom;height: 2rem;}
   .hero_text{max-height:800px;  z-index: 1; font-size: clamp(2.5rem, 5vw, 15rem); font-weight: 900; text-transform: uppercase; text-align: left;}  
   .hero_btn{padding: 1rem;   z-index: 1; font-size: 1.3rem; color: #ffffff}
   #menu_dtk { flex: 0 1 auto; color: #ffffff; }
+  .sec_menu22 {
+    padding-top: 5em;   display: flex;    /* flex-direction: column; */    padding: 35px;    text-align: right; gap: 3rem;}
+.sec_menu{ padding-top: 5em; display: flex; flex-direction: column; padding: 35px; text-align: right;} 
  
   @keyframes blink {50% { background: transparent; }}
 
@@ -68,6 +71,7 @@ vertical-align: bottom;height: 2rem;}
  
 
   /*H===========================================================MENU*/
+
 
   .div_menu_home {height: 100vh; display: grid; grid-template-columns: 1fr;justify-items: center; text-align: right; min-width: 300px; padding-right: 1rem; border-right: 2px solid rgba(255, 255, 255, 0.817);}
   .div_menu_home .m_text,i{font-size: 1.65rem; font-weight: 100;}
@@ -80,7 +84,7 @@ vertical-align: bottom;height: 2rem;}
   .m_text:hover{transform: skewY(-2deg) scaleY(1.1);letter-spacing: 2px; text-decoration: underline; }
     
   .m_off_text{ color: #abaa9f; }
-  .sec_menu, .sec_menu22{ padding-top: 5em; display: flex; flex-direction: column; padding: 35px; text-align: right;} 
+  
   .img_logoH{  width: 150px;  margin-bottom: 2rem; }  
 
   /*================================================= PROJECTS*/
