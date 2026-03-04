@@ -61,8 +61,8 @@ vertical-align: bottom;height: 2rem;}
   .hero_btn{padding: 1rem;   z-index: 1; font-size: 1.3rem; color: #ffffff}
   #menu_dtk { flex: 0 1 auto; color: #ffffff; }
   .sec_menu22 {
-    padding-top: 5em;   display: flex;    /* flex-direction: column; */    padding: 35px;    text-align: right; gap: 3rem;}
-.sec_menu{ padding-top: 5em; display: flex; flex-direction: column; padding: 35px; text-align: right;} 
+    padding-top: 5em;   display: flex;    /* flex-direction: column; */    padding: 35px; gap: 3rem;}
+.sec_menu{ padding-top: 5em; display: flex; flex-direction: column; padding: 35px; text-align: left;} 
  
   @keyframes blink {50% { background: transparent; }}
 
@@ -110,8 +110,8 @@ vertical-align: bottom;height: 2rem;}
 
  /*=================================================RESUME*/
 .desc_item { white-space: pre-line;}
-  #skills_section {  display: flex;  align-items: flex-start; gap: 2rem;  margin-top: 2rem;}
-  #titles_col { width: 25%;display: flex;flex-direction: column; justify-content: flex-start; gap: 5rem; padding-right: 2px;/* distribuye los títulos verticalmente */ }
+  #skills_section {  display: flex;  align-items: flex-start; gap: 2rem;  margin-top: 2rem;max-width: 1500px;}
+  #titles_col { width: 25%;display: flex;flex-direction: column; justify-content: flex-start; gap: 5rem; padding-right: 2px;height:stretch;/* distribuye los títulos verticalmente */ }
   .title_item {display: flex; align-items: baseline; cursor: pointer;font-weight: bold; color: gray; transition: color 0.2s;}
   .title_item.selected {color: rgba(0, 0, 0, 0.817); }
   .title_item i { margin-right: 0.5rem;font-size: 0.75rem; }
@@ -119,14 +119,14 @@ vertical-align: bottom;height: 2rem;}
   .desc_item i { margin-right: 0.5rem;   color: #555; }
   #aboutme {min-height: 100vh; }  
   .wrap{display: grid;  margin: 0 auto;  padding:2rem;  justify-items: left; align-items: center;}
-  #p_info{background:rgba(0, 0, 0, 0.764);  color: #a9a483; }
+  #p_info{background:rgba(0, 0, 0, 0.764);  color: #a9a483; max-width: 1500px;}
   #titles_col { flex: 0 0 200px;        /* ancho fijo para el menú */}
   #desc_col {flex: 1; /* toma el resto del espacio disponible */width: 900px; /* no permite que se expanda más */ overflow-y: auto;  /* scroll vertical si hay mucho contenido */}
   .desc_item p {  margin: 0;  /* quita margen del <p> */  line-height: 1.2;   /* ajusta altura de línea */}
   .desc_item small {  display: inline;    /* evita que small se comporte como bloque */  line-height: 1.2;  font-size: 0.9rem;  /* opcional: más pequeño */}
   
   /*=================================================SKILS*/
-  #skills{min-height: fit-content;  display: grid; align-content: center;}
+  #skills{min-height: fit-content;  display: grid; align-content: center;padding: 0 5rem 5rem; background-color: rgba(43, 41, 41, 0.1);}
   .skills-grid {  display: flex;    gap: 0.5rem;}
   /* Celdas */
   .skill { flex: 1; background:rgba(0, 0, 0, 0.764);  color: #a9a483;  cursor: pointer;  overflow: hidden;  position: relative;  transition: flex 0.5s ease; height: 30vh; }
@@ -228,7 +228,7 @@ textarea {  min-height: 140px;  resize: vertical;}
 /****email*/
 /* .field-group {flex-direction: column; align-items: stretch; }
 .field-group textarea,input { width: 100% } */
-/******cursor*/
+/******cursor*/Í
 #typewriter {font-size: 1.5rem; }
 
 }

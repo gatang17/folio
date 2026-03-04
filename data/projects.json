@@ -1,23 +1,33 @@
-{"d_notes": [
-  {  "id": "dnotes",
-  "title": "Personal Portfolio",
-  "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
-  "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
-  "images": ["images/diagram/diagram.png"],
-  "title2": "Visual Design & Implementation Flow",
-  "diag_descrip": "The diagram represents the workflow from the initial concept in Figma to the final deployment. Each block symbolizes a key step in the process. The larger Figma block highlights the importance of planning and visual design—while it may not take the most time, it is essential to solidify the idea before building. Subsequent steps progressively transform the concept into a structured, styled, interactive, and finally live website.",
-  "github": "https://github.com/tuusuario/portfolio",
-  "live": "https://tuportfolio.vercel.app"}],
+{
+  "d_notes": [
+    {
+      "id": "dnotes",
+      "title": "Personal Portfolio",
+      "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
+      "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
+      "images": ["images/diagram/diagram.png"],
+      "title2": "Visual Design & Implementation Flow",
+      "diag_descrip": "The diagram represents the workflow from the initial concept in Figma to the final deployment. Each block symbolizes a key step in the process. The larger Figma block highlights the importance of planning and visual design—while it may not take the most time, it is essential to solidify the idea before building. Subsequent steps progressively transform the concept into a structured, styled, interactive, and finally live website.",
+      "github": "https://github.com/tuusuario/portfolio",
+      "live": "https://tuportfolio.vercel.app"
+    }
+  ],
 
-"projects": [
-
-    
+  "projects": [
     {
       "id": "jgphoto",
       "title": "J&G Photography",
       "subtitle": "Development of a website for J&G Photography LLC, a studio specializing in product photography, fine art portraits, and children's portraits.",
       "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based background color, a glass-effect hamburger menu without affecting carousel images, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and Google Maps iframe for location. Hosted on Vercel for free deployment, shortened URL, and basic analytics.",
-      "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "FormSubmit", "Google Maps iframe", "Vercel"],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "FormSubmit",
+        "Google Maps iframe",
+        "Vercel"
+      ],
       "images": [
         "images/projects/jgphoto/jg_1.png",
         "images/projects/jgphoto/jg_2.png",
@@ -34,210 +44,209 @@
       ],
       "github": "https://gatang17.github.io",
       "live": "https://jgstudio.vercel.app"
+    },
+    {
+      "id": "handydmd",
+      "title": "Handyman DMD",
+      "description": "Development of a simple and user-friendly website for HandymanDMD...",
+      "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
+      "images": ["images/projects/handydmd/handyman.jpg"],
+      "github": "",
+
+      "live": "https://handydmd.com/"
+    },
+    {
+      "id": "aurora",
+      "title": "Aurora Wellness Center",
+      "description": "Aurora Wellness Center is a personal project built on the free version of WordPress. Due to the limitations of the free plan, no custom CSS or HTML could be used, so the site was structured entirely using covers, columns, rows, and careful margin adjustments. The page is designed as a single-page layout with anchor links to different sections, providing a training exercise in organizing content and design with minimal tools. This project focuses on a calm and professional aesthetic, with warm, editorial-style photography, soft colors (greens, beige, cream, golden accents), and clear visual hierarchy. The site is still in development, serving as a practical exercise in layout, structure, and usability within WordPress constraints.",
+      "technologies": [
+        "WordPress Free Version",
+        "Covers",
+        "Columns",
+        "Rows",
+        "Anchor Links"
+      ],
+      "images": [
+        "images/projects/aurora/a_1.png",
+        "images/projects/aurora/a_2.png",
+        "images/projects/aurora/a_3.png",
+        "images/projects/aurora/a_4.png"
+      ],
+      "live": "https://aurwelcen.wordpress.com",
+      "github": ""
+    },
+    {
+      "id": "jlprezc",
+      "title": "jlprezc portfolio website",
+      "description": "This is a personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases the photography of Jose Luis Perez Cespedes, featuring pixelated effects in the initial animations to reflect the digital pixels that are part of modern photography.",
+      "technologies": [
+        "WordPress Free Version",
+        "Covers",
+        "Columns",
+        "Rows",
+        "Anchor Links"
+      ],
+      "images": ["images/projects/jlprezc/jlperezc.png"],
+      "live": "https://jlperezc.vercel.app/",
+      "github": ""
     }
-    ,
-{
-  "id": "handydmd",
-  "title": "Handyman DMD",
-  "description": "Development of a simple and user-friendly website for HandymanDMD...",
-  "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
-  "images": [
-      "images/projects/handydmd/handyman.jpg"
   ],
- "github": "",
 
-  "live": "https://handydmd.com/"
-
-},
-{
-  "id": "aurora",
-  "title": "Aurora Wellness Center",
-  "description": "Aurora Wellness Center is a personal project built on the free version of WordPress. Due to the limitations of the free plan, no custom CSS or HTML could be used, so the site was structured entirely using covers, columns, rows, and careful margin adjustments. The page is designed as a single-page layout with anchor links to different sections, providing a training exercise in organizing content and design with minimal tools. This project focuses on a calm and professional aesthetic, with warm, editorial-style photography, soft colors (greens, beige, cream, golden accents), and clear visual hierarchy. The site is still in development, serving as a practical exercise in layout, structure, and usability within WordPress constraints.",
-  "technologies": ["WordPress Free Version", "Covers", "Columns", "Rows", "Anchor Links"],
-  "images": [
-       "images/projects/aurora/a_1.png",
-      "images/projects/aurora/a_2.png",
-      "images/projects/aurora/a_3.png",
-      "images/projects/aurora/a_4.png"
+  "skills": [
+    {
+      "id": "graphic",
+      "title": "Graphic Design",
+      "overlay": "Graphic",
+      "points": [
+        "Brand identity development",
+        "Editorial & layout design",
+        "Typography systems",
+        "Visual composition & hierarchy"
+      ],
+      "tools": ["Illustrator", "Photoshop", "InDesign"]
+    },
+    {
+      "id": "html",
+      "title": "HTML",
+      "overlay": "HTML",
+      "points": [
+        "Structured content organization",
+        "Accessible page foundations",
+        "Content hierarchy & clarity",
+        "Clean and scalable markup",
+        "Version control"
+      ],
+      "tools": ["HTML"]
+    },
+    {
+      "id": "css",
+      "title": "CSS",
+      "overlay": "CSS",
+      "points": [
+        "Layout systems (Flexbox & Grid)",
+        "Responsive visual design",
+        "Micro-interactions & motion",
+        "Consistent design systems"
+      ],
+      "tools": ["CSS", "Bootstrap"]
+    },
+    {
+      "id": "js",
+      "title": "JavaScript",
+      "overlay": "JS",
+      "points": [
+        "Creating interactive website elements",
+        "Enhancing user experience through motion",
+        "Building dynamic page behaviors",
+        "Improving usability with subtle interactions"
+      ],
+      "tools": ["Visual Studio Code"]
+    },
+    {
+      "id": "uiux",
+      "title": "UI/UX Design",
+      "overlay": "UI/UX",
+      "points": [
+        "Wireframing & prototyping",
+        "Visual storytelling",
+        "Typography & color strategy",
+        "User-centered design thinking"
+      ],
+      "tools": ["Figma", "Adobe XD"]
+    }
   ],
-  "live": "https://aurwelcen.wordpress.com",
-  "github": ""
-} ,
-{
-  "id": "jlprezc",
-  "title": "jlprezc portfolio website",
-  "description": "This is a personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases the photography of Jose Luis Perez Cespedes, featuring pixelated effects in the initial animations to reflect the digital pixels that are part of modern photography.",
-  "technologies": ["WordPress Free Version", "Covers", "Columns", "Rows", "Anchor Links"],
-  "images": [
-       "images/projects/jlprezc/jlperezc.png"
-  ],
-  "live": "https://jlperezc.vercel.app/",
-  "github": ""
-} 
-],
 
-"skills": [
-{
-"id": "graphic",
-"title": "Graphic Design",
-"overlay": "Graphic",
-"points": [
-"Brand identity development",
-"Editorial & layout design",
-"Typography systems",
-"Visual composition & hierarchy"
-],
-"tools": ["Illustrator", "Photoshop", "InDesign"]
-},
-{
-"id": "html",
-"title": "HTML",
-"overlay": "HTML",
-"points": [
-"Structured content organization",
-"Accessible page foundations",
-"Content hierarchy & clarity",
-"Clean and scalable markup",
-  "Version control"
-],
-"tools": ["HTML"]
-},
-{
-"id": "css",
-"title": "CSS",
-"overlay": "CSS",
-"points": [
-"Layout systems (Flexbox & Grid)",
-"Responsive visual design",
-"Micro-interactions & motion",
-"Consistent design systems"
-],
-"tools": ["CSS", "Bootstrap"]
-},
-{
-"id": "js",
-"title": "JavaScript",
-"overlay": "JS",
-"points": [
-"Creating interactive website elements",
-"Enhancing user experience through motion",
-"Building dynamic page behaviors",
-"Improving usability with subtle interactions"
-],
-"tools": ["Visual Studio Code"]
-},
-{
-"id": "uiux",
-"title": "UI/UX Design",
-"overlay": "UI/UX",
-"points": [
-"Wireframing & prototyping",
-"Visual storytelling",
-"Typography & color strategy",
-"User-centered design thinking"
-],
-"tools": ["Figma", "Adobe XD"]
-}
-],
+  "about": [
+    {
+      "pageTitle": "Resume",
 
+      "personal": {
+        "name": "GRETEL ALVAREZ TANG",
+        "phone": "(502) 345-8298",
+        "email": "gretelalvareztang@gmail.com",
+        "website": "https://gatang.vercel.app"
+      },
 
+      "education": [
+        {
+          "institution": "Jefferson Community & Technical College",
+          "location": "Louisville, KY",
+          "degree": "Associate of Applied Science\nCommunication Arts Technology: Advertising Design Option",
+          "graduation": "Dec 2026"
+        },
+        {
+          "institution": "Universidad de Holguín",
+          "location": "Holguín, Cuba",
+          "degree": "Bachelor’s Degree in Computer Engineering",
+          "graduation": "Jun 2011"
+        }
+      ],
 
-"about": [
-{
-"pageTitle": "Resume",
+      "skills & abilities": [
+        "Design: Adobe Creative Suite",
+        "Web: HTML, CSS, Basic JavaScript",
+        "Technical Foundation: SQL, Java",
+        "Technical and creative workflow support",
+        "Strong communication and teamwork",
+        "Bilingual: English and Spanish"
+      ],
+      "experience": [
+        {
+          "title": "Federal Work-Study Student Worker",
+          "organization": "Jefferson Community & Technical College Print Lab",
+          "location": "Louisville, KY",
+          "period": "Oct 2024 – Present",
+          "responsibilities": [
+            "Provide CAT Lab assistance by supporting students with photo printing, mounting, and Adobe Creative Suite programs.",
+            "Maintain the photography studio, printing lab, and classroom clean, organized, and secure.",
+            "Sell printing supplies and handle cash transactions accurately.",
+            "Troubleshoot basic software and printing equipment issues.",
+            "Ensure compliance with program rules and operational standards."
+          ]
+        },
+        {
+          "title": "Newborn Photographer & Sales Specialist",
+          "organization": "Bella Baby Photography",
+          "location": "Louisville, KY",
+          "period": "Aug 2023 – Aug 2024",
+          "responsibilities": [
+            "Conducted professional photo sessions and edited images.",
+            "Applied color correction and composition adjustments.",
+            "Guided clients through product selection and customized packages.",
+            "Managed client communication and order processing."
+          ]
+        },
+        {
+          "title": "Freelance Photographer & Editor Assistant",
+          "organization": "Estudio Esplendor",
+          "location": "Holguín, Cuba",
+          "period": "May 2017 – Mar 2022",
+          "responsibilities": [
+            "Managed photography projects from concept to final delivery.",
+            "Performed professional image editing, retouching, and color grading.",
+            "Collaborated with clients on portraits, events, and commercial projects.",
+            "Maintained organized digital archives and asset management."
+          ]
+        },
+        {
+          "title": "Oracle Database Administrator / Data Analyst",
+          "organization": "ONAT",
+          "location": "Holguín, Cuba",
+          "period": "2011 – 2016",
+          "responsibilities": [
+            "Managed Oracle databases and SQL systems.",
+            "Organized and analyzed institutional data for reporting and needs.",
+            "Maintained data integrity, structured storage, and system reliability.",
+            "Supported internal teams with technical troubleshooting."
+          ]
+        }
+      ],
 
-"personal": {
-"name": "GRETEL ALVAREZ TANG",
-"phone": "(502) 345-8298",
-"email": "gretelalvareztang@gmail.com",
-"website": "https://gatang.vercel.app"
-},
-
-"education": [
-{
-  "institution": "Jefferson Community & Technical College",
-  "location": "Louisville, KY",
-  "degree": "Associate of Applied Science\nCommunication Arts Technology: Advertising Design Option",
-  "graduation": "Dec 2026"
-},
-{
-  "institution": "Universidad de Holguín",
-  "location": "Holguín, Cuba",
-  "degree": "Bachelor’s Degree in Computer Engineering",
-  "graduation": "Jun 2011"
-}
-],
-
-  "skills & abilities": [
-  "Design: Adobe Creative Suite",
-  "Web: HTML, CSS, Basic JavaScript",
-  "Technical Foundation: SQL, Java",
-  "Technical and creative workflow support",
-  "Strong communication and teamwork",
-  "Bilingual: English and Spanish"
-]
-,
-
-"experience": [
-{
-  "title": "Federal Work-Study Student Worker",
-  "organization": "Jefferson Community & Technical College Print Lab",
-  "location": "Louisville, KY",
-  "period": "Oct 2024 – Present",
-  "responsibilities": [
-    "Provide CAT Lab assistance by supporting students with photo printing, mounting, and Adobe Creative Suite programs.",
-    "Maintain the photography studio, printing lab, and classroom clean, organized, and secure.",
-    "Sell printing supplies and handle cash transactions accurately.",
-    "Troubleshoot basic software and printing equipment issues.",
-    "Ensure compliance with program rules and operational standards."
-  ]
-},
-{
-  "title": "Newborn Photographer & Sales Specialist",
-  "organization": "Bella Baby Photography",
-  "location": "Louisville, KY",
-  "period": "Aug 2023 – Aug 2024",
-  "responsibilities": [
-    "Conducted professional photo sessions and edited images.",
-    "Applied color correction and composition adjustments.",
-    "Guided clients through product selection and customized packages.",
-    "Managed client communication and order processing."
-  ]
-},
-{
-  "title": "Freelance Photographer & Editor Assistant",
-  "organization": "Estudio Esplendor",
-  "location": "Holguín, Cuba",
-  "period": "May 2017 – Mar 2022",
-  "responsibilities": [
-    "Managed photography projects from concept to final delivery.",
-    "Performed professional image editing, retouching, and color grading.",
-    "Collaborated with clients on portraits, events, and commercial projects.",
-    "Maintained organized digital archives and asset management."
-  ]
-},
-{
-  "title": "Oracle Database Administrator / Data Analyst",
-  "organization": "ONAT",
-  "location": "Holguín, Cuba",
-  "period": "2011 – 2016",
-  "responsibilities": [
-    "Managed Oracle databases and SQL systems.",
-    "Organized and analyzed institutional data for reporting and needs.",
-    "Maintained data integrity, structured storage, and system reliability.",
-    "Supported internal teams with technical troubleshooting."
+      "awards": [
+        "Dean’s List – Distinction for Scholastic Achievement, 2025",
+        "Phi Theta Kappa Honor Society – Lifetime Member",
+        "Recipient of Jubilee Scholarship"
+      ]
+    }
   ]
 }
-],
-
-"awards": [
-"Dean’s List – Distinction for Scholastic Achievement, 2025",
-"Phi Theta Kappa Honor Society – Lifetime Member",
-"Recipient of Jubilee Scholarship"
-]
-}
-]
-}
-
-
-

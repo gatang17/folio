@@ -8,21 +8,6 @@
 
     <title>Gretel Alvarez Tang - Graphic Designer Portfolio</title>
     <meta name="google-site-verification" content="RTpMOP6rSgO3T47Cy-ySAzgArwTyP1rlOGrGDDT1LrA" />
-
-    <meta name="description"
-        content="Portfolio of Gretel Alvarez Tang, a professional graphic designer specializing in branding, print, and web design projects." />
-    <meta name="keywords"
-        content="graphic designer, branding, print design, web design, portfolio, Louisville Kentucky, logo design, photoshop, grey, figma, html, java" />
-    <meta name="author" content="Gretel Alvarez Tang" />
-
-    <!-- Open Graph para compartir en redes sociales -->
-    <meta property="og:title" content="Gretel Alvarez Tang - Graphic Designer Portfolio" />
-    <meta property="og:description"
-        content="Portfolio of Gretel Alvarez Tang, a professional graphic designer specializing in branding, print, and web design projects." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gatang17.github.io/portfolio" />
-    <meta property="og:image" content="https://gatang17.github.io/portfolio/images/logo2.png" />
-
     <!-- CSS y otros recursos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sen:wght@400..800&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -50,20 +35,9 @@
 <section id="intro" class="">     
         <div class="d-flex">            
             <div class="" id="menu_dtk" > </div>            
-            <div id="hero">
-                <!-- <div class="glass"></div>
- <style>
-.glass { position: absolute; z-index: 10; top: -100%; left: 0%; width: 500%; height: 500%; pointer-events: none;  
- background: linear-gradient( 125deg, transparent 45%, rgba(255, 255, 255, 0.738) 50%, transparent 55% ); animation: shineY 8s linear infinite; mix-blend-mode: hard-light; }
-@keyframes shineY {from { transform: translateY(-100%) ; }
-                   to { transform: translateY(50%); }  }
-@media (max-width: 768px) {
-  .glass { top: -100%; left: 0%; width: 300%;height: 400%;animation: shineY 4s linear infinite;
-    background: linear-gradient( 125deg, transparent 42%, rgba(255, 255, 255, 0.738) 50%,transparent 65% );
-  }} 
-</style> -->
+
                 <div class="con_hero">              
-             <!-- <img id="id_img_hero" src="images/hero2.jpg">       -->
+
                    <div class="con_hero_sub" >                        
                         <h2 class="hero_text"> Designs that<br> find solutions</h2>                    
                         <!-- <a href="index.html#projects" class="hero_btn btn m_text mosaic_btn">click here and check the things i've done</a> -->
@@ -93,75 +67,19 @@
             <div style="border-bottom: solid; margin-bottom: 2rem;padding: 2rem;">
                 <h2 class="title">Projects</h2>
             </div>
-        
-            <!-- NUEVO WRAPPER -->
-            <!-- <div class="projects-wrapper"> -->
+
+  
                 <div id="p_container">                   
                     <div id="projects-grid"></div>           
                 </div>
-     <!--        </div> -->
+
         </div>
         
-    <!--<div id="film-projects">
-        <div class="film-row film-row-top">
-          <div class="film-track" id="film-track-top"></div>
-        </div>
-         <div class="film-row film-row-bottom">
-          <div class="film-track" id="film-track-bottom"></div>
-        </div> 
-      </div>-->
+
     </section>
 
-      
-      <style>
-   /* .projects-wrapper{
-  background: #e5e5e5;   
-  max-width: 2000px;     
-  margin: 0 auto;        
-  padding: 3rem 2rem;
-  border-radius: 12px;   
-
-} */
-
-
-        /* ===== FILM CAROUSEL ===== */
-      
-/* #film-projects {
-    display: grid; justify-items: center;align-content: center;
-    height: 80vh;  overflow: hidden;  position: relative;     background: #d5d4d1; }
-.film-row {  position: relative;    overflow: hidden;    width: 100%; margin-bottom: 2rem;display: flex;   align-items: center;}
-
-.film-track { width: max-content;   display: flex;  gap: 1rem;   align-items: center;  animation: scrollLeft 10s linear infinite;}
-.film-row-bottom .film-track { animation: scrollRight 40s linear infinite; } 
-
-
-@keyframes scrollLeft {  from { transform: translateX(0); }  to   { transform: translateX(-50%); }}
-@keyframes scrollRight {  from { transform: translateX(-50%); }  to   { transform: translateX(0); }}
-.film-row-bottom .film-track {  animation: scrollRight 25s linear infinite;}
-
-.film-card {  position: relative;  flex-shrink:0;  cursor: pointer; height: 40%; width: fit-content;}
-.film-card img { height: 300px;  width: auto;  display: block;  filter: grayscale(100%);  transition: filter 0.4s ease;}
-
-.film-overlay {  position: absolute;  inset: 0;  background: rgba(0,0,0,0.4);  color: white;  padding: 1rem;  display: flex;
-  align-items: flex-end;  opacity: 0;  transition: opacity 0.3s ease;  font-size: 0.9rem;}
-
-.film-card:hover img { filter: grayscale(0%); }
-.film-card:hover .film-overlay { opacity: 1; }
-.film-row:hover .film-track { animation-play-state: paused; }
-
-#film-projects { display: none; }
-
-
-
-@media (min-width: 875px) and (max-width: 1024px) {  #projects-grid { display: none; }  #film-projects { display: block; }}
-
-@media (min-width: 1025px) {  #projects-grid { display: none; }  #film-projects { display: block; }}
-
-@media (max-width: 875px) { 
-   #film-projects { display: none; } 
-} */
-
-      </style>
+ 
+  
       
   
     <!--============================================SKILLS SECTION-->
@@ -169,7 +87,7 @@
 <section id="skills" class="content">
     <div style="padding: 2rem;">
         <h2 class="title">Skills</h2>
-        <div id="title" class="d-flex flex-column align-items-center py-3" style="border-bottom: solid;">
+        <div id="title" class="d-flex flex-column align-items-center py-3" style="">
             
             </div></div>
  
@@ -232,11 +150,7 @@
                     <label for="email">email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-
-                <!-- <div class="field-group col">
-                    <label for="message">message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div> -->
+              
                 <div class="field-group full">
                     <textarea id="message" placeholder="MESSAGE"></textarea>
                   </div>
@@ -256,19 +170,11 @@
         </h2>
         
   </div>
-
-
     <div id="footer-container" class="mt-2"></div>
-
 
     <!-- Botón flotante móvil -->
     <div id="mobile-menu-btn" >   <a href="#intro"> <i class="fa-solid fa-circle-arrow-up" ></i>    </a>    </div>
-    <style>
-        #mobile-menu-btn {position: fixed;  bottom: 2rem;  right: 2rem;width: 40px; height: 40px; border-radius: 50%; display: flex;
-        justify-content: center;  align-items: center; cursor: pointer;  z-index: 9999;     }
-        #mobile-menu-btn i { color: rgba(64, 64, 64, 0.253);    font-size: 1.5rem;     }
-        #mobile-menu-btn i:hover {  color: rgb(24, 23, 23);    }
-    </style>
+ 
     <div class="fade-overlay" id="fade-overlay"></div>
     <script>
         const mobileBtn = document.querySelector('#mobile-menu-btn a');
