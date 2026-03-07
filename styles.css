@@ -48,8 +48,8 @@ h3 {
   word-break: keep-all; /* evita saltos dentro de palabras */
 }
 h4 {
-  font-size: clamp(1rem, 2vw, 1.2rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */
-  text-transform: uppercase;
+  font-size: clamp(0.85rem, 2vw, 1.2rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */
+  text-transform: capitalize;
   overflow-wrap: normal; /* no rompe palabras largas */
   word-break: keep-all; /* evita saltos dentro de palabras */
 }
@@ -69,6 +69,14 @@ p {
 .title {
   font-size: clamp(2rem, 15vw, 10rem); /*text-transform: uppercase;*/
 }
+.awward{
+  width: 100%;
+  height: 50px;
+  object-fit: scale-down;
+}
+.awad_box{justify-content: center;text-align: center; align-items: center; width: 100%; height: max-content; }
+
+
 /*****footer*/
 
 .chat {
@@ -133,6 +141,19 @@ footer {
   padding-bottom: 10px;
 }
 /*=================index*/
+#intro {
+  background-image: url(images/hero2.jpg);
+  background-position: center;
+}
+.hero_text {
+  max-height: 800px;
+  z-index: 1;
+  font-size: clamp(2.5rem, 5vw, 15rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  color: #ffffff;
+}
 #top_bar {
   padding: 10px;
   background-color: rgb(22, 22, 22);
@@ -359,6 +380,9 @@ i {
 .desc_item {
   white-space: pre-line;
 }
+#skills_section h4{
+  font-size: 0.85rem; 
+}
 #skills_section {
   display: flex;
   align-items: flex-start;
@@ -367,6 +391,7 @@ i {
   max-width: 1500px;
 }
 #titles_col {
+  border-right: solid;
   width: 25%;
   display: flex;
   flex-direction: column;
@@ -511,9 +536,10 @@ i {
 /*=================================================CONTACT */
 
 #contact {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
+  min-height: fit-content;
+  display: grid;
+  align-content: center;
+  padding: 0 5rem 5rem; 
 }
 
 .contForm {
@@ -668,9 +694,20 @@ textarea {
     visibility: hidden;
   }
   /*****resume*/
-  #desc_col {
-    width: 100%; /* ocupa toda la fila */
-    margin-top: 1rem;
+  .desc_item {
+    white-space: pre-line;
+  }
+  #skills_section {
+display: block;
+  }
+  #titles_col {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: solid;
+    border-right: none;
   }
   /*****project*/
 
