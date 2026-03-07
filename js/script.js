@@ -328,8 +328,9 @@ fetch('./data/projects.json')
             //  const hr=  document.createElement('hr');
   
               div.innerHTML = `
+               <hr>
                   <h4>${job.title}</h4>
-                  <hr>
+                 
                   <p>${job.organization} — ${job.location}</p>
                   <small>${job.period}</small>
               `;
@@ -531,20 +532,63 @@ fetch('data/projects.json')
 // }
 
 //=================================================CONTACT
+const popup = document.getElementById("pop_up");
+const form = document.getElementById("contactForm");
 
 function openPopup(){
-  document.getElementById("pop_up").classList.add("active");
+  popup.classList.add("active");
 }
 
 function closePopup(){
-  document.getElementById("pop_up").classList.remove("active");
+  popup.classList.remove("active");
 }
 
+// cerrar si hacen click fuera del cuadro
+popup.addEventListener("click", function(e){
+  if(e.target === popup){
+    closePopup();
+  }
+});
 
+// cerrar con tecla ESC
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closePopup();
+  }
+});
+
+// enviar formulario sin recargar
+form.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(() => {
+    openPopup();
+    form.reset();
+  });
+
+});
+//==================================== Botón flotante móvil
+const mobileBtn = document.querySelector('#mobile-menu-btn a');
+const introSection = document.getElementById('intro');
+mobileBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // es es lo q evita scroll normal
+    // Fade in
+    fadeOverlay.classList.add('show');
+    // Cuando termina el fade
+    setTimeout(() => {
+        introSection.scrollIntoView({ behavior: 'auto' }); // salto limpio
+    }, 600); // MISMO tiempo que el transition
+});
+  // -------------------- INIT ANIMATION (loader principal)
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // -------------------- INIT ANIMATION (loader principal)
+
   const loader = document.getElementById("mosaic-loader");
   if (loader) {
     const blocks = 24;
