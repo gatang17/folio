@@ -530,6 +530,26 @@ fetch('data/projects.json')
 //     .replace(/\b\w/g, c => c);
 // }
 
+//=================================================contact
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("pop_up");
+
+form.addEventListener("submit", function() {
+    popup.style.visibility = "visible";
+});
+
+
+const btnHome = document.getElementById("btn_logo");
+
+btnHome.addEventListener("click", function(){
+    popup.style.visibility = "hidden";
+});
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // -------------------- INIT ANIMATION (loader principal)
