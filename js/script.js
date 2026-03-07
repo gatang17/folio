@@ -530,23 +530,15 @@ fetch('data/projects.json')
 //     .replace(/\b\w/g, c => c);
 // }
 
-//=================================================contact
-const form = document.getElementById("contactForm");
-const popup = document.getElementById("pop_up");
+//=================================================CONTACT
 
-form.addEventListener("submit", function() {
-    popup.style.visibility = "visible";
-});
+function openPopup(){
+  document.getElementById("pop_up").classList.add("active");
+}
 
-
-const btnHome = document.getElementById("btn_logo");
-
-btnHome.addEventListener("click", function(){
-    popup.style.visibility = "hidden";
-});
-
-
-
+function closePopup(){
+  document.getElementById("pop_up").classList.remove("active");
+}
 
 
 

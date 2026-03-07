@@ -158,12 +158,13 @@
                 </div>
                 
                 <div class="row">
-                <button type="submit" class="btn m_text mosaic_btn my-5">Send</button>
+                <button type="submit" class="btn m_text mosaic_btn my-5">Contact</button>
                 </div>
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 
                 </form>
+               
         </div>                
     </section>
     <div class="chat">
@@ -173,15 +174,67 @@
           <span class="cursor"></span>
         </h2>       
   </div>
-  <div id="pop_up"> 
-    <div class="innerpop">       
-       <a href="index.html#intro">
-            <img src="images/logo.png" id="btn_logo"></a>
-            <h5>Thank You for your message I'll respond shortly</h5>
-           
+
+
+  <div class="popup" id="pop_up">
+    <div class="innerpop">
+  
+      <button class="closeBtn" onclick="closePopup()">✕</button>
+  
+      <img src="images/logo.png" id="btn_logo">
+  
+      <h5>Thank you for your message. I'll respond shortly.</h5>
+  
     </div>
- 
   </div>
+<style>
+
+
+
+</style>
+<script>
+   const popup = document.getElementById("pop_up");
+const form = document.getElementById("contactForm");
+
+function openPopup(){
+  popup.classList.add("active");
+}
+
+function closePopup(){
+  popup.classList.remove("active");
+}
+
+// cerrar si hacen click fuera del cuadro
+popup.addEventListener("click", function(e){
+  if(e.target === popup){
+    closePopup();
+  }
+});
+
+// cerrar con tecla ESC
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closePopup();
+  }
+});
+
+// enviar formulario sin recargar
+form.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(() => {
+    openPopup();
+    form.reset();
+  });
+
+});
+</script>
+
 
     <div id="footer-container" class="mt-2"></div>
 
