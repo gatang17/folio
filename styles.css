@@ -605,6 +605,16 @@ textarea {
   min-height: 140px;
   resize: vertical;
 }
+#pop_up{
+visibility: hidden;
+position: absolute;
+display: flex;
+width: 100vw;
+height: 100vh;
+z-index: 500000;
+background-color:#a9a483;
+align-items: center;
+justify-content: center;}
 /*=============================================================================MEDIA QUERY*/
 
 /* esto es para tablet*/
