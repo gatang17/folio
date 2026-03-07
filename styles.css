@@ -631,8 +631,13 @@ border-radius: 5px;
 margin: 1rem;
 align-items: center;
 justify-items: center;
+width: max-content;
+height: max-content;
 }
-.innerpop img{max-height: 100px; margin: 10px;}
+.innerpop img{
+  max-height: 100px; 
+  margin: 10px;
+}
 .closeBtn{
   position:relative;
   right:20px;
