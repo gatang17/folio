@@ -42,7 +42,7 @@
         "Generated message ready to send via FormSubmit",
         "Embedded Google Maps for studio location"
       ],
-      "github": "https://gatang17.github.io",
+      "github": "gatang17.github.io/JGStudio/",
       "live": "https://jgstudio.vercel.app"
     },
     {
@@ -88,7 +88,7 @@
       ],
       "images": ["images/projects/jlprezc/jlperezc.png"],
       "live": "https://jlperezc.vercel.app/",
-      "github": ""
+      "github": "jlperezc.vercel.app"
     }
   ],
 
