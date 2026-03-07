@@ -214,14 +214,16 @@ content {
   gap: 50px;
   grid-template-columns: 50% 10%;
   grid-auto-rows: min-content;
-  justify-items: center;
-  text-align: center;
-  padding: 10px;
+  justify-content: start;
+  align-content: flex-end;
+  padding: 5rem;
 }
+
 .con_hero_sub {
   display: grid;
-  justify-items: l;
+  justify-items: left;
   text-align: right;
+  padding: 2rem;
 }
 #id_img_hero {
   max-height: 700px;
@@ -336,6 +338,9 @@ i {
   position: relative;
   display: inline-block;
   text-align: center;
+}
+.fa-check { 
+  font-size: small;
 }
 
 #p_container {
@@ -717,10 +722,7 @@ height: max-content;
     justify-content: space-around;
   }
   .con_hero {
-    display: grid; /* grid-template-columns: 1fr;*/
-    grid-auto-rows: min-content;
-    justify-items: center;
-    text-align: center;
+    height: auto;
   }
   .hero_text {
     max-width: 90%;
