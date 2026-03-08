@@ -793,7 +793,7 @@ display: block;
   }
   .skills-grid {
     flex-direction: column;
-    max-height: fit-content;
+    max-height: 100%;
   }
   .skill {
     min-height: 2rem; /* cerrada */
