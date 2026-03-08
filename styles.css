@@ -704,9 +704,7 @@ height: max-content;
 }
 /* esto es para mobil*/
 @media (max-width: 875px) {
-  .div_section{
-    padding: 0;
-  }
+
   #intro {
     background-size: cover;
     background-position: center !important;
@@ -789,7 +787,7 @@ display: block;
 
   /*****skills*/
   #skills {
-    min-height: fit-content;
+    max-height: fit-content;
   }
   .skills-grid {
     flex-direction: column;
@@ -817,6 +815,22 @@ display: block;
   /****email*/
   /* .field-group {flex-direction: column; align-items: stretch; }
 .field-group textarea,input { width: 100% } */
+
+.div_section{
+  padding: 0 2rem 5rem;
+}
+.contForm form {
+  width: 100%;
+  /* max-width: 900px; */
+  background-color: rgba(43, 41, 41, 0.1);
+  padding: 3rem;
+  border-radius: 0px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: fit-content;
+}
   /******cursor*/
   #typewriter {
     font-size: 1.5rem;
