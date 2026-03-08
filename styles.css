@@ -682,6 +682,7 @@ height: max-content;
 }
 /* esto es para desktop*/
 @media (min-width: 876px) {
+ 
   #projects-grid {
     width: 100%;
     display: grid;
@@ -703,6 +704,9 @@ height: max-content;
 }
 /* esto es para mobil*/
 @media (max-width: 875px) {
+  .div_section{
+    padding: 0;
+  }
   #intro {
     background-size: cover;
     background-position: center !important;
@@ -723,6 +727,7 @@ height: max-content;
   }
   .con_hero {
     height: auto;
+    padding: 1rem;
   }
   .hero_text {
     max-width: 90%;
@@ -788,7 +793,7 @@ display: block;
   }
   .skills-grid {
     flex-direction: column;
-    max-height: 100vh;
+    max-height: fit-content;
   }
   .skill {
     min-height: 2rem; /* cerrada */
@@ -808,6 +813,7 @@ display: block;
     right: 50%;
     top: 85%;
   }
+
   /****email*/
   /* .field-group {flex-direction: column; align-items: stretch; }
 .field-group textarea,input { width: 100% } */
