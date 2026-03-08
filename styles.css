@@ -333,6 +333,7 @@ i {
 /*================================================= PROJECTS*/
 #projects {
   min-height: 100vh;
+  padding: 0 5rem 5rem;
 }
 .cont_descript {
   position: relative;
@@ -776,7 +777,9 @@ display: block;
     font-size: 0.75rem;
   }
   /*****project*/
-
+#projects{
+  padding: 2rem 0 !important;
+}
   #projects-grid {
     width: 100%;
     display: grid;
@@ -788,6 +791,7 @@ display: block;
   /*****skills*/
   #skills {
     max-height: fit-content;
+    padding: 2rem 0 !important;
   }
   .skills-grid {
     flex-direction: column;
@@ -816,8 +820,8 @@ display: block;
   /* .field-group {flex-direction: column; align-items: stretch; }
 .field-group textarea,input { width: 100% } */
 
-.div_section{
-  padding: 0 2rem 5rem;
+#contact{
+  padding: 2rem 0 !important;
 }
 .contForm form {
   width: 100%;
