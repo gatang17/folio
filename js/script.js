@@ -256,11 +256,17 @@ fetch('./data/projects.json')
     const topics = Object.keys(aboutme)
   .filter(key => key !== "pageTitle" && key !== "personal");
     let selectedTopic = topics[0]; // por defecto seleccionamos el primero
-
+    const downloadBtn = document.createElement("div");
+    downloadBtn.innerHTML = `
+    <a href="data/Final_Resume_Gretel.pdf" download class="btn m_text mosaic_btn">
+    Download PDF
+    </a>`;
+    
     function renderTitles() {
         titlesCol.innerHTML = '';
         topics.forEach(topic => {
             const div = document.createElement('div');
+
             div.className = 'title_item' + (topic === selectedTopic ? ' selected' : '');
             div.innerHTML = `<i class="fa-solid fa-circle"></i><h4>${topic}</h4>`;
             div.addEventListener('click', () => {
@@ -269,6 +275,7 @@ fetch('./data/projects.json')
                 renderDesc();
             });
             titlesCol.appendChild(div);
+            titlesCol.appendChild(downloadBtn);
         });
     }
 
