@@ -258,7 +258,7 @@ fetch('./data/projects.json')
     let selectedTopic = topics[0]; // por defecto seleccionamos el primero
     const downloadBtn = document.createElement("div");
     downloadBtn.innerHTML = `
-    <a href="data/Final_Resume_Gretel.pdf" download class="btn m_text mosaic_btn">
+    <a id="download" href="data/Final_Resume_Gretel.pdf" download class="btn m_text mosaic_btn">
     Download PDF
     </a>`;
     
