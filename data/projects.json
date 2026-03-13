@@ -8,7 +8,7 @@
       "images": ["images/diagram/diagram.png"],
       "title2": "Visual Design & Implementation Flow",
       "diag_descrip": "The diagram represents the workflow from the initial concept in Figma to the final deployment. Each block symbolizes a key step in the process. The larger Figma block highlights the importance of planning and visual design—while it may not take the most time, it is essential to solidify the idea before building. Subsequent steps progressively transform the concept into a structured, styled, interactive, and finally live website.",
-      "github": "https://github.com/tuusuario/portfolio",
+      "github": "https://github.com/gatang17/folio",
       "live": "https://tuportfolio.vercel.app"
     }
   ],
@@ -41,7 +41,7 @@
         "Generated message ready to send via FormSubmit",
         "Embedded Google Maps for studio location"
       ],
-      "github": "https://gatang17.github.io/JGStudio/",
+      "github": "https://github.com/gatang17/JGStudio/",
       "live": "https://jgstudio.vercel.app"
     },
     {
@@ -77,17 +77,19 @@
     {
       "id": "jlprezc",
       "title": "Jose Perez portfolio",
-      "description": "This is a personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases the photography of Jose Luis Perez Cespedes, featuring pixelated effects in the initial animations to reflect the digital pixels that are part of modern photography.",
-      "technologies": [
-        "WordPress Free Version",
-        "Covers",
-        "Columns",
-        "Rows",
-        "Anchor Links"
-      ],
-      "images": ["images/projects/jlprezc/jlperezc.png"],
+     "description": "Portfolio website for a professional photography student focused on commercial and product photography. The site highlights the photographs with a gallery-first design, allowing users to open a carousel to view images one by one. Built with HTML, CSS, and JavaScript, with deployments on GitHub and Vercel.",
+"technologies": [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "GitHub",
+  "Vercel",
+  "Interactive Image Carousel",
+  "Responsive Design"
+],
+      "images": ["images/projects/jlprezc/jlperezc.png","images/projects/jlprezc/jlperezc_2.png","images/projects/jlprezc/jlperezc_3.png","images/projects/jlprezc/jlperezc_4.png","images/projects/jlprezc/jlperezc_5.png","images/projects/jlprezc/jlperezc_6.png","images/projects/jlprezc/jlperezc_7.png"],
       "live": "https://jlperezc.vercel.app/",
-      "github": "https://gatang17.github.io/jlperezc/"
+      "github": "https://github.com/gatang17/jlperezc/"
     }
   ],
 

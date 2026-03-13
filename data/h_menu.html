@@ -1,32 +1,77 @@
+<div class="col-6 d-flex justify-content-end align-items-center">
+  <button id="btn_menu">
+    <i id="iconm" class="fa-solid fa-bars"></i>
+  </button>
 
+  <div class="navMenu" id="navMenu">
+    <a class="m_text m_off_text" href="index.html">home</a>
+    <a
+      class="m_text m_off_text"
+      href="javascript:void(0)"
+      data-section="projects"
+      onclick="goToSection(this)"
+      >projects</a
+    >
+    <a
+      class="m_text m_off_text"
+      href="javascript:void(0)"
+      data-section="skills"
+      onclick="goToSection(this)"
+      >Skills</a
+    >
+    <a class="m_text m_off_text" href="resume.html">resume</a>
+    <a
+      class="m_text m_off_text"
+      href="javascript:void(0)"
+      data-section="contact"
+      onclick="goToSection(this)"
+      href="index.html#"
+      >contact</a
+    >
+  </div>
+</div>
 
-    <div class="col-6 d-flex d-lg-none justify-content-end align-items-center">
-      <button id="btn_menu">
-        <i id="iconm" class="fa-solid fa-bars"></i>
-      </button>
-      
-        <div class="navMenu" id="navMenu">
-          <a class=" m_text m_off_text"  href="index.html">home</a>
-          <a class=" m_text m_off_text" href="index.html#projects">projects</a>
-          <a class="  m_text m_off_text" href="index.html#skills">Skills</a>
-          <a class="  m_text m_off_text" href="resume.html">resume</a>            
-          <a class=" m_text m_off_text" href="index.html#contact">contact</a>
-        </div>
- 
-      
-    </div>
-    
-    
-      <style>
-#btn_menu { background: none;  border: none;  padding: 0;  cursor: pointer;}
-.navBar button {  background: none;  border: none;  padding: 0; cursor: pointer;  display: inline-flex; }
-.navBar{ width: 100vw; height: 10vh; background-color: transparent;}
-.navMenu{  position: fixed;  top: 0;  right: 0;  width: 60vw;  height: 100vh;  background: black;  display: flex;  flex-direction: column;  gap: 2rem;  padding: 4rem 2rem;  transform: translateX(100%); transition: transform 0.3s ease;  z-index: 9999;}
-.navMenu.open {  transform: translateX(0); }
-#iconm{  font-size: 3rem;}
-body.menu-open {  overflow: hidden;}
-
-
+<style>
+  #btn_menu {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .navBar button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+  }
+  .navBar {
+    width: 100vw;
+    height: 10vh;
+    background-color: transparent;
+  }
+  .navMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60vw;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+  }
+  .navMenu.open {
+    transform: translateX(0);
+  }
+  #iconm {
+    font-size: 3rem;
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
 </style>
-
-  

@@ -3,23 +3,19 @@ window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-X2R58E5647');
-//---------------------------scroll suave
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetEl = document.getElementById(targetId);
-      
-      const offset = 160; // 10rem ≈ 160px
-      const topPos = targetEl.getBoundingClientRect().top + window.scrollY - offset;
-      
-      window.scrollTo({
-        top: topPos,
-        behavior: 'smooth' // 
-      });
-    });
-  });
+
+ //=================HIDE THE SECTIONS IN BROWSER=======
+function goToSection(link) {
+    // Tomamos el id de destino desde el data-section
+    const sectionId = link.dataset.section;
+    const section = document.getElementById(sectionId);
   
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      // Animación opcional de cuadritos
+      animateSection(section);
+    }
+  }
 //==================FETCHES===========================
 
 function InitMobile() {
@@ -52,11 +48,10 @@ function InitMobile() {
   });
 }
 
-
-
-
 // ------------------- Menu injection on index
 document.addEventListener("DOMContentLoaded", () => {
+  let lastScroll = 0;
+
 
 //----------------------------------menu_top for no index pages
   fetch("./data/header.html")
@@ -66,6 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
     initMosaicButtons();
   })
   .catch(err => console.error('Error loading header:', err));
+  fetch("./data/h_menu.html")
+.then(res => res.text())
+.then(html => {
+  
+  document.getElementById("mobile-menu-btn").innerHTML = html;
+  InitMobile();
+  }) 
+.catch(err => console.error('Error loading menuhamburguer:', err));
+//======================ESTE CODIGO HACE Q EL MENU FLOTANDO NO SE VEA EN 0
+const mobileBtn = document.getElementById("mobile-menu-btn");
+window.addEventListener("scroll", () => {
+const current = window.scrollY;
+  if (current <= 20) {
+  mobileBtn.style.opacity = "0";
+} else if (current > lastScroll) {
+  mobileBtn.style.opacity = "1"; // bajando
+}  
+lastScroll = current;
+});
   //----------------------------------footer-container for all pages
   fetch("./data/footer.html")
   .then(res => res.text())
@@ -76,11 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("./data/h_menu.html")
   .then(res => res.text())
   .then(html => {
-    document.getElementById("h_menu-container").innerHTML = html;
-    
-   
-    // AQUI el menú ya existe
- 
+
+    document.getElementById("h_menu-container").innerHTML = html;       
+    // AQUI el menú ya existe 
     InitMobile();
   })
   .catch(err => console.error('Error loading menuhamburguer:', err));
@@ -101,10 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <div id="logo_container"><img id="img_logoV" src="images/logo.png" ></div>  
         
             <section class="sec_menu">             
-              <a class="nav-link m_text mosaic_btn" href="#projects">projects</a>
-              <a class="nav-link m_text mosaic_btn" href="#skills">Skills</a>
+              <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="projects" onclick="goToSection(this)">projects</a>      
+              <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="skills" onclick="goToSection(this)">Skills</a>
               <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>     
-              <a class="nav-link m_text mosaic_btn" href="#contact">contact</a>
+              <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="contact" onclick="goToSection(this)" href="index.html#">contact</a>
             </section>
             <div class="sec_menu22" id="">
       <a class="nav-link m_text" href="https://figma.com/@gatang17"  target="_blank" ><i class="fa-brands fa-figma"></i></a>
@@ -218,9 +230,9 @@ if (projectContainer) {  // <- chequeo agregado
             ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
           </div>
           ${project.images && project.images.length > 0 ? ` ` : '<p>No images available.</p>'}
-        <div class="row " >
+        <div class="div_img" >
               ${project.images.map(img => `
-                <div class="col-6 mb-3 ">
+                <div class="mb-3 gal_wrap">
                   <img src="${img}" class="img-fluid " alt="${project.title}">
                 </div>
               `).join('')}
@@ -231,7 +243,7 @@ if (projectContainer) {  // <- chequeo agregado
 }
 
 
-//about_me----------------------------------------------------------------
+//=======================================================about_me----------------------------------------------------------------
 fetch('./data/projects.json')
 .then(res => res.json())
 .then(data => {
@@ -353,7 +365,7 @@ fetch('./data/projects.json')
 });
 
 
-//==================project en index
+//=================================================project en index
 const grid = document.getElementById("projects-grid");
 grid.addEventListener("click", (e) => {
   const card = e.target.closest(".project-card");
@@ -400,9 +412,8 @@ fetch("./data/projects.json")
       grid.appendChild(card);
     });
   });
-  //==========================SKILLS
 
-
+  //=================================================SKILLS
 function showProject(id) {
   fetch('projects.json')``
     .then(response => response.json())
@@ -579,6 +590,8 @@ form.addEventListener("submit", function(e){
   });
 
 });
+
+
 //==================================== Botón flotante móvil
 const mobileBtn = document.querySelector('#mobile-menu-btn a');
 const introSection = document.getElementById('intro');
@@ -588,9 +601,10 @@ mobileBtn.addEventListener('click', (e) => {
     fadeOverlay.classList.add('show');
     // Cuando termina el fade
     setTimeout(() => {
-        introSection.scrollIntoView({ behavior: 'auto' }); // salto limpio
+        introSection.scrollIntoView({ behavior: 'smooth' }); // salto limpio
     }, 600); // MISMO tiempo que el transition
 });
+
   // -------------------- INIT ANIMATION (loader principal)
 
 document.addEventListener("DOMContentLoaded", () => {
