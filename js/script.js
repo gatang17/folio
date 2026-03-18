@@ -592,19 +592,19 @@ form.addEventListener("submit", function(e){
 });
 
 
-//==================================== Botón flotante móvil
-const mobileBtn = document.querySelector('#mobile-menu-btn a');
+//==================================== Botón flotante móvil estaba antes para llegar a home
+/* const mobileBtn = document.querySelector('#mobile-menu-btn a');
 const introSection = document.getElementById('intro');
 mobileBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // es es lo q evita scroll normal
-    // Fade in
+    e.preventDefault(); 
+ 
     fadeOverlay.classList.add('show');
-    // Cuando termina el fade
+  
     setTimeout(() => {
         introSection.scrollIntoView({ behavior: 'smooth' }); // salto limpio
-    }, 600); // MISMO tiempo que el transition
+    }, 600); 
 });
-
+ */
   // -------------------- INIT ANIMATION (loader principal)
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -524,6 +524,10 @@ i {
 .skills-grid {
   display: flex;
   gap: 0.5rem;
+   max-width: 1500px;
+   width: auto;
+  margin: 0 auto;
+    padding: 3rem 2rem;
 }
 /* Celdas */
 .skill {
@@ -602,10 +606,11 @@ i {
 }
 /* CARD DEL FORM */
 .contForm form {
-  width: 70%;
-  max-width: 900px;
+ max-width: 1500px;
+ width: auto;
+ margin: 0 auto;
+padding: 3rem 2rem;
   background-color: rgba(43, 41, 41, 0.1);
-  padding: 3rem;
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   display: flex;
