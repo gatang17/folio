@@ -1,12 +1,12 @@
 body {
-  font-family: "Sen", sans-serif;
   min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   color: rgba(0, 0, 0, 0.817);
   scrollbar-width: none;
-  background-color: #a9a48333;
+  /*background-color: #a9a48333;*/
+  background-color: #a6931733;
   overflow-x: hidden;
 }
 /* font-family: "Figtree", */
@@ -28,10 +28,24 @@ body {
   max-width: 100%;
   box-sizing: border-box;
 }
+/*=======FONTS*/
+ :root {
+  --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+body {
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+
 
 h1 {
   font-size: clamp(2rem, 10vw, 4rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */
   font-weight: 900;
+  text-transform: uppercase;
   overflow-wrap: normal; /* no rompe palabras largas */
   word-break: keep-all; /* evita saltos dentro de palabras */
 }
@@ -66,9 +80,9 @@ p {
   font-style: italic;
   font-size: 1rem;
 }
-.title {
-  font-size: clamp(2rem, 15vw, 10rem); /*text-transform: uppercase;*/
-}
+
+
+
 
 /*****footer*/
 footer {
@@ -135,13 +149,15 @@ footer {
   flex: 1;
   overflow: hidden;
   white-space: nowrap;
-  background-color: rgba(43, 41, 41, 0.1);
+ /* background-color: rgba(43, 41, 41, 0.1);*/
+  background-color: #d0a32b;
   color: #2f2f2f;
   justify-content: center; /* centro vertical */
   align-items: center; /* centro horizontal */
   text-align: center; /* centro texto */
   padding: 6rem 0;
   min-height: 50vh;
+  padding: 2rem;
   margin-top: 2rem;
 }
 .chat h3,
@@ -155,14 +171,14 @@ footer {
 .chat p p {
   /* no más de 32px */
   font-weight: 600;
-  color: #343224;
+  color: #f1f1f1;
   text-wrap: pretty;
 }
 #typewriter {
   display: inline-block;
   transform: translateX(0);
   text-transform: uppercase;
-  color: #a8a177;
+  color: #2f2f2f;
 }
 h2 .cursor {
   display: inline-block;
@@ -202,7 +218,7 @@ footer {
   font-weight: 900;
   text-transform: uppercase;
   text-align: left;
-  color: #ffffff;
+  color: #a9a483;
 }
 #top_bar {
   padding: 10px;
@@ -226,11 +242,11 @@ footer {
   height: 5vh;
   width: auto;
 }
-content {
+.content {
   scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */
-  padding: 0 0 0 0;
   margin-top: 4rem;
-}
+  min-height: 100vh;
+  }
 
 /*--------------SECTION INTRO*/
 
@@ -278,11 +294,11 @@ content {
   padding: 1rem;
   z-index: 1;
   font-size: 1.3rem;
-  color: #ffffff;
+  color: #a9a483;
 }
 #menu_dtk {
   flex: 0 1 auto;
-  color: #ffffff;
+  color: #a9a483;
 }
 .sec_menu22 {
   padding-top: 5em;
@@ -320,7 +336,7 @@ content {
   text-align: right;
   min-width: 300px;
   padding-right: 1rem;
-  border-right: 2px solid rgba(255, 255, 255, 0.817);
+  border-right: 2px solid #a9a483;
 }
 .div_menu_home .m_text,
 i {
@@ -340,7 +356,7 @@ i {
   height: auto;
   object-fit: contain;
   align-self: center; /* por si flex lo quiere estirar */
-  filter: brightness(10);
+  
 }
 
 .nav-link {
@@ -360,7 +376,7 @@ i {
 }
 
 .m_off_text {
-  color: #abaa9f;
+  color: #a9a483
 }
 
 .img_logoH {
@@ -369,9 +385,18 @@ i {
 }
 
 /*================================================= PROJECTS*/
-#projects {
-  min-height: 100vh;
-  padding: 0 5rem 5rem;
+
+.title {
+  font-size: clamp(2.5rem, 20vw, 10rem); /*text-transform: uppercase;*/
+  color: #d0a32b;
+}
+.t-border{
+  position: relative;
+  padding: 0 5rem;
+  margin-left: 0rem;
+  max-width:1100px;
+ /* background-color: #0c1747;*/
+ border-bottom: solid #0c1747 5px;
 }
 .cont_descript {
   position: relative;
@@ -485,11 +510,13 @@ i {
 }
 .wrap {
   display: grid;
-  margin: 0 auto;
-  padding: 0rem;
+  margin: 5rem auto;
+  padding: 3rem 2rem;
   justify-items: left;
   align-items: center;
+  max-width: 1500px;
 }
+
 #p_info {
   background: rgba(0, 0, 0, 0.764);
   color: #a9a483;
@@ -514,26 +541,34 @@ i {
 }
 
 /*=================================================SKILS*/
+
+
 #skills {
-  min-height: fit-content;
   display: grid;
-  align-content: center;
-  padding: 0 5rem 5rem;
-  background-color: rgba(43, 41, 41, 0.1);
+  align-content: flex-start;
+  /*background-color: rgba(43, 41, 41, 0.1);*/
+  background-color: #d0a32b;
+  min-height: fit-content;  
 }
+#lnk_skills{
+   color: #0c1747!important;
+}
+
 .skills-grid {
   display: flex;
   gap: 0.5rem;
-   max-width: 1500px;
-   width: auto;
+  max-width: 1500px;
+  width: auto;
   margin: 0 auto;
-    padding: 3rem 2rem;
+  padding: 3rem 2rem;
 }
 /* Celdas */
 .skill {
   flex: 1;
-  background: rgba(0, 0, 0, 0.764);
-  color: #a9a483;
+ /* background: rgba(0, 0, 0, 0.764);
+  color: #a9a483;*/
+  background:#e8e0cb;
+  color: #0c1747;
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -549,9 +584,9 @@ i {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.764),
-    rgba(0, 0, 0, 0.5)
+    to left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.025)
   );
   display: flex;
   align-items: center;
@@ -593,14 +628,15 @@ i {
   position: relative;
 }
 /*=================================================CONTACT */
+
 #contact {
-  min-height: fit-content;
   display: grid;
-  align-content: center;
-  padding: 0 5rem 5rem;
+  align-content: flex-start;
+
 }
 
 .contForm {
+  margin-top:3rem ;
   display: flex;
   justify-content: center;
 }
@@ -648,7 +684,7 @@ textarea {
   padding: 0.7rem 0;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #d0d0d0;
+  border-bottom: 2px solid #b5a8a8;
   font-size: 1rem;
   transition: all 0.25s ease;
 }
@@ -729,7 +765,7 @@ textarea {
 }
 /*=============================================================================MEDIA QUERY*/
 
-/* esto es para tablet*/
+/* *******************************************************************esto es para tablet*/
 @media (min-width: 875px) and (max-width: 1024px) {
   /****hero*/
   .con_hero {
@@ -764,7 +800,7 @@ textarea {
     top: 50%;
   }
 }
-/* esto es para mobil*/
+/* ****************************************************************esto es para mobil*/
 @media (max-width: 875px) {
   #intro {
     background-size: cover;
@@ -776,7 +812,16 @@ textarea {
   }
   .content {
     scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */
+    min-height:fit-content ;
   }
+
+.t-border{
+  position: relative;
+  padding: 0 2rem;
+  margin-left: 0rem;
+  max-width:80vw;
+  border-bottom: solid #0c1747 5px;
+}
   /*****index*/
   #hero {
     height: 90%;
@@ -863,11 +908,12 @@ textarea {
     max-height: 100%;
   }
   .skill {
-    min-height: 2rem; /* cerrada */
+    max-height: 4rem; /* cerrada */
     transition: min-height 0.4s ease;
   }
   .skill.active {
-    min-height: 30vh; /* expandida */
+    max-height: fit-content;
+    padding-bottom: 1rem;
   }
   .skills-grid .skill .arrow {
     transition: transform 0.3s;

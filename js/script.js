@@ -4,7 +4,7 @@ window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'G-X2R58E5647');
 
- //=================HIDE THE SECTIONS IN BROWSER=======
+/*  //=================HIDE THE SECTIONS IN BROWSER=======
 function goToSection(link) {
     // Tomamos el id de destino desde el data-section
     const sectionId = link.dataset.section;
@@ -14,8 +14,43 @@ function goToSection(link) {
       section.scrollIntoView({ behavior: "smooth" });
       // Animación opcional de cuadritos
       animateSection(section);
+    } 
+  } */
+   //=================HIDE THE SECTIONS IN BROWSER=======
+   function goToSection(link) {
+    const sectionId = link.dataset.section;
+  
+    if (window.location.pathname !== "/" && !window.location.pathname.endsWith("index.html")) {
+      window.location.href = `/?section=${sectionId}`;
+      return;
+    }
+  
+    const section = document.getElementById(sectionId);
+  
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      animateSection(section);
     }
   }
+  
+  window.addEventListener("load", () => {
+    const params = new URLSearchParams(window.location.search);
+    const sectionId = params.get("section");
+  
+    if (!sectionId) return;
+  
+    const section = document.getElementById(sectionId);
+  
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth" });
+        animateSection(section);
+  
+        history.replaceState(null, "", "index.html");
+      }, 300);
+    }
+  });
+
 //==================FETCHES===========================
 
 function InitMobile() {
