@@ -96,8 +96,7 @@ footer {
 }
 .logo img {
   max-height: 300px;
-  filter: brightness(0) invert(1);
-}
+ }
 
 /* Mobile */
 .footer-links,
