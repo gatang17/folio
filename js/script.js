@@ -179,35 +179,47 @@ fetch('data/projects.json')
     const t_dnote = document.getElementById('t_dnote');
     const dnoDescrip = document.getElementById('dno_descrip');
     const pdnLink = document.getElementById('pdn_link');
-    const pdiag = document.getElementById('pdiag');
-    const t_pdiag = document.getElementById('t_pdiag');
     const sec_diag = document.getElementById('sec_diag');
 
-    const project = data.d_notes[0]; // solo el primer proyecto
+    const project = data.d_notes[0];
 
-    // título y descripción
     t_dnote.textContent = project.title;
     dnoDescrip.textContent = project.description;
 
-    // botones GitHub / Live
     pdnLink.innerHTML = `
-    <div class="project-links mt-0 mb-5 mt-5 text-end " style=" border-top:solid;">
-      ${project.github ? `<a href="${project.github}" target="_blank" class="btn me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
-      ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
-    </div>`;
+      <div class="project-links mt-0 mb-5 mt-5 text-end" style="border-top:solid;">
+        ${project.github ? `<a href="${project.github}" target="_blank" class="btn me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
+        ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
+      </div>
+    `;
 
-    // diagram description
+    if (project.gallery && project.gallery.length > 0) {
+      sec_diag.innerHTML = "";
 
-    pdiag.textContent = `${project.diag_descrip}`;
-    t_pdiag.textContent=`${project.title2}`;
+      project.gallery.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("diag-card");
 
-    // imagen
-    if (project.images && project.images.length > 0) {
-      sec_diag.src = project.images[0];      
+        const title = document.createElement("h3");
+        title.textContent = item.title;
+
+        const text = document.createElement("p");
+        text.textContent = item.description;
+
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.title;
+        img.classList.add("diag-img");
+
+        card.appendChild(title);
+        card.appendChild(text);
+        card.appendChild(img);
+
+        sec_diag.appendChild(card);
+      });
     }
   })
   .catch(err => console.error('Error cargando JSON:', err));
-
 
 //=====================================================PROJECT
 document.querySelectorAll('.project-card .project-link').forEach(link => {

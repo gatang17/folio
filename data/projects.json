@@ -1,17 +1,31 @@
 {
   "d_notes": [
-    {
-      "id": "dnotes",
-      "title": "Personal Portfolio",
-      "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript. The site showcases my completed projects, including photography and web development work, in a clear and interactive format. The design focuses on simplicity, readability, and user experience, allowing visitors to easily navigate between projects and learn about my skills. Each project dynamically loads its details from a JSON file, demonstrating both my front-end development skills and ability to structure content efficiently. This portfolio serves as a professional presentation of my work and a practical exercise in coding a fully functional, self-managed website.",
-      "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
-      "images": ["images/diagram/diagram.png"],
-      "title2": "Visual Design & Implementation Flow",
-      "diag_descrip": "The diagram represents the workflow from the initial concept in Figma to the final deployment. Each block symbolizes a key step in the process. The larger Figma block highlights the importance of planning and visual design—while it may not take the most time, it is essential to solidify the idea before building. Subsequent steps progressively transform the concept into a structured, styled, interactive, and finally live website.",
-      "github": "https://github.com/gatang17/folio",
-      "live": "https://tuportfolio.vercel.app"
-    }
-  ],
+  {
+    "id": "dnotes",
+    "title": "Designer's Notes",
+    "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript.",
+    "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
+    "gallery": [
+      {
+        "image": "sketches/foliov1.png",
+        "title": "Initial Portfolio Sketch",
+        "description": "This sketch shows the first visual idea for the portfolio layout and content structure."
+      },
+      {
+        "image": "sketches/foliov2.png",
+        "title": "index variatrions",
+        "description": "These early home page variations explore the idea of combining a billboard-like visual presence with the structure of a functional website menu. The goal was to create a landing page that felt bold and graphic while still guiding users clearly through the main navigation."
+      },
+      {
+        "image": "images/diagram/diagram.png",
+        "title": "Visual Design & Implementation Flow",
+        "description": "The diagram represents the workflow from the initial concept in Figma to the final deployment."
+      }
+    ],
+    "github": "https://github.com/gatang17/folio",
+    "live": "https://tuportfolio.vercel.app"
+  }
+],
 
   "projects": [
     {
