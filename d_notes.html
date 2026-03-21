@@ -40,12 +40,10 @@
         </div>
       </div>
       <div id="pdn_link"></div>
-      <section id="sec_2">
-        <div class="div_grid">
-          <div id=""></div>
-          <div id="sec_diag"></div>
-        </div>
-        <div id="sec_diag" class="d-flex flex-wrap gap-3"></div>
+      <section id="sec_2">      
+         
+          <div id="sec_diag"></div>       
+       
       </section>
       <div class="row">
         <a href="index.html#contact" class="btn m_text mosaic_btn my-5"
@@ -54,40 +52,43 @@
       </div>
     </main>
     <style>
+
       .dnotes {
         padding: 2rem;
       }
-      #sec_2 {
-        justify-items: center;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-        gap: 2rem;
-      }
+
       #sec_diag {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));   
+        justify-items: start;
+        align-items: baseline;
+         gap: 2rem;       
       }
-      .diag-card {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        column-gap: 90px;
+      
+      .diag-card {   
+        padding: 2rem; 
+        break-inside: avoid;
+        margin-bottom: 16px;        
+        column-count: 2;       
+        column-gap: 16px;
       }
 
       .diag-img {
-        max-width: 50vw;
+        max-width: 500px;
         width: 100%;
         height: auto;
         mix-blend-mode: darken;
       }
+
       @media (max-width: 768px) {
-        #sec_2 {
-          grid-template-columns: 1fr; /* se apilan en móvil */
-        }
+        .diag-card { 
+        break-inside: avoid;
+        column-count: 1;   
+      }
+        #sec_diag {
+        grid-template-columns: 1fr; /* se apilan en móvil */
+      }
+       
       }
     </style>
 

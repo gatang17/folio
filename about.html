@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/8fb3a30aab.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="row justify-content-between py-3 mx-2">
+      <div id="header-container"></div>
+
+    </header>
+
+    <section id="aboutme" class="content">
+      <div  class="t-border">
+        <h2  class="title">About Me</h2> 
+          
+      </div>
+      <p class="mx-5">Graphic & Web Designer passionate about creating clean and functional digital experiences</p>      
+   <div>
+    <div class="chat" >
+        <h2 class="h_type">  Hi, Im Gretel </h2>
+       
+        <p>I specialize in creating clean, user-friendly designs, from print to digital. With experience in photography, web design, and UI/UX, I enjoy turning ideas into visually appealing and functional projects.</p>
+    </div> 
+     </div>    
+      <!-------------------------------------------------------- INFORMATION -->
+      <div class="grid-container">
+        <div class="card card1" id="card1" data-key="caseStudys" data-title="Case Studys" onclick="expandCard('card1')">
+          <div class="card-title">Case Studys</div>
+          <div class="card-content"></div> <!-- contenido dinámico -->
+        </div>
+        <div class="card card2" id="card2" data-key="photography" data-title="Photography" onclick="expandCard('card2')">
+          <div class="card-title">Photography</div>
+          <div class="card-content"></div>
+        </div>
+        <div class="card card3" id="card3" data-key="editorial" data-title="Editorial" onclick="expandCard('card3')">
+          <div class="card-title">Editorial & Publication Design</div>
+          <div class="card-content"></div>
+        </div>
+        <div class="card card4" id="card4" data-key="experience" data-title="Experience" onclick="expandCard('card4')">
+          <div class="card-title">Experience</div>
+          <div class="card-content"></div>
+        </div>
+      </div>
+
+    </section>
+<style>
+    .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Cards base */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* Colores del tema: fondo amarillo para todas */
+.card1, .card2, .card3, .card4 {
+  
+  color: #001F54; /* navy para el texto */
+}
+
+/* Cards base */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+}
+
+/* Expandido */
+.card.expanded {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+/* Card title pequeño arriba */
+.card-title {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #001F54; /* navy para el título */
+}
+
+/* Card content: grid de subtemas */
+.card-content {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr; /* igual altura para todos los elementos */
+  gap: 10px;
+  padding: 5px;
+  height: auto; /* no forzar altura extra */
+}
+
+/* Subtarjetas */
+.gallery-item {
+  background: rgba(255,255,255,0.8);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #001F54;
+}
+
+/* Hover sin hacer scroll */
+.gallery-item:hover {
+  transform: scale(1.02); /* muy pequeño, no activa scroll */
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+</style>
+<script>
+const container = document.querySelector('.grid-container');
+const baseRows = '1fr 1fr';
+const baseCols = '1fr 1fr';
+
+fetch('data/projects.json')
+  .then(res => res.json())
+  .then(data => window.projectsData = data);
+
+function expandCard(cardId) {
+  const cards = document.querySelectorAll('.card');
+  const clicked = document.getElementById(cardId);
+
+  // 1️⃣ Primero: restaurar grid y limpiar contenido de todas las tarjetas
+  container.style.gridTemplateRows = baseRows;
+  container.style.gridTemplateColumns = baseCols;
+  cards.forEach(c => {
+    c.classList.remove('expanded');
+    c.querySelector('.card-content').innerHTML = '';
+  });
+
+  // 2️⃣ Si hicimos clic en la tarjeta ya expandida antes, no hacemos nada más (queda contraída)
+  //    Esto permite que al hacer clic en la misma se contraiga
+  if(clicked.dataset.wasExpanded === 'true') {
+    clicked.dataset.wasExpanded = 'false';
+    return;
+  }
+
+  // 3️⃣ Expandir la tarjeta clickeada
+  clicked.classList.add('expanded');
+  clicked.dataset.wasExpanded = 'true'; // marcar como expandida
+
+  // ajustar grid según la tarjeta
+  let rowFr = [1,1], colFr = [1,1];
+  switch(cardId){
+    case 'card1': rowFr=[3,1]; colFr=[3,1]; break;
+    case 'card2': rowFr=[3,1]; colFr=[1,3]; break;
+    case 'card3': rowFr=[1,3]; colFr=[3,1]; break;
+    case 'card4': rowFr=[1,3]; colFr=[1,3]; break;
+  }
+  container.style.gridTemplateRows = `${rowFr[0]}fr ${rowFr[1]}fr`;
+  container.style.gridTemplateColumns = `${colFr[0]}fr ${colFr[1]}fr`;
+
+  // 4️⃣ Mostrar contenido desde JSON
+  const tema = window.projectsData[clicked.dataset.key]; 
+  const contentDiv = clicked.querySelector('.card-content');
+  if(tema) {
+    tema.forEach(sub => {
+      const item = document.createElement('div');
+      item.classList.add('gallery-item');
+      if(sub.image) item.innerHTML = `<img src="${sub.image}">`;
+      item.innerHTML += `<h4>${sub.title}</h4><p>${sub.description}</p>`;
+      contentDiv.appendChild(item);
+    });
+  }
+}
+</script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/projects.js"></script>
+    <script src="js/script.js"></script>
+    <div id="footer-container"></div>
+  </body>
+</html>

@@ -150,6 +150,7 @@ lastScroll = current;
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="projects" onclick="goToSection(this)">projects</a>      
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="skills" onclick="goToSection(this)">Skills</a>
+               <a class="nav-link m_text mosaic_btn" href="about.html">about me</a>     
               <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>     
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="contact" onclick="goToSection(this)" href="index.html#">contact</a>
             </section>
