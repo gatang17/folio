@@ -116,84 +116,56 @@
     {
       "id": "graphic",
       "title": "Graphic Design",
-      "overlay": "Graphic",
+      "overlay": "Graphic Design",
       "points": [
         "Brand identity development",
         "Editorial & layout design",
         "Typography systems",
         "Visual composition & hierarchy"
       ],
-      "tools": ["Illustrator", "Photoshop", "InDesign"]
-    },
-    {
-      "id": "html",
-      "title": "HTML",
-      "overlay": "HTML",
-      "points": [
-        "Structured content organization",
-        "Accessible page foundations",
-        "Content hierarchy & clarity",
-        "Clean and scalable markup",
-        "Version control"
-      ],
-      "tools": ["HTML"]
-    },
-    {
-      "id": "css",
-      "title": "CSS",
-      "overlay": "CSS",
-      "points": [
-        "Layout systems (Flexbox & Grid)",
-        "Responsive visual design",
-        "Micro-interactions & motion",
-        "Consistent design systems"
-      ],
-      "tools": ["CSS", "Bootstrap"]
-    },
-    {
-      "id": "js",
-      "title": "JavaScript",
-      "overlay": "JS",
-      "points": [
-        "Creating interactive website elements",
-        "Enhancing user experience through motion",
-        "Building dynamic page behaviors",
-        "Improving usability with subtle interactions"
-      ],
-      "tools": ["Visual Studio Code"]
+      "tools": ["Adobe Creative Suite"]
     },
     {
       "id": "uiux",
-      "title": "UI/UX Design",
-      "overlay": "UI/UX",
+      "title": "Digital Design",
+      "overlay": "Digital Design",
       "points": [
-        "Wireframing & prototyping",
-        "Visual storytelling",
-        "Typography & color strategy",
-        "User-centered design thinking"
+        "Creating clear and easy-to-use websites",
+        "Planning page layouts and visual flow",
+        "Choosing typography & colors for readability",
+        "Designing with users in mind"
       ],
       "tools": ["Figma", "Adobe XD"]
+    },
+    {
+      "id": "HTML",
+      "title": "Web Implementation",
+      "overlay": "HTML/CSS/JS",
+      "points": [
+        "Translating design concepts into functional websites",
+        "Building responsive and visually consistent layouts",
+        "Adding interactive elements to enhance user experience",
+        "Ensuring design consistency across devices"
+      ],
+      "tools": ["HTML", "CSS", "JavaScript", "Bootstrap"]
     }
-  ],
+ 
+],
 
   "about": [
     {
       "pageTitle": "Resume",
-
       "personal": {
         "name": "GRETEL ALVAREZ TANG",
         "phone": "(502) 345-8298",
         "email": "gretelalvareztang@gmail.com",
         "website": "https://gatang.vercel.app"
       },
-
-      "education": [
-        {
+      "education": [        {
           "institution": "Jefferson Community & Technical College",
           "location": "Louisville, KY",
           "degree": "Associate of Applied Science\nCommunication Arts Technology: Advertising Design Option",
-          "graduation": "Dec 2026"
-        },
+          "graduation": "Dec 2026"        },
         {
           "institution": "Universidad de Holguín",
           "location": "Holguín, Cuba",
@@ -270,66 +242,51 @@
     }
   ],
 
-
  
-    "caseStudys": [
+    "about_me": [
       {
-        "image":["images/about/cstudy/qpp1.png"] ,
-        "title": "Quill Pen Press",
-        "description": "This project was a brand research study of Quill Pen Press, a hybrid publisher focused on empowering independent authors and small presses. I analyzed the brand’s identity, target audience, market perception, competition, and unique value proposition, and provided strategic recommendations to strengthen its positioning, communication, and connection with authors and readers."
-      },
-      {
-        "image": "images/about/cstudy/cofee.png",
-        "title": "Café on Clock",
-        "description": "This project involved designing the logo for 'Café on Clock,' a café brand that blends Spanish and English in its identity. I created a hand-drawn, pen-style logo that evokes an artisanal and cozy feel, reflecting both coffee culture and the brand’s unique linguistic fusion."
-      },
-      {
-        "image": "images/about/cstudy/splash.png",
-        "title": "Juicy Splash",
-        "description": "This project involved designing the logo for 'Juicy Splash,' a citrus juice brand. I developed a fresh and vibrant visual identity inspired by the energy of citrus fruits, using dynamic elements to convey freshness, flavor, and a refreshing sensory experience."
-      }
-    ],
-    "photography": [
-      {
-        "image": "photo1.jpg",
-        "title": "Foto 1",
-        "description": "Descripción de la foto 1"
-      },
-      {
-        "image": "photo2.jpg",
-        "title": "Foto 2",
-        "description": "Descripción de la foto 2"
-      },
-      {
-        "image": "photo3.jpg",
-        "title": "Foto 3",
-        "description": "Descripción de la foto 3"
-      }
-    ],
-    "editorial": [
-      {
-        "image": "images/about/editorial/JPEG/05.jpg",
-        "title": "Annual Report",
-        "description": "This project involved designing a 2024 Annual Report for the Communication Arts Technology Program. I created a visually engaging publication that highlights the program’s achievements, student successes, events, and future goals. The design focused on transforming data and institutional content into a compelling visual narrative, using layout, typography, and imagery to inform, engage, and inspire its audience."
-      },
-      {
-        "image": "images/about/editorial/JPEG/DerbyR10.png",
-        "title": "Kentucky Derby Festival 2026 – Poster",
-        "description": "This poster reflects the freedom and energy of the Kentucky Derby through loose, expressive strokes. Vibrant colors convey excitement and emotion, while the city skyline in the background represents local pride. The scattered patches evoke fireworks, adding a celebratory feel to the composition."
-      },
-      {
-        "image": "editorial3.jpg",
-        "title": "Editorial 3",
-        "description": "Texto explicativo 3"
-      }
-    ],
-    "experience": [
-      {
-        "image": "experience1.jpg",
-        "title": "Experiencia 1",
-        "description": "Descripción breve de la experiencia"
+        "caseStudys": [
+          {
+            "image": ["images/about/cstudy/qpp1.png"],
+            "title": "Quill Pen Press",
+            "description": "This project was a brand research study of Quill Pen Press, a hybrid publisher focused on empowering independent authors and small presses."
+          },
+          {
+            "image": "images/about/cstudy/cofee.png",
+            "title": "Café on Clock",
+            "description": "This project involved designing the logo for Café on Clock."
+          },
+          {
+            "image": "images/about/cstudy/splash.png",
+            "title": "Juicy Splash",
+            "description": "This project involved designing the logo for Juicy Splash."
+          }
+        ],
+        "photography": [
+          {
+            "image": "photo1.jpg",
+            "title": "Foto 1",
+            "description": "Descripción de la foto 1"
+          }
+        ],
+        "editorial": [
+          {
+            "image": "images/about/editorial/JPEG/05.jpg",
+            "title": "Annual Report",
+            "description": "Annual report design project."
+          }
+        ],
+        "experience": [
+          {
+            "image": "experience1.jpg",
+            "title": "Experiencia 1",
+            "description": "Descripción breve"
+          }
+        ]
       }
     ]
+
+ 
   
 
 }

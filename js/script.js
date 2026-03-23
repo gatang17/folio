@@ -291,7 +291,7 @@ if (projectContainer) {  // <- chequeo agregado
 }
 
 
-//=======================================================about_me----------------------------------------------------------------
+//=======================================================resumen----------------------------------------------------------------
 fetch('./data/projects.json')
 .then(res => res.json())
 .then(data => {
@@ -412,6 +412,88 @@ fetch('./data/projects.json')
     renderDesc();
 });
 
+//=======================================================about_me----------------------------------------------------------------
+fetch('data/projects.json')
+  .then(response => response.json())
+  .then(data => {
+
+    const aboutData = data.about_me[0];
+
+    const sidebar = document.getElementById('sidebar');
+    const displayBox = document.getElementById('display-box');
+
+    let firstLoaded = false;
+
+    const showProject = (item, itemDiv) => {
+      const imgSrc = Array.isArray(item.image)
+        ? item.image[0]
+        : item.image;
+
+      displayBox.innerHTML = `
+        <img src="${imgSrc}">
+        <div class="description">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>
+      `;
+
+      // activar selección
+      document.querySelectorAll('.item').forEach(el => el.classList.remove('active'));
+      if (itemDiv) itemDiv.classList.add('active');
+    };
+
+    Object.keys(aboutData).forEach(category => {
+
+      const catDiv = document.createElement('div');
+      catDiv.classList.add('category');
+
+      const header = document.createElement('div');
+      header.classList.add('cat-header');
+      header.innerHTML = `
+        <span>${category}</span>
+        <span class="plus">+</span>
+      `;
+
+      const itemsDiv = document.createElement('div');
+      itemsDiv.classList.add('items');
+
+      aboutData[category].forEach((item, index) => {
+
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('item');
+        itemDiv.textContent = item.title;
+
+        itemDiv.addEventListener('click', (e) => {
+          e.stopPropagation();
+          showProject(item, itemDiv);
+        });
+
+        // DEFAULT (primer item del primer grupo)
+        if (!firstLoaded && index === 0) {
+          showProject(item, itemDiv);
+          catDiv.classList.add('open');
+          firstLoaded = true;
+        }
+
+        itemsDiv.appendChild(itemDiv);
+      });
+
+      // 👉 SOLO UNA CATEGORÍA ABIERTA
+      header.addEventListener('click', () => {
+        document.querySelectorAll('.category').forEach(cat => {
+          if (cat !== catDiv) cat.classList.remove('open');
+        });
+
+        catDiv.classList.toggle('open');
+      });
+
+      catDiv.appendChild(header);
+      catDiv.appendChild(itemsDiv);
+      sidebar.appendChild(catDiv);
+    });
+
+  })
+  .catch(error => console.log('Error:', error));
 
 //=================================================project en index
 const grid = document.getElementById("projects-grid");

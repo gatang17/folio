@@ -7,245 +7,159 @@
     <title>My Portfolio</title>
 
     <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"      rel="stylesheet"  />
 
     <!-- FontAwesome -->
-    <script
-      src="https://kit.fontawesome.com/8fb3a30aab.js"
-      crossorigin="anonymous"
-    ></script>
+    <script      src="https://kit.fontawesome.com/8fb3a30aab.js"      crossorigin="anonymous"    ></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+    <!-- Custom CSS -->   
+     <link rel="stylesheet" href="styles.css" /> 
+      </head>
 
   <body>
     <!-- HEADER -->
     <header class="row justify-content-between py-3 mx-2">
       <div id="header-container"></div>
-
     </header>
 
     <section id="aboutme" class="content">
-      <div  class="t-border">
-        <h2  class="title">About Me</h2> 
+        <div  class="t-border">
+          <h2  class="title">About Me</h2> 
+            
+        </div>
+        <div style="display: flex;justify-items: flex-end; justify-content: flex-end; align-items: flex-end; align-content: flex-end; padding: 3rem;">
+            <div class="" style="max-width: 500px; max-height: fit-content!important; padding: 0rem;">
+                <h2 class="h_type">  Hi, Im Gretel </h2>
+               
+                <p>Hi, I'm Gretel! Here's a little about me: I love design and photography. They aren't my major, but I really enjoy creating things that can catch people's interest and make them think.</p>
+            </div> 
+             </div> 
+        
+        <div class="container-custom">
+            
+            <div class="main-box" id="display-box">
+                
+                </div>
           
-      </div>
-      <p class="mx-5">Graphic & Web Designer passionate about creating clean and functional digital experiences</p>      
-   <div>
-    <div class="chat" >
-        <h2 class="h_type">  Hi, Im Gretel </h2>
-       
-        <p>I specialize in creating clean, user-friendly designs, from print to digital. With experience in photography, web design, and UI/UX, I enjoy turning ideas into visually appealing and functional projects.</p>
-    </div> 
-     </div>    
-      <!-------------------------------------------------------- INFORMATION -->
-      <div id="sec_wrap" class="content">
-        <div class="grid-container">
-            <div class="card card1" id="card1" data-key="caseStudys" data-title="Case Studys" onclick="expandCard('card1')">
-              <div class="card-title">Case Studys</div>
-              <div class="card-content"></div> <!-- contenido dinámico -->
+            <div class="sidebar" id="sidebar">
+               
             </div>
-            <div class="card card2" id="card2" data-key="photography" data-title="Photography" onclick="expandCard('card2')">
-              <div class="card-title">Photography</div>
-              <div class="card-content"></div>
-            </div>
-            <div class="card card3" id="card3" data-key="editorial" data-title="Editorial" onclick="expandCard('card3')">
-              <div class="card-title">Editorial & Publication Design</div>
-              <div class="card-content"></div>
-            </div>
-            <div class="card card4" id="card4" data-key="experience" data-title="Experience" onclick="expandCard('card4')">
-              <div class="card-title">Experience</div>
-              <div class="card-content"></div>
-            </div>
+            
           </div>
-      </div>
-
-
+    
     </section>
-<style>
- 
-    #sec_wrap{
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        row-gap: 2rem;
-        max-height: fit-content;
-    }
-    .grid-container {
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  width:clamp(500px , 70vw , 1200px );
-  height:clamp(auto , 70vw , 1200px );
-  
+    <style>
+        /*=================================================RESUME*/
+.container-custom {
+    display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;             /* espacio entre items */
+  justify-content: flex-start; 
+  padding: 3rem;
 }
 
-/* Cards base */
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: all 0.5s ease;
-  border-radius: 10px;
-  background-color: transparent;
+/* MAIN */
+.main-box {
+  width: 60%;
+  min-height: 400px;
+  padding: 15px;
 }
 
-/* Colores del tema: fondo amarillo para todas */
-.card1, .card2, .card3, .card4 {
-    color: #001F54; /* navy para el texto */
-     background:#e3c67d;
-
-}
-
-/* Cards base */
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: all 0.5s ease;
-  border-radius: 10px;
-}
-
-/* Expandido */
-.card.expanded {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  z-index: 10;
-  background:#e8e0cb;
-}
-
-/* Card title pequeño arriba */
-.card-title {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #001F54; /* navy para el título */
-}
-
-/* Card content: grid de subtemas */
-.card-content {
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr; /* igual altura para todos los elementos */
-  gap: 10px;
-  padding: 5px;
-  height: auto; /* no forzar altura extra */
-}
-
-/* Subtarjetas */
-.gallery-item {
-  background: transparent;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-  color: #001F54;
-  box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Hover sin hacer scroll */
-.gallery-item:hover {
-  transform: scale(1.02); /* muy pequeño, no activa scroll */
-}
-
-.gallery-item img {
+.main-box img {
   width: 100%;
   display: block;
-  border-radius: 5px;
+  flex: 0 0 auto;
 }
-/* MEDIA QUERY: móviles */
-@media (max-width: 868px) {
-  .grid-container {
-    display: flex;
-    flex-direction: column; /* vertical */
+
+.description {
+  margin-top: 15px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+/* CATEGORY */
+.category {
+
+
+  overflow: hidden;
+}
+
+/* HEADER */
+.cat-header {
+    border-bottom: solid #a9a483;;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* PLUS ROTATION */
+.plus {
+  transition: transform 0.3s ease;
+}
+
+.category.open .plus {
+  transform: rotate(45deg); /* + → × */
+}
+
+/* ITEMS (ANIMACIÓN REAL) */
+.items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CUANDO ABRE */
+.category.open .items {
+  max-height: 2000px; /* suficiente para contenido */
+}
+
+/* ITEM */
+.item {
+  padding: 8px 10px;
+  min-height: 80px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.item:hover {
+  background: #a9a483;
+}
+
+/* ACTIVO */
+.item.active {
+    color: #a9a483;
+    background-color: #2f2f2f;
+}
+@media (max-width: 768px) {
+  .main-box,
+  .sidebar {
+    width: 100%; /* ocupa toda la fila */
   }
 
-  .card-content {
-    display: flex;
-    flex-direction: column; /* items vertical */
-  }
-
-  .gallery-item {
-    margin-bottom: 10px;
+  .container-custom {
+    justify-content: center; /* opcional, centra items si son más estrechos */
   }
 }
 </style>
-<script>
-const container = document.querySelector('.grid-container');
-const baseRows = '1fr 1fr';
-const baseCols = '1fr 1fr';
+    <script>
 
-fetch('data/projects.json')
-  .then(res => res.json())
-  .then(data => window.projectsData = data);
-
-function expandCard(cardId) {
-  const cards = document.querySelectorAll('.card');
-  const clicked = document.getElementById(cardId);
-
-  // 1️⃣ Primero: restaurar grid y limpiar contenido de todas las tarjetas
-  container.style.gridTemplateRows = baseRows;
-  container.style.gridTemplateColumns = baseCols;
-  cards.forEach(c => {
-    c.classList.remove('expanded');
-    c.querySelector('.card-content').innerHTML = '';
-  });
-
-  // Si hicimos clic en la tarjeta ya expandida antes, no hacemos nada más (queda contraída)
-  //    Esto permite que al hacer clic en la misma se contraiga
-  if(clicked.dataset.wasExpanded === 'true') {
-    clicked.dataset.wasExpanded = 'false';
-    return;
-  }
-
-  // 3️Expandir la tarjeta clickeada
-  clicked.classList.add('expanded');
-  clicked.dataset.wasExpanded = 'true'; // marcar como expandida
-
-  // ajustar grid según la tarjeta
-  let rowFr = [1,1], colFr = [1,1];
-  switch(cardId){
-    case 'card1': rowFr=[3,1]; colFr=[3,1]; break;
-    case 'card2': rowFr=[3,1]; colFr=[1,3]; break;
-    case 'card3': rowFr=[1,3]; colFr=[3,1]; break;
-    case 'card4': rowFr=[1,3]; colFr=[1,3]; break;
-  }
-  container.style.gridTemplateRows = `${rowFr[0]}fr ${rowFr[1]}fr`;
-  container.style.gridTemplateColumns = `${colFr[0]}fr ${colFr[1]}fr`;
-
-  // Mostrar contenido desde JSON
-  const tema = window.projectsData[clicked.dataset.key]; 
-  const contentDiv = clicked.querySelector('.card-content');
-  if(tema) {
-    tema.forEach(sub => {
-      const item = document.createElement('div');
-      item.classList.add('gallery-item');
-      if(sub.image) item.innerHTML = `<img src="${sub.image}">`;
-      item.innerHTML += `<h4>${sub.title}</h4><p>${sub.description}</p>`;
-      contentDiv.appendChild(item);
-    });
-  }
-}
-</script>
+    </script>
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="js/projects.js"></script>
-    <script src="js/script.js"></script>
+   <script src="js/script.js"></script> 
     <div id="footer-container"></div>
   </body>
 </html>

@@ -205,20 +205,14 @@ footer {
   margin-top: auto;
   padding-bottom: 10px;
 }
-/*=================index*/
+/*=========================================================index*/
 #intro {
-  background-image: url(images/hero2.jpg);
-  background-position: center;
+  min-height: 90vh;
+  display: grid;
+  overflow: hidden;
+ 
 }
-.hero_text {
-  max-height: 800px;
-  z-index: 1;
-  font-size: clamp(2.5rem, 5vw, 15rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: left;
-  color: #a9a483;
-}
+
 #top_bar {
   padding: 10px;
   background-color: rgb(22, 22, 22);
@@ -247,13 +241,7 @@ footer {
   min-height: 100vh;
   }
 
-/*--------------SECTION INTRO*/
 
-#intro {
-  min-height: 90vh;
-  display: grid;
-  overflow: hidden;
-}
 #hero {
   position: relative;
   width: 100%;
@@ -261,8 +249,19 @@ footer {
   align-items: center;
   justify-content: left;
 }
-
+.cont_index{
+  background-image: 
+   url(images/hero1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  justify-items: flex-start;
+    align-content: flex-end;
+    color: #2f2f2f;
+}
 .con_hero {
+  
   display: grid;
   gap: 50px;
   grid-template-columns: 50% 10%;
@@ -288,6 +287,15 @@ footer {
   font-weight: 900;
   text-transform: uppercase;
   text-align: left;
+  max-height: 800px;
+  z-index: 1;
+  font-size: clamp(2.5rem, 5vw, 15rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  /*color: #a9a483;*/
+  color: #2f2f2f;
+
 }
 .hero_btn {
   padding: 1rem;
@@ -297,7 +305,8 @@ footer {
 }
 #menu_dtk {
   flex: 0 1 auto;
-  color: #a9a483;
+
+  
 }
 .sec_menu22 {
   padding-top: 5em;
@@ -563,7 +572,7 @@ i {
 }
 /* Celdas */
 .skill {
-  flex: 1;
+  flex: 2;
  /* background: rgba(0, 0, 0, 0.764);
   color: #a9a483;*/
   background:#e8e0cb;
@@ -576,17 +585,12 @@ i {
 }
 /* Celda activa */
 .skill.active {
-  flex: 2; /* ~50% */
+  flex: 3; /* ~50% */
 }
 /* OVERLAY (pista visual) */
 .skill-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.025)
-  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -813,7 +817,10 @@ textarea {
     scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */
     min-height:fit-content ;
   }
-
+  .cont_index{
+   background: url(images/hero2.jpg) center/cover no-repeat;
+  width: 100%;
+  }
 .t-border{
   position: relative;
   padding: 0 2rem;
@@ -836,6 +843,10 @@ textarea {
     max-width: 90%;
     z-index: 1;
     text-align: left;
+    color: #a9a483;
+    text-shadow: 2px 2px 2px #2f2f2f;
+  
+
   }
   .hero_btn {
     font-size: 1rem;
@@ -907,8 +918,8 @@ textarea {
     max-height: 100%;
   }
   .skill {
-    max-height: 4rem; /* cerrada */
-    transition: min-height 0.4s ease;
+    flex: 1;
+       transition: min-height 0.4s ease;
   }
   .skill.active {
     max-height: fit-content;
@@ -936,10 +947,10 @@ textarea {
   .contForm form {
     width: 100%;
     /* max-width: 900px; */
-    background-color: rgba(43, 41, 41, 0.1);
+
     padding: 3rem;
     border-radius: 0px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+ 
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
