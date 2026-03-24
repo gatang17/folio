@@ -4,18 +4,6 @@ window.dataLayer = window.dataLayer || [];
   gtag('js', new Date());
   gtag('config', 'G-X2R58E5647');
 
-/*  //=================HIDE THE SECTIONS IN BROWSER=======
-function goToSection(link) {
-    // Tomamos el id de destino desde el data-section
-    const sectionId = link.dataset.section;
-    const section = document.getElementById(sectionId);
-  
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      // Animación opcional de cuadritos
-      animateSection(section);
-    } 
-  } */
    //=================HIDE THE SECTIONS IN BROWSER=======
    function goToSection(link) {
     const sectionId = link.dataset.section;
@@ -98,12 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(err => console.error('Error loading header:', err));
   fetch("./data/h_menu.html")
 .then(res => res.text())
-.then(html => {
-  
-  document.getElementById("mobile-menu-btn").innerHTML = html;
-  InitMobile();
-  }) 
-.catch(err => console.error('Error loading menuhamburguer:', err));
+
+
 //======================ESTE CODIGO HACE Q EL MENU FLOTANDO NO SE VEA EN 0
 const mobileBtn = document.getElementById("mobile-menu-btn");
 window.addEventListener("scroll", () => {
@@ -145,12 +129,12 @@ lastScroll = current;
         <div class="container-fluid"> 
              
           <div class="div_menu_home">
-          <div id="logo_container"><img id="img_logoV" src="images/logo.png" ></div>  
+          <div id="logo_container"><img id="img_logoV" src="images/logoBW.png" ></div>  
         
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="projects" onclick="goToSection(this)">projects</a>      
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="skills" onclick="goToSection(this)">Skills</a>
-               <a class="nav-link m_text mosaic_btn" href="about.html">about me</a>     
+             <!--  <a class="nav-link m_text mosaic_btn" href="about.html">about me</a>     -->
               <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>     
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="contact" onclick="goToSection(this)" href="index.html#">contact</a>
             </section>
@@ -188,9 +172,9 @@ fetch('data/projects.json')
     dnoDescrip.textContent = project.description;
 
     pdnLink.innerHTML = `
-      <div class="project-links mt-0 mb-5 mt-5 text-end" style="border-top:solid;">
-        ${project.github ? `<a href="${project.github}" target="_blank" class="btn me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
-        ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
+      <div class="project-links mt-0 mb-5 mt-5 text-start" style="border-top:solid;">
+        ${project.github ? `<a href="${project.github}" target="_blank" class="btn " >GitHub</a>` : ''}
+        ${project.live ? `<a href="${project.live}" target="_blank" class="btn" >Live Demo</a>` : ''}
       </div>
     `;
 
@@ -298,7 +282,7 @@ fetch('./data/projects.json')
     const aboutme = data.about[0];  
 
     // Nombre
-    document.getElementById("name").textContent = aboutme.pageTitle;
+  
     const titlesCol = document.getElementById("titles_col");
 
         // Contenedor de personal info (p_info)
@@ -318,9 +302,7 @@ fetch('./data/projects.json')
     let selectedTopic = topics[0]; // por defecto seleccionamos el primero
     const downloadBtn = document.createElement("div");
     downloadBtn.innerHTML = `
-    <a id="download" href="data/Final_Resume_Gretel.pdf" download class="btn m_text mosaic_btn">
-    Download PDF
-    </a>`;
+    `;
     
     function renderTitles() {
         titlesCol.innerHTML = '';
@@ -335,7 +317,7 @@ fetch('./data/projects.json')
                 renderDesc();
             });
             titlesCol.appendChild(div);
-            titlesCol.appendChild(downloadBtn);
+      
         });
     }
 
@@ -653,31 +635,6 @@ fetch('data/projects.json')
 
 //==================END_FETCHES==========================
 
-/* ===============================
-   HELPERS
-=============================== */
-
-// function normalize(path) {
-//   return path.replace(/\/$/, '');
-// }
-// function fileNameToLabel(path) {
-//   let file = path.split('/').pop();
-
-//   if (!file || file === '') {
-//     file = 'index.html';
-//   }
-//   if (file === 'index.html') {
-//     return 'Home';
-//   } 
-//   if (file === 'p_descript.html') {
-//     return 'details';
-//   }
-//   return file
-//     .replace('.html', '')
-//     .replace(/[-_]/g, ' ')
-//     .replace(/([a-z])([A-Z])/g, '$1 $2')
-//     .replace(/\b\w/g, c => c);
-// }
 
 //=================================================CONTACT
 const popup = document.getElementById("pop_up");
@@ -721,84 +678,81 @@ form.addEventListener("submit", function(e){
 
 });
 
-
 //==================================== Botón flotante móvil estaba antes para llegar a home
-/* const mobileBtn = document.querySelector('#mobile-menu-btn a');
-const introSection = document.getElementById('intro');
-mobileBtn.addEventListener('click', (e) => {
-    e.preventDefault(); 
- 
-    fadeOverlay.classList.add('show');
-  
-    setTimeout(() => {
-        introSection.scrollIntoView({ behavior: 'smooth' }); // salto limpio
-    }, 600); 
-});
- */
-  // -------------------- INIT ANIMATION (loader principal)
-
 document.addEventListener("DOMContentLoaded", () => {
 
+  const mobileBtn = document.querySelector('#mobile-menu-btn a');
+  const introSection = document.getElementById('intro');
+  const fadeOverlay = document.getElementById('fade-overlay'); // asegúrate que exista
 
-  const loader = document.getElementById("mosaic-loader");
-  if (loader) {
-    const blocks = 24;
-    for (let i = 0; i < blocks; i++) {
-      const tile = document.createElement("div");
-      tile.style.animationDelay = `${Math.random() * 0.4}s`;
-      loader.appendChild(tile);
-    }    setTimeout(() => {      loader.remove();    }, 900); // duración total < 1s
-  }});
+  if (!mobileBtn || !introSection) return;
 
+  mobileBtn.addEventListener('click', (e) => {
+    e.preventDefault();
 
-//========================typewriter effect
-const texts = [
+    if (fadeOverlay) {
+      fadeOverlay.classList.add('show');
+    }
+
+    setTimeout(() => {
+      introSection.scrollIntoView({ behavior: 'smooth' });
+    }, 600);
+  });
+
+});
+//=================================================typeWriter(); */
+//here i am giving the values to the array
+createTypeWriter("typewriter", [
   "Let’s connect!",
   "Let’s Build Something Great!"
-];
+]);
 
-const element = document.getElementById("typewriter");
+createTypeWriter("typewriter_hero", [
+  "Hi, I'm Gretel",
+  "Welcome to my portfolio",
+  "I design experiences"
+]); 
 
+function createTypeWriter(elementId, texts) {
+  const element = document.getElementById(elementId);
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-const speed = 100;
-const deleteSpeed = 60;
-const pause = 1200;
+  const speed = 100;
+  const deleteSpeed = 60;
+  const pause = 1200;
 
-function typeWriter() {
-  const currentText = texts[textIndex];
+  function typeWriter() {
+    const currentText = texts[textIndex];
 
-  if (!isDeleting) {
-    // ESCRIBIENDO
-    if (charIndex < currentText.length) {
-      element.textContent += currentText.charAt(charIndex);
-      charIndex++;
-      setTimeout(typeWriter, speed);
+    if (!isDeleting) {
+      if (charIndex < currentText.length) {
+        element.textContent += currentText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, speed);
+      } else {
+        setTimeout(() => {
+          isDeleting = true;
+          typeWriter();
+        }, pause);
+      }
     } else {
-      setTimeout(() => {
-        isDeleting = true;
-        typeWriter();
-      }, pause);
-    }
-  } else {
-    // BORRANDO
-    if (charIndex > 0) {
-      charIndex--;
-      element.textContent = currentText.substring(0, charIndex);
-      setTimeout(typeWriter, deleteSpeed);
-    } else {
-      isDeleting = false;
-      textIndex = (textIndex + 1) % texts.length;
-      setTimeout(typeWriter, 300);
+      if (charIndex > 0) {
+        charIndex--;
+        element.textContent = currentText.substring(0, charIndex);
+        setTimeout(typeWriter, deleteSpeed);
+      } else {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(typeWriter, 300);
+      }
     }
   }
+
+  typeWriter();
 }
-
-typeWriter();
-
 //==============================boton
 
 

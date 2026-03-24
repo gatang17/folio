@@ -18,7 +18,7 @@
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!--   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Geist:wght@400;600;700&display=swap" rel="stylesheet"> -->
+ <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sen:wght@400..800&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">-->
    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
 
@@ -36,9 +36,16 @@
     <!--============================================INTRO SECTION-->
 <section id="intro" class="d-flex ">     
     <div class="" id="menu_dtk" > </div>   
-        <div class="cont_index" >                   
-                <div class="con_hero">              
-                   <div class="con_hero_sub" >                        
+        <div class="cont_index" > 
+            <div class="chat_hero">
+                <h2><span id="typewriter_hero"></span>
+                    <span class="cursor"></span>
+                  </h2>       
+            </div>                     
+                <div class="con_hero">
+                                  
+                   <div class="con_hero_sub" >  
+                                          
                         <h2 class="hero_text"> Web Designer</h2>                    
                         <!-- <a href="index.html#projects" class="hero_btn btn m_text mosaic_btn">click here and check the things i've done</a> -->
                     </div>             
@@ -46,14 +53,7 @@
                 </div>                       
              </div>      
     </section>
-        <!--============================================TYPEWRITER EFFECT-->
-    <div class="chat">
-        <h2>Have a project in mind?</h2>
-        <h2>
-            <span id="typewriter"></span>
-            <span class="cursor"></span>
-          </h2>       
-    </div>
+ 
   
     <!--============================================PROJECTS SECTION-->
 
@@ -77,20 +77,20 @@
         </div> 
             <div class="skills-grid">
                 <div class="skill active" data-title="graphic">
-                    <i class="fa-solid fa-angle-right arrow"></i>             
+                    <!-- <i class="fa-solid fa-angle-right arrow"></i>              -->
                     <div class="skill-overlay"></div>
                     <div class="skill-inner"></div>
                   </div>
 
                 <div class="skill" data-title="HTML">
-                  <i class="fa-solid fa-angle-right arrow"></i>
+                  <!-- <i class="fa-solid fa-angle-right arrow"></i> -->
            
                   <div class="skill-overlay"></div>
                   <div class="skill-inner"></div>
                 </div>
             
                 <div class="skill" data-title="uiux">
-                    <i class="fa-solid fa-angle-left arrow"></i>
+                    <!-- <i class="fa-solid fa-angle-left arrow"></i> -->
                   
                     <div class="skill-overlay"></div>
                     <div class="skill-inner"></div>
@@ -98,7 +98,8 @@
                 </div>
           </section>
  
-
+       <!--============================================TYPEWRITER EFFECT-->
+  
     <!--============================================CONTACT SECTION-->
     <section id="contact" class="content" >
         <div >
@@ -106,6 +107,7 @@
             <h2 class="title">Contact</h2>            
         </div>        
     </div>
+    <div class="wrap_form d-flex justify-content-center align-items-center gap-5">
         <div class="contForm">            
             <form id="contactForm" action="https://formsubmit.co/gretelalvareztang@gmail.com" method="POST" class="col">
 
@@ -127,9 +129,9 @@
                 <textarea id="message" name="message" placeholder=" "></textarea>
                        
                 </div>
-                <div class="d-flex" style="justify-content: center;">
+                <div class="d-flex" style="justify-content: start;">
                     <div style="max-width: fit-content;">
-                        <button type="submit" class="btn m_text mosaic_btn my-5" style="width: 70px;">Send</button>
+                        <button type="submit" class="btn m_text my-5" style="width: 70px;">Send</button>
                     </div>
                    
                 </div>
@@ -137,9 +139,17 @@
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 
-                </form>
-               
-        </div>                
+                </form>               
+        </div> 
+        <div class="chat">
+            <h2>Have a project in mind?</h2>
+            <h2>
+                <span id="typewriter"></span>
+                <span class="cursor"></span>
+              </h2>       
+        </div>               
+    </div>
+      
     </section>
 
 
@@ -161,10 +171,8 @@
 
     <!-- Botón flotante móvil -->
     <div id="mobile-menu-btn" >
-
-       <!--  <a href="javascript:void(0)"data-section="intro" onclick="goToSection(this)"> <i class="fa-solid fa-circle-arrow-up" ></i></a>
-     -->
-    </div>
+      <a href="javascript:void(0)"data-section="intro" onclick="goToSection(this)"> <i class="fa-solid fa-circle-arrow-up" ></i></a>
+     </div>
  
     <div class="fade-overlay" id="fade-overlay"></div>
 
