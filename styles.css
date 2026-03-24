@@ -297,13 +297,11 @@ height: 50vh;
 .hero_text {
   max-height: 800px;
   z-index: 1;
-  font-size: clamp(2.5rem, 5vw, 15rem);
   font-weight: 900;
   text-transform: uppercase;
   text-align: left;
   max-height: 800px;
   z-index: 1;
-  font-size: clamp(2.5rem, 5vw, 15rem);
   font-weight: 900;
   text-transform: uppercase;
   text-align: left;
