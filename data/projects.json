@@ -47,6 +47,8 @@
         "Vercel"
       ],
       "images": [
+        "images/projects/jgphoto/jg_0d.png",
+        "images/projects/jgphoto/jg_0m.png",
         "images/projects/jgphoto/jg_1.png",
         "images/projects/jgphoto/jg_2.png",
         "images/projects/jgphoto/jg_3.png",
@@ -68,7 +70,11 @@
       "title": "Handyman DMD",
       "description": "Development of a simple and user-friendly website for HandymanDMD...",
       "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
-      "images": ["images/projects/handydmd/handyman.jpg"],
+      "images": [
+            "images/projects/handydmd/h_0d.png",
+            "images/projects/handydmd/h_0m.png",
+        "images/projects/handydmd/handyman.jpg"
+      ],
       "github": "",
 
       "live": "https://handydmd.com/"
@@ -85,6 +91,8 @@
         "Anchor Links"
       ],
       "images": [
+        "images/projects/aurora/a_0m.png",
+        "images/projects/aurora/a_0d.png",
         "images/projects/aurora/a_1.png",
         "images/projects/aurora/a_2.png",
         "images/projects/aurora/a_3.png",
@@ -106,7 +114,15 @@
   "Interactive Image Carousel",
   "Responsive Design"
 ],
-      "images": ["images/projects/jlprezc/jlperezc.png","images/projects/jlprezc/jlperezc_2.png","images/projects/jlprezc/jlperezc_3.png","images/projects/jlprezc/jlperezc_4.png","images/projects/jlprezc/jlperezc_5.png","images/projects/jlprezc/jlperezc_6.png","images/projects/jlprezc/jlperezc_7.png"],
+      "images": [
+      "images/projects/jlprezc/jlperezc_0d.png",
+      "images/projects/jlprezc/jlperezc_0m.png",
+      "images/projects/jlprezc/jlperezc_2.png",
+      "images/projects/jlprezc/jlperezc_3.png",
+      "images/projects/jlprezc/jlperezc_4.png",
+      "images/projects/jlprezc/jlperezc_5.png",
+      "images/projects/jlprezc/jlperezc_6.png",
+      "images/projects/jlprezc/jlperezc_7.png"],
       "live": "https://jlperezc.vercel.app/",
       "github": "https://github.com/gatang17/jlperezc/"
     }

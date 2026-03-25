@@ -493,35 +493,46 @@ function truncateText(text, limit = 60) {
     ? text.slice(0, limit).trim() + "…"
     : text;
 }
+function renderProjects(data) {
+  const grid = document.getElementById("projects-grid");
+  grid.innerHTML = ""; // limpiar antes de renderizar
+
+  const isMobile = window.matchMedia("(max-width: 863px)").matches;
+  
+
+  data.projects.forEach(project => {
+    const card = document.createElement("div");
+    card.classList.add("project-card");
+    card.dataset.id = project.id;
+
+    const imageWrapper = document.createElement("div");
+    imageWrapper.classList.add("image-wrapper");
+
+    const img = document.createElement("img");
+
+    img.src = isMobile
+      ? project.images[1] || project.images[0]
+      : project.images[0];
+
+    img.alt = project.title;
+
+    const title = document.createElement("p");
+    title.textContent = project.title;
+
+    imageWrapper.appendChild(img);
+    card.appendChild(imageWrapper);
+    card.appendChild(title);
+    grid.appendChild(card);
+  });
+}
 fetch("./data/projects.json")
   .then(res => res.json())
   .then(data => {
-    const grid = document.getElementById("projects-grid");
+    renderProjects(data);
 
-    data.projects.forEach(project => {
-      const card = document.createElement("div");
-      card.classList.add("project-card");
-      card.dataset.id = project.id; // <<< Esto es lo que faltaba
-
-      const imageWrapper = document.createElement("div");
-      imageWrapper.classList.add("image-wrapper");
-
-      const img = document.createElement("img");
-      img.src = project.images[0] || "images/placeholder.png";
-      img.alt = project.title;
-
-     /* const overlay = document.createElement("div");
-      overlay.classList.add("overlay");
-      overlay.textContent = truncateText(project.description, 60);*/
-
-      const title = document.createElement("p");
-      title.textContent = project.title;
-
-      imageWrapper.appendChild(img);
-     /* imageWrapper.appendChild(overlay);*/
-      card.appendChild(imageWrapper);
-      card.appendChild(title);
-      grid.appendChild(card);
+    // 👇 SOLO UNA VEZ (fuera del forEach)
+    window.addEventListener("resize", () => {
+      renderProjects(data);
     });
   });
 

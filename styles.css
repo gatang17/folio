@@ -403,7 +403,10 @@ i {
 }
 
 /*================================================= PROJECTS*/
-
+#projects{
+  height: 100vh;
+  background-color: #2f2f2f;
+}
 .title {
   font-size: clamp(2.5rem, 20vw, 8rem); /*text-transform: uppercase;*/
   color: #d0a32b;
@@ -427,21 +430,20 @@ i {
 }
 
 #p_container {
-  max-width: 1500px;
-  width: auto;
   margin: 0 auto;
   padding: 3rem 2rem; /* background: #e5e5e5; /* gris */
   display: flex;
   justify-content: center;
   color: #a9a483;
+
 }
 .project-card {
-  background: rgba(0, 0, 0, 0.764);
+/*   background: rgba(0, 0, 0, 0.764);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08); */
   padding: 1.5rem;
   max-width: 900px;
   width: auto;
-  margin: 0 auto;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  margin: 0 auto; 
   transition: transform 0.2s ease;
   display: grid;
   gap: 1rem;
@@ -461,11 +463,11 @@ i {
   opacity: 1;
 }
 .image-wrapper {
-  position: relative;
+ 
   overflow: hidden;
 }
 .image-wrapper img {
-  width: 100%;
+  max-height: 350px;
   display: block;
   filter: grayscale(100%);
   transition: filter 0.4s ease;
@@ -564,7 +566,9 @@ i {
   background-color: #d0a32b;
   min-height: fit-content;  
 }
-
+#lnk_skills{
+  color: #2f2f2f;
+}
 .skills-grid {
   display: flex;
   gap: 0.5rem;
@@ -653,7 +657,6 @@ i {
 /* CARD DEL FORM */
 .contForm form {
 
-  min-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2rem;
   background-color: rgba(43, 41, 41, 0.1);
@@ -816,7 +819,7 @@ h2 .cursor {
 /*=============================================================================MEDIA QUERY*/
 
 /* *******************************************************************esto es para tablet*/
-@media (min-width: 875px) and (max-width: 1024px) {
+@media (min-width: 780px) and (max-width: 1025px){
   /****hero*/
   .con_hero {
     display: flex;
@@ -824,15 +827,18 @@ h2 .cursor {
   }
   #projects-grid {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem !important;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    }
+    #projects {
+      height: fit-content;
+      padding: 2rem 0 !important;
+    }
+    
 }
 /* esto es para desktop*/
-@media (min-width: 876px) {
+@media (min-width: 1025px) {
   #projects-grid {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -851,7 +857,7 @@ h2 .cursor {
   }
 }
 /* ****************************************************************esto es para mobil*/
-@media (max-width: 875px) {
+@media (max-width: 790px) {
   #intro {
     background-size: cover;
     background-position: center !important;
@@ -939,19 +945,20 @@ h2 .cursor {
   .desc_content ul {
     font-size: 0.75rem;
   }
-  /*****project*/
+  /**************************************************project*/
   #projects {
+    height: fit-content;
     padding: 2rem 0 !important;
   }
   #projects-grid {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem !important;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    }
+
   /* #p_container{min-width: 100%;   margin: 0 auto; padding: 0;} */
 
-  /*****skills*/
+  /********************************************skills*/
   #skills {
     max-height: fit-content;
     padding: 2rem 0 !important;
