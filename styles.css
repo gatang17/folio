@@ -276,8 +276,7 @@ height: 50vh;
   justify-items: flex-start;
     align-content: flex-end;
 }
-.con_hero {
-  
+.con_hero {  
   display: grid;
   gap: 50px;
   grid-template-columns: 50% 10%;
@@ -884,6 +883,12 @@ h2 .cursor {
   }
   .con_hero {
     height: auto;
+    }
+    .chat_hero{
+       padding: 5rem 2rem;
+      }
+    .con_hero_sub {
+      padding: 0;
     }
   .hero_text {
     max-width: 80%;
