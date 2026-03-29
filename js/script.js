@@ -264,12 +264,23 @@ if (projectContainer) {  // <- chequeo agregado
           ${project.images && project.images.length > 0 ? ` ` : '<p>No images available.</p>'}
         <div class="div_img" >
               ${project.images.map(img => `
-                <div class="mb-3 gal_wrap">
-                  <img src="${img}" class="img-fluid " alt="${project.title}">
-                </div>
+         <div class="mb-3 gal_wrap">
+         <a href="${img}" data-fancybox="gallery">
+         <img src="${img}" class="img-fluid" alt="${project.title}">
+         </a>
+         </div>
               `).join('')}
             </div>  `;
         projectContainer.innerHTML = html;
+        // Dentro de tu fetch() después de generar projectContainer.innerHTML
+if (project.images && project.images.length > 0) {
+  // Inicializa Fancybox
+  Fancybox.bind("[data-fancybox='gallery']", {
+    infinite: false,
+    Toolbar: true,
+    closeButton: "top"
+  });
+}
       });
   }
 }
