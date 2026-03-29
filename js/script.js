@@ -206,6 +206,74 @@ fetch('data/projects.json')
   })
   .catch(err => console.error('Error cargando JSON:', err));
 
+//=====================================================PROJECT
+document.querySelectorAll('.project-card .project-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const projectId = e.target.closest('.project-card').dataset.id;
+    sessionStorage.setItem('selectedProject', projectId);
+    window.location.href = 'p_descript.html';
+  });
+});
+
+const projectContainer = document.getElementById('projects-list');
+
+if (projectContainer) {  // <- chequeo agregado
+  const projectId = sessionStorage.getItem('selectedProject'); // obtener el proyecto
+
+  if (!projectId) {
+    projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
+  } else {
+ //-------------------------------fetch the selected project
+    fetch('./data/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const project = data.projects.find(p => p.id.toString() === projectId);
+        if (!project) {
+          projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
+          return;
+        }
+        //-------------------built the data
+        let html = `
+        <h2>${project.title}</h2>
+       
+          ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
+          <p>${project.description}</p>
+          <div class="row "> 
+  <div class="col-6 mb-3 ">
+    ${project.technologies && project.technologies.length > 0 ? `
+      <h5>Technologies:</h5>
+      <ul class="list-unstyled">
+        ${project.technologies.map(tech => `<li><i class="fa-solid fa-check me-2"></i></i>${tech}</li>`).join('')}
+      </ul>
+    ` : ''}
+  </div>
+
+  <div class="col-6 mb-3">
+    ${project.captions && project.captions.length > 0 ? `
+      <h5>Captions:</h5>
+      <ul class="list-unstyled">
+        ${project.captions.map(caption => `<li><i class="fa-solid fa-check me-2"></i></i>${caption}</li>`).join('')}
+      </ul>  ` : ''}
+  </div>
+</div>
+<div class="project-links mt-0 mb-5 text-end " style=" border-top:solid;">
+            ${project.github ? `<a href="${project.github}" target="_blank" class="btn  me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
+            ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
+          </div>
+          ${project.images && project.images.length > 0 ? ` ` : '<p>No images available.</p>'}
+        <div class="div_img" >
+              ${project.images.map(img => `
+                <div class="mb-3 gal_wrap">
+                  <img src="${img}" class="img-fluid " alt="${project.title}">
+                </div>
+              `).join('')}
+            </div>  `;
+        projectContainer.innerHTML = html;
+      });
+  }
+}
+
 
 //=======================================================resumen----------------------------------------------------------------
 fetch('./data/projects.json')
@@ -409,7 +477,7 @@ fetch('data/projects.json')
   })
   .catch(error => console.log('Error:', error));
 
- //=====================================================PROJECT en index
+//=================================================project en index
 const grid = document.getElementById("projects-grid");
 grid.addEventListener("click", (e) => {
   const card = e.target.closest(".project-card");
@@ -448,7 +516,7 @@ function renderProjects(data) {
 
     img.alt = project.title;
 
-    const title = document.createElement("p");
+    const title = document.createElement("h4");
     title.textContent = project.title;
 
     imageWrapper.appendChild(img);
@@ -467,76 +535,6 @@ fetch("./data/projects.json")
       renderProjects(data);
     });
   });
-
- 
-//=====================================================PROJECT PAGE
-document.querySelectorAll('.project-card img').forEach(img => {
-  img.addEventListener('click', (e) => {
-    const projectId = e.target.closest('.project-card').dataset.id;
-    sessionStorage.setItem('selectedProject', projectId);
-    window.location.href = 'p_descript.html';
-  });
-});
-
-const projectContainer = document.getElementById('projects-list');
-
-if (projectContainer) {  // <- chequeo agregado
-  const projectId = sessionStorage.getItem('selectedProject'); // obtener el proyecto
-
-  if (!projectId) {
-    projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
-  } else {
- //-------------------------------fetch the selected project
-    fetch('./data/projects.json')
-      .then(res => res.json())
-      .then(data => {
-        const project = data.projects.find(p => p.id.toString() === projectId);
-        if (!project) {
-          projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
-          return;
-        }
-        //-------------------built the data
-        let html = `
-        <h2>${project.title}</h2>
-       
-          ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
-          <p>${project.description}</p>
-          <div class="row "> 
-  <div class="col-6 mb-3 ">
-    ${project.technologies && project.technologies.length > 0 ? `
-      <h5>Technologies:</h5>
-      <ul class="list-unstyled">
-        ${project.technologies.map(tech => `<li><i class="fa-solid fa-check me-2"></i></i>${tech}</li>`).join('')}
-      </ul>
-    ` : ''}
-  </div>
-
-  <div class="col-6 mb-3">
-    ${project.captions && project.captions.length > 0 ? `
-      <h5>Captions:</h5>
-      <ul class="list-unstyled">
-        ${project.captions.map(caption => `<li><i class="fa-solid fa-check me-2"></i></i>${caption}</li>`).join('')}
-      </ul>  ` : ''}
-  </div>
-</div>
-<div class="project-links mt-0 mb-5 text-end " style=" border-top:solid;">
-            ${project.github ? `<a href="${project.github}" target="_blank" class="btn  me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
-            ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
-          </div>
-          ${project.images && project.images.length > 0 ? ` ` : '<p>No images available.</p>'}
-        <div class="div_img" >
-              ${project.images.map(img => `
-                <div class="mb-3 gal_wrap">
-                  <img src="${img}" class="img-fluid " alt="${project.title}">
-                </div>
-              `).join('')}
-            </div>  `;
-        projectContainer.innerHTML = html;
-      });
-  }
-}
-
-
 
   //=================================================SKILLS
 function showProject(id) {
