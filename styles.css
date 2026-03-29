@@ -642,10 +642,10 @@ i {
 .wrap_form{
   padding: 5rem 2rem 2rem 2rem;
   justify-items: center;
+  width: fit-content;
 }
 .contForm {
   height: 100%;
-
 }
 
 /* CARD DEL FORM */
