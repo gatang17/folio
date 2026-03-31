@@ -85,8 +85,15 @@ p, li {
   font-size: 1rem;
 }
 
-
-
+.div_info{
+  background-color: #d0a32b;
+  min-height: 200px;
+  padding: 1rem;
+  align-content: center;
+}
+.img_carrousel{
+   max-height: 150px;
+}
 
 /*****footer*/
 footer {
@@ -243,7 +250,7 @@ footer {
 .content {
   scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */
   margin-top: 4rem;
-  min-height: 100vh;
+  min-height: fit-content;
   }
 
 
@@ -559,8 +566,7 @@ i {
   align-content: flex-start;
   /*background-color: rgba(43, 41, 41, 0.1);*/
   background-color: #d0a32b;
-  min-height: fit-content;  
-}
+  }
 #lnk_skills{
   color: #2f2f2f;
 }
@@ -571,8 +577,8 @@ i {
   width: auto;
   margin: 0 auto;
   padding: 3rem 2rem;
-  height: fit-content;
-}
+
+  }
 /* Celdas */
 .skill {
   flex: 2;
@@ -606,9 +612,14 @@ i {
 }
 /* CONTENIDO REAL */
 .skill-inner {
+  height: 700px;
   opacity: 0;
   padding: 2rem;
-  transition: opacity 0.3s ease 0.2s;
+  transition: opacity 0.003s ease 0.2s;
+  height: 100%;
+  display: grid;
+  align-content: center;
+ 
 }
 /* Texto visible solo al expandir */
 .skill.active .skill-inner {
@@ -641,10 +652,10 @@ i {
 .wrap_form{
   padding: 5rem 2rem 2rem 2rem;
   justify-items: center;
-  width: fit-content;
+  justify-self: center;
 }
 .contForm {
-  height: 100%;
+  width: 100%;
 }
 
 /* CARD DEL FORM */

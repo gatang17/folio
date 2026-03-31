@@ -35,7 +35,7 @@
   "projects": [
     {
       "id": "jgphoto",
-      "title": "JG Photography",
+      "title": "J&G Photography",
       "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based background color, a glass-effect hamburger menu without affecting carousel images, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and Google Maps iframe for location. Hosted on Vercel for free deployment, shortened URL, and basic analytics.",
       "technologies": [
         "HTML",
