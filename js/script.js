@@ -129,7 +129,7 @@ lastScroll = current;
         <div class="container-fluid"> 
              
           <div class="div_menu_home">
-          <div id="logo_container"><img id="img_logoV" src="images/logoBW.png" ></div>  
+          <div id="logo_container"><img id="img_logo" src="images/logoBW.png" ></div>  
         
             <section class="sec_menu">             
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="projects" onclick="goToSection(this)">projects</a>      
@@ -138,7 +138,7 @@ lastScroll = current;
               <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>     
               <a class="nav-link m_text mosaic_btn" href="javascript:void(0)"data-section="contact" onclick="goToSection(this)" href="index.html#">contact</a>
             </section>
-            <div class="sec_menu22" id="">
+        <div class="sec_menu22" id="">
       <a class="nav-link m_text" href="https://figma.com/@gatang17"  target="_blank" ><i class="fa-brands fa-figma"></i></a>
       <a class="nav-link m_text " href="https://github.com/gatang17"  target="_blank" ><i class="fa-brands fa-github-alt"></i></a>
       <a class="nav-link m_text" href="https://www.linkedin.com/in/grete88/" target="_blank" ><i class="fa-brands fa-linkedin-in"></i></a>
@@ -257,7 +257,7 @@ if (projectContainer) {  // <- chequeo agregado
       </ul>  ` : ''}
   </div>
 </div>
-<div class="project-links mt-0 mb-5 text-end " style=" border-top:solid;">
+<div class="project-links mt-0 mb-5 mt-5 text-start m_text" style=" border-top:solid;">
             ${project.github ? `<a href="${project.github}" target="_blank" class="btn  me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
             ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
           </div>
@@ -790,7 +790,7 @@ function getLineColorFromBackground(btn) {
       if (rgb) {
         const r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
         const brightness = (r*299 + g*587 + b*114)/1000;
-        return brightness < 128 ? '#000000' : '#ffffff';
+        return brightness < 128 ? 'var(--primary-yelow)' : 'var(  --primary-yelow)';
       }
     }
     el = el.parentElement;
