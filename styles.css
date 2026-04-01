@@ -139,11 +139,12 @@ line-height: 0.5rem;
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: start;
+    align-items: center;
   }
   .footer-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2rem;
      align-items: flex-end;
   }
   .footer-social-text {
@@ -238,13 +239,13 @@ footer {
 
 #top_bar {
   padding: 10px;
-  background-color: rgb(22, 22, 22);
+  background-color: var(--soft-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #link_note {
-  color: rgb(211, 85, 85);
+  color: var(--primary-yelow);
   font-weight: 100 !important;
 }
 
