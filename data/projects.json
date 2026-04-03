@@ -69,7 +69,17 @@
       "id": "handydmd",
       "title": "Handyman DMD",
       "description": "Development of a simple and user-friendly website for HandymanDMD...",
-      "technologies": ["HTML", "CSS", "Bootstrap", "FormSubmit", "Vercel"],
+      "technologies": [
+    "WordPress",
+    "Astra Theme",
+    "Gutenberg Editor",
+    "Spectra",
+    "Stackable",
+    "Essential Blocks",
+    "Contact Form 7",
+    "Code Snippets",
+    "Custom CSS"
+  ],
       "images": [
             "images/projects/handydmd/h_0d.png",
             "images/projects/handydmd/h_0m.png",
@@ -83,13 +93,17 @@
       "id": "aurora",
       "title": "Aurora Wellness Center",
       "description": "Aurora Wellness Center is a personal project built on the free version of WordPress. Due to the limitations of the free plan, no custom CSS or HTML could be used, so the site was structured entirely using covers, columns, rows, and careful margin adjustments. The page is designed as a single-page layout with anchor links to different sections, providing a training exercise in organizing content and design with minimal tools. This project focuses on a calm and professional aesthetic, with warm, editorial-style photography, soft colors (greens, beige, cream, golden accents), and clear visual hierarchy. The site is still in development, serving as a practical exercise in layout, structure, and usability within WordPress constraints.",
-      "technologies": [
-        "WordPress Free Version",
-        "Covers",
-        "Columns",
-        "Rows",
-        "Anchor Links"
-      ],
+   "technologies": [
+    "WordPress",
+    "Astra Theme",
+    "Gutenberg Editor",
+    "Spectra",
+    "Stackable",
+    "Essential Blocks",
+    "Contact Form 7",
+    "Code Snippets",
+    "Custom CSS"
+  ],
       "images": [
         "images/projects/aurora/a_0m.png",
         "images/projects/aurora/a_0d.png",
@@ -102,29 +116,25 @@
       "github": ""
     },
     {
-      "id": "jlprezc",
-      "title": "Jose Perez portfolio",
-     "description": "Portfolio website for a professional photography student focused on commercial and product photography. The site highlights the photographs with a gallery-first design, allowing users to open a carousel to view images one by one. Built with HTML, CSS, and JavaScript, with deployments on GitHub and Vercel.",
+      "id": "quillpp",
+      "title": "Quill Pen Press",
+     "description": "Quill Pen Press targeted emerging writers who wanted their books professionally bound and promoted after a selection process. The company was new, had few clients, no website, and faced strong competition, making it difficult to gain visibility and credibility. The solution was to create a professional and approachable brand identity using navy blue and gold, a beige website background, and a stylized 'Q' logo with the company name, emphasizing quality and professionalism to build trust and attract potential customers. The website was designed and implemented in Webflow to quickly create a responsive, visually polished site without needing custom coding.",
 "technologies": [
+  "Webflow",
   "HTML",
   "CSS",
-  "JavaScript",
-  "GitHub",
-  "Vercel",
+  "Responsive Design",
+  "Branding & Logo Design",
   "Interactive Image Carousel",
-  "Responsive Design"
+  "Web Transitions"
 ],
       "images": [
-      "images/projects/jlprezc/jlperezc_0d.png",
-      "images/projects/jlprezc/jlperezc_0m.png",
-      "images/projects/jlprezc/jlperezc_2.png",
-      "images/projects/jlprezc/jlperezc_3.png",
-      "images/projects/jlprezc/jlperezc_4.png",
-      "images/projects/jlprezc/jlperezc_5.png",
-      "images/projects/jlprezc/jlperezc_6.png",
-      "images/projects/jlprezc/jlperezc_7.png"],
-      "live": "https://jlperezc.vercel.app/",
-      "github": "https://github.com/gatang17/jlperezc/"
+        "images/projects/qpp/qpp-0m.png",
+      "images/projects/qpp/qpp-0d.png",
+      "images/projects/qpp/qpp_02.png",      
+      "images/projects/qpp/qpp_03.png"
+      ],
+      "live": "https://quillpenpress.webflow.io"
     }
   ],
 
