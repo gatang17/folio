@@ -9,6 +9,11 @@
   --hairline-color:#120f0cc6;
  
  }
+
+ html {
+  scroll-behavior: smooth;
+}
+
 .text-xs {
   font-size: .75rem;
   letter-spacing: 3px;
@@ -45,6 +50,8 @@ body {
   background-color: var(--color-font-body);
   font-family: var(--font-body)!important;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -428,6 +435,7 @@ i {
 /*================================================= PROJECTS*/
 #projects{
   height: 100vh;
+  margin-bottom: 5rem;
 }
 .title {
   font-size: clamp(2.5rem, 15vw, 8rem); /*text-transform: uppercase;*/
@@ -1224,4 +1232,8 @@ visibility: hidden;
   60% { transform: translate(1px, 0); }
   80% { transform: translate(-1px, 1px); }
   100% { transform: translate(0); }
+}
+@keyframes typewriter-fade {
+  0%, 100% { opacity: 0; }
+  5%, 95% { opacity: 1; }
 }
