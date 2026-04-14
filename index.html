@@ -43,14 +43,18 @@
         <div class="cont_index" > 
            
               <div class="con_hero ">
+                <video autoplay muted loop playsinline class="bg-video">
+                  <source src="/images/8523640-hd_1920_1080_25fps.mp4" type="video/mp4">
+                </video>
                     <div class="con_hero_sub " >  
+                    
                         <span class="text-xs my-5  uppercase ">Web Designer</span>
 
                                           
                         <h1 class="mb-5 softColor text-start">
-                            <span class="text-foreground block">Creating</span>
+                            <span class=" block">Creating</span>
                             <span class="text-enfasis block">Digital</span>
-                            <span class="text-foreground block">Experiences</span></h1>                 
+                            <span class=" block">Experiences</span></h1>                 
                             <!-- <a href="index.html#projects" class="hero_btn btn m_text mosaic_btn">click here and check the things i've done</a> -->
                            
                             <div class="chat_hero softColor">               
@@ -72,71 +76,9 @@
                  
     </section>
 
-    <div class="scroll-indicator py-5">
-      <div class="mouse">
-        <div class="dot"></div>
-      </div>
-    </div>
+ 
   
-    <style>
-
-.scroll-indicator {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* 🔥 ESTE ES EL QUE AHORA TAMBIÉN SE MUEVE */
-.mouse {
-  width: 24px;
-  height: 40px;
-  border: 2px solid var( --hairline-color);
-  border-radius: 999px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
-
-  animation: floatMouse 2.5s ease-in-out infinite;
-}
-
-/* punto interno */
-.dot {
-  width: 6px;
-  height: 6px;
-  background: var(--hairline-color);
-  border-radius: 50%;
-  animation: scrollDot 2s infinite ease-in-out;
-}
-
-/* 🔽 movimiento del punto */
-@keyframes scrollDot  {
-  0% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(12px);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-}
-
-/* 🔼 movimiento del contenedor (efecto flotante) */
-@keyframes floatMouse {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-    </style>
+    
       <!--============================================experiences-->
  <!-- <section class="content">
     <div id="carouselExp" class="carousel carousel-dark" data-bs-ride="carousel">

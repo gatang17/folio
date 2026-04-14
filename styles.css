@@ -5,8 +5,8 @@
   --color-font-body: #F2E6D9 ;
   --background-color: #F2E6D9 ;
   --primary-yelow: #d19a1a;
-  --soft-color:#1c1c1c;
-  --hairline-color:#120f0cc6;
+  --soft-color:#272c35;
+  --hairline-color:#3f4550;
  
  }
 
@@ -268,20 +268,59 @@ footer {
 }
 .content {
   scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */
-  margin-top: 4rem;
+    padding: 5rem 0;
+   
   min-height: fit-content;
   }
 
 
 .cont_index {
   position: relative;
-  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  justify-items: flex-start;
+
+/*nuevo*/
+
+}
+.cont_index {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  background-size: cover;
 }
 
+/* capa encima de la imagen */
+.cont_index::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(218, 212, 207, 0.75);
+backdrop-filter: blur(5px);
+
+  z-index: 0;
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* tu contenido */
+.con_hero_sub{
+  position: relative;
+  z-index: 1;
+}
 .chat_hero h2{
   font-size: clamp(1rem, 5vw, 3rem);
 }
@@ -289,16 +328,7 @@ footer {
   white-space: normal;
   word-break: break-word;
 }
-.cont_index{
-/*   background-image: 
-   url(images/hero1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-  width: 100%;
-  justify-items: flex-start;
-    align-content: flex-end;
-}
+
 .con_hero {  
   display: grid;
   gap: 50px;
@@ -435,11 +465,14 @@ i {
 /*================================================= PROJECTS*/
 #projects{
   height: 100vh;
-  margin-bottom: 5rem;
+  align-content: center;
+  background-color: var(--soft-color);
+  color: var(--color-font-body);
+
 }
 .title {
   font-size: clamp(2.5rem, 15vw, 8rem); /*text-transform: uppercase;*/
-  color: var(--soft-color);
+  
   }
 .t-border{
   padding: 0 5rem;
@@ -461,7 +494,7 @@ i {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  color: var(--soft-color);
+  color: var(--color-font-body);
 
 }
 .project-card {
@@ -585,11 +618,11 @@ i {
 #skills {
   display: grid;
   align-content: flex-start;
-  /*background-color: rgba(43, 41, 41, 0.1);*/
-  background-color: var(--soft-color);
+  background-color: rgba(43, 41, 41, 0.1);
+ 
   }
 #lnk_skills{
-  color: var(--color-font-body);
+  color: var(--soft-color);
 }
 .skills-grid {
   display: flex;
@@ -611,10 +644,12 @@ i {
   overflow: hidden;
   position: relative;
   transition: flex 0.5s ease;
+  
  }
 /* Celda activa */
 .skill.active {
-  background:var(--color-font-body);
+  background:var(--soft-color);
+  color: var(--primary-yelow);
   flex: 3; /* ~50% */
 }
 /* OVERLAY (pista visual) */
@@ -632,6 +667,11 @@ i {
 /* Overlay desaparece al expandir */
 .skill.active .skill-overlay {
   opacity: 0;
+  
+}
+.skill-overlay span{
+  transform: rotate(270deg);
+  
 }
 /* CONTENIDO REAL */
 .skill-inner {
@@ -673,7 +713,6 @@ i {
 
 }
 .wrap_form{
-  padding: 5rem 2rem 2rem 2rem;
   justify-items: center;
   justify-self: center;
 }
@@ -891,6 +930,9 @@ h2 .cursor {
 /* ****************************************************************esto es para mobil*/
 @media (max-width: 790px) {
   /*menu*/
+.cont_index {  
+    height: fit-content;   
+}
   #btn_menu {
     background: none;
     border: none;
