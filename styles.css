@@ -238,7 +238,7 @@ footer {
 }
 /*=========================================================INDEX*/
 #intro {
-  min-height: 90vh;
+ height: max-content;
   display: grid;
   overflow: hidden;
  }
@@ -569,7 +569,7 @@ i {
 }
 #desc_col {
   flex: 1; /* toma el resto del espacio disponible */
-  width: 900px; /* no permite que se expanda más */
+ 
   overflow-y: auto; /* scroll vertical si hay mucho contenido */
 }
 .desc_item p {
@@ -927,7 +927,9 @@ h2 .cursor {
     right: 0;
     width: 60vw;
     height: 100vh;
-    background: black;
+    background: var(--soft-color);
+    opacity: 0.95;
+   
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -1014,7 +1016,13 @@ h2 .cursor {
     visibility: hidden;
   }
   /*************************************resume*/
+#aboutme{
+  margin: 0;
 
+}
+.desc_col{
+  width: auto;
+}
   .desc_item {
     white-space: pre-line;
   }
@@ -1080,6 +1088,10 @@ h2 .cursor {
     position: absolute;
     right: 50%;
     top: 85%;
+  }
+  .skill-overlay span{
+    transform: rotate(0deg);
+    
   }
 
   /****email*/
