@@ -790,7 +790,7 @@ function getLineColorFromBackground(btn) {
       if (rgb) {
         const r = parseInt(rgb[0]), g = parseInt(rgb[1]), b = parseInt(rgb[2]);
         const brightness = (r*299 + g*587 + b*114)/1000;
-        return brightness < 128 ? 'var(--primary-yelow)' : 'var(  --primary-yelow)';
+        return brightness < 128 ? 'var( --background-color)' : 'var(  --background-color)';
       }
     }
     el = el.parentElement;
