@@ -2,13 +2,16 @@
 :root {
   --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --color-font-body: #F2E6D9 ;
+  --color-font-body: #272c35 ;
   --background-color: #F2E6D9 ;
-  --primary-yelow: #d19a1a;
+  --primary-yellow: #d19a1a;
   --soft-color:#272c35;
-  --hairline-color:#3f4550;
- 
+  --hairline-color:#3f4550; 
+
+
+
  }
+
 
  html {
   scroll-behavior: smooth;
@@ -18,7 +21,7 @@
   font-size: 1.rem;
   letter-spacing: 3px;
   line-height: 1rem;
-  color: var(--primary-yelow);
+  color: var(--primary-yellow);
 }
 .text-muted-foreground{
   color: #8c8c8c;
@@ -27,7 +30,7 @@
   text-transform: uppercase;
 }
 .text-enfasis{
-  color: var(--primary-yelow);
+  color: var(--primary-yellow);
 }
 
 
@@ -45,9 +48,9 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  color: var(--soft-color);
   scrollbar-width: none;
-  background-color: var(--color-font-body);
+  background-color: var(--background-color);
+  color: var(--color-font-body);
   font-family: var(--font-body)!important;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -71,6 +74,10 @@ h1 {
   overflow-wrap: normal; /* no rompe palabras largas */
   word-break: keep-all; /* evita saltos dentro de palabras */
 }
+.title {
+  font-size: clamp(2.5rem, 15vw, 8rem); 
+  
+  }
 h2 {
   font-size: clamp(2rem, 7vw, 3.5rem); /*clamp(MÍNIMO, IDEAL, MÁXIMO)  */
   font-weight: 600;
@@ -98,6 +105,8 @@ p, li {
   overflow-wrap: normal; /* no rompe palabras largas */
   word-break: keep-all; /* evita saltos dentro de palabras */
 }
+
+
 .infoT {
   font-style: italic;
   font-size: 1rem;
@@ -252,7 +261,7 @@ footer {
   align-items: center;
 }
 #link_note {
-  color: var(--primary-yelow);
+  color: var(--primary-yellow);
   font-weight: 100 !important;
 }
 
@@ -269,7 +278,7 @@ footer {
 .content {
   scroll-margin-top: 1rem; /* deja 10rem desde el top al hacer scroll automático */
     padding: 5rem 0;
-   
+
   min-height: fit-content;
   }
 
@@ -420,7 +429,7 @@ i {
 .m_text:hover {
  /*  transform: skewY(-2deg) scaleY(1.1);
   letter-spacing: 2px; */
-   color: var(--primary-yelow);
+   color: var(--primary-yellow);
 }
 
 .m_off_text {
@@ -437,19 +446,15 @@ i {
   height: fit-content;
   align-content: flex-start;
   background-color: var(--soft-color);
-  color: var(--color-font-body);
+  color: var(--background-color);
 
 }
-.title {
-  font-size: clamp(2.5rem, 15vw, 8rem); /*text-transform: uppercase;*/
-  
-  }
+
 .t-border{
   padding: 0 5rem;
   margin-left: 0rem;
   max-width:1100px;
- /* background-color: #0c1747;*/
- /* border-bottom: solid #0c1747 5px; */
+
 }
 .cont_descript {
   position: relative;
@@ -464,7 +469,7 @@ i {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  color: var(--color-font-body);
+  color: var(--background-color);
 
 }
 .project-card {
@@ -588,7 +593,7 @@ i {
 #skills {
   display: grid;
   align-content: flex-start;
-  background-color: rgba(43, 41, 41, 0.1);
+  background-color: var(--background-color-section);
  
   }
 #lnk_skills{
@@ -609,7 +614,7 @@ i {
   flex: 2;
  /* background: rgba(0, 0, 0, 0.764);
   color: #a9a483;*/
-  background:var(--primary-yelow);
+  background:var(--primary-yellow);
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -619,7 +624,7 @@ i {
 /* Celda activa */
 .skill.active {
   background:var(--soft-color);
-  color: var(--primary-yelow);
+  color: var(--primary-yellow);
   flex: 3; /* ~50% */
 }
 /* OVERLAY (pista visual) */
@@ -947,7 +952,7 @@ h2 .cursor {
   }
   #iconm:active {
    transform:scale(1.25) ;
-    color: var(--primary-yelow);
+    color: var(--primary-yellow);
   }
   body.menu-open {
     overflow: hidden;
@@ -1147,7 +1152,7 @@ visibility: hidden;
   font-size: 1.5rem;
 }
 #mobile-menu-btn i:hover {
-  color:var(--primary-yelow);
+  color:var(--primary-yellow);
 }
 
 

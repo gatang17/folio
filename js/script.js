@@ -1,3 +1,5 @@
+
+
 //===================GOOGLE ANALITICS
 window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -22,6 +24,7 @@ window.dataLayer = window.dataLayer || [];
   }
   
   window.addEventListener("load", () => {
+    
     const params = new URLSearchParams(window.location.search);
     const sectionId = params.get("section");
   
