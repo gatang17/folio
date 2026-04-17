@@ -954,11 +954,7 @@ h2 .cursor {
   }
   /*section*/
 
-  .con_hero {
-    height: 60vh;
-    align-content: center;
-    padding: 3rem;
-  }
+ 
   .content {
     scroll-margin-top: -1rem; /* deja 10rem desde el top al hacer scroll automático */
     min-height:fit-content ;
@@ -983,9 +979,14 @@ h2 .cursor {
   }
   .con_hero {
     height: auto;
+    padding: 0 2rem;
+    margin-top: 3rem;
+    align-content: center;
+
     }
     .chat_hero{
-       padding: 5rem 2rem;
+      text-align: left;
+      height: 130px;
       }
     .con_hero_sub {
       padding: 0;
@@ -1061,20 +1062,21 @@ h2 .cursor {
 
   /********************************************skills*/
   #skills {
-    max-height: fit-content;
+    height: max-content;
     padding: 2rem 0 !important;
   }
   .skills-grid {
     flex-direction: column;
-    max-height: 100%;
+   height: 100%;
   }
   .skill {
     flex: 1;
-       transition: min-height 0.4s ease;
-       max-height:150px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height:150px;
   }
   .skill.active {
-    max-height: fit-content;
+    max-height: 500px;
     padding-bottom: 1rem;
     height: fit-content;
   }
