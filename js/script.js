@@ -230,60 +230,109 @@ if (projectContainer) {  // <- chequeo agregado
  //-------------------------------fetch the selected project
     fetch('./data/projects.json')
       .then(res => res.json())
-      .then(data => {
-        const project = data.projects.find(p => p.id.toString() === projectId);
-        if (!project) {
-          projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
-          return;
-        }
-        //-------------------built the data
-        let html = `
-        <h2>${project.title}</h2>
-       
-          ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
-          <p>${project.description}</p>
-          <div class="row "> 
-  <div class="col-6 mb-3 ">
-    ${project.technologies && project.technologies.length > 0 ? `
-      <h5>Technologies:</h5>
-      <ul class="list-unstyled">
-        ${project.technologies.map(tech => `<li><i class="fa-solid fa-check me-2"></i></i>${tech}</li>`).join('')}
-      </ul>
-    ` : ''}
-  </div>
+      .then(data => {document.querySelectorAll('.project-card .project-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          const projectId = e.target.closest('.project-card').dataset.id;
+          sessionStorage.setItem('selectedProject', projectId);
+          window.location.href = 'p_descript.html';
+        });
+      });
+      
+      const projectContainer = document.getElementById('projects-list');
+      
+      if (projectContainer) {
+      
+        const projectId = sessionStorage.getItem('selectedProject');
+      
+        if (!projectId) {
+          projectContainer.innerHTML = '<p>No se seleccionó ningún proyecto.</p>';
+        } else {
+      
+          fetch('./data/projects.json')
+            .then(res => res.json())
+            .then(data => {
+      
+              const project = data.projects.find(p => p.id.toString() === projectId);
+      
+              if (!project) {
+                projectContainer.innerHTML = '<p>Proyecto no encontrado.</p>';
+                return;
+              }
+              
+              // HTML insertion
+              let html = `
+              <div class="project-layout">
+      
+                <div class="project-info">
+                  <h2>${project.title}</h2>
+                  ${project.subtitle ? `<h4>${project.subtitle}</h4>` : ''}
+                  <p>${project.description}</p>
+      
+                  <div class="row "> 
+                    <div class="col-6 mb-3">
+                      ${project.technologies && project.technologies.length > 0 ? `
+                        <h5>Technologies:</h5>
+                        <p class="tech-inline"> ${project.technologies.join(' • ')}</p>  ` : ''}   </div>                       
+                  </div>                  
 
-  <div class="col-6 mb-3">
-    ${project.captions && project.captions.length > 0 ? `
-      <h5>Captions:</h5>
-      <ul class="list-unstyled">
-        ${project.captions.map(caption => `<li><i class="fa-solid fa-check me-2"></i></i>${caption}</li>`).join('')}
-      </ul>  ` : ''}
-  </div>
-</div>
-<div class="project-links mt-0 mb-5 mt-5 text-start m_text" style=" border-top:solid;">
-            ${project.github ? `<a href="${project.github}" target="_blank" class="btn  me-2" style="font-size:0.75rem;">GitHub</a>` : ''}
-            ${project.live ? `<a href="${project.live}" target="_blank" class="btn" style="font-size:0.75rem;">Live Demo</a>` : ''}
-          </div>
-          ${project.images && project.images.length > 0 ? ` ` : '<p>No images available.</p>'}
-        <div class="div_img" >
-              ${project.images.map(img => `
-         <div class="mb-3 gal_wrap">
-         <a href="${img}" data-fancybox="gallery">
-         <img src="${img}" class="img-fluid" alt="${project.title}">
-         </a>
-         </div>
-              `).join('')}
-            </div>  `;
-        projectContainer.innerHTML = html;
-        // Dentro de tu fetch() después de generar projectContainer.innerHTML
-if (project.images && project.images.length > 0) {
-  // Inicializa Fancybox
-  Fancybox.bind("[data-fancybox='gallery']", {
-    infinite: false,
-    Toolbar: true,
-    closeButton: "top"
-  });
-}
+                  </div>      
+          
+                 <div class="project-gallery">
+                 
+                 <div class="main-image">
+                 <a href="${project.images[0]}" data-fancybox="gallery" id="mainFancyboxLink">
+                 <img src="${project.images[0]}" id="activeImage" alt="${project.title}">
+                 </a>
+                 </div>
+                 
+                 <div class="thumbs"> ${project.images.map(img => ` <img src="${img}" class="thumb" data-full="${img}"> `).join('')} </div>
+                 <div class="d-none"> ${project.images.map(img => ` <a href="${img}" data-fancybox="gallery"></a> `).join('')}  </div>
+                 </div>
+                </div>
+
+              
+      
+              </div>
+                   <div class="project-links">
+                    ${project.github ? `<a href="${project.github}" target="_blank" class="btn m_text">GitHub</a>` : ''}
+                    ${project.live ? `<a href="${project.live}" target="_blank" class="btn m_text">Live</a>` : ''}
+                  </div>
+              `;
+      
+              projectContainer.innerHTML = html;
+              //video
+              const video = document.querySelector('.project-video');
+              if (video) 
+                {video.playbackRate = 15; 
+                  }
+      
+              // Fancybox
+              Fancybox.bind("[data-fancybox='gallery']", {
+                infinite: false,
+                Toolbar: true,
+                closeButton: "top"
+              });
+      
+              // THUMBS FIX (ESTO ES LO QUE TE FALLABA)
+              document.addEventListener('click', (e) => {
+                const thumb = e.target.closest('.thumb');
+                if (!thumb) return;
+      
+                const newSrc = thumb.dataset.full;
+      
+                const mainImg = document.getElementById('activeImage');
+                const mainLink = document.querySelector('.main-image a');
+      
+                if (!mainImg || !mainLink) return;
+      
+                mainImg.src = newSrc;
+                mainLink.href = newSrc;
+              });
+      
+            });
+        }
+      }
       });
   }
 }

@@ -738,3 +738,73 @@ body {
   margin: 0;
 }
 </style>
+
+
+<div class="hero">
+  <div class="img"></div>
+  <div class="content">
+    <h2>About Aurora</h2>
+    <p>Your text goes here</p>
+  </div>
+</div>
+
+<style>
+.hero{
+  position: relative;
+  background-color: rgb(160, 137, 99);
+  height: 500px;
+  overflow: hidden;
+}
+
+/* IMAGEN */
+.img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background-image: url(images/about/cstudy/splash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 500px 0 0 500px;
+}
+
+/* TEXTO */
+.content{
+  position: relative;
+  z-index: 2;
+  color: rgb(228, 228, 228);
+  padding: 80px;
+  max-width: 40%;
+}
+
+@media (max-width: 768px){
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center; /* centra todo horizontalmente */
+  text-align: center;  /* centra el texto */
+}
+
+/* IMAGEN arriba */
+.img{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  left: 0;
+
+  border-radius: 0 0 450px 450px;
+}
+
+/* TEXTO debajo centrado */
+.content{
+  position: relative;
+  max-width: 90%;
+  padding: 30px;
+}
+}
+
+
+</style>

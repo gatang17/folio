@@ -94,7 +94,7 @@
     {
       "id": "aurora",
       "title": "Aurora Wellness Center",
-      "description": "Aurora Wellness Center is a personal project built on the free version of WordPress. Due to the limitations of the free plan, no custom CSS or HTML could be used, so the site was structured entirely using covers, columns, rows, and careful margin adjustments. The page is designed as a single-page layout with anchor links to different sections, providing a training exercise in organizing content and design with minimal tools. This project focuses on a calm and professional aesthetic, with warm, editorial-style photography, soft colors (greens, beige, cream, golden accents), and clear visual hierarchy. The site is still in development, serving as a practical exercise in layout, structure, and usability within WordPress constraints.",
+   "description": "Initially, this website was created on WordPress.com as part of a class assignment, which limited some customization options. In the following semester, I migrated the site to WordPress.org using my own domain. This transition gave me greater creative freedom, allowing me to fully customize elements such as the header, layout, and overall theme to better align with the brand identity of Aurora.",
    "technologies": [
     "WordPress",
     "Astra Theme",
@@ -139,6 +139,9 @@
       "live": "https://quillpenpress.webflow.io"
     }
   ],
+
+
+
 
   "skills": [
     {
