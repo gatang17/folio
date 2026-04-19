@@ -260,10 +260,14 @@
         "Contact form integration"
       ],
       "images": [
-        "images/projects/jlprezc/jl_0d.png",
-        "images/projects/jlprezc/jl_0m.png",
-        "images/projects/jlprezc/jl_1.png",
-        "images/projects/jlprezc/jl_2.png"
+        "images/projects/jlprezc/jlperezc_0d.png",
+        "images/projects/jlprezc/jlperezc_0m.png",
+        "images/projects/jlprezc/jlperezc_1.png",
+        "images/projects/jlprezc/jlperezc_2.png",
+        "images/projects/jlprezc/jlperezc_3.png",
+        "images/projects/jlprezc/jlperezc_4.png",
+        "images/projects/jlprezc/jlperezc_5.png",
+        "images/projects/jlprezc/jlperezc_6.png"
       ],
       "github": "",
       "live": ""
@@ -300,12 +304,12 @@
         "Nutritional and location sections"
       ],
       "images": [
-        "images/projects/juicy/j_0d.png",
-        "images/projects/juicy/j_0m.png",
+        "images/projects/juicys_plash/js_0d.png",
+        "images/projects/juicys_plash/js_0m.png",
         "images/projects/juicy/j_1.png",
         "images/projects/juicy/j_2.png"
       ],
-      "github": "",
+      "github": "https://gatang17.github.io/creative_portfolio/",
       "live": ""
     },
     {
@@ -340,9 +344,9 @@
         "Gift-service oriented layout"
       ],
       "images": [
-        "images/projects/berry/b_0d.png",
-        "images/projects/berry/b_0m.png",
-        "images/projects/berry/b_1.png"
+        "images/projects/berry_sweet/bs_0d.png",
+        "images/projects/berry_sweet/bs_0m.png",
+        "images/projects/berry_sweet/bs_1.png"
       ],
       "github": "",
       "live": ""

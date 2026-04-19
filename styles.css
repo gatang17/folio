@@ -785,12 +785,17 @@ a:hover,
 }
 
 .projects-btn {
-  color: var(--background-color);
-  border: 1px solid rgba(242, 230, 217, 0.25);
+  color: var(--background-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 .projects-btn:hover {
-  border-color: rgba(242, 230, 217, 0.55);
+  transform: translateY(-2px);
+  opacity: 0.85;
+  color: var(--primary-yellow-soft);
 }
 
 .projects-cta {
