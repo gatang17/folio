@@ -1,25 +1,17 @@
 <header class="row justify-content-between py-3 mx-2" style="border-bottom: 1px solid #808080;">
+  <div class="col-6">
+    <a href="index.html">
+      <img src="/images/logoBWH.png" id="img_logoh" alt="Logo">
+    </a>
+  </div>
 
- <!-- Logo -->
- <div class="col-6">
-  <a href="index.html"><img src="/images/logoBWH.png" id="img_logoh"></a>
-</div>    
-    <!-- Menú horizontal -->
-    <div class="col-6 d-none d-lg-flex justify-content-between">
-      
-          <a class="nav-link m_text " href="index.html">home</a>       
-          <a class="nav-link m_text " href="javascript:void(0)"data-section="projects" onclick="goToSection(this)">projects</a>       
-          <a class="nav-link m_text " href="javascript:void(0)"data-section="skills" onclick="goToSection(this)">Skills</a>
-         <!--  <a class="nav-link m_text" href="about.html"> about me</a> -->
-          <a class="nav-link m_text " href="resume.html">resume</a>        
-        <a class="nav-link m_text " href="javascript:void(0)"data-section="contact" onclick="goToSection(this)" href="index.html#">contact</a>
+  <div class="col-6 d-none d-lg-flex justify-content-between align-items-center">
+    <a class="nav-link m_text" href="index.html">home</a>
+    <a class="nav-link m_text" href="index.html?section=projects">projects</a>
+    <a class="nav-link m_text" href="index.html?section=skills">skills</a>
+    <a class="nav-link m_text" href="resume.html">resume</a>
+    <a class="nav-link m_text" href="index.html?section=contact">contact</a>
+  </div>
 
-      </div>
- 
-   
-    <!-- Menú hamburguesa (solo en pantallas pequeñas) -->
-    <div class="col-6 d-flex d-lg-none justify-content-end align-items-center"  id="h_menu-container"> </div>
-  </header>
-  <style>
-
-  </style>
+  <div class="col-6 d-flex d-lg-none justify-content-end align-items-center" id="h_menu-container"></div>
+</header>

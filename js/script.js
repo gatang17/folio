@@ -18,22 +18,6 @@ const isIndexPage = () => {
 
 const getProjectUrl = (projectId) => `p_descript.html?id=${encodeURIComponent(projectId)}`;
 
-function goToSection(link) {
-  const sectionId = link.dataset.section;
-  if (!sectionId) return;
-
-  if (!isIndexPage()) {
-    window.location.href = `index.html?section=${encodeURIComponent(sectionId)}`;
-    return;
-  }
-
-  const section = document.getElementById(sectionId);
-  if (!section) return;
-
-  section.scrollIntoView({ behavior: 'smooth' });
-}
-
-window.goToSection = goToSection;
 
 function handleSectionRedirect() {
   if (!isIndexPage()) return;
@@ -249,10 +233,10 @@ async function injectSharedLayout() {
                 </div>
 
                 <section class="sec_menu">
-                  <a class="nav-link m_text mosaic_btn" href="javascript:void(0)" data-section="projects" onclick="goToSection(this)">projects</a>
-                  <a class="nav-link m_text mosaic_btn" href="javascript:void(0)" data-section="skills" onclick="goToSection(this)">skills</a>
+                  <a class="nav-link m_text mosaic_btn" href="index.html?section=projects">projects</a>
+                  <a class="nav-link m_text mosaic_btn" href="index.html?section=skills">skills</a>
                   <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>
-                  <a class="nav-link m_text mosaic_btn" href="javascript:void(0)" data-section="contact" onclick="goToSection(this)">contact</a>
+                  <a class="nav-link m_text mosaic_btn" href="index.html?section=contact">contact</a>
                 </section>
 
                 <div class="sec_menu22">
@@ -283,7 +267,7 @@ async function injectSharedLayout() {
 // PROJECT RENDERING
 // =============================
 function createFeaturedProjectCard(project, isMobile) {
-  const imageSrc = isMobile ? (project.images[1] || project.images[0]) : project.images[0];
+  const imageSrc = getResponsiveImage(project.images);
 
   return `
     <article class="project-card" data-id="${escapeHtml(project.id)}">
@@ -316,7 +300,7 @@ function createArchiveProjectCard(project) {
   return `
     <article class="archive-card" data-id="${escapeHtml(project.id)}">
       <div class="archive-thumb">
-        <img src="${escapeHtml(project.images[0])}" alt="${escapeHtml(project.title)} project image">
+        <img src="${getResponsiveImage(project.images)}" alt="${escapeHtml(project.title)} project image">
       </div>
 
       <div class="archive-copy">
@@ -350,12 +334,40 @@ function initArchiveCardClicks() {
 
 function renderProjectsArchive(data) {
   const listing = document.getElementById('projects-listing');
+  const heroContainer = document.querySelector('.projects-hero');
   if (!listing) return;
 
-  listing.innerHTML = data.projects.map(createArchiveProjectCard).join('');
+  const orderedProjects = [
+    ...data.projects.filter(p => p.featured === true),
+    ...data.projects.filter(p => p.featured === false)
+  ];
+
+  // HERO (primer proyecto)
+  const hero = orderedProjects[0];
+
+  if (heroContainer && hero) {
+    heroContainer.innerHTML = `
+      <div class="project-hero-card">
+        <img src="${getResponsiveImage(hero.images)}" alt="${hero.title}">
+        <div class="project-hero-content">
+          <span>${hero.category}</span>
+          <h2>${hero.title}</h2>
+          <p>${hero.summary || ''}</p>
+          <a href="${getProjectUrl(hero.id)}" class="btn mosaic_btn">View Case Study</a>
+        </div>
+      </div>
+    `;
+  }
+
+  // RESTO (grid normal)
+  const rest = orderedProjects.slice(1);
+
+  listing.innerHTML = rest
+    .map(createArchiveProjectCard)
+    .join('');
+
   initArchiveCardClicks();
 }
-
 function createMetaBlock(title, value) {
   if (!value || (Array.isArray(value) && value.length === 0)) return '';
 
@@ -469,6 +481,20 @@ function renderProjectDetail(project) {
     });
   });
 }
+function getResponsiveImage(images) {
+  if (!Array.isArray(images)) return 'images/placeholder.png';
+
+  const isMobile = window.matchMedia('(max-width: 863px)').matches;
+
+  const desktopImg = images.find(img => img.includes('_0d'));
+  const mobileImg = images.find(img => img.includes('_0m'));
+
+  if (isMobile) {
+    return mobileImg || desktopImg || images[0];
+  } else {
+    return desktopImg || images[0];
+  }
+} 
 
 async function initProjects(data) {
   renderFeaturedProjects(data);
@@ -476,7 +502,10 @@ async function initProjects(data) {
 
   const featuredGrid = document.getElementById('projects-grid');
   if (featuredGrid) {
-    window.addEventListener('resize', () => renderFeaturedProjects(data));
+    window.addEventListener('resize', () => {
+      renderFeaturedProjects(data);
+      renderProjectsArchive(data);
+    });
   }
 
   const detailContainer = document.getElementById('projects-list');

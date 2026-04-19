@@ -217,13 +217,135 @@
         "Brand-consistent UI"
       ],
       "images": [
-        "images/projects/qpp/qpp-0d.png",
-        "images/projects/qpp/qpp-0m.png",
-        "images/projects/qpp/qpp_02.png",
-        "images/projects/qpp/qpp_03.png"
+        "images/projects/qpp/qpp_0d.png",
+        "images/projects/qpp/qpp_0m.png",
+        "images/projects/qpp/qpp_1.png",
+        "images/projects/qpp/qpp_2.png",
+        "images/projects/qpp/qpp_3.png"
       ],
       "live": "https://quillpenpress.webflow.io",
       "github": ""
+    },
+    {
+      "id": "jlprezc",
+      "title": "JLPrezc Portfolio",
+      "subtitle": "Photography Portfolio Website",
+      "category": "Client Project",
+      "cardStack": "HTML • CSS • JS",
+      "year": "2025",
+      "featured": false,
+      "summary": "Dark, image-focused portfolio for a product photographer.",
+      "description": "This project was developed for a photography student who needed a portfolio capable of displaying a large volume of work without relying on printed material. The goal was to create a strong first impression while showcasing both identity and photographic style. The design uses a dark theme to reinforce a dramatic, masculine, and professional tone aligned with the photographer’s style.",
+      "challenge": "The site needed to show many photographs clearly while still giving visitors a sense of the photographer’s identity and specialties.",
+      "solution": "A dark visual system was used together with large image-focused layouts, a Pinterest-style gallery, category-based navigation, and a dedicated contact section to keep the experience immersive but functional.",
+      "impact": "The result gives the photographer a way to present his work professionally online, even when printed presentation is limited.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "FormSubmit",
+        "GitHub",
+        "Vercel"
+      ],
+      "roles": [
+        "Website Design",
+        "Front-End Development",
+        "Gallery Layout",
+        "Content Structuring"
+      ],
+      "features": [
+        "Pinterest-style gallery",
+        "Category-based carousel navigation",
+        "Dark UI aesthetic",
+        "Contact form integration"
+      ],
+      "images": [
+        "images/projects/jlprezc/jl_0d.png",
+        "images/projects/jlprezc/jl_0m.png",
+        "images/projects/jlprezc/jl_1.png",
+        "images/projects/jlprezc/jl_2.png"
+      ],
+      "github": "",
+      "live": ""
+    },
+    {
+      "id": "juicysplash",
+      "title": "Juicy Splash",
+      "subtitle": "Branding + Web Concept",
+      "category": "Branding + Web Concept",
+      "cardStack": "HTML • CSS • JS",
+      "year": "2025",
+      "featured": false,
+      "summary": "Playful tropical juice brand focused on interaction and a youthful visual identity.",
+      "description": "Juicy Splash was a branding project for an Advertising Design class focused on a natural juice company. The concept explored a tropical, summer-inspired approach using bright fruit-based colors such as yellows, greens, and blues to evoke freshness, islands, and beach culture. The target audience was younger, so the design was intentionally more playful and memorable.",
+      "challenge": "The project needed to communicate a clear brand identity while also feeling fresh, youthful, and different from a static promotional page.",
+      "solution": "The visual system combined tropical colors, playful energy, and interactive bubbles to make the site feel lively and engaging. Sections such as nutritional information and location were included to make the concept feel more complete and realistic.",
+      "impact": "The final concept shows how interaction and visual branding can work together to make a product site more memorable for a young audience.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Branding"
+      ],
+      "roles": [
+        "Brand Identity",
+        "UI Design",
+        "Front-End Concept",
+        "Interactive Direction"
+      ],
+      "features": [
+        "Interactive bubble concept",
+        "Tropical color system",
+        "Youth-oriented branding",
+        "Nutritional and location sections"
+      ],
+      "images": [
+        "images/projects/juicy/j_0d.png",
+        "images/projects/juicy/j_0m.png",
+        "images/projects/juicy/j_1.png",
+        "images/projects/juicy/j_2.png"
+      ],
+      "github": "",
+      "live": ""
+    },
+    {
+      "id": "berrysweet",
+      "title": "Berry Sweet",
+      "subtitle": "UI Prototype",
+      "category": "UI Prototype",
+      "cardStack": "Figma",
+      "year": "2025",
+      "featured": false,
+      "summary": "Sweet-themed UI concept for a dessert gifting business.",
+      "description": "Berry Sweet was designed in Figma as a UI prototype for a small company focused on chocolate-covered strawberries and fruit gifts for special occasions such as birthdays and celebrations. Because the service is visually driven, the design placed strong emphasis on showing results and helping users imagine the final gift experience.",
+      "challenge": "The interface needed to communicate sweetness, celebration, and product appeal while still being clear and easy to browse.",
+      "solution": "A pink-centered visual language, image-focused layout, and desktop/mobile prototype structure were used to build a concept that feels decorative yet organized.",
+      "impact": "The project demonstrates the ability to design emotionally driven interfaces for gift-oriented businesses, even in a prototype stage.",
+      "technologies": [
+        "Figma",
+        "UI Design",
+        "Wireframing",
+        "Mobile Layout"
+      ],
+      "roles": [
+        "UI Design",
+        "Visual Direction",
+        "Desktop Prototype",
+        "Mobile Prototype"
+      ],
+      "features": [
+        "Desktop and mobile prototypes",
+        "Image-driven product presentation",
+        "Sweet-themed visual language",
+        "Gift-service oriented layout"
+      ],
+      "images": [
+        "images/projects/berry/b_0d.png",
+        "images/projects/berry/b_0m.png",
+        "images/projects/berry/b_1.png"
+      ],
+      "github": "",
+      "live": ""
     }
   ],
   "skills": [
@@ -252,7 +374,7 @@
       "tools": ["Figma", "Adobe XD"]
     },
     {
-      "id": "HTML",
+      "id": "html",
       "title": "Web Implementation",
       "overlay": "HTML/CSS/JS",
       "points": [
@@ -350,48 +472,6 @@
         "Dean’s List – Distinction for Scholastic Achievement, 2025",
         "Phi Theta Kappa Honor Society – Lifetime Member",
         "Recipient of Jubilee Scholarship"
-      ]
-    }
-  ],
-  "about_me": [
-    {
-      "caseStudys": [
-        {
-          "image": ["images/about/cstudy/qpp1.png"],
-          "title": "Quill Pen Press",
-          "description": "Brand research and visual development study for a hybrid publisher focused on empowering independent authors and small presses."
-        },
-        {
-          "image": "images/about/cstudy/cofee.png",
-          "title": "Café on Clock",
-          "description": "Logo design exploration for a café concept with a strong visual identity direction."
-        },
-        {
-          "image": "images/about/cstudy/splash.png",
-          "title": "Juicy Splash",
-          "description": "Logo concept and branding exploration for a juice-focused visual system."
-        }
-      ],
-      "photography": [
-        {
-          "image": "photo1.jpg",
-          "title": "Photography Work",
-          "description": "Selected photography direction showing visual sensitivity, composition, and editing experience."
-        }
-      ],
-      "editorial": [
-        {
-          "image": "images/about/editorial/JPEG/05.jpg",
-          "title": "Annual Report",
-          "description": "Editorial design work focused on structure, hierarchy, and clean content presentation."
-        }
-      ],
-      "experience": [
-        {
-          "image": "experience1.jpg",
-          "title": "Creative and Technical Experience",
-          "description": "A combination of visual design, photography, and technical problem-solving across different roles."
-        }
       ]
     }
   ]
