@@ -561,9 +561,9 @@ function initDesignerNotes(data) {
   initMosaicButtons(pdnLink);
 }
 
-// =============================
-// RESUME
-// =============================
+/* =============================
+   RESUME
+============================= */
 function initResume(data) {
   const aboutme = data.about?.[0];
   const titlesCol = document.getElementById('titles_col');
@@ -573,28 +573,48 @@ function initResume(data) {
   if (!aboutme || !titlesCol || !personalDiv || !descContent) return;
 
   personalDiv.innerHTML = `
-    <h3 style="font-weight:bold; text-transform:uppercase;">${escapeHtml(aboutme.personal.name)}</h3>
-    <p>
-      ${escapeHtml(aboutme.personal.phone)}<br>
-      ${escapeHtml(aboutme.personal.email)}<br>
-      <a href="${escapeHtml(aboutme.personal.website)}" class="nav-link" target="_blank" rel="noreferrer">${escapeHtml(aboutme.personal.website.replace(/^https?:\/\//, ''))}</a>
-    </p>`;
+    <div class="resume-contact-inner">
+      <h2 class="resume-name">${escapeHtml(aboutme.personal.name)}</h2>
+      <div class="resume-contact-lines">
+        <p>${escapeHtml(aboutme.personal.phone)}</p>
+        <p>${escapeHtml(aboutme.personal.email)}</p>
+        <a href="${escapeHtml(aboutme.personal.website)}" class="resume-website" target="_blank" rel="noreferrer">
+          ${escapeHtml(aboutme.personal.website.replace(/^https?:\/\//, ''))}
+        </a>
+      </div>
+    </div>
+  `;
 
-  const topics = Object.keys(aboutme).filter((key) => key !== 'pageTitle' && key !== 'personal');
+  const topics = Object.keys(aboutme).filter(
+    (key) => key !== 'pageTitle' && key !== 'personal'
+  );
+
   let selectedTopic = topics[0];
+
+  function formatTopicLabel(topic) {
+    return topic
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+  }
 
   function renderTitles() {
     titlesCol.innerHTML = '';
 
     topics.forEach((topic) => {
-      const div = document.createElement('div');
+      const div = document.createElement('button');
+      div.type = 'button';
       div.className = `title_item${topic === selectedTopic ? ' selected' : ''}`;
-      div.innerHTML = `<i class="fa-solid fa-circle"></i><h4>${escapeHtml(topic)}</h4>`;
+      div.innerHTML = `
+        <span class="title_dot"></span>
+        <span class="title_label">${escapeHtml(formatTopicLabel(topic))}</span>
+      `;
+
       div.addEventListener('click', () => {
         selectedTopic = topic;
         renderTitles();
         renderDesc();
       });
+
       titlesCol.appendChild(div);
     });
   }
@@ -605,25 +625,34 @@ function initResume(data) {
     if (!sectionData) return;
 
     if (Array.isArray(sectionData) && typeof sectionData[0] === 'string') {
+      const block = document.createElement('div');
+      block.className = 'resume-block';
+
       const ul = document.createElement('ul');
+      ul.className = 'resume-list';
+
       sectionData.forEach((item) => {
         const li = document.createElement('li');
         li.textContent = item;
         ul.appendChild(li);
       });
-      descContent.appendChild(ul);
+
+      block.appendChild(ul);
+      descContent.appendChild(block);
       return;
     }
 
     if (selectedTopic === 'education') {
       sectionData.forEach((item) => {
-        const div = document.createElement('div');
+        const div = document.createElement('article');
+        div.className = 'resume-entry';
+
         div.innerHTML = `
-          <h4>${escapeHtml(item.institution)}</h4>
-          <p>
-            ${escapeHtml(item.degree).replace(/\n/g, '<br>')}<br>
-            ${escapeHtml(item.graduation)}<br><br>
-          </p>`;
+          <h3>${escapeHtml(item.institution)}</h3>
+          <p class="resume-subtitle">${escapeHtml(item.degree).replace(/\n/g, '<br>')}</p>
+          <p class="resume-date">${escapeHtml(item.graduation)}</p>
+        `;
+
         descContent.appendChild(div);
       });
       return;
@@ -631,8 +660,11 @@ function initResume(data) {
 
     if (selectedTopic === 'experience') {
       sectionData.forEach((job) => {
-        const div = document.createElement('div');
+        const article = document.createElement('article');
+        article.className = 'resume-entry';
+
         const ul = document.createElement('ul');
+        ul.className = 'resume-list';
 
         job.responsibilities.forEach((responsibility) => {
           const li = document.createElement('li');
@@ -640,14 +672,24 @@ function initResume(data) {
           ul.appendChild(li);
         });
 
-        div.innerHTML = `
-          <hr>
-          <h4>${escapeHtml(job.title)}</h4>
-          <p>${escapeHtml(job.organization)} — ${escapeHtml(job.location)}</p>
-          <small>${escapeHtml(job.period)}</small>`;
+        article.innerHTML = `
+          <h3>${escapeHtml(job.title)}</h3>
+          <p class="resume-subtitle">${escapeHtml(job.organization)} — ${escapeHtml(job.location)}</p>
+          <p class="resume-date">${escapeHtml(job.period)}</p>
+        `;
 
-        div.appendChild(ul);
-        descContent.appendChild(div);
+        article.appendChild(ul);
+        descContent.appendChild(article);
+      });
+      return;
+    }
+
+    if (Array.isArray(sectionData)) {
+      sectionData.forEach((item) => {
+        const article = document.createElement('article');
+        article.className = 'resume-entry';
+        article.innerHTML = `<p>${escapeHtml(String(item))}</p>`;
+        descContent.appendChild(article);
       });
     }
   }
