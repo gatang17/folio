@@ -1,42 +1,50 @@
 {
   "d_notes": [
-  {
-    "id": "dnotes",
-    "title": "Designer's Notes",
-    "description": "This is my personal portfolio website, built from scratch using HTML, CSS, and JavaScript.",
-    "technologies": ["HTML", "CSS", "JavaScript", "JSON"],
-    "gallery": [
-      {
-        "image": "sketches/foliov1.png",
-        "title": "Initial Portfolio Sketch",
-        "description": "This sketch shows the first visual idea for the portfolio layout and content structure."
-      },
-      {
-        "image": "sketches/foliov2.png",
-        "title": "index Variatrions",
-        "description": "These early home page sketches explore the structure and flow of the main landing experience. The layout is organized vertically to guide the user through key sections—projects, skills, and contact—while maintaining a strong visual entry point at the top. The hero section was conceived as a billboard-like composition, combining large typography with graphic elements to immediately capture attention. A fixed sidebar was introduced to provide constant navigation access, allowing users to move quickly between sections without losing context."
-      },
-      {
-        "image": "sketches/foliov3.png",
-        "title": "index & Interaction Concept",
-        "description": "The home page was intentionally designed as a section-based layout to improve navigation speed and user flow. Instead of separating content into multiple pages, the goal was to allow users to access key information—projects, skills, and contact—without unnecessary page reloads. This approach reduces friction in the browsing experience. While the initial load may include more content, navigation within the page becomes faster and more intuitive, especially for users who want a quick overview of my work. The Projects section on the home page is treated as a featured preview. It loads only essential visual elements, such as images, to keep performance efficient while still engaging the user. More detailed content is deferred to dedicated project pages. From a visual perspective, the design was inspired by the idea of a billboard—bold, graphic, and attention-grabbing—combined with the structure of a functional website. The intention was to create something that feels expressive and memorable, while still maintaining clarity and usability. Interactive elements, such as cursor-based animations, were added to make the experience more dynamic and to reflect the intersection between design and technology. The goal was not only to present content, but to create a more engaging and distinctive interaction. Although frameworks could achieve similar results, I chose to build this using custom code to maintain full control over layout, behavior, and performance. This approach also allowed me to better understand how design decisions translate into real implementation, reinforcing the connection between visual design and front-end development."
-      },
-      {
-        "image": "images/diagram/diagram.png",
-        "title": "Visual Design & Implementation Flow",
-        "description": "The diagram represents the workflow from the initial concept in Figma to the final deployment."
-      }
-    ],
-    "github": "https://github.com/gatang17/folio",
-    "live": "https://tuportfolio.vercel.app"
-  }
-],
-
+    {
+      "id": "dnotes",
+      "title": "Designer's Notes",
+      "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web. The vertical navigation and typewriter effect are intentional symbolic choices that connect interface history, personal beginnings in web design, and a more handcrafted digital experience.",
+      "technologies": ["HTML", "CSS", "JavaScript", "JSON", "AOS", "Fancybox"],
+      "gallery": [
+        {
+          "image": "sketches/foliov1.png",
+          "title": "Initial Portfolio Sketch",
+          "description": "This first sketch explored the overall layout direction, hierarchy, and relationship between navigation, hero content, and project sections."
+        },
+        {
+          "image": "sketches/foliov2.png",
+          "title": "Layout Variations",
+          "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
+        },
+        {
+          "image": "sketches/foliov3.png",
+          "title": "Interaction Concept",
+          "description": "The site was conceived as a portfolio that feels both editorial and interactive. The goal was to create a memorable browsing experience while still keeping the structure clear and functional."
+        },
+        {
+          "image": "images/diagram/diagram.png",
+          "title": "Visual Design & Implementation Flow",
+          "description": "This diagram represents the workflow from early visual ideation in Figma to coded implementation and deployment."
+        }
+      ],
+      "github": "https://github.com/gatang17/folio",
+      "live": "https://tuportfolio.vercel.app"
+    }
+  ],
   "projects": [
     {
       "id": "jgphoto",
       "title": "J&G Photography",
-      "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based background color, a glass-effect hamburger menu without affecting carousel images, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and Google Maps iframe for location. Hosted on Vercel for free deployment, shortened URL, and basic analytics.",
+      "subtitle": "Custom Web Design",
+      "category": "Custom Code",
+      "cardStack": "HTML • CSS • JavaScript",
+      "year": "2025",
+      "featured": true,
+      "summary": "Interactive portfolio website for a photography business with custom-coded sections and service presentation.",
+      "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based styling, a glass-effect hamburger menu, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and a Google Maps iframe for location.",
+      "challenge": "The site needed to present multiple photography services in a visually engaging way while still being easy to navigate for potential clients.",
+      "solution": "A custom front-end structure was built to combine visual impact with practical booking-oriented content. The final result emphasized flexibility, clarity, and stronger visual identity.",
+      "impact": "The website helped transform the business into a more polished digital presence with clearer service communication and better visual consistency.",
       "technologies": [
         "HTML",
         "CSS",
@@ -45,6 +53,19 @@
         "FormSubmit",
         "Google Maps iframe",
         "Vercel"
+      ],
+      "roles": [
+        "UI Design",
+        "Front-End Development",
+        "Content Structuring",
+        "Responsive Design"
+      ],
+      "features": [
+        "Dynamic visual navigation",
+        "Custom package builder",
+        "Responsive layout",
+        "Contact integration",
+        "Embedded map"
       ],
       "images": [
         "images/projects/jgphoto/jg_0p.png",
@@ -68,44 +89,87 @@
     {
       "id": "handydmd",
       "title": "Handyman DMD",
-      "description": "Development of a simple and user-friendly website for HandymanDMD...",
+      "subtitle": "Business Website",
+      "category": "WordPress",
+      "cardStack": "WordPress • Custom CSS",
+      "year": "2025",
+      "featured": true,
+      "summary": "Service-based website focused on clarity, trust, and accessible information for home repair customers.",
+      "description": "Development of a simple and user-friendly website for Handyman DMD, designed to communicate services clearly and present the business as trustworthy and practical. The site organizes service categories, company information, and contact access in a direct structure tailored to small business needs.",
+      "challenge": "The business needed a professional online presence without overcomplicating the user experience or making the site feel generic.",
+      "solution": "A WordPress-based website was built with a clean structure, practical copy direction, and selective customization to make the site feel more intentional and business-focused.",
+      "impact": "The final result gave the business a stronger digital identity and a clearer way to communicate services online.",
       "technologies": [
-    "WordPress",
-    "Astra Theme",
-    "Gutenberg Editor",
-    "Spectra",
-    "Stackable",
-    "Essential Blocks",
-    "Contact Form 7",
-    "Code Snippets",
-    "Custom CSS"
-  ],
+        "WordPress",
+        "Astra Theme",
+        "Gutenberg Editor",
+        "Spectra",
+        "Stackable",
+        "Essential Blocks",
+        "Contact Form 7",
+        "Code Snippets",
+        "Custom CSS"
+      ],
+      "roles": [
+        "Site Structure",
+        "Visual Direction",
+        "WordPress Customization",
+        "Content Design"
+      ],
+      "features": [
+        "Service presentation",
+        "Business credibility focus",
+        "Responsive pages",
+        "Custom visual adjustments",
+        "Contact pathway"
+      ],
       "images": [
-            "images/projects/handydmd/h_0d.png",
-            "images/projects/handydmd/h_0m.png",
+        "images/projects/handydmd/h_0d.png",
+        "images/projects/handydmd/h_0m.png",
         "images/projects/handydmd/h_1.png",
         "images/projects/handydmd/h_2.png",
         "images/projects/handydmd/h_3.png"
       ],
       "github": "",
-
       "live": "https://handydmd.com/"
     },
     {
       "id": "aurora",
       "title": "Aurora Wellness Center",
-   "description": "Initially, this website was created on WordPress.com as part of a class assignment, which limited some customization options. In the following semester, I migrated the site to WordPress.org using my own domain. This transition gave me greater creative freedom, allowing me to fully customize elements such as the header, layout, and overall theme to better align with the brand identity of Aurora.",
-   "technologies": [
-    "WordPress",
-    "Astra Theme",
-    "Gutenberg Editor",
-    "Spectra",
-    "Stackable",
-    "Essential Blocks",
-    "Contact Form 7",
-    "Code Snippets",
-    "Custom CSS"
-  ],
+      "subtitle": "WordPress Redesign",
+      "category": "Redesign",
+      "cardStack": "WordPress • UI Refresh",
+      "year": "2025",
+      "featured": true,
+      "summary": "Brand-aligned redesign focused on creating a calmer and more flexible digital experience for a wellness-centered business.",
+      "description": "This website was initially created on WordPress.com as part of a class assignment, which limited customization options. It was later migrated to WordPress.org using a custom domain, allowing greater control over layout, branding, and structure. The redesign focused on improving flexibility and aligning the site more closely with the visual identity of Aurora.",
+      "challenge": "The first version felt constrained by platform limitations and did not fully reflect the desired brand atmosphere.",
+      "solution": "The site was migrated and reworked to allow more control over the header, layout, styling, and overall experience, creating a cleaner and more cohesive design system.",
+      "impact": "The redesign improved both visual consistency and creative freedom, resulting in a more intentional and polished site.",
+      "technologies": [
+        "WordPress",
+        "Astra Theme",
+        "Gutenberg Editor",
+        "Spectra",
+        "Stackable",
+        "Essential Blocks",
+        "Contact Form 7",
+        "Code Snippets",
+        "Custom CSS"
+      ],
+      "roles": [
+        "Redesign Strategy",
+        "WordPress Build",
+        "Visual Styling",
+        "Brand Alignment"
+      ],
+      "features": [
+        "Migration to WordPress.org",
+        "Custom header direction",
+        "Improved layout control",
+        "Brand-consistent styling",
+        "Responsive structure"
+      ],
       "images": [
         "images/projects/aurora/a_0m.png",
         "images/projects/aurora/a_0d.png",
@@ -120,29 +184,48 @@
     {
       "id": "quillpp",
       "title": "Quill Pen Press",
-     "description": "Quill Pen Press targeted emerging writers who wanted their books professionally bound and promoted after a selection process. The company was new, had few clients, no website, and faced strong competition, making it difficult to gain visibility and credibility. The solution was to create a professional and approachable brand identity using navy blue and gold, a beige website background, and a stylized 'Q' logo with the company name, emphasizing quality and professionalism to build trust and attract potential customers. The website was designed and implemented in Webflow to quickly create a responsive, visually polished site without needing custom coding.",
-"technologies": [
-  "Webflow",
-  "HTML",
-  "CSS",
-  "Responsive Design",
-  "Branding & Logo Design",
-  "Interactive Image Carousel",
-  "Web Transitions"
-],
-      "images": [
-      "images/projects/qpp/qpp-0d.png",
-      "images/projects/qpp/qpp-0m.png",
-      "images/projects/qpp/qpp_02.png",      
-      "images/projects/qpp/qpp_03.png"
+      "subtitle": "Brand + Website",
+      "category": "Brand System",
+      "cardStack": "Webflow • Branding",
+      "year": "2025",
+      "featured": true,
+      "summary": "Identity and website concept for a publishing brand aimed at emerging writers seeking professional presentation.",
+      "description": "Quill Pen Press targeted emerging writers who wanted their books professionally bound and promoted after a selection process. The company was new, had few clients, no website, and strong competition. The solution was to create a professional and approachable identity using navy blue, gold, and a soft neutral background, then apply that direction in a responsive Webflow website.",
+      "challenge": "The brand needed credibility, personality, and a stronger visual presence in order to compete within a crowded publishing space.",
+      "solution": "A visual system was created around trust, professionalism, and warmth, using a refined color palette, a stylized logo, and a polished website structure to support the brand message.",
+      "impact": "The project demonstrates how branding and digital presentation can work together to build confidence around a new business concept.",
+      "technologies": [
+        "Webflow",
+        "HTML",
+        "CSS",
+        "Responsive Design",
+        "Branding & Logo Design",
+        "Interactive Image Carousel",
+        "Web Transitions"
       ],
-      "live": "https://quillpenpress.webflow.io"
+      "roles": [
+        "Brand Strategy",
+        "Logo Design",
+        "Website Design",
+        "Responsive Implementation"
+      ],
+      "features": [
+        "Original identity direction",
+        "Responsive layout",
+        "Editorial visual tone",
+        "Interactive presentation",
+        "Brand-consistent UI"
+      ],
+      "images": [
+        "images/projects/qpp/qpp-0d.png",
+        "images/projects/qpp/qpp-0m.png",
+        "images/projects/qpp/qpp_02.png",
+        "images/projects/qpp/qpp_03.png"
+      ],
+      "live": "https://quillpenpress.webflow.io",
+      "github": ""
     }
   ],
-
-
-
-
   "skills": [
     {
       "id": "graphic",
@@ -150,9 +233,9 @@
       "overlay": "Graphic Design",
       "points": [
         "Brand identity development",
-        "Editorial & layout design",
+        "Editorial and layout design",
         "Typography systems",
-        "Visual composition & hierarchy"
+        "Visual hierarchy and composition"
       ],
       "tools": ["Adobe Creative Suite"]
     },
@@ -162,8 +245,8 @@
       "overlay": "Digital Design",
       "points": [
         "Creating clear and easy-to-use websites",
-        "Planning page layouts and visual flow",
-        "Choosing typography & colors for readability",
+        "Planning layouts and visual flow",
+        "Choosing typography and color for readability",
         "Designing with users in mind"
       ],
       "tools": ["Figma", "Adobe XD"]
@@ -175,14 +258,12 @@
       "points": [
         "Translating design concepts into functional websites",
         "Building responsive and visually consistent layouts",
-        "Adding interactive elements to enhance user experience",
-        "Ensuring design consistency across devices"
+        "Adding interactions to support user experience",
+        "Maintaining design consistency across devices"
       ],
       "tools": ["HTML", "CSS", "JavaScript", "Bootstrap"]
     }
- 
-],
-
+  ],
   "about": [
     {
       "pageTitle": "Resume",
@@ -192,11 +273,13 @@
         "email": "gretelalvareztang@gmail.com",
         "website": "https://gatangdesigns.io"
       },
-      "education": [        {
+      "education": [
+        {
           "institution": "Jefferson Community & Technical College",
           "location": "Louisville, KY",
           "degree": "Associate of Applied Science\nCommunication Arts Technology: Advertising Design Option",
-          "graduation": "Dec 2026"        },
+          "graduation": "Dec 2026"
+        },
         {
           "institution": "University Oscar Lucero",
           "location": "Holguín, Cuba",
@@ -204,7 +287,6 @@
           "graduation": "Jun 2011"
         }
       ],
-
       "skills & abilities": [
         "Design: Adobe Creative Suite",
         "Web: HTML, CSS, JavaScript",
@@ -264,7 +346,6 @@
           ]
         }
       ],
-
       "awards": [
         "Dean’s List – Distinction for Scholastic Achievement, 2025",
         "Phi Theta Kappa Honor Society – Lifetime Member",
@@ -272,52 +353,46 @@
       ]
     }
   ],
-
- 
-    "about_me": [
-      {
-        "caseStudys": [
-          {
-            "image": ["images/about/cstudy/qpp1.png"],
-            "title": "Quill Pen Press",
-            "description": "This project was a brand research study of Quill Pen Press, a hybrid publisher focused on empowering independent authors and small presses."
-          },
-          {
-            "image": "images/about/cstudy/cofee.png",
-            "title": "Café on Clock",
-            "description": "This project involved designing the logo for Café on Clock."
-          },
-          {
-            "image": "images/about/cstudy/splash.png",
-            "title": "Juicy Splash",
-            "description": "This project involved designing the logo for Juicy Splash."
-          }
-        ],
-        "photography": [
-          {
-            "image": "photo1.jpg",
-            "title": "Foto 1",
-            "description": "Descripción de la foto 1"
-          }
-        ],
-        "editorial": [
-          {
-            "image": "images/about/editorial/JPEG/05.jpg",
-            "title": "Annual Report",
-            "description": "Annual report design project."
-          }
-        ],
-        "experience": [
-          {
-            "image": "experience1.jpg",
-            "title": "Experiencia 1",
-            "description": "Descripción breve"
-          }
-        ]
-      }
-    ]
-
- 
-  
-
+  "about_me": [
+    {
+      "caseStudys": [
+        {
+          "image": ["images/about/cstudy/qpp1.png"],
+          "title": "Quill Pen Press",
+          "description": "Brand research and visual development study for a hybrid publisher focused on empowering independent authors and small presses."
+        },
+        {
+          "image": "images/about/cstudy/cofee.png",
+          "title": "Café on Clock",
+          "description": "Logo design exploration for a café concept with a strong visual identity direction."
+        },
+        {
+          "image": "images/about/cstudy/splash.png",
+          "title": "Juicy Splash",
+          "description": "Logo concept and branding exploration for a juice-focused visual system."
+        }
+      ],
+      "photography": [
+        {
+          "image": "photo1.jpg",
+          "title": "Photography Work",
+          "description": "Selected photography direction showing visual sensitivity, composition, and editing experience."
+        }
+      ],
+      "editorial": [
+        {
+          "image": "images/about/editorial/JPEG/05.jpg",
+          "title": "Annual Report",
+          "description": "Editorial design work focused on structure, hierarchy, and clean content presentation."
+        }
+      ],
+      "experience": [
+        {
+          "image": "experience1.jpg",
+          "title": "Creative and Technical Experience",
+          "description": "A combination of visual design, photography, and technical problem-solving across different roles."
+        }
+      ]
+    }
+  ]
 }
