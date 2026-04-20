@@ -18,7 +18,6 @@ const isIndexPage = () => {
 
 const getProjectUrl = (projectId) => `p_descript.html?id=${encodeURIComponent(projectId)}`;
 
-
 function handleSectionRedirect() {
   if (!isIndexPage()) return;
 
@@ -216,48 +215,6 @@ async function injectSharedLayout() {
       hMenuContainer.innerHTML = mobileMenuHtml;
       initMobileMenu();
     }
-
-    const divDesk = document.getElementById('menu_dtk');
-    const hMenu = document.getElementById('header-container');
-
-    if (divDesk) {
-      const mediaQuery = window.matchMedia('(min-width: 875px)');
-
-      const updateDesktopSidebar = (e) => {
-        if (e.matches) {
-          divDesk.innerHTML = `
-            <div class="container-fluid">
-              <div class="div_menu_home">
-                <div id="logo_container">
-                  <img id="img_logo" src="images/logoBW.png" alt="Gretel Alvarez Tang logo">
-                </div>
-
-                <section class="sec_menu">
-                  <a class="nav-link m_text mosaic_btn" href="index.html?section=projects">projects</a>
-                  <a class="nav-link m_text mosaic_btn" href="index.html?section=skills">skills</a>
-                  <a class="nav-link m_text mosaic_btn" href="resume.html">resume</a>
-                  <a class="nav-link m_text mosaic_btn" href="index.html?section=contact">contact</a>
-                </section>
-
-                <div class="sec_menu22">
-                  <a class="nav-link m_text" href="https://figma.com/@gatang17" target="_blank" aria-label="Figma profile"><i class="fa-brands fa-figma"></i></a>
-                  <a class="nav-link m_text" href="https://github.com/gatang17" target="_blank" aria-label="GitHub profile"><i class="fa-brands fa-github-alt"></i></a>
-                  <a class="nav-link m_text" href="https://www.linkedin.com/in/grete88/" target="_blank" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-              </div>
-            </div>`;
-
-          if (hMenu) hMenu.classList.add('hide-menu');
-          initMosaicButtons(divDesk);
-        } else {
-          divDesk.innerHTML = '';
-          if (hMenu) hMenu.classList.remove('hide-menu');
-        }
-      };
-
-      updateDesktopSidebar(mediaQuery);
-      mediaQuery.addEventListener('change', updateDesktopSidebar);
-    }
   } catch (error) {
     console.error('Shared layout injection error:', error);
   }
@@ -342,7 +299,6 @@ function renderProjectsArchive(data) {
     ...data.projects.filter(p => p.featured === false)
   ];
 
-  // HERO (primer proyecto)
   const hero = orderedProjects[0];
 
   if (heroContainer && hero) {
@@ -359,7 +315,6 @@ function renderProjectsArchive(data) {
     `;
   }
 
-  // RESTO (grid normal)
   const rest = orderedProjects.slice(1);
 
   listing.innerHTML = rest
@@ -368,6 +323,7 @@ function renderProjectsArchive(data) {
 
   initArchiveCardClicks();
 }
+
 function createMetaBlock(title, value) {
   if (!value || (Array.isArray(value) && value.length === 0)) return '';
 
@@ -381,7 +337,6 @@ function createMetaBlock(title, value) {
       ${content}
     </div>`;
 }
-
 
 function renderProjectDetail(project) {
   const projectContainer = document.getElementById('projects-list');
@@ -481,6 +436,7 @@ function renderProjectDetail(project) {
     });
   });
 }
+
 function getResponsiveImage(images) {
   if (!Array.isArray(images)) return 'images/placeholder.png';
 
@@ -494,7 +450,7 @@ function getResponsiveImage(images) {
   } else {
     return desktopImg || images[0];
   }
-} 
+}
 
 async function initProjects(data) {
   renderFeaturedProjects(data);

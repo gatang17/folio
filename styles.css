@@ -16,6 +16,8 @@
   --hairline-color: #3f4550;
   --white-soft: #faf8f4;
   --overlay-dark: rgba(39, 44, 53, 0.68);
+  --sidebar-width: 300px;
+  --topbar-height: 42px;
 }
 
 html {
@@ -178,10 +180,6 @@ body.menu-open {
 
 .softColor {
   color: var(--soft-color);
-}
-
-.hide-menu {
-  display: none !important;
 }
 
 .block {
@@ -353,6 +351,7 @@ a:hover,
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: var(--topbar-height);
   padding: 10px;
   background-color: var(--soft-color);
 }
@@ -503,19 +502,19 @@ a:hover,
 ============================= */
 
 #intro {
-  display: flex;
-  height: max-content;
+  display: block;
+  position: relative;
+  min-height: 100vh;
   overflow: hidden;
 }
 
-.cont_index {
+.home-page .cont_index {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: left;
-  justify-items: flex-start;
-  min-height: 100vh;
-  flex: 1;
+  min-height: calc(100vh - var(--topbar-height));
+  margin-left: var(--sidebar-width);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -580,7 +579,13 @@ a:hover,
 ============================= */
 
 #menu_dtk {
-  flex: 0 1 auto;
+  position: absolute;
+  top: var(--topbar-height);
+  left: 0;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--topbar-height));
+  z-index: 20;
+  background: var(--background-color);
 }
 
 .sec_menu22 {
@@ -660,7 +665,6 @@ a:hover,
 
 #projects {
   align-content: flex-start;
-  height: fit-content;
   background-color: var(--soft-color);
   color: var(--background-color);
 }
@@ -877,9 +881,8 @@ a:hover,
   text-transform: uppercase;
 }
 
-
 /* =============================
-   RESUME / ABOUT
+   12. RESUME / ABOUT
 ============================= */
 
 .resume-page-body .secondary-main {
@@ -1109,70 +1112,6 @@ a:hover,
   max-width: none;
   margin: 0;
   padding: 0;
-}
-
-/* =============================
-   RESUME RESPONSIVE
-============================= */
-
-@media (max-width: 1024px) {
-  .resume-layout {
-    grid-template-columns: 240px minmax(0, 1fr);
-    gap: 1.5rem;
-  }
-
-  #desc_col {
-    padding: 1.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .resume-page-body .secondary-main {
-    width: min(100%, calc(100% - 2rem));
-  }
-
-  .resume-layout {
-    grid-template-columns: 1fr;
-  }
-
-  #titles_col {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.75rem 1rem;
-    padding-right: 0;
-    padding-bottom: 1rem;
-    border-right: none;
-    border-bottom: 1px solid rgba(63, 69, 80, 0.18);
-  }
-
-  .title_item {
-    width: auto;
-    padding: 0.15rem 0;
-  }
-
-  #desc_col {
-    min-height: auto;
-    padding: 1.5rem;
-  }
-
-  .resume-entry h3 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .resume-summary {
-    font-size: 1rem;
-  }
-
-  .resume-download {
-    width: 100%;
-    justify-content: center;
-  }
-
-  #desc_col {
-    padding: 1.25rem;
-  }
 }
 
 /* =============================
@@ -1600,8 +1539,73 @@ h2 .cursor {
    18. RESPONSIVE
 ============================= */
 
-@media (min-width: 768px) {
-  .footer-icons {
+/* =============================
+   RESUME RESPONSIVE
+============================= */
+
+@media (max-width: 1024px) {
+  .resume-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  #desc_col {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-page-body .secondary-main {
+    width: min(100%, calc(100% - 2rem));
+  }
+
+  .resume-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #titles_col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(63, 69, 80, 0.18);
+  }
+
+  .title_item {
+    width: auto;
+    padding: 0.15rem 0;
+  }
+
+  #desc_col {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .resume-entry h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-summary {
+    font-size: 1rem;
+  }
+
+  .resume-download {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #desc_col {
+    padding: 1.25rem;
+  }
+}
+
+
+@media (min-width: 875px) {
+  .home-page #header-container {
     display: none;
   }
 }
@@ -1632,6 +1636,21 @@ h2 .cursor {
   .project-info-card,
   .project-gallery {
     position: static;
+  }
+}
+
+@media (max-width: 874px) {
+  .home-page #menu_dtk {
+    display: none;
+  }
+
+  .home-page .cont_index {
+    margin-left: 0;
+    min-height: fit-content;
+  }
+
+  .home-page #header-container {
+    display: block;
   }
 }
 
