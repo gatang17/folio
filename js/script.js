@@ -348,15 +348,15 @@ function renderProjectDetail(project) {
   projectContainer.innerHTML = `
     <section class="project-detail-shell">
       <header class="project-detail-head" data-aos="fade-up">
-        <div class="project-head-copy">
-          <span class="project-eyebrow">${escapeHtml(project.category || project.subtitle || 'Project')}</span>
+      <div class="project-head-copy"> 
+            <!-- <span class="project-eyebrow">${escapeHtml(project.category || project.subtitle || 'Project')}</span> -->
           <h1>${escapeHtml(project.title)}</h1>
           ${project.subtitle ? `<h4>${escapeHtml(project.subtitle)}</h4>` : ''}
           <p class="project-summary">${escapeHtml(project.summary || project.description || '')}</p>
         </div>
 
         <div class="project-head-meta">
-          ${createMetaBlock('Year', project.year)}
+          <!--   ${createMetaBlock('Year', project.year)} -->
           ${createMetaBlock('Role', project.roles)}
           ${createMetaBlock('Key Features', project.features)}
         </div>
@@ -655,7 +655,7 @@ function initResume(data) {
 }
 
 // =============================
-// ABOUT ME SIDEBAR
+// SKILLS
 // =============================
 function initAboutMe(data) {
   const aboutData = data.about_me?.[0];
@@ -725,9 +725,7 @@ function initAboutMe(data) {
   });
 }
 
-// =============================
-// SKILLS
-// =============================
+
 function initSkills(data) {
   const skills = document.querySelectorAll('.skill');
   if (!skills.length) return;
@@ -856,9 +854,9 @@ async function initApp() {
   ]);
 
   createTypeWriter('typewriter_hero', [
-    'I design with intention',
+    'I design with intention.',
     'Not just pretty. Functional.',
-    'Experiences that actually work'
+    'Experiences that actually work.'
   ]);
 
   try {

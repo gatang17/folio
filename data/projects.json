@@ -269,8 +269,8 @@
         "images/projects/jlprezc/jlperezc_5.png",
         "images/projects/jlprezc/jlperezc_6.png"
       ],
-      "github": "",
-      "live": ""
+      "github": "https://github.com/gatang17/jlperezc.git",
+      "live": "https://jlperezc.vercel.app/"
     },
     {
       "id": "juicysplash",
@@ -278,7 +278,7 @@
       "subtitle": "Branding + Web Concept",
       "category": "Branding + Web Concept",
       "cardStack": "HTML • CSS • JS",
-      "year": "2025",
+      "year": "2024",
       "featured": false,
       "summary": "Playful tropical juice brand focused on interaction and a youthful visual identity.",
       "description": "Juicy Splash was a branding project for an Advertising Design class focused on a natural juice company. The concept explored a tropical, summer-inspired approach using bright fruit-based colors such as yellows, greens, and blues to evoke freshness, islands, and beach culture. The target audience was younger, so the design was intentionally more playful and memorable.",
@@ -318,7 +318,7 @@
       "subtitle": "UI Prototype",
       "category": "UI Prototype",
       "cardStack": "Figma",
-      "year": "2025",
+      "year": "2026",
       "featured": false,
       "summary": "Sweet-themed UI concept for a dessert gifting business.",
       "description": "Berry Sweet was designed in Figma as a UI prototype for a small company focused on chocolate-covered strawberries and fruit gifts for special occasions such as birthdays and celebrations. Because the service is visually driven, the design placed strong emphasis on showing results and helping users imagine the final gift experience.",
