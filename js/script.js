@@ -855,7 +855,7 @@ async function initApp() {
 
   createTypeWriter('typewriter_hero', [
     'I design with intention.',
-    'Not just pretty. Functional.',
+    'Not just pretty, functional.',
     'Experiences that actually work.'
   ]);
 
