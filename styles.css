@@ -115,6 +115,10 @@ li {
 /* =============================
    2. UTILITIES
 ============================= */
+.col-6 > a {
+  display: inline-block;
+  width: fit-content;
+}
 
 #btn_menu {
   background: none;
@@ -216,7 +220,13 @@ body.menu-open {
 }
 
 .secondary-hero {
-  padding: 2rem 0 3rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 2rem 3rem 3rem;
+
+  background-image: url(images/projects/personal/backgound-1.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .projects-hero {
@@ -311,6 +321,8 @@ a:hover,
   border-color: var(--soft-color);
 }
 
+
+
 .mosaic_btn {
   position: relative;
   z-index: 2;
@@ -318,10 +330,7 @@ a:hover,
   border: none;
   text-transform: uppercase;
   font-weight: 700;
-  transition: color 0.5s;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  transition: color 0.5s, letter-spacing 0.35s ease;
 }
 
 .mosaic_btn .line {
@@ -358,12 +367,18 @@ a:hover,
 }
 
 #link_note {
-  font-weight: 100 !important;
+  font-weight: 200 !important;
   color: var(--primary-yellow);
 }
-
 #header-container {
+
   max-height: 100px;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10000999;
+  background: var(--background-color);
 }
 
 #img_logoh {
@@ -809,9 +824,11 @@ a:hover,
 
 .projects-page-main {
   padding-bottom: 3rem;
+ 
 }
 
 .projects-archive-grid {
+  
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.75rem;
@@ -890,14 +907,19 @@ a:hover,
 }
 
 #aboutme {
+  
   min-height: 100vh;
 }
 
 .resume-hero {
   padding-bottom: 2rem;
+  background-position: center;
+  background-size: cover;
+
 }
 
 .resume-hero h1 {
+  
   margin-top: 0.35rem;
   font-size: clamp(3.2rem, 8vw, 6.5rem);
   line-height: 0.95;
@@ -911,9 +933,11 @@ a:hover,
   font-size: 1.05rem;
   line-height: 1.7;
   color: rgba(39, 44, 53, 0.78);
+  
 }
 
 .resume-intro-block {
+  
   display: grid;
   gap: 1.5rem;
   margin-bottom: 3rem;
@@ -1127,6 +1151,9 @@ a:hover,
 }
 
 .project-detail-head {
+  position: relative;
+  background-size: cover;
+  background-position: center;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
   gap: 2rem;
@@ -1185,59 +1212,65 @@ a:hover,
   border: 1px solid rgba(63, 69, 80, 0.15);
   background: rgba(255, 255, 255, 0.22);
 }
-
+ 
 .project-gallery {
+  position: relative;
+  top: auto;
+} 
+
+/* .project-gallery {
   position: sticky;
   top: 80px;
+} */
+
+/*masonryContainer from pinterest*/
+.project-gallery {
+  position: relative;
+  top: auto;
 }
 
-.main-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 620px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.main-image img {
+.project-gallery-grid {
+  column-count: 2;
+  column-gap: 2rem;
   display: block;
+}
+
+.project-gallery-item {
+  display: inline-block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.main-image img:hover {
-  transform: scale(1.02);
-}
-
-.thumbs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.thumbs img {
-  width: 100%;
-  height: 84px;
+  margin-bottom: 2rem;
+  break-inside: avoid;
+  overflow: hidden;
   cursor: pointer;
-  object-fit: cover;
-  opacity: 0.6;
-  transition: 0.2s;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
-.thumbs img:hover {
-  opacity: 1;
-  transform: scale(1.05);
+.project-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-.thumbs img.active {
-  opacity: 1;
-  border: 2px solid #000;
+.project-gallery-item:hover img {
+  transform: scale(1.03);
+  opacity: 0.92;
 }
+
+@media (max-width: 768px) {
+  .project-gallery-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .project-gallery-item {
+    margin-bottom: 1.2rem;
+  }
+}
+
+
 
 .tech-inline {
   margin-top: 20px;

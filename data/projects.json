@@ -2,7 +2,7 @@
   "d_notes": [
     {
       "id": "dnotes",
-      "title": "Designer's Notes",
+      "title": "Designer Notes",
       "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web. The vertical navigation and typewriter effect are intentional symbolic choices that connect interface history, personal beginnings in web design, and a more handcrafted digital experience.",
       "technologies": ["HTML", "CSS", "JavaScript", "JSON", "AOS", "Fancybox"],
       "gallery": [
@@ -136,8 +136,8 @@
     {
       "id": "aurora",
       "title": "Aurora Wellness Center",
-      "subtitle": "WordPress Redesign",
-      "category": "Redesign",
+      "subtitle": "WordPress",
+      "category": "Case Study",
       "cardStack": "WordPress • UI Refresh",
       "year": "2025",
       "featured": true,
@@ -185,7 +185,7 @@
       "id": "quillpp",
       "title": "Quill Pen Press",
       "subtitle": "Brand + Website",
-      "category": "Brand System",
+      "category": "Case Study",
       "cardStack": "Webflow • Branding",
       "year": "2025",
       "featured": true,

@@ -114,7 +114,6 @@ function getLineColorFromBackground(btn) {
 
   return 'var(--background-color)';
 }
-
 function initMosaicButtons(scope = document) {
   const buttons = scope.querySelectorAll('.mosaic_btn');
   const lineCount = 50;
@@ -124,6 +123,7 @@ function initMosaicButtons(scope = document) {
     btn.dataset.mosaicInit = 'true';
 
     const originalColor = getComputedStyle(btn).color;
+    const originalLetterSpacing = getComputedStyle(btn).letterSpacing;
 
     const burstLines = () => {
       for (let i = 0; i < lineCount; i += 1) {
@@ -142,7 +142,7 @@ function initMosaicButtons(scope = document) {
           else line.style.bottom = '-100%';
         }, Math.random() * 200);
 
-        setTimeout(() => line.remove(), 120);
+        setTimeout(() => line.remove(), 80);
       }
     };
 
@@ -152,8 +152,8 @@ function initMosaicButtons(scope = document) {
     });
 
     btn.addEventListener('mouseleave', () => {
-      btn.style.color = originalColor;
-      btn.style.letterSpacing = '0.05em';
+      btn.style.removeProperty('color');
+      btn.style.letterSpacing = originalLetterSpacing;
       burstLines();
     });
   });
@@ -346,8 +346,8 @@ function renderProjectDetail(project) {
   const firstImage = images[0] || '';
 
   projectContainer.innerHTML = `
-    <section class="project-detail-shell">
-      <header class="project-detail-head" data-aos="fade-up">
+    <section class="project-detail-shell ">
+      <div class="project-detail-head secondary-hero"  data-aos="fade-up">
       <div class="project-head-copy"> 
             <!-- <span class="project-eyebrow">${escapeHtml(project.category || project.subtitle || 'Project')}</span> -->
           <h1>${escapeHtml(project.title)}</h1>
@@ -360,7 +360,7 @@ function renderProjectDetail(project) {
           ${createMetaBlock('Role', project.roles)}
           ${createMetaBlock('Key Features', project.features)}
         </div>
-      </header>
+      </div>
 
       <section class="project-layout" data-aos="fade-up">
         <div class="project-info-card project-info">
@@ -385,26 +385,16 @@ function renderProjectDetail(project) {
           </div>
         </div>
 
-        <div class="project-gallery">
-          <div class="main-image">
-            <a href="${escapeHtml(firstImage)}" data-fancybox="gallery" id="mainFancyboxLink">
-              <img src="${escapeHtml(firstImage)}" id="activeImage" alt="${escapeHtml(project.title)} main project image">
-            </a>
-          </div>
+        <div class="project-gallery-grid">
+  ${images.map((img, index) => `
+    <a href="${escapeHtml(img)}" data-fancybox="gallery" class="project-gallery-item">
+      <img
+        src="${escapeHtml(img)}"
+        alt="${escapeHtml(project.title)} project image ${index + 1}">
+    </a>
+  `).join('')}
+</div>     
 
-          <div class="thumbs">
-            ${images.map((img, index) => `
-              <img
-                src="${escapeHtml(img)}"
-                class="thumb ${index === 0 ? 'active' : ''}"
-                data-full="${escapeHtml(img)}"
-                alt="${escapeHtml(project.title)} thumbnail ${index + 1}">
-            `).join('')}
-          </div>
-
-          <div class="d-none">
-            ${images.map((img) => `<a href="${escapeHtml(img)}" data-fancybox="gallery"></a>`).join('')}
-          </div>
         </div>
       </section>
     </section>`;
@@ -419,22 +409,6 @@ function renderProjectDetail(project) {
     });
   }
 
-  const thumbs = projectContainer.querySelectorAll('.thumb');
-  const mainImg = document.getElementById('activeImage');
-  const mainLink = document.getElementById('mainFancyboxLink');
-
-  thumbs.forEach((thumb) => {
-    thumb.addEventListener('click', () => {
-      const newSrc = thumb.dataset.full;
-      if (!mainImg || !mainLink || !newSrc) return;
-
-      mainImg.src = newSrc;
-      mainLink.href = newSrc;
-
-      thumbs.forEach((item) => item.classList.remove('active'));
-      thumb.classList.add('active');
-    });
-  });
 }
 
 function getResponsiveImage(images) {
