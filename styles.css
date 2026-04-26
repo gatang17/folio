@@ -1913,3 +1913,16 @@ body:not(.home-page) #header-container {
     grid-template-columns: 1fr;
   }
 }
+
+.diagram-svg {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  animation: revealDiagram 3.5s ease forwards;
+}
+
+@keyframes revealDiagram {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}

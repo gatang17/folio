@@ -69,7 +69,8 @@
     "description": "The site was conceived as a portfolio that feels both editorial and interactive."
   },
   {
-    "image": "images/diagram/diagram.png",
+    "image": "images/diagram/diagram.svg",
+    "type": "diagram",
     "title": "Visual Design & Implementation Flow",
     "description": "This diagram shows how a website is built in a structured way. It starts with ideas and sketches, then moves into structure (HTML), visual design (CSS), and interaction (JavaScript). Tools like GitHub help keep track of changes, similar to saving different versions of a project. The hosting platform connects to it, making it easy to publish updates and go back to a previous version if needed."
   }

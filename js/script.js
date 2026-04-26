@@ -511,6 +511,7 @@ function initDesignerNotes(data) {
   const notesIntent = document.getElementById('notes_intent');
   const notesDecisions = document.getElementById('notes_decisions');
 
+
   if (!tDnote || !dnoDescrip || !pdnLink || !secDiag) return;
 
   const project = data.d_notes?.[0];
@@ -575,32 +576,63 @@ function initDesignerNotes(data) {
       ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Demo</a>` : ''}
     </div>`;
 
-  // Gallery
-  const diagramItem = project.gallery.find((item) => item.image.includes('diagram'));
-  const sketchItems = project.gallery.filter((item) => !item.image.includes('diagram'));
-  
-  secDiag.innerHTML = `
-    ${diagramItem ? `
-      <article class="diag-card diag-card-featured">
-        <h3>${escapeHtml(diagramItem.title)}</h3>
-        <p>${escapeHtml(diagramItem.description)}</p>
-        <img src="${escapeHtml(diagramItem.image)}" alt="${escapeHtml(diagramItem.title)}" class="diag-img">
-      </article>
-    ` : ''}
-  
-    <div class="sketch-stack">
-      ${sketchItems.map((item) => `
-        <article class="diag-card sketch-card">
-          <h3>${escapeHtml(item.title)}</h3>
-          <p>${escapeHtml(item.description)}</p>
-          <a href="${escapeHtml(item.image)}" data-fancybox="notes">
-  <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="diag-img"> </a>
-        </article>
-      `).join('')}
-    </div>
-  `;
+// Gallery
+const diagramItem = project.gallery.find((item) => item.image.includes('diagram'));
+const sketchItems = project.gallery.filter((item) => !item.image.includes('diagram'));
 
-  initMosaicButtons(pdnLink);
+secDiag.innerHTML = `
+  ${diagramItem ? `
+    <article class="diag-card diag-card-featured">
+      <h3>${escapeHtml(diagramItem.title)}</h3>
+      <p>${escapeHtml(diagramItem.description)}</p>
+
+      ${diagramItem.image.endsWith('.svg') ? `
+        <div class="diagram-svg" data-src="${escapeHtml(diagramItem.image)}"></div>
+      ` : `
+        <a href="${escapeHtml(diagramItem.image)}" data-fancybox="notes">
+          <img src="${escapeHtml(diagramItem.image)}" alt="${escapeHtml(diagramItem.title)}" class="diag-img">
+        </a>
+      `}
+    </article>
+  ` : ''}
+
+  <div class="sketch-stack">
+    ${sketchItems.map((item) => `
+      <article class="diag-card sketch-card">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.description)}</p>
+        <a href="${escapeHtml(item.image)}" data-fancybox="notes">
+          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="diag-img">
+        </a>
+      </article>
+    `).join('')}
+  </div>
+`;
+
+// Load SVG inline
+// Load SVG inline
+secDiag.querySelectorAll('.diagram-svg').forEach(async (el) => {
+  const url = el.dataset.src;
+
+  try {
+    const res = await fetch(url);
+    const svgText = await res.text();
+    el.innerHTML = svgText;
+  } catch (error) {
+    console.error('Error loading SVG:', error);
+  }
+});
+
+// Fancybox
+if (window.Fancybox) {
+  Fancybox.bind("[data-fancybox='notes']", {
+    infinite: false,
+    Toolbar: true,
+    closeButton: "top"
+  });
+}
+
+initMosaicButtons(pdnLink);
 }
 
 /* =============================
