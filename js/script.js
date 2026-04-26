@@ -160,6 +160,44 @@ function initMosaicButtons(scope = document) {
 }
 
 // =============================
+// MENU sticky en index
+// =============================
+function initProjectSectionHeader() {
+  if (!isIndexPage()) return;
+
+  const header = document.getElementById('header-container');
+  const section = document.getElementById('projects');
+
+  if (!header || !section) return;
+
+  function update() {
+    const isDesktop = window.innerWidth > 768;
+
+    if (!isDesktop) {
+      header.classList.remove('show-project-header');
+      return;
+    }
+
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // aparece cuando la parte superior de projects llega al 70% de la pantalla
+    const showHeader = rect.top <= vh * 0.15;
+
+    if (showHeader) {
+      header.classList.add('show-project-header');
+    } else {
+      header.classList.remove('show-project-header');
+    }
+  }
+
+  window.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+
+  update();
+}
+
+// =============================
 // MENU INJECTION
 // =============================
 function initMobileMenu() {
@@ -457,7 +495,6 @@ async function initProjects(data) {
     renderProjectDetail(project);
   }
 }
-
 // =============================
 // DESIGNER NOTES
 // =============================
@@ -467,6 +504,13 @@ function initDesignerNotes(data) {
   const pdnLink = document.getElementById('pdn_link');
   const secDiag = document.getElementById('sec_diag');
 
+  const notesTech = document.getElementById('notes_tech');
+  const notesDirection = document.getElementById('notes_direction');
+  const notesTypography = document.getElementById('notes_typography');
+  const notesColors = document.getElementById('notes_colors');
+  const notesIntent = document.getElementById('notes_intent');
+  const notesDecisions = document.getElementById('notes_decisions');
+
   if (!tDnote || !dnoDescrip || !pdnLink || !secDiag) return;
 
   const project = data.d_notes?.[0];
@@ -475,18 +519,86 @@ function initDesignerNotes(data) {
   tDnote.textContent = project.title;
   dnoDescrip.textContent = project.description;
 
+  // Technologies
+  if (notesTech && project.technologies?.length) {
+    notesTech.textContent = project.technologies.join(' • ');
+  }
+
+  // Design direction
+  if (notesDirection && project.design?.direction?.length) {
+    notesDirection.innerHTML = project.design.direction
+      .map((item) => `<p>${escapeHtml(item)}</p>`)
+      .join('');
+  }
+
+  // Typography
+  if (notesTypography && project.design?.typography?.length) {
+    notesTypography.innerHTML = project.design.typography
+      .map((font) => `<p>${escapeHtml(font)}</p>`)
+      .join('');
+  }
+
+  // Colors
+  if (notesColors && project.design?.colors?.length) {
+    notesColors.innerHTML = project.design.colors
+      .map((color) => `
+        <div class="color-row">
+          <span 
+            class="color-swatch" 
+            style="background:${escapeHtml(color.value)}">
+          </span>
+          <div>
+            <p>${escapeHtml(color.name)}</p>
+            <small>${escapeHtml(color.value)}</small>
+          </div>
+        </div>
+      `)
+      .join('');
+  }
+
+  // Intent
+  if (notesIntent && project.process?.intent) {
+    notesIntent.textContent = project.process.intent;
+  }
+
+  // Decisions
+  if (notesDecisions && project.process?.decisions?.length) {
+    notesDecisions.innerHTML = project.process.decisions
+      .map((decision) => `<li>${escapeHtml(decision)}</li>`)
+      .join('');
+  }
+
+  // Links
   pdnLink.innerHTML = `
-    <div class="project-links mt-0 mb-5 mt-5 text-start">
+    <div class="project-links mt-0 text-start">
       ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
       ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Demo</a>` : ''}
     </div>`;
 
-  secDiag.innerHTML = project.gallery.map((item) => `
-    <div class="diag-card">
-      <h3>${escapeHtml(item.title)}</h3>
-      <p>${escapeHtml(item.description)}</p>
-      <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="diag-img">
-    </div>`).join('');
+  // Gallery
+  const diagramItem = project.gallery.find((item) => item.image.includes('diagram'));
+  const sketchItems = project.gallery.filter((item) => !item.image.includes('diagram'));
+  
+  secDiag.innerHTML = `
+    ${diagramItem ? `
+      <article class="diag-card diag-card-featured">
+        <h3>${escapeHtml(diagramItem.title)}</h3>
+        <p>${escapeHtml(diagramItem.description)}</p>
+        <img src="${escapeHtml(diagramItem.image)}" alt="${escapeHtml(diagramItem.title)}" class="diag-img">
+      </article>
+    ` : ''}
+  
+    <div class="sketch-stack">
+      ${sketchItems.map((item) => `
+        <article class="diag-card sketch-card">
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+          <a href="${escapeHtml(item.image)}" data-fancybox="notes">
+  <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="diag-img"> </a>
+        </article>
+      `).join('')}
+    </div>
+  `;
 
   initMosaicButtons(pdnLink);
 }
@@ -817,6 +929,7 @@ function initMobileScrollButton() {
 // =============================
 async function initApp() {
   await injectSharedLayout();
+  initProjectSectionHeader();
   handleSectionRedirect();
   initMosaicButtons();
   initContactForm();

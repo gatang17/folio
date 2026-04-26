@@ -1,36 +1,84 @@
 {
-  "d_notes": [
-    {
-      "id": "dnotes",
-      "title": "Designer Notes",
-      "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web. The vertical navigation and typewriter effect are intentional symbolic choices that connect interface history, personal beginnings in web design, and a more handcrafted digital experience.",
-      "technologies": ["HTML", "CSS", "JavaScript", "JSON", "AOS", "Fancybox"],
-      "gallery": [
-        {
-          "image": "sketches/foliov1.png",
-          "title": "Initial Portfolio Sketch",
-          "description": "This first sketch explored the overall layout direction, hierarchy, and relationship between navigation, hero content, and project sections."
-        },
-        {
-          "image": "sketches/foliov2.png",
-          "title": "Layout Variations",
-          "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
-        },
-        {
-          "image": "sketches/foliov3.png",
-          "title": "Interaction Concept",
-          "description": "The site was conceived as a portfolio that feels both editorial and interactive. The goal was to create a memorable browsing experience while still keeping the structure clear and functional."
-        },
-        {
-          "image": "images/diagram/diagram.png",
-          "title": "Visual Design & Implementation Flow",
-          "description": "This diagram represents the workflow from early visual ideation in Figma to coded implementation and deployment."
-        }
+    "d_notes": [
+  {
+    "id": "dnotes",
+    "title": "Designer Notes",
+    "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web.",
+
+    "design": {
+      "direction": [
+        "Editorial layout",
+        "Structured hierarchy",
+        "Subtle nostalgic references",
+        "Handcrafted digital feel"
       ],
-      "github": "https://github.com/gatang17/folio",
-      "live": "https://tuportfolio.vercel.app"
-    }
-  ],
+
+      "typography": [
+        "Bricolage Grotesque",
+        "Geist"
+      ],
+
+      "colors": [
+        {
+          "name": "Background",
+          "value": "#F2E9E1"
+        },
+        {
+          "name": "Primary Text",
+          "value": "#272C35"
+        },
+        {
+          "name": "Accent",
+          "value": "#CBA135"
+        }
+      ]
+    },
+
+    "process": {
+      "intent": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design.",
+      "decisions": [
+        "Vertical navigation to emphasize structure",
+        "Muted palette to reduce visual noise",
+        "Subtle textures for depth without distraction",
+        "Minimal transitions to keep focus on content"
+      ]
+    },
+
+    "technologies": [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "AOS (Animation Library)",
+  "Fancybox (Lightbox)"
+],
+
+  "gallery": [
+  {
+    "image": "sketches/foliov1.png",
+    "title": "Initial Portfolio Sketch",
+    "description": "This first sketch explored the overall layout direction, hierarchy, and relationship between navigation, hero content, and project sections."
+  },
+  {
+    "image": "sketches/foliov2.png",
+    "title": "Layout Variations",
+    "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
+  },
+  {
+    "image": "sketches/foliov3.png",
+    "title": "Interaction Concept",
+    "description": "The site was conceived as a portfolio that feels both editorial and interactive."
+  },
+  {
+    "image": "images/diagram/diagram.png",
+    "title": "Visual Design & Implementation Flow",
+    "description": "This diagram shows how a website is built in a structured way. It starts with ideas and sketches, then moves into structure (HTML), visual design (CSS), and interaction (JavaScript). Tools like GitHub help keep track of changes, similar to saving different versions of a project. The hosting platform connects to it, making it easy to publish updates and go back to a previous version if needed."
+  }
+],
+
+    "github": "https://github.com/gatang17/folio",
+    "live": "https://gatangdesigns.io/"
+  }
+],
   "projects": [
     {
       "id": "jgphoto",
