@@ -398,7 +398,7 @@ header {
 #footer-container {
   width: 100%;
   margin-top: auto;
-  padding: 2rem 1.5rem 0.75rem;
+  padding: 0rem 1.5rem 0.75rem;
 }
 
 .site-footer {
@@ -1372,6 +1372,7 @@ header {
 #contact {
   display: grid;
   align-content: flex-start;
+   background: rgba(255, 255, 255, 0.22);
 }
 
 .wrap_form {
@@ -1379,6 +1380,7 @@ header {
   width: min(1440px, 100%);
   margin: 0 auto;
   padding: 3rem 5rem 0;
+
 }
 
 .contForm {
@@ -1393,7 +1395,8 @@ header {
   margin: 0 auto;
   padding: 2.25rem 2rem;
   border: 1px solid rgba(63, 69, 80, 0.14);
-  background: rgba(255, 255, 255, 0.22);
+  background: var(--background-color);
+ /* background: rgba(255, 255, 255, 0.22);*/
 }
 
 .contact-side-label {
