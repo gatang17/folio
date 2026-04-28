@@ -8,6 +8,45 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'G-X2R58E5647');
 
+
+
+// =============================
+//BREADCUMBS
+// =============================
+function initBreadcrumbs() {
+  const bc = document.getElementById('breadcrumb');
+  if (!bc) return;
+
+  const path = window.location.pathname;
+
+  let trail = [{ label: 'Home', url: 'index.html' }];
+
+  if (path.includes('projects.html')) {
+    trail.push({ label: 'All Projects', url: 'projects.html' });
+  }
+
+  if (path.includes('p_descript.html')) {
+    trail.push({ label: 'All Projects', url: 'projects.html' });
+    trail.push({ label: 'Project Details', url: '#' });
+  }
+
+  if (path.includes('d_notes.html')) {
+    trail.push({ label: 'Designer Notes', url: 'd_notes.html' });
+  }
+
+  if (path.includes('resume.html')) {
+    trail.push({ label: 'Resume', url: 'resume.html' });
+  }
+
+  bc.innerHTML = trail
+    .map((item, i) => {
+      if (i === trail.length - 1) {
+        return `<span>${item.label}</span>`;
+      }
+      return `<a href="${item.url}">${item.label}</a>`;
+    })
+    .join(' <i class="fa-solid fa-angle-right mx-2"></i> ');
+}
 // =============================
 // GLOBAL HELPERS
 // =============================
@@ -961,11 +1000,13 @@ function initMobileScrollButton() {
 // =============================
 async function initApp() {
   await injectSharedLayout();
+  initBreadcrumbs();
   initProjectSectionHeader();
   handleSectionRedirect();
   initMosaicButtons();
   initContactForm();
   initMobileScrollButton();
+ 
 
   createTypeWriter('typewriter', [
     'Let’s connect!',
