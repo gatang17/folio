@@ -23,13 +23,6 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-X2R58E5647');
-  </script>
 </head>
 
 <body class="home-page">
@@ -41,10 +34,10 @@
 
   <!-- Shared mobile / secondary header -->
   <div id="header-container"></div>
-
+  
   <section id="intro" class="d-flex">
     <!-- Desktop-only sidebar -->
-    <aside id="menu_dtk" aria-label="Homepage sidebar navigation">
+    <aside id="menu_dtk" data-aos="fade-right" data-aos-delay="500" aria-label="Homepage sidebar navigation">
       <div class="div_menu_home">
         <div id="logo_container">
           <img id="img_logo" src="images/logoBW.png" alt="Gretel Alvarez Tang logo">
@@ -65,9 +58,9 @@
       </div>
     </aside>
 
-    <div class="cont_index">
+    <div  data-aos="fade-up" data-aos-delay="500"  class="cont_index">
       <div class="con_hero">
-        <div class="con_hero_sub">
+        <div  class="con_hero_sub">
           <span class="text-xs my-4 uppercase">Web Designer</span>
 
           <h1 class="mb-4 softColor text-start hero-title">
@@ -109,7 +102,7 @@
 
   <!-- SKILLS -->
   <section id="skills" class="content">
-    <div class="t-border">
+    <div class="t-border" data-aos="fade-up">
       <span class="text-xs uppercase">What can I offer</span>
       <h2 id="lnk_skills" class="title">Skills</h2>
     </div>
@@ -134,7 +127,7 @@
 
   <!-- CONTACT -->
   <section id="contact" class="content">
-    <div class="t-border">
+    <div class="t-border" data-aos="fade-up">
       <span class="text-xs uppercase">Have a project in mind?</span>
       <h2 class="title">Contact</h2>
     </div>

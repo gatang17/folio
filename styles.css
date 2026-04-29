@@ -45,12 +45,13 @@ body {
 }
 
 .breadcrumb-nav {
-  width: min(1200px, calc(100% - 3rem));
+  width: 100%;
+  padding: 0 3rem;
   margin: 1rem auto 0;
-  font-size: 0.85rem;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(39, 44, 53, 0.65);
+  color: rgba(39, 44, 53, 0.52);
 }
 
 .breadcrumb-nav a {
