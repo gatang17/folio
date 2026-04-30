@@ -48,8 +48,8 @@
   "HTML",
   "CSS",
   "JavaScript",
-  "AOS (Animation Library)",
-  "Fancybox (Lightbox)"
+  "Animation Library",
+  "Lightbox"
 ],
 
   "gallery": [
@@ -113,9 +113,7 @@
       "roles": [
         "UI Design","Front-End Development","Content Structuring","Responsive Design"
       ],
-      "features": [
-        "Dynamic navigation","Custom package builder","Responsive layout","Contact integration"
-      ],
+      "features": [ ],
       "images": [
         "images/projects/jgphoto/jg_0p.png",
         "images/projects/jgphoto/jg_0m.png"
@@ -153,7 +151,13 @@
       },
 
       "technologies": ["WordPress"],
-      "roles": ["Site Structure"],
+"roles": [
+  "Brand Identity",
+  "UI Design",
+  "Content Structuring",
+  "WordPress Customization",
+  "Responsive Design"
+],
       "features": [],
       "images": [
         "images/projects/handydmd/h_0d.png",
@@ -192,7 +196,13 @@
       },
 
       "technologies": ["WordPress"],
-      "roles": ["Redesign Strategy"],
+      "roles": [
+  "Brand Identity",
+  "UI Design",
+  "Content Structuring",
+  "WordPress Customization",
+  "Responsive Design"
+],
       "features": [],
       "images": [
         "images/projects/aurora/a_0d.png",
@@ -230,7 +240,7 @@
         "images": []
       },
 
-      "technologies": ["Webflow"],
+      "technologies": [""],
       "roles": ["Brand Strategy"],
       "features": [],
       "images": [
@@ -269,8 +279,11 @@
         "images": []
       },
 
-      "technologies": ["HTML","CSS","JavaScript"],
-      "roles": ["Front-End"],
+      "technologies": [ ],
+
+      "roles": [
+        "UI Design","Front-End Development","Content Structuring","Responsive Design"
+      ],
       "features": [],
       "images": [
         "images/projects/jlprezc/jlperezc_0d.png",
@@ -284,7 +297,7 @@
     {
       "id": "juicysplash",
       "title": "Juicy Splash",
-      "subtitle": "Branding + Web Concept",
+      "subtitle": "Branding + Web Concept • In Progress",
       "category": "Branding",
       "cardStack": "HTML • CSS • JS",
       "year": "2024",
@@ -293,27 +306,31 @@
 
       "description": {
         "text": "This project is a branding and web concept for a tropical juice company. The goal was to create a playful and energetic visual identity.",
-        "images": ["images/projects/juicy/j_1.png"]
+        "images": ["images/projects/juicys_plash/js_2.png"]
       },
       "challenge": {
         "text": "The challenge was to create a design that felt fresh, vibrant, and engaging without becoming chaotic or hard to read.",
-        "images": []
+        "images": ["images/projects/juicys_plash/js_1.png"]
       },
       "solution": {
         "text": "Bright colors, simple layouts, and interactive elements were combined to create a lively but controlled visual experience.",
-        "images": ["images/projects/juicy/j_2.png"]
+        "images": ["images/projects/juicys_plash/js_3.png"]
       },
       "impact": {
         "text": "The result is a memorable concept that communicates energy and freshness while remaining easy to navigate.",
-        "images": []
+        "images": ["images/projects/juicys_plash/js_0d.png", "images/projects/juicys_plash/js_0m.png"]
       },
 
-      "technologies": ["HTML","CSS"],
-      "roles": ["Branding"],
+      "technologies": ["Illustrator","HTML","CSS","JS"],
+      "roles": [
+        "UI Design","Front-End Development","Content Structuring","Responsive Design"
+      ],
+
       "features": [],
       "images": [
         "images/projects/juicys_plash/js_0d.png",
-        "images/projects/juicys_plash/js_0m.png"
+        "images/projects/juicys_plash/js_0m.png",
+        "images/projects/juicys_plash/js_1.png"
       ],
       "github": "https://github.com/gatang17/creative_portfolio.git",
       "live": "https://gatang17.github.io/creative_portfolio/",

@@ -1173,6 +1173,7 @@ header {
    13. PROJECT DETAIL PAGE
 ============================= */
 
+
 .project-detail-main {
   padding-bottom: 3rem;
 }
@@ -1181,6 +1182,8 @@ header {
   display: grid;
   gap: 2.5rem;
 }
+
+/* ===== HEADER ===== */
 
 .project-detail-head {
   position: relative;
@@ -1220,6 +1223,8 @@ header {
   font-size: 0.98rem;
 }
 
+/* ===== LAYOUT ===== */
+
 .project-layout {
   display: block;
 }
@@ -1227,21 +1232,24 @@ header {
 .project-case-grid {
   margin-top: 5rem;
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
 }
+
+/* ===== CASE STUDY ROW ===== */
 
 .project-case-row {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  align-items: start;
-  padding: 2rem 0;
- 
+  padding: 4rem 0;
+  border-top: 1px solid rgba(63, 69, 80, 0.15);
 }
 
+/* ===== TEXT BLOCK (EDITORIAL STYLE) ===== */
+
 .project-case-text {
-  display: flex;
-  gap: 1rem;
+  display: block;
+  max-width: 760px;
 }
 
 .project-case-number {
@@ -1250,35 +1258,42 @@ header {
 }
 
 .project-case-text h5 {
-  margin-bottom: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
+  color: #d69a00;
+  margin-bottom: 1.4rem;
 }
 
 .project-case-text p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  line-height: 1.35;
+  max-width: 42ch;
+  color: #2f3540;
 }
 
+/* ===== IMAGES ===== */
+
 .project-case-images {
-  display: grid;
-  gap: 1rem;
-  justify-content: start; /* evita centrado raro */
+  column-count: 2;      /* número de columnas */
+  column-gap: 1rem;
 }
 
 .project-case-images img {
-  width: 450px;
-  height: auto;        /* altura fija */
-  object-fit: cover;    /* 🔥 clave */
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  break-inside: avoid;  /* 🔥 evita que se corten */
   display: block;
 }
+
+/* ===== TECH / LINKS ===== */
 
 .tech-inline {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid rgba(63, 69, 80, 0.2);
-  font-size: 0.82rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -1290,27 +1305,30 @@ header {
   margin-top: 1.5rem;
 }
 
+/* ===== FINAL BLOCK ===== */
+
 .project-final-block {
   padding: 2rem 0;
- 
 }
+
+
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
   .project-detail-head {
     grid-template-columns: 1fr;
   }
 }
-
+@media (max-width: 768px) {
+  .project-case-images {
+    column-count: 1;
+  }
+}
 @media (max-width: 768px) {
   .project-case-row {
     grid-template-columns: 1fr;
   }
-
-  .project-case-text {
-    grid-template-columns: 50px 1fr;
-  }
 }
-
 /* =============================
    14. SKILLS SECTION
 ============================= */

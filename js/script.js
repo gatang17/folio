@@ -430,7 +430,7 @@ function createProjectCaseGrid(project) {
             <div class="project-case-images">
               ${images.map((img, imgIndex) => `
                 <a href="${escapeHtml(img)}" data-fancybox="gallery">
-                  <img src="${escapeHtml(img)}" alt="${escapeHtml(section.title)} image ${imgIndex + 1}">
+                  <img src="${escapeHtml(img)}"data-aos="fade-up" alt="${escapeHtml(section.title)} image ${imgIndex + 1}">
                 </a>
               `).join('')}
             </div>
@@ -440,6 +440,7 @@ function createProjectCaseGrid(project) {
     </div>
   `;
 }
+
 
 function createMetaBlock(title, value) {
   if (!value || (Array.isArray(value) && value.length === 0)) return '';
