@@ -76,9 +76,8 @@
   }
 ],
 
-    "github": "https://github.com/gatang17/folio",
-    "live": "https://gatangdesigns.io/"
-  }
+    "github": "https://github.com/gatang17/folio"
+    }
 ],
   "projects": [
     {
@@ -90,51 +89,42 @@
       "year": "2025",
       "featured": true,
       "summary": "Interactive portfolio website for a photography business with custom-coded sections and service presentation.",
-      "description": "Modern, interactive, and customizable website built with HTML, CSS, JavaScript, and Bootstrap. Features include a dynamic navigation menu with scroll-based styling, a glass-effect hamburger menu, a custom service package builder using JSON and dropdowns, lightweight FormSubmit integration for messaging, and a Google Maps iframe for location.",
-      "challenge": "The site needed to present multiple photography services in a visually engaging way while still being easy to navigate for potential clients.",
-      "solution": "A custom front-end structure was built to combine visual impact with practical booking-oriented content. The final result emphasized flexibility, clarity, and stronger visual identity.",
-      "impact": "The website helped transform the business into a more polished digital presence with clearer service communication and better visual consistency.",
+
+       "description": {
+          "text": "This project is an interactive portfolio website created for a photography business. The goal was to present services, galleries, and packages in a clear and visually engaging way. The site combines clean layout structure with custom interactions to make the content easy to explore.",
+          "images": ["images/projects/jgphoto/jg_0p.png"]
+        },
+        "challenge": {
+          "text": "The main challenge was organizing multiple photography services without overwhelming the user. The content needed to be clear, easy to navigate, and visually attractive while still guiding users toward booking or contacting.",
+          "images": ["images/projects/jgphoto/jg_1.png"]
+        },
+        "solution": {
+          "text": "A custom front-end structure was developed to separate services into clear sections. Each part of the website was designed to guide the user step by step, combining strong visuals with simple navigation and practical content.",
+          "images": ["images/projects/jgphoto/jg_3.png"]
+        },
+        "impact": {
+          "text": "The final result is a more organized and professional online presence. The website makes it easier for users to understand the services and improves how the business communicates with potential clients.",
+          "images": ["images/projects/jgphoto/jg_5.png"]
+        },
+
       "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Bootstrap",
-        "FormSubmit",
-        "Google Maps iframe",
-        "Vercel"
+        "HTML","CSS","JavaScript","Bootstrap","FormSubmit","Google Maps iframe","Vercel"
       ],
       "roles": [
-        "UI Design",
-        "Front-End Development",
-        "Content Structuring",
-        "Responsive Design"
+        "UI Design","Front-End Development","Content Structuring","Responsive Design"
       ],
       "features": [
-        "Dynamic visual navigation",
-        "Custom package builder",
-        "Responsive layout",
-        "Contact integration",
-        "Embedded map"
+        "Dynamic navigation","Custom package builder","Responsive layout","Contact integration"
       ],
       "images": [
         "images/projects/jgphoto/jg_0p.png",
-        "images/projects/jgphoto/jg_0m.png",
-        "images/projects/jgphoto/jg_1.png",
-        "images/projects/jgphoto/jg_2.png",
-        "images/projects/jgphoto/jg_3.png",
-        "images/projects/jgphoto/jg_4.png",
-        "images/projects/jgphoto/jg_5.png"
-      ],
-      "captions": [
-        "Homepage hero with dynamic top menu",
-        "Hamburger menu with glass blur effect",
-        "Custom service package builder dropdowns",
-        "Generated message ready to send via FormSubmit",
-        "Embedded Google Maps for studio location"
+        "images/projects/jgphoto/jg_0m.png"
       ],
       "github": "https://github.com/gatang17/JGStudio/",
-      "live": "https://jgstudio.vercel.app"
+      "live": "https://jgstudio.vercel.app",
+       "more": "projects.html"
     },
+
     {
       "id": "handydmd",
       "title": "Handyman DMD",
@@ -143,45 +133,37 @@
       "cardStack": "WordPress • Custom CSS",
       "year": "2025",
       "featured": true,
-      "summary": "Service-based website focused on clarity, trust, and accessible information for home repair customers.",
-      "description": "Development of a simple and user-friendly website for Handyman DMD, designed to communicate services clearly and present the business as trustworthy and practical. The site organizes service categories, company information, and contact access in a direct structure tailored to small business needs.",
-      "challenge": "The business needed a professional online presence without overcomplicating the user experience or making the site feel generic.",
-      "solution": "A WordPress-based website was built with a clean structure, practical copy direction, and selective customization to make the site feel more intentional and business-focused.",
-      "impact": "The final result gave the business a stronger digital identity and a clearer way to communicate services online.",
-      "technologies": [
-        "WordPress",
-        "Astra Theme",
-        "Gutenberg Editor",
-        "Spectra",
-        "Stackable",
-        "Essential Blocks",
-        "Contact Form 7",
-        "Code Snippets",
-        "Custom CSS"
-      ],
-      "roles": [
-        "Site Structure",
-        "Visual Direction",
-        "WordPress Customization",
-        "Content Design"
-      ],
-      "features": [
-        "Service presentation",
-        "Business credibility focus",
-        "Responsive pages",
-        "Custom visual adjustments",
-        "Contact pathway"
-      ],
+      "summary": "Service-based website focused on clarity and trust.",
+
+      "description": {
+        "text": "This project is a service-based website designed to clearly communicate what the business offers. The focus was on simplicity, trust, and making information easy to understand for users.",
+        "images": ["images/projects/handydmd/h_1.png"]
+      },
+      "challenge": {
+        "text": "The challenge was to create a professional website without adding unnecessary complexity. The content needed to be clear, direct, and easy to navigate for users looking for specific services.",
+        "images": ["images/projects/handydmd/h_2.png"]
+      },
+      "solution": {
+        "text": "A clean layout was implemented with simple navigation and clear sections. The design focuses on readability and practical use, making it easy for users to find what they need quickly.",
+        "images": ["images/projects/handydmd/h_3.png"]
+      },
+      "impact": {
+        "text": "The result is a stronger and more trustworthy digital presence. The website helps communicate services more clearly and improves user confidence.",
+        "images": ["images/projects/handydmd/h_1.png"]
+      },
+
+      "technologies": ["WordPress"],
+      "roles": ["Site Structure"],
+      "features": [],
       "images": [
         "images/projects/handydmd/h_0d.png",
-        "images/projects/handydmd/h_0m.png",
-        "images/projects/handydmd/h_1.png",
-        "images/projects/handydmd/h_2.png",
-        "images/projects/handydmd/h_3.png"
+        "images/projects/handydmd/h_0m.png"
       ],
+      "live": "https://handydmd.com/",
       "github": "",
-      "live": "https://handydmd.com/"
+      "more": "projects.html"
     },
+
     {
       "id": "aurora",
       "title": "Aurora Wellness Center",
@@ -190,46 +172,37 @@
       "cardStack": "WordPress • UI Refresh",
       "year": "2025",
       "featured": true,
-      "summary": "Brand-aligned redesign focused on creating a calmer and more flexible digital experience for a wellness-centered business.",
-      "description": "This website was initially created on WordPress.com as part of a class assignment, which limited customization options. It was later migrated to WordPress.org using a custom domain, allowing greater control over layout, branding, and structure. The redesign focused on improving flexibility and aligning the site more closely with the visual identity of Aurora.",
-      "challenge": "The first version felt constrained by platform limitations and did not fully reflect the desired brand atmosphere.",
-      "solution": "The site was migrated and reworked to allow more control over the header, layout, styling, and overall experience, creating a cleaner and more cohesive design system.",
-      "impact": "The redesign improved both visual consistency and creative freedom, resulting in a more intentional and polished site.",
-      "technologies": [
-        "WordPress",
-        "Astra Theme",
-        "Gutenberg Editor",
-        "Spectra",
-        "Stackable",
-        "Essential Blocks",
-        "Contact Form 7",
-        "Code Snippets",
-        "Custom CSS"
-      ],
-      "roles": [
-        "Redesign Strategy",
-        "WordPress Build",
-        "Visual Styling",
-        "Brand Alignment"
-      ],
-      "features": [
-        "Migration to WordPress.org",
-        "Custom header direction",
-        "Improved layout control",
-        "Brand-consistent styling",
-        "Responsive structure"
-      ],
+      "summary": "Brand-aligned redesign.",
+
+      "description": {
+        "text": "This project involved migrating and redesigning a wellness website to improve control and visual consistency. The goal was to create a cleaner and more structured layout.",
+        "images": ["images/projects/aurora/a_1.png"]
+      },
+      "challenge": {
+        "text": "The existing platform had limitations that made customization difficult. The design lacked consistency and needed better structure.",
+        "images": []
+      },
+      "solution": {
+        "text": "A new layout system was created with improved styling and structure. The design was simplified to maintain consistency across sections.",
+        "images": ["images/projects/aurora/a_2.png"]
+      },
+      "impact": {
+        "text": "The result is a more cohesive and visually consistent website that is easier to manage and navigate.",
+        "images": []
+      },
+
+      "technologies": ["WordPress"],
+      "roles": ["Redesign Strategy"],
+      "features": [],
       "images": [
-        "images/projects/aurora/a_0m.png",
         "images/projects/aurora/a_0d.png",
-        "images/projects/aurora/a_1.png",
-        "images/projects/aurora/a_2.png",
-        "images/projects/aurora/a_3.png",
-        "images/projects/aurora/a_4.png"
+        "images/projects/aurora/a_0m.png"
       ],
       "live": "https://folio.gatangdesigns.io/",
-      "github": ""
+      "github": "",
+       "more": "projects.html"
     },
+
     {
       "id": "quillpp",
       "title": "Quill Pen Press",
@@ -238,43 +211,37 @@
       "cardStack": "Webflow • Branding",
       "year": "2025",
       "featured": true,
-      "summary": "Identity and website concept for a publishing brand aimed at emerging writers seeking professional presentation.",
-      "description": "Quill Pen Press targeted emerging writers who wanted their books professionally bound and promoted after a selection process. The company was new, had few clients, no website, and strong competition. The solution was to create a professional and approachable identity using navy blue, gold, and a soft neutral background, then apply that direction in a responsive Webflow website.",
-      "challenge": "The brand needed credibility, personality, and a stronger visual presence in order to compete within a crowded publishing space.",
-      "solution": "A visual system was created around trust, professionalism, and warmth, using a refined color palette, a stylized logo, and a polished website structure to support the brand message.",
-      "impact": "The project demonstrates how branding and digital presentation can work together to build confidence around a new business concept.",
-      "technologies": [
-        "Webflow",
-        "HTML",
-        "CSS",
-        "Responsive Design",
-        "Branding & Logo Design",
-        "Interactive Image Carousel",
-        "Web Transitions"
-      ],
-      "roles": [
-        "Brand Strategy",
-        "Logo Design",
-        "Website Design",
-        "Responsive Implementation"
-      ],
-      "features": [
-        "Original identity direction",
-        "Responsive layout",
-        "Editorial visual tone",
-        "Interactive presentation",
-        "Brand-consistent UI"
-      ],
+      "summary": "Publishing brand concept.",
+
+      "description": {
+        "text": "This project focused on building a brand identity and website concept for a publishing platform. The goal was to create a professional and credible visual presence.",
+        "images": ["images/projects/qpp/qpp_1.png"]
+      },
+      "challenge": {
+        "text": "The main challenge was creating a design that felt trustworthy and established while still appealing to new writers.",
+        "images": []
+      },
+      "solution": {
+        "text": "A structured visual system was created with consistent typography, layout, and branding elements to reinforce credibility.",
+        "images": ["images/projects/qpp/qpp_2.png"]
+      },
+      "impact": {
+        "text": "The result is a stronger brand perception and a more professional presentation.",
+        "images": []
+      },
+
+      "technologies": ["Webflow"],
+      "roles": ["Brand Strategy"],
+      "features": [],
       "images": [
         "images/projects/qpp/qpp_0d.png",
-        "images/projects/qpp/qpp_0m.png",
-        "images/projects/qpp/qpp_1.png",
-        "images/projects/qpp/qpp_2.png",
-        "images/projects/qpp/qpp_3.png"
+        "images/projects/qpp/qpp_0m.png"
       ],
       "live": "https://quillpenpress.webflow.io",
-      "github": ""
+      "github": "",
+       "more": "projects.html"
     },
+
     {
       "id": "jlprezc",
       "title": "JLPrezc Portfolio",
@@ -283,84 +250,76 @@
       "cardStack": "HTML • CSS • JS",
       "year": "2025",
       "featured": false,
-      "summary": "Dark, image-focused portfolio for a product photographer.",
-      "description": "This project was developed for a photography student who needed a portfolio capable of displaying a large volume of work without relying on printed material. The goal was to create a strong first impression while showcasing both identity and photographic style. The design uses a dark theme to reinforce a dramatic, masculine, and professional tone aligned with the photographer’s style.",
-      "challenge": "The site needed to show many photographs clearly while still giving visitors a sense of the photographer’s identity and specialties.",
-      "solution": "A dark visual system was used together with large image-focused layouts, a Pinterest-style gallery, category-based navigation, and a dedicated contact section to keep the experience immersive but functional.",
-      "impact": "The result gives the photographer a way to present his work professionally online, even when printed presentation is limited.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "FormSubmit",
-        "GitHub",
-        "Vercel"
-      ],
-      "roles": [
-        "Website Design",
-        "Front-End Development",
-        "Gallery Layout",
-        "Content Structuring"
-      ],
-      "features": [
-        "Pinterest-style gallery",
-        "Category-based carousel navigation",
-        "Dark UI aesthetic",
-        "Contact form integration"
-      ],
+      "summary": "Dark photography portfolio.",
+
+      "description": {
+        "text": "This project is a photography portfolio designed to showcase a large number of images in a clean and controlled way. The focus was on creating a visual-first experience without overwhelming the user.",
+        "images": ["images/projects/jlprezc/jlperezc_1.png"]
+      },
+      "challenge": {
+        "text": "The main challenge was organizing many images without losing clarity. The layout needed to balance visual impact with usability and navigation.",
+        "images": []
+      },
+      "solution": {
+        "text": "A dark interface was used to highlight the photography, combined with a structured gallery system that allows users to browse content easily.",
+        "images": ["images/projects/jlprezc/jlperezc_2.png"]
+      },
+      "impact": {
+        "text": "The final result is a professional portfolio that keeps the focus on the images while maintaining a clean and easy browsing experience.",
+        "images": []
+      },
+
+      "technologies": ["HTML","CSS","JavaScript"],
+      "roles": ["Front-End"],
+      "features": [],
       "images": [
         "images/projects/jlprezc/jlperezc_0d.png",
-        "images/projects/jlprezc/jlperezc_0m.png",
-        "images/projects/jlprezc/jlperezc_1.png",
-        "images/projects/jlprezc/jlperezc_2.png",
-        "images/projects/jlprezc/jlperezc_3.png",
-        "images/projects/jlprezc/jlperezc_4.png",
-        "images/projects/jlprezc/jlperezc_5.png",
-        "images/projects/jlprezc/jlperezc_6.png"
+        "images/projects/jlprezc/jlperezc_0m.png"
       ],
       "github": "https://github.com/gatang17/jlperezc.git",
-      "live": "https://jlperezc.vercel.app/"
+      "live": "https://jlperezc.vercel.app/",
+       "more": "projects.html"
     },
+
     {
       "id": "juicysplash",
       "title": "Juicy Splash",
       "subtitle": "Branding + Web Concept",
-      "category": "Branding + Web Concept",
+      "category": "Branding",
       "cardStack": "HTML • CSS • JS",
       "year": "2024",
       "featured": false,
-      "summary": "Playful tropical juice brand focused on interaction and a youthful visual identity.",
-      "description": "Juicy Splash was a branding project for an Advertising Design class focused on a natural juice company. The concept explored a tropical, summer-inspired approach using bright fruit-based colors such as yellows, greens, and blues to evoke freshness, islands, and beach culture. The target audience was younger, so the design was intentionally more playful and memorable.",
-      "challenge": "The project needed to communicate a clear brand identity while also feeling fresh, youthful, and different from a static promotional page.",
-      "solution": "The visual system combined tropical colors, playful energy, and interactive bubbles to make the site feel lively and engaging. Sections such as nutritional information and location were included to make the concept feel more complete and realistic.",
-      "impact": "The final concept shows how interaction and visual branding can work together to make a product site more memorable for a young audience.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Branding"
-      ],
-      "roles": [
-        "Brand Identity",
-        "UI Design",
-        "Front-End Concept",
-        "Interactive Direction"
-      ],
-      "features": [
-        "Interactive bubble concept",
-        "Tropical color system",
-        "Youth-oriented branding",
-        "Nutritional and location sections"
-      ],
+      "summary": "Tropical brand concept.",
+
+      "description": {
+        "text": "This project is a branding and web concept for a tropical juice company. The goal was to create a playful and energetic visual identity.",
+        "images": ["images/projects/juicy/j_1.png"]
+      },
+      "challenge": {
+        "text": "The challenge was to create a design that felt fresh, vibrant, and engaging without becoming chaotic or hard to read.",
+        "images": []
+      },
+      "solution": {
+        "text": "Bright colors, simple layouts, and interactive elements were combined to create a lively but controlled visual experience.",
+        "images": ["images/projects/juicy/j_2.png"]
+      },
+      "impact": {
+        "text": "The result is a memorable concept that communicates energy and freshness while remaining easy to navigate.",
+        "images": []
+      },
+
+      "technologies": ["HTML","CSS"],
+      "roles": ["Branding"],
+      "features": [],
       "images": [
         "images/projects/juicys_plash/js_0d.png",
-        "images/projects/juicys_plash/js_0m.png",
-        "images/projects/juicy/j_1.png",
-        "images/projects/juicy/j_2.png"
+        "images/projects/juicys_plash/js_0m.png"
       ],
       "github": "https://github.com/gatang17/creative_portfolio.git",
-      "live": "https://gatang17.github.io/creative_portfolio/"
+      "live": "https://gatang17.github.io/creative_portfolio/",
+       "more": "projects.html"
     },
+
     {
       "id": "berrysweet",
       "title": "Berry Sweet",
@@ -369,36 +328,35 @@
       "cardStack": "Figma",
       "year": "2026",
       "featured": false,
-      "summary": "Sweet-themed UI concept for a dessert gifting business.",
-      "description": "Berry Sweet was designed in Figma as a UI prototype for a small company focused on chocolate-covered strawberries and fruit gifts for special occasions such as birthdays and celebrations. Because the service is visually driven, the design placed strong emphasis on showing results and helping users imagine the final gift experience.",
-      "challenge": "The interface needed to communicate sweetness, celebration, and product appeal while still being clear and easy to browse.",
-      "solution": "A pink-centered visual language, image-focused layout, and desktop/mobile prototype structure were used to build a concept that feels decorative yet organized.",
-      "impact": "The project demonstrates the ability to design emotionally driven interfaces for gift-oriented businesses, even in a prototype stage.",
-      "technologies": [
-        "Figma",
-        "UI Design",
-        "Wireframing",
-        "Mobile Layout"
-      ],
-      "roles": [
-        "UI Design",
-        "Visual Direction",
-        "Desktop Prototype",
-        "Mobile Prototype"
-      ],
-      "features": [
-        "Desktop and mobile prototypes",
-        "Image-driven product presentation",
-        "Sweet-themed visual language",
-        "Gift-service oriented layout"
-      ],
+      "summary": "Dessert UI concept.",
+
+      "description": {
+        "text": "This project is a UI prototype focused on creating a visually appealing and emotionally engaging interface for a dessert concept.",
+        "images": ["images/projects/berry_sweet/bs_1.png"]
+      },
+      "challenge": {
+        "text": "The main challenge was translating the idea of sweetness into a digital interface without making it feel overwhelming or unbalanced.",
+        "images": []
+      },
+      "solution": {
+        "text": "A soft color palette and simple layout structure were used to create a consistent and pleasant user experience.",
+        "images": []
+      },
+      "impact": {
+        "text": "The final design communicates the concept clearly and creates a strong emotional connection through visual elements.",
+        "images": []
+      },
+
+      "technologies": ["Figma"],
+      "roles": ["UI Design"],
+      "features": [],
       "images": [
         "images/projects/berry_sweet/bs_0d.png",
-        "images/projects/berry_sweet/bs_0m.png",
-        "images/projects/berry_sweet/bs_1.png"
+        "images/projects/berry_sweet/bs_0m.png"
       ],
       "github": "",
-      "live": ""
+      "live": "",
+       "more": "projects.html"
     }
   ],
   "skills": [

@@ -376,6 +376,9 @@ function renderProjectsArchive(data) {
     ...data.projects.filter(p => p.featured === false)
   ];
 
+  //Aqui es q empieza la p_decript
+
+
   const hero = orderedProjects[0];
 
   if (heroContainer && hero) {
@@ -401,6 +404,43 @@ function renderProjectsArchive(data) {
   initArchiveCardClicks();
 }
 
+function createProjectCaseGrid(project) {
+  const sections = [
+    { title: 'Overview', data: project.description },
+    { title: 'Challenge', data: project.challenge },
+    { title: 'Solution', data: project.solution },
+    { title: 'Impact', data: project.impact }
+  ];
+
+  return `
+    <div class="project-case-grid">
+      ${sections.map((section, index) => {
+        const text = section.data?.text || '';
+        const images = Array.isArray(section.data?.images) ? section.data.images : [];
+
+        return `
+          <section class="project-case-row ">
+           <div class="project-case-text">
+            <div>
+             <h5>${escapeHtml(section.title)}</h5>
+              <p>${escapeHtml(text)}</p>
+               </div>
+               </div>
+
+            <div class="project-case-images">
+              ${images.map((img, imgIndex) => `
+                <a href="${escapeHtml(img)}" data-fancybox="gallery">
+                  <img src="${escapeHtml(img)}" alt="${escapeHtml(section.title)} image ${imgIndex + 1}">
+                </a>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
 function createMetaBlock(title, value) {
   if (!value || (Array.isArray(value) && value.length === 0)) return '';
 
@@ -414,42 +454,34 @@ function createMetaBlock(title, value) {
       ${content}
     </div>`;
 }
-
 function renderProjectDetail(project) {
   const projectContainer = document.getElementById('projects-list');
   if (!projectContainer) return;
 
-  const images = Array.isArray(project.images) ? project.images : [];
-  const firstImage = images[0] || '';
-
   projectContainer.innerHTML = `
-    <section class="project-detail-shell ">
-      <div class="project-detail-head secondary-hero"  data-aos="fade-up">
-      <div class="project-head-copy"> 
-            <!-- <span class="project-eyebrow">${escapeHtml(project.category || project.subtitle || 'Project')}</span> -->
-          <h1>${escapeHtml(project.title)}</h1>
+    <section class="project-detail-shell">
+       
+      <div class="project-detail-head secondary-hero" data-aos="fade-up">
+        <div class="project-head-copy"> 
+          <h1>${escapeHtml(project.title || '')}</h1>
           ${project.subtitle ? `<h4>${escapeHtml(project.subtitle)}</h4>` : ''}
-          <p class="project-summary">${escapeHtml(project.summary || project.description || '')}</p>
+          <p class="project-summary">${escapeHtml(project.summary || '')}</p>
         </div>
 
         <div class="project-head-meta">
-          <!--   ${createMetaBlock('Year', project.year)} -->
           ${createMetaBlock('Role', project.roles)}
           ${createMetaBlock('Key Features', project.features)}
         </div>
       </div>
-
+    <div class="project-links">
+            ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Site</a>` : ''}
+            ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
+        </div>
       <section class="project-layout" data-aos="fade-up">
-        <div class="project-info-card project-info">
-          <div class="meta-block">
-            <h5>Overview</h5>
-            <p>${escapeHtml(project.description || '')}</p>
-          </div>
 
-          ${project.challenge ? createMetaBlock('Challenge', project.challenge) : ''}
-          ${project.solution ? createMetaBlock('Solution', project.solution) : ''}
-          ${project.impact ? createMetaBlock('Impact', project.impact) : ''}
+        ${createProjectCaseGrid(project)}
 
+        <div class="project-final-block">
           ${project.technologies?.length ? `
             <div class="meta-block">
               <h5>Technologies</h5>
@@ -459,19 +491,8 @@ function renderProjectDetail(project) {
           <div class="project-links">
             ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Site</a>` : ''}
             ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
+            ${project.more ? `<a href="${escapeHtml(project.more)}" rel="noreferrer" class="btn m_text mosaic_btn">See More Projects</a>` : ''}
           </div>
-        </div>
-
-        <div class="project-gallery-grid">
-  ${images.map((img, index) => `
-    <a href="${escapeHtml(img)}" data-fancybox="gallery" class="project-gallery-item">
-      <img
-        src="${escapeHtml(img)}"
-        alt="${escapeHtml(project.title)} project image ${index + 1}">
-    </a>
-  `).join('')}
-</div>     
-
         </div>
       </section>
     </section>`;
@@ -485,8 +506,9 @@ function renderProjectDetail(project) {
       closeButton: 'top'
     });
   }
-
 }
+
+
 
 function getResponsiveImage(images) {
   if (!Array.isArray(images)) return 'images/placeholder.png';
@@ -612,8 +634,8 @@ function initDesignerNotes(data) {
   pdnLink.innerHTML = `
     <div class="project-links mt-0 text-start">
       ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
-      ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Demo</a>` : ''}
-    </div>`;
+     
+      </div>`;
 
 // Gallery
 const diagramItem = project.gallery.find((item) => item.image.includes('diagram'));

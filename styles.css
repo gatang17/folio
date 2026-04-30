@@ -400,7 +400,7 @@ a:hover,
 header {
   position: sticky;
   top: 0;
-  z-index: 10000999;
+  z-index: 100;
   background: var(--background-color);
 }
 
@@ -826,19 +826,25 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--background-soft);
+  color: var(--color-font-body);
+  background-color: var(--primary-yellow);
   transition: color 0.25s ease, border-color 0.25s ease;
+  border-color: var(--primary-yellow);
+  border-radius: 0;
 }
 
 .projects-btn:hover {
   transform: translateY(-2px);
   opacity: 0.85;
-  color: var(--primary-yellow-soft);
+  color: var(--background-soft);
+  background-color: transparent;
+  border-color: var(--primary-yellow);
 }
 
 .projects-cta {
   padding-top: 2rem;
   text-align: center;
+ 
 }
 
 /* =============================
@@ -919,6 +925,9 @@ header {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+
+
 
 /* =============================
    12. RESUME / ABOUT
@@ -1175,8 +1184,6 @@ header {
 
 .project-detail-head {
   position: relative;
-  background-size: cover;
-  background-position: center;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
   gap: 2rem;
@@ -1188,14 +1195,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.project-eyebrow {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--primary-yellow);
 }
 
 .project-summary {
@@ -1222,78 +1221,58 @@ header {
 }
 
 .project-layout {
+  display: block;
+}
+
+.project-case-grid {
+  margin-top: 5rem;
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-  align-items: start;
   gap: 2rem;
 }
 
-.project-info-card {
-  position: sticky;
-  top: 90px;
-  padding: 1.5rem;
-  border: 1px solid rgba(63, 69, 80, 0.15);
-  background: rgba(255, 255, 255, 0.22);
-}
+.project-case-row {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 0;
  
-.project-gallery {
-  position: relative;
-  top: auto;
-} 
-
-/* .project-gallery {
-  position: sticky;
-  top: 80px;
-} */
-
-/*masonryContainer from pinterest*/
-.project-gallery {
-  position: relative;
-  top: auto;
 }
 
-.project-gallery-grid {
-  column-count: 2;
-  column-gap: 2rem;
+.project-case-text {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-case-number {
+  color: var(--primary-yellow);
+  font-weight: 700;
+}
+
+.project-case-text h5 {
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-case-text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.project-case-images {
+  display: grid;
+  gap: 1rem;
+  justify-content: start; /* evita centrado raro */
+}
+
+.project-case-images img {
+  width: 450px;
+  height: auto;        /* altura fija */
+  object-fit: cover;    /* 🔥 clave */
   display: block;
 }
-
-.project-gallery-item {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 2rem;
-  break-inside: avoid;
-  overflow: hidden;
-  cursor: pointer;
-  background: transparent;
-  padding: 0;
-  border: none;
-}
-
-.project-gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.project-gallery-item:hover img {
-  transform: scale(1.03);
-  opacity: 0.92;
-}
-
-@media (max-width: 768px) {
-  .project-gallery-grid {
-    column-count: 1;
-    column-gap: 0;
-  }
-
-  .project-gallery-item {
-    margin-bottom: 1.2rem;
-  }
-}
-
-
 
 .tech-inline {
   margin-top: 20px;
@@ -1309,6 +1288,27 @@ header {
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1.5rem;
+}
+
+.project-final-block {
+  padding: 2rem 0;
+ 
+}
+
+@media (max-width: 1024px) {
+  .project-detail-head {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-case-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-case-text {
+    grid-template-columns: 50px 1fr;
+  }
 }
 
 /* =============================
