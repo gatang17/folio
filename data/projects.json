@@ -172,7 +172,7 @@
       "id": "aurora",
       "title": "Aurora Wellness Center",
       "subtitle": "WordPress",
-      "category": "Case Study",
+      "category": "WordPress",
       "cardStack": "WordPress • UI Refresh",
       "year": "2025",
       "featured": true,
@@ -184,7 +184,7 @@
       },
       "challenge": {
         "text": "The existing platform had limitations that made customization difficult. The design lacked consistency and needed better structure.",
-        "images": []
+        "images": ["images/projects/aurora/a_2.png"]
       },
       "solution": {
         "text": "A new layout system was created with improved styling and structure. The design was simplified to maintain consistency across sections.",
@@ -192,7 +192,7 @@
       },
       "impact": {
         "text": "The result is a more cohesive and visually consistent website that is easier to manage and navigate.",
-        "images": []
+        "images": ["images/projects/aurora/a_0d.png","images/projects/aurora/a_0m.png"]
       },
 
       "technologies": ["WordPress"],
