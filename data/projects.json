@@ -101,7 +101,7 @@
       },
       "impact": {
         "text": "The final result is a more organized and professional online presence. The website makes it easier for users to understand the services and improves how the business communicates with potential clients.",
-        "images": ["images/projects/jgphoto/jg_5.png"]
+        "images": ["images/projects/jgphoto/jg_5.png","images/projects/jgphoto/jg_6.png","images/projects/jgphoto/jg_7.png"]
       },
 
       "technologies": [
@@ -141,7 +141,7 @@
 
       "description": {
         "text": "This project is a service-based website designed to clearly communicate what the business offers. The focus was on simplicity, trust, and making information easy to understand for users.",
-        "images": ["images/projects/handydmd/h_1.png"]
+        "images": ["images/projects/handydmd/h_0d.png","images/projects/handydmd/h_0m.png"]
       },
       "challenge": {
         "text": "The challenge was to create a professional website without adding unnecessary complexity. The content needed to be clear, direct, and easy to navigate for users looking for specific services.",
@@ -153,8 +153,7 @@
       },
       "impact": {
         "text": "The result is a stronger and more trustworthy digital presence. The website helps communicate services more clearly and improves user confidence.",
-        "images": ["images/projects/handydmd/h_0d.png"],
-        "images": ["images/projects/handydmd/h_0m.png"]
+        "images": ["images/projects/handydmd/h_1.png","images/projects/handydmd/h_2.png","images/projects/handydmd/h_4.png"]
       },
 
       "technologies": ["WordPress"],
