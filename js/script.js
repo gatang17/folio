@@ -343,9 +343,9 @@ function createArchiveProjectCard(project) {
         <p>${escapeHtml(project.summary || project.description || '')}</p>
 
         <div class="archive-links">
-          <a href="${getProjectUrl(project.id)}">Case Study</a>
-          ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer">Live</a>` : ''}
-          ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer">GitHub</a>` : ''}
+        <div class="icon-circle">
+       <i class="fa-solid fa-arrow-right-long"></i>
+        </div>
         </div>
       </div>
     </article>`;
@@ -383,15 +383,24 @@ function renderProjectsArchive(data) {
 
   if (heroContainer && hero) {
     heroContainer.innerHTML = `
-      <div class="project-hero-card">
+      <a href="${getProjectUrl(hero.id)}">
+      <div class="project-hero-card archive-card">
         <img src="${getResponsiveImage(hero.images)}" alt="${hero.title}">
         <div class="project-hero-content">
-          <span>${hero.category}</span>
-          <h2>${hero.title}</h2>
-          <p>${hero.summary || ''}</p>
-          <a href="${getProjectUrl(hero.id)}" class="btn mosaic_btn">View Case Study</a>
+          <span class="archive-subtitle">${hero.category}</span>
+          <h3>${hero.title}</h3>
+          <p>${hero.summary || ''}</p>    
+             <div class="archive-links d-flex justify-content-end">
+        <div class="icon-circle">
+       <i class="fa-solid fa-arrow-right-long"></i>
         </div>
+        </div>      
+        </div>     
       </div>
+    
+      
+      </a>
+      
     `;
   }
 

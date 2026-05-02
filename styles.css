@@ -836,7 +836,7 @@ header {
 .projects-btn:hover {
   transform: translateY(-2px);
   opacity: 0.85;
-  color: var(--background-soft);
+  color: var(--primary-yellow);
   background-color: transparent;
   border-color: var(--primary-yellow);
 }
@@ -915,19 +915,48 @@ header {
   color: rgba(39, 44, 53, 0.82);
 }
 
+.project-hero-card {
+  display: flex;
+  flex-direction: column;
+}
 .archive-links {
-  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto; 
 }
 
-.archive-links a {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.icon-circle i {
+  color: var(--hairline-color);
+  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+
 }
 
+.icon-circle {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
 
+  transition: all 0.3s ease;
+}
 
+/* cuando haces hover en la card */
+.archive-card:hover .icon-circle {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.archive-card:hover .icon-circle {
+  opacity: 1;
+  display: flex;
+  border-color: var(--primary-yellow);
+}
+
+.archive-card:hover .icon-circle i {
+  display: flex;
+  transform: rotate(-45deg);
+}
 
 /* =============================
    12. RESUME / ABOUT
@@ -1493,6 +1522,8 @@ textarea {
 .contact-divider {
   height: 340px;
 }
+
+
 
 .contact-side-copy {
   width: min(100%, 420px);
