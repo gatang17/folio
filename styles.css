@@ -505,39 +505,181 @@ header {
 .dnotes {
   padding: 2rem 0;
 }
+.diag-img{
+  height: 400px!important;
+}
 
-#sec_diag {
+/* =============================
+   DESIGNER NOTES REFINEMENT
+   Only affects d_notes.html
+============================= */
+
+.notes-page-body #sec_diag {
+  width: min(980px, 100%);
+  margin: 4rem auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  justify-items: stretch;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2rem;
   align-items: start;
 }
 
-.diag-card {
-  height: 100%;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.064);
-  backdrop-filter: blur(6px);
+.notes-page-body .diagram-column,
+.notes-page-body .sketch-stack {
+  display: grid;
+  gap: 2rem;
 }
 
-.diag-card h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
+.notes-page-body .diag-card {
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(63, 69, 80, 0.08);
+  backdrop-filter: blur(4px);
 }
 
-.diag-card p {
-  margin-bottom: 1rem;
-  font-size: 0.98rem;
+.notes-page-body .diag-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
 }
 
-.diag-img {
+.notes-page-body .diag-card p {
+  max-width: 58ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.notes-page-body .diag-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto 0;
+  object-fit: contain;
+}
+
+.notes-page-body .sketch-card .diag-img {
+  max-height: 320px;
+}
+
+.notes-page-body .diagram-svg {
+  max-width: 100%;
+  margin: 2rem auto 0;
+  opacity: 0.8;
+}
+
+.notes-page-body .diagram-svg svg {
   width: 100%;
   height: auto;
-  max-width: 500px;
-  mix-blend-mode: darken;
+  display: block;
 }
 
+/* image used for the navigation/menu explanation */
+.notes-page-body .diagram-column .diag-card:first-child .diag-img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+/* 404 card image */
+.notes-page-body .sketch-stack .diag-card:last-child .diag-img {
+  max-height: 360px;
+  object-fit: contain;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .notes-page-body #sec_diag {
+    grid-template-columns: 1fr;
+    width: min(720px, calc(100% - 2rem));
+    margin-top: 3rem;
+  }
+
+  .notes-page-body .diag-card {
+    padding: 1.25rem;
+  }
+
+  .notes-page-body .sketch-card .diag-img,
+  .notes-page-body .diagram-column .diag-card:first-child .diag-img,
+  .notes-page-body .sketch-stack .diag-card:last-child .diag-img {
+    max-height: none;
+  }
+ 
+}
+
+@media (max-width: 520px) {
+  .notes-page-body #sec_diag {
+    width: calc(100% - 1.5rem);
+    gap: 1.25rem;
+  }
+
+  .notes-page-body .diagram-column,
+  .notes-page-body .sketch-stack {
+    gap: 1.25rem;
+  }
+
+  .notes-page-body .diag-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .notes-page-body .diag-card p {
+    font-size: 0.9rem;
+  }
+}
+
+.notes-page-body .diagram-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* image used for the navigation/menu explanation */
+.notes-page-body .diagram-column .diag-card:first-child .diag-img {
+  max-height: 520px;
+  object-fit: contain;
+}
+
+/* 404 card image */
+.notes-page-body .sketch-stack .diag-card:last-child .diag-img {
+  max-height: 360px;
+  object-fit: contain;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .notes-page-body #sec_diag {
+    grid-template-columns: 1fr;
+    width: min(720px, calc(100% - 2rem));
+    margin-top: 3rem;
+  }
+
+  .notes-page-body .diag-card {
+    padding: 1.25rem;
+  }
+
+  .notes-page-body .sketch-card .diag-img,
+  .notes-page-body .diagram-column .diag-card:first-child .diag-img,
+  .notes-page-body .sketch-stack .diag-card:last-child .diag-img {
+    max-height: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .notes-page-body #sec_diag {
+    width: calc(100% - 1.5rem);
+    gap: 1.25rem;
+  }
+
+  .notes-page-body .diagram-column,
+  .notes-page-body .sketch-stack {
+    gap: 1.25rem;
+  }
+
+  .notes-page-body .diag-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .notes-page-body .diag-card p {
+    font-size: 0.9rem;
+  }
+}
 /* =============================
    8. HOME / INTRO / HERO
 ============================= */

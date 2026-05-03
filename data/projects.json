@@ -1,5 +1,5 @@
 {
-  "d_notes": [
+"d_notes": [
   {
     "id": "dnotes",
     "title": "Designer Notes",
@@ -62,25 +62,32 @@
         "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
       },
       {
-        "image": "sketches/foliov3.png",
+        "image": "images/projects/personal/designInteractions.png",
         "title": "Interaction Concept",
         "description": "The site was conceived as a portfolio that feels both editorial and interactive."
-      } ,{
+      },
+      {
         "image": "images/projects/personal/ima_menu.png",
         "type": "diagram-zone",
         "title": "Navigation System",
-        "description": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design."
+        "description": "The vertical navigation reinforces structure and hierarchy, allowing users to move between sections quickly while maintaining a clear sense of position within the layout."
       },
       {
         "image": "images/diagram/diagram.svg",
         "type": "diagram",
         "title": "Visual Design & Implementation Flow",
         "description": "This diagram shows how the website structure moves from planning into HTML, CSS, JavaScript, version control, and deployment."
+      },
+      {
+        "image": "images/projects/personal/404.png",
+        "title": "404 Experience",
+        "description": "The 404 page extends the visual system into edge cases. Motion and subtle color shifts were used to reduce the negative perception of errors, transforming a potential dead-end into a moment of engagement."
       }
     ],
 
     "github": "https://github.com/gatang17/folio"
   }
+
 ],
   "projects": [
     {
