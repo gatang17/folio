@@ -517,8 +517,7 @@ header {
 .diag-card {
   height: 100%;
   padding: 1.5rem;
-  border: 1px solid rgba(63, 69, 80, 0.15);
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.064);
   backdrop-filter: blur(6px);
 }
 
@@ -2061,6 +2060,12 @@ body:not(.home-page) #header-container {
   #sec_diag {
     grid-template-columns: 1fr;
   }
+}
+
+.img-thum {
+  height: 400px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .diagram-svg {

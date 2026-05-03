@@ -561,8 +561,8 @@ function renderProjectDetail(project) {
         </div>
       </div>
     <div class="project-links">
-            ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Site</a>` : ''}
-            ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
+            ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text ">Live Site</a>` : ''}
+            ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text">GitHub</a>` : ''}
         </div>
       <section class="project-layout" data-aos="fade-up">
 
@@ -576,8 +576,8 @@ function renderProjectDetail(project) {
             </div>` : ''}
 
           <div class="project-links">
-            ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Site</a>` : ''}
-            ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
+            ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text ">Live Site</a>` : ''}
+            ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text">GitHub</a>` : ''}
           </div>
         </div>
       </section>
@@ -718,8 +718,8 @@ function initDesignerNotes(data) {
 
   // Links
   pdnLink.innerHTML = `
-    <div class="project-links mt-0 text-start">
-      ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
+    <div class="project-links mt-0  text-start">
+      ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text">GitHub</a>` : ''}
      
       </div>`;
 
@@ -747,7 +747,7 @@ secDiag.innerHTML = `
               src="${escapeHtml(item.image)}"
               data-aos="zoom-in"
               alt="${escapeHtml(item.title)}"
-              class="diag-img"
+              class="diag-img img-thum""
               loading="lazy"
               decoding="async">
           </a>
