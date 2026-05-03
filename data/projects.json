@@ -65,27 +65,17 @@
         "image": "sketches/foliov3.png",
         "title": "Interaction Concept",
         "description": "The site was conceived as a portfolio that feels both editorial and interactive."
-      },
-      {
-        "image": "images/projects/personal/light-mode.png",
-        "title": "Light Mode Exploration",
-        "description": "The light version prioritizes clarity, readability, and a more editorial presentation."
-      },
-      {
-        "image": "images/projects/personal/dark-mode.png",
-        "title": "Dark Mode Exploration",
-        "description": "The dark version introduces a more immersive and brand-driven tone, showing how color can reshape the perception of the same layout."
-      },
-      {
+      } ,{
         "image": "images/projects/personal/ima_menu.png",
+        "type": "diagram-zone",
         "title": "Navigation System",
-        "description": "The vertical menu is designed to reinforce structure and hierarchy, creating a clear and consistent navigation flow across the site."
+        "description": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design."
       },
       {
         "image": "images/diagram/diagram.svg",
         "type": "diagram",
         "title": "Visual Design & Implementation Flow",
-        "description": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design. The logo also works as an interactive trigger: clicking it activates an alternate dark mode, demonstrating how color can change the perception and emotional tone of the same interface."
+        "description": "This diagram shows how the website structure moves from planning into HTML, CSS, JavaScript, version control, and deployment."
       }
     ],
 

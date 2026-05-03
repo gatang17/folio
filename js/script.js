@@ -51,7 +51,12 @@ function initBreadcrumbs() {
 // =============================
 // LOGO INDEX
 // =============================
-function initLogoTheme() {
+
+// This feature explores how color affects perception and user experience.
+// It was intentionally removed from the final version to keep the interface
+// focused and consistent, but kept here for reference.
+
+/* function initLogoTheme() {
   const themeActive = sessionStorage.getItem('theme') === 'brand';
   document.body.classList.toggle('brand-mode', themeActive);
 
@@ -118,7 +123,7 @@ function initMosaicLogo() {
   logo.addEventListener('mouseenter', burstLines);
   logo.addEventListener('mouseleave', burstLines);
 }
-
+ */
 // =============================
 // GLOBAL HELPERS
 // =============================
@@ -1117,8 +1122,8 @@ function initMobileScrollButton() {
 async function initApp() {
   await injectSharedLayout();
 
-  initLogoTheme();
-  initMosaicLogo();
+ /*  initLogoTheme();
+  initMosaicLogo(); */
 
   initBreadcrumbs();
   initProjectSectionHeader();
