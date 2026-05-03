@@ -12,11 +12,19 @@
     <link rel="stylesheet" href="styles.css" />
 
     <title>Project Details - Gretel Alvarez Tang</title>
+
+    <script>
+      if (localStorage.getItem('theme') !== 'brand') {
+        document.documentElement.classList.remove('brand-mode');
+      } else {
+        document.documentElement.classList.add('brand-mode');
+      }
+    </script>
   </head>
 
   <body class="secondary-page project-detail-body">
    <div id="top_bar" class="py-2.5 px-6">
-    <a href="d_notes.html" class="m_text mosaic_btn d-flex max-w-7xl text-xs mx-auto flex items-center gap-4 justify-center link_note" id="link_note">
+    <a href="d_notes.html" class="m_text d-flex max-w-7xl text-xs mx-auto flex items-center gap-4 justify-center link_note" id="link_note">
       designer notes
     </a>
     
@@ -27,6 +35,9 @@
     <nav id="breadcrumb" class="breadcrumb-nav"></nav>
     <main class="content secondary-main project-detail-main">
       <div id="projects-list"></div>
+      <div class="projects-cta text-center" data-aos="fade-up">
+        <a href="projects.html" class="projects-btn btn text-xs">View All Projects</a>
+      </div>
     </main>
 
     <div id="footer-container"></div>

@@ -1,81 +1,97 @@
 {
   "d_notes": [
-    {
-      "id": "dnotes",
-      "title": "Designer Notes",
-      "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web.",
+  {
+    "id": "dnotes",
+    "title": "Designer Notes",
+    "description": "This portfolio was designed to balance contemporary web presentation with subtle references to the early visual language of the web.",
 
-      "design": {
-        "direction": [
-          "Editorial layout",
-          "Structured hierarchy",
-          "Subtle nostalgic references",
-          "Handcrafted digital feel"
-        ],
-
-        "typography": ["Bricolage Grotesque", "Geist"],
-
-        "colors": [
-          {
-            "name": "Background",
-            "value": "#F2E9E1"
-          },
-          {
-            "name": "Primary Text",
-            "value": "#272C35"
-          },
-          {
-            "name": "Accent",
-            "value": "#CBA135"
-          }
-        ]
-      },
-
-      "process": {
-        "intent": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design.",
-        "decisions": [
-          "Vertical navigation to emphasize structure",
-          "Muted palette to reduce visual noise",
-          "Subtle textures for depth without distraction",
-          "Minimal transitions to keep focus on content"
-        ]
-      },
-
-      "technologies": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Animation Library",
-        "Lightbox"
+    "design": {
+      "direction": [
+        "Editorial layout",
+        "Structured hierarchy",
+        "Subtle nostalgic references",
+        "Handcrafted digital feel"
       ],
 
-      "gallery": [
+      "typography": ["Bricolage Grotesque", "Geist"],
+
+      "colors": [
         {
-          "image": "sketches/foliov1.png",
-          "title": "Initial Portfolio Sketch",
-          "description": "This first sketch explored the overall layout direction, hierarchy, and relationship between navigation, hero content, and project sections."
+          "name": "Background",
+          "value": "#F2E9E1"
         },
         {
-          "image": "sketches/foliov2.png",
-          "title": "Layout Variations",
-          "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
+          "name": "Primary Text",
+          "value": "#272C35"
         },
         {
-          "image": "sketches/foliov3.png",
-          "title": "Interaction Concept",
-          "description": "The site was conceived as a portfolio that feels both editorial and interactive."
-        },
-        {
-          "image": "images/diagram/diagram.svg",
-          "type": "diagram",
-          "title": "Visual Design & Implementation Flow",
-          "description": "This diagram shows how a website is built in a structured way. It starts with ideas and sketches, then moves into structure (HTML), visual design (CSS), and interaction (JavaScript). Tools like GitHub help keep track of changes, similar to saving different versions of a project. The hosting platform connects to it, making it easy to publish updates and go back to a previous version if needed."
+          "name": "Accent",
+          "value": "#CBA135"
         }
-      ],
+      ]
+    },
 
-      "github": "https://github.com/gatang17/folio"
-    }
-  ],
+    "process": {
+      "intent": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design. The interface was also explored in both light and dark modes to understand how color impacts perception and user experience.",
+      "decisions": [
+        "Vertical navigation to emphasize structure",
+        "Muted palette to reduce visual noise",
+        "Subtle textures for depth without distraction",
+        "Minimal transitions to keep focus on content",
+        "Color exploration to demonstrate how the same layout can communicate differently depending on visual context"
+      ]
+    },
+
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Animation Library",
+      "Lightbox"
+    ],
+
+    "gallery": [
+      {
+        "image": "sketches/foliov1.png",
+        "title": "Initial Portfolio Sketch",
+        "description": "This first sketch explored the overall layout direction, hierarchy, and relationship between navigation, hero content, and project sections."
+      },
+      {
+        "image": "sketches/foliov2.png",
+        "title": "Layout Variations",
+        "description": "These early homepage variations explored a section-based flow where users could move quickly between Projects, Skills, and Contact without unnecessary page changes."
+      },
+      {
+        "image": "sketches/foliov3.png",
+        "title": "Interaction Concept",
+        "description": "The site was conceived as a portfolio that feels both editorial and interactive."
+      },
+      {
+        "image": "images/projects/personal/light-mode.png",
+        "title": "Light Mode Exploration",
+        "description": "The light version prioritizes clarity, readability, and a more editorial presentation."
+      },
+      {
+        "image": "images/projects/personal/dark-mode.png",
+        "title": "Dark Mode Exploration",
+        "description": "The dark version introduces a more immersive and brand-driven tone, showing how color can reshape the perception of the same layout."
+      },
+      {
+        "image": "images/projects/personal/ima_menu.png",
+        "title": "Navigation System",
+        "description": "The vertical menu is designed to reinforce structure and hierarchy, creating a clear and consistent navigation flow across the site."
+      },
+      {
+        "image": "images/diagram/diagram.svg",
+        "type": "diagram",
+        "title": "Visual Design & Implementation Flow",
+        "description": "The vertical navigation and typewriter effect connect early web aesthetics with modern interaction design. The logo also works as an interactive trigger: clicking it activates an alternate dark mode, demonstrating how color can change the perception and emotional tone of the same interface."
+      }
+    ],
+
+    "github": "https://github.com/gatang17/folio"
+  }
+],
   "projects": [
     {
       "id": "jgphoto",
@@ -96,12 +112,16 @@
         "images": ["images/projects/jgphoto/jg_1.png"]
       },
       "solution": {
-        "text": "A custom front-end structure was developed to separate services into clear sections. Each part of the website was designed to guide the user step by step, combining strong visuals with simple navigation and practical content.",
+        "text": "A custom front-end structure was developed to organize services into clear sections while maintaining a strong visual flow. A masonry-style gallery system was implemented to display photography in a more natural and dynamic way, allowing images of different proportions to coexist without forcing a rigid grid. This approach improves visual rhythm and better reflects the nature of photography work. The layout and interactions were designed to guide users step by step toward booking or contact actions.",
         "images": ["images/projects/jgphoto/jg_3.png"]
       },
       "impact": {
         "text": "The final result is a more organized and professional online presence. The website makes it easier for users to understand the services and improves how the business communicates with potential clients.",
-        "images": ["images/projects/jgphoto/jg_5.png","images/projects/jgphoto/jg_6.png","images/projects/jgphoto/jg_7.png"]
+        "images": [
+          "images/projects/jgphoto/jg_5.png",
+          "images/projects/jgphoto/jg_6.png",
+          "images/projects/jgphoto/jg_7.png"
+        ]
       },
 
       "technologies": [
@@ -140,20 +160,27 @@
       "summary": "Service-based website focused on clarity and trust.",
 
       "description": {
-        "text": "This project is a service-based website designed to clearly communicate what the business offers. The focus was on simplicity, trust, and making information easy to understand for users.",
-        "images": ["images/projects/handydmd/h_0d.png","images/projects/handydmd/h_0m.png"]
+        "text": "This project is a service-based website designed to clearly communicate what the business offers. The focus was on creating a straightforward and trustworthy digital presence where users can quickly understand services and take action.",
+        "images": [
+          "images/projects/handydmd/h_0d.png",
+          "images/projects/handydmd/h_0m.png"
+        ]
       },
       "challenge": {
-        "text": "The challenge was to create a professional website without adding unnecessary complexity. The content needed to be clear, direct, and easy to navigate for users looking for specific services.",
+        "text": "The main challenge was presenting multiple services in a way that felt clear and reliable without overwhelming users. The content needed to be direct, easy to navigate, and focused on helping users find information quickly.",
         "images": ["images/projects/handydmd/h_2.png"]
       },
       "solution": {
-        "text": "A clean layout was implemented with simple navigation and clear sections. The design focuses on readability and practical use, making it easy for users to find what they need quickly.",
+        "text": "A structured layout was developed using WordPress, focusing on clear sections, strong visual hierarchy, and simplified navigation. Custom styling and layout adjustments were applied to improve readability and maintain consistency across the site. Each section was designed to guide users naturally toward contact and service inquiries.",
         "images": ["images/projects/handydmd/h_3.png"]
       },
       "impact": {
-        "text": "The result is a stronger and more trustworthy digital presence. The website helps communicate services more clearly and improves user confidence.",
-        "images": ["images/projects/handydmd/h_1.png","images/projects/handydmd/h_2.png","images/projects/handydmd/h_4.png"]
+        "text": "The result is a more professional and trustworthy website that improves how services are presented and makes it easier for users to understand offerings and get in touch.",
+        "images": [
+          "images/projects/handydmd/h_1.png",
+          "images/projects/handydmd/h_2.png",
+          "images/projects/handydmd/h_4.png"
+        ]
       },
 
       "technologies": ["WordPress"],
@@ -185,15 +212,15 @@
       "summary": "Spa brand case study.",
 
       "description": {
-        "text": "This project is a case study for a wellness website focused on creating a calm and cohesive digital experience. The goal was to improve visual consistency and establish a cleaner, more structured layout aligned with the brand’s identity.",
+        "text": "This project is a case study for a wellness website focused on creating a calm and cohesive digital experience. The goal was to improve visual consistency and align the layout with the brand’s identity.",
         "images": ["images/projects/aurora/a_1.png"]
       },
       "challenge": {
-        "text": "The main challenge was addressing an inconsistent visual system and creating a design that felt balanced and intuitive while clearly presenting the site’s content.",
+        "text": "The main challenge was addressing an inconsistent visual system while maintaining a balanced and relaxing experience. The design needed to feel calm and structured while clearly presenting the site’s content.",
         "images": ["images/projects/aurora/a_2.png"]
       },
       "solution": {
-        "text": "A simplified layout system was developed with consistent typography, spacing, and color usage. The design was refined to create a more cohesive and calming user experience across all sections.",
+        "text": "A simplified layout system was developed using WordPress, focusing on consistent typography, spacing, and color usage. Custom styling was applied to improve visual cohesion while working within platform constraints. The design was refined to create a calm and intuitive user experience across all sections.",
         "images": ["images/projects/aurora/a_3.png"]
       },
       "impact": {
@@ -222,44 +249,62 @@
       "more": "projects.html"
     },
 
-    {
-      "id": "quillpp",
-      "title": "Quill Pen Press",
-      "subtitle": "Webflow",
-      "category": "Webflow",
-      "cardStack": "Webflow • Branding • UI",
-      "year": "2025",
-      "featured": true,
-      "summary": "Publishing brand concept.",
-
-      "description": {
-        "text": "This project focused on building a brand identity and website concept for a publishing platform. The goal was to create a professional and credible visual presence.",
-        "images": ["images/projects/qpp/qpp_2.png"]
+      {
+        "id": "quillpp",
+        "title": "Quill Pen Press",
+        "subtitle": "Webflow",
+        "category": "Webflow",
+        "cardStack": "Webflow • Branding • UI",
+        "year": "2025",
+        "featured": true,
+        "summary": "Publishing platform concept focused on structure, readability, and brand credibility.",
+      
+        "description": {
+          "text": "This project focused on building a brand identity and website concept for a publishing platform. The goal was to create a professional and credible visual presence that supports both presentation and content exploration.",
+          "images": ["images/projects/qpp/qpp_2.png"]
+        },
+        "challenge": {
+          "text": "The main challenge was creating a design that felt established and trustworthy while still appealing to new writers. The layout needed to balance clarity, structure, and visual identity without feeling overly rigid.",
+          "images": []
+        },
+        "solution": {
+          "text": "The website was developed in Webflow to allow rapid layout exploration and structured content organization. A consistent visual system was created using typography, spacing, and modular sections to reinforce credibility. This approach made it easier to iterate on design decisions while maintaining a cohesive and professional presentation.",
+          "images": []
+        },
+        "impact": {
+          "text": "The result is a strong brand concept with a clear and structured visual identity, providing a solid foundation for a publishing platform focused on accessibility and professionalism.",
+          "images": ["images/projects/qpp/qpp_1.png"]
+        },
+      
+        "technologies": [
+          "Webflow",
+          "Figma",
+          "Typography System",
+          "Layout Design"
+        ],
+        "roles": [
+          "Brand Identity Design",
+          "UI Design",
+          "Layout System Design",
+          "Content Structuring",
+          "Webflow Development"
+        ],
+        "features": [
+          "Structured content layout",
+          "Consistent typography system",
+          "Modular section design",
+          "Clear visual hierarchy",
+          "Responsive layout"
+        ],
+      
+        "images": [
+          "images/projects/qpp/qpp_0d.png",
+          "images/projects/qpp/qpp_0m.png"
+        ],
+        "live": "https://quillpenpress.webflow.io",
+        "github": "",
+        "more": "projects.html"
       },
-      "challenge": {
-        "text": "The main challenge was creating a design that felt trustworthy and established while still appealing to new writers.",
-        "images": []
-      },
-      "solution": {
-        "text": "A structured visual system was created with consistent typography, layout, and branding elements to reinforce credibility.",
-        "images": []
-      },
-      "impact": {
-        "text": "The result is a stronger brand perception and a more professional presentation.",
-        "images": ["images/projects/qpp/qpp_1.png"]
-      },
-
-      "technologies": [""],
-      "roles": ["Brand Strategy"],
-      "features": [],
-      "images": [
-        "images/projects/qpp/qpp_0d.png",
-        "images/projects/qpp/qpp_0m.png"
-      ],
-      "live": "https://quillpenpress.webflow.io",
-      "github": "",
-      "more": "projects.html"
-    },
 
     {
       "id": "jlprezc",
@@ -277,7 +322,12 @@
       },
       "challenge": {
         "text": "The main challenge was organizing many images without losing clarity. The layout needed to balance visual impact with usability and navigation.",
-        "images": ["images/projects/jlprezc/jlperezc_2.png","images/projects/jlprezc/jlperezc_3.png","images/projects/jlprezc/jlperezc_4.png","images/projects/jlprezc/jlperezc_5.png"]
+        "images": [
+          "images/projects/jlprezc/jlperezc_2.png",
+          "images/projects/jlprezc/jlperezc_3.png",
+          "images/projects/jlprezc/jlperezc_4.png",
+          "images/projects/jlprezc/jlperezc_5.png"
+        ]
       },
       "solution": {
         "text": "A dark interface was used to highlight the photography, combined with a structured gallery system that allows users to browse content easily.",
@@ -330,9 +380,7 @@
       },
       "impact": {
         "text": "The result is a memorable concept that communicates energy and freshness while remaining easy to navigate.",
-        "images": [
-          "images/projects/juicys_plash/js_4.png"
-        ]
+        "images": ["images/projects/juicys_plash/js_4.png"]
       },
 
       "technologies": ["Illustrator", "HTML", "CSS", "JS"],
@@ -378,7 +426,10 @@
       },
       "impact": {
         "text": "The final design communicates the concept clearly and creates a strong emotional connection through visual elements.",
-        "images": ["images/projects/berry_sweet/bs_1.png","images/projects/berry_sweet/bs_2.png"]
+        "images": [
+          "images/projects/berry_sweet/bs_1.png",
+          "images/projects/berry_sweet/bs_2.png"
+        ]
       },
 
       "technologies": ["Figma"],

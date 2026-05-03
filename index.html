@@ -24,11 +24,18 @@
   <link rel="stylesheet" href="styles.css" />
 
 
+  <script>
+    if (localStorage.getItem('theme') !== 'brand') {
+      document.documentElement.classList.remove('brand-mode');
+    } else {
+      document.documentElement.classList.add('brand-mode');
+    }
+  </script>
 </head>
 
 <body class="home-page">
    <div id="top_bar" class="py-2.5 px-6 ">
-    <a href="d_notes.html" class="mosaic_btn m_text d-flex max-w-7xl text-xs mx-auto flex items-center gap-4 justify-center"  id="link_note">
+    <a href="d_notes.html" class="m_text d-flex max-w-7xl text-xs mx-auto flex items-center gap-4 justify-center"  id="link_note">
       designer notes
     </a>
   </div>
@@ -40,8 +47,10 @@
     <!-- Desktop-only sidebar -->
     <aside id="menu_dtk" data-aos="fade-right" data-aos-delay="500" aria-label="Homepage sidebar navigation">
       <div class="div_menu_home">
-        <div id="logo_container">
-          <img id="img_logo" src="images/logoBW.png" alt="Gretel Alvarez Tang logo">
+        <div id="logo_container" class="logo-mosaic ">
+          <img class="logo-color" src="images/logo-color.png" alt="">
+          <img id="img_logo" class="logo-base" src="images/logoBW.png" alt="Gretel Alvarez Tang logo">
+          
         </div>
 
         <section class="sec_menu">
@@ -82,7 +91,7 @@
 
   <!-- PROJECTS -->
   <section id="projects" class="content">
-    <div class="projects-shell">
+    <div class="projects-shell" data-aos="fade-up">
       <div class="t-border" data-aos="fade-up">
         <span class="text-xs uppercase">Selected work</span>
         <h2 class="title">Projects</h2>
@@ -95,7 +104,7 @@
         <div id="projects-grid" class="projects-featured-grid"></div>
       </div>
 
-      <div class="projects-cta text-center" data-aos="fade-up">
+      <div class="projects-cta text-center">
         <a href="projects.html" class="projects-btn btn text-xs">View All Projects</a>
       </div>
     </div>

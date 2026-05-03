@@ -47,6 +47,78 @@ function initBreadcrumbs() {
     })
     .join(' <i class="fa-solid fa-angle-right mx-2"></i> ');
 }
+
+// =============================
+// LOGO INDEX
+// =============================
+function initLogoTheme() {
+  const themeActive = sessionStorage.getItem('theme') === 'brand';
+  document.body.classList.toggle('brand-mode', themeActive);
+
+  const logo = document.getElementById('logo_container');
+  if (!logo) return;
+
+  let active = themeActive;
+
+  logo.addEventListener('click', () => {
+    active = !active;
+
+    document.body.classList.toggle('brand-mode', active);
+
+    if (active) {
+      sessionStorage.setItem('theme', 'brand');
+    } else {
+      sessionStorage.removeItem('theme');
+    }
+  });
+}
+
+if (performance.navigation.type === 1) {
+  sessionStorage.removeItem('theme');
+}
+
+//mosaic
+function initMosaicLogo() {
+  const logo = document.querySelector('.logo-mosaic');
+  if (!logo || logo.dataset.mosaicLogoInit === 'true') return;
+
+  logo.dataset.mosaicLogoInit = 'true';
+
+  const lineCount = 120;
+
+  function burstLines() {
+    for (let i = 0; i < lineCount; i += 1) {
+      const line = document.createElement('span');
+      line.classList.add('line');
+
+      const isTop = Math.random() > 0.5;
+      line.classList.add(isTop ? 'top' : 'bottom');
+
+      line.style.left = `${Math.random() * 100}%`;
+      line.style.background = 'var(--background-soft)';
+
+      logo.appendChild(line);
+
+      setTimeout(() => {
+        if (isTop) {
+          line.style.top = '-120%';
+        } else {
+          line.style.bottom = '-120%';
+        }
+
+        line.style.opacity = '0';
+      }, Math.random() * 80);
+
+      setTimeout(() => {
+        line.remove();
+      }, 380);
+    }
+  }
+
+  logo.addEventListener('mouseenter', burstLines);
+  logo.addEventListener('mouseleave', burstLines);
+}
+
 // =============================
 // GLOBAL HELPERS
 // =============================
@@ -306,7 +378,7 @@ function createFeaturedProjectCard(project, isMobile) {
   return `
     <article class="project-card" data-id="${escapeHtml(project.id)}">
       <a class="project-thumb" href="${getProjectUrl(project.id)}" aria-label="View ${escapeHtml(project.title)} project details">
-        <img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(project.title)} preview image">
+        <img src="${escapeHtml(imageSrc)}"data-aos="zoom-in" alt="${escapeHtml(project.title)} preview image">
         <div class="project-overlay"><span>View Project</span></div>
       </a>
 
@@ -334,7 +406,7 @@ function createArchiveProjectCard(project) {
   return `
     <article class="archive-card" data-id="${escapeHtml(project.id)}">
       <div class="archive-thumb">
-        <img src="${getResponsiveImage(project.images)}" alt="${escapeHtml(project.title)} project image">
+        <img src="${getResponsiveImage(project.images)}"data-aos="zoom-in" alt="${escapeHtml(project.title)} project image">
       </div>
 
       <div class="archive-copy">
@@ -438,8 +510,8 @@ function createProjectCaseGrid(project) {
 
             <div class="project-case-images">
               ${images.map((img, imgIndex) => `
-                <a href="${escapeHtml(img)}" data-fancybox="gallery">
-                  <img src="${escapeHtml(img)}"data-aos="fade-up" alt="${escapeHtml(section.title)} image ${imgIndex + 1}">
+                <a href="${escapeHtml(img)}" data-fancybox="gallery" >
+                  <img src="${escapeHtml(img)}"data-aos="zoom-in" alt="${escapeHtml(section.title)} image ${imgIndex + 1} loading="lazy"  decoding="async">
                 </a>
               `).join('')}
             </div>
@@ -501,7 +573,6 @@ function renderProjectDetail(project) {
           <div class="project-links">
             ${project.live ? `<a href="${escapeHtml(project.live)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">Live Site</a>` : ''}
             ${project.github ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noreferrer" class="btn m_text mosaic_btn">GitHub</a>` : ''}
-            ${project.more ? `<a href="${escapeHtml(project.more)}" rel="noreferrer" class="btn m_text mosaic_btn">See More Projects</a>` : ''}
           </div>
         </div>
       </section>
@@ -648,32 +719,45 @@ function initDesignerNotes(data) {
       </div>`;
 
 // Gallery
-const diagramItem = project.gallery.find((item) => item.image.includes('diagram'));
-const sketchItems = project.gallery.filter((item) => !item.image.includes('diagram'));
+const diagramItems = project.gallery.filter((item) =>
+  item.type === 'diagram' || item.type === 'diagram-zone'
+);
+
+const sketchItems = project.gallery.filter((item) =>
+  item.type !== 'diagram' && item.type !== 'diagram-zone'
+);
 
 secDiag.innerHTML = `
-  ${diagramItem ? `
-    <article class="diag-card diag-card-featured">
-      <h3>${escapeHtml(diagramItem.title)}</h3>
-      <p>${escapeHtml(diagramItem.description)}</p>
+  <div class="diagram-column py-5">
+    ${diagramItems.map((item) => `
+      <article class="diag-card diag-card-featured">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.description)}</p>
 
-      ${diagramItem.image.endsWith('.svg') ? `
-        <div class="diagram-svg" data-src="${escapeHtml(diagramItem.image)}"></div>
-      ` : `
-        <a href="${escapeHtml(diagramItem.image)}" data-fancybox="notes">
-          <img src="${escapeHtml(diagramItem.image)}" alt="${escapeHtml(diagramItem.title)}" class="diag-img">
-        </a>
-      `}
-    </article>
-  ` : ''}
+        ${item.image.endsWith('.svg') ? `
+          <div class="diagram-svg" data-src="${escapeHtml(item.image)}"></div>
+        ` : `
+          <a href="${escapeHtml(item.image)}" data-fancybox="notes">
+            <img 
+              src="${escapeHtml(item.image)}"
+              data-aos="zoom-in"
+              alt="${escapeHtml(item.title)}"
+              class="diag-img"
+              loading="lazy"
+              decoding="async">
+          </a>
+        `}
+      </article>
+    `).join('')}
+  </div>
 
-  <div class="sketch-stack">
+  <div class="sketch-stack py-5">
     ${sketchItems.map((item) => `
       <article class="diag-card sketch-card">
         <h3>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.description)}</p>
         <a href="${escapeHtml(item.image)}" data-fancybox="notes">
-          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="diag-img">
+          <img src="${escapeHtml(item.image)}" data-aos="zoom-in" alt="${escapeHtml(item.title)}" class="diag-img">
         </a>
       </article>
     `).join('')}
@@ -859,7 +943,7 @@ function initAboutMe(data) {
     const imgSrc = Array.isArray(item.image) ? item.image[0] : item.image;
 
     displayBox.innerHTML = `
-      <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}">
+      <img src="${escapeHtml(imgSrc)}"data-aos="zoom-in" alt="${escapeHtml(item.title)}">
       <div class="description">
         <h3>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.description)}</p>
@@ -1032,12 +1116,17 @@ function initMobileScrollButton() {
 // =============================
 async function initApp() {
   await injectSharedLayout();
+
+  initLogoTheme();
+  initMosaicLogo();
+
   initBreadcrumbs();
   initProjectSectionHeader();
   handleSectionRedirect();
   initMosaicButtons();
   initContactForm();
   initMobileScrollButton();
+ 
  
 
   createTypeWriter('typewriter', [
